@@ -105,3 +105,14 @@ export function recolor(color,palette,background=false){
  const rows=[['#D7CDF5','#F9ECB0','#AA9BF0','#F9A3AA','#7864D7','#FFE3E1','#181817','#FFFFFF'],['#FDD7B9','#F9ECB0','#FAC896','#80DADA','#D27532','#BEEBEB','#181817','#FFFFFF'],['#BEEBEB','#FFD4F2','#80DADA','#6D7BFC','#5ABEBE','#B6C6FE','#181817','#FFFFFF']];
  for(const row of rows){const i=row.indexOf(c);if(i>=0)return i>=6&&palette.objects.length<8?row[i]:palette.objects[i%palette.objects.length];}return color;
 }
+export function resizeScene(state,w,h){
+ if(!Number.isFinite(w)||!Number.isFinite(h)||w<=0||h<=0)throw Error('Некорректный размер холста');
+ let b=state.formatBasis;
+ if(!b||!Number.isFinite(b.w)||!Number.isFinite(b.h)||b.w<=0||b.h<=0||state.objects.some(o=>!b.objects?.[o.uid])){
+  b=state.formatBasis={w:state.w,h:state.h,objects:Object.fromEntries(state.objects.map(o=>[o.uid,{x:o.x,y:o.y,w:o.w}]))};
+ }
+ const scale=Math.min(w/b.w,h/b.h);
+ for(const o of state.objects){const p=b.objects[o.uid];o.x=w===b.w?p.x:p.x/b.w*w;o.y=h===b.h?p.y:p.y/b.h*h;o.w=scale===1?p.w:p.w*scale;}
+ state.w=w;state.h=h;return state;
+}
+

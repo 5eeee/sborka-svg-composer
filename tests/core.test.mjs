@@ -21,3 +21,10 @@ test('короткая пользовательская палитра не пе
 test('явные акценты и разноцветные тона заднего плана отклоняются',()=>{const p={background:'#ffffff',objects:['#ff0000','#00ff00','#0000ff']};assert.throws(()=>validPalette({...p,backgroundObjects:['#ff0000']}),/акцент/);assert.throws(()=>validPalette({...p,backgroundObjects:[]}),/1–2/);assert.throws(()=>validPalette({...p,backgroundObjects:'#eeeeee'}),/1–2/);assert.throws(()=>validPalette({...p,backgroundObjects:['#88aacc','#ccaa88']}),/монохром/);assert.doesNotThrow(()=>validPalette({...p,backgroundObjects:backgroundTones('#f5f1fc')}));});
 
 test('основные объекты могут использовать фоновые тона, обратное запрещено',()=>{const p=validPalette({background:'#F5F1FC',objects:['#D7CDF5','#F9ECB0','#AA9BF0','#F9A3AA','#7864D7','#FFE3E1','#181817','#FFFFFF'],backgroundObjects:['#D7CDF5','#7864D7']});assert.equal(recolor('#D7CDF5',p,false),'#D7CDF5');assert.equal(recolor('#7864D7',p,false),'#7864D7');assert.throws(()=>validPalette({...p,backgroundObjects:['#AA9BF0']}),/акцент/);});
+import {resizeScene} from '../core.mjs';
+test('возврат к исходному формату восстанавливает размеры и координаты',()=>{
+ const state={w:1200,h:630,objects:[{uid:'a',x:333,y:210,w:412,r:17}]};
+ resizeScene(state,1080,1080);resizeScene(state,1080,1350);resizeScene(state,1200,630);
+ assert.deepEqual(state.objects,[{uid:'a',x:333,y:210,w:412,r:17}]);
+ delete state.formatBasis;state.objects[0].w=500;resizeScene(state,1080,1080);resizeScene(state,1200,630);assert.equal(state.objects[0].w,500);
+});
