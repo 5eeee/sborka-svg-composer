@@ -1,22 +1,36 @@
 {
-  "status": "submission_package_prepared_not_sent",
+  "status": "ready_for_user_review_not_sent",
   "date": "2026-11-02",
   "entry": "index.html",
   "url": "http://127.0.0.1:8774",
   "plugin_id": "2137a770-4ae4-432e-8fb5-81003c111a93",
-  "plugin_version": "f8b6ede5ff5b20fc28ea5ef0795945f744ebed16",
+  "plugin_version": "d97b08395b42f8f5e311584fd1a18424d90aeabf",
   "figma_runtime": "audited_live_figma_verified",
   "external_submission": "not_sent",
   "verification_file": "https://www.figma.com/design/aadh2KN9IgfjlrDEfzDLNM/Untitled",
   "verification_result": "All Figma source pages reviewed. Common source-relative scale and all ten explicit objects verified in browser exported JSON and Figma exported JSON. Latest native vector insertion passed.",
-  "design_version": 11,
+  "design_version": 13,
   "last_live_insertion_version": "f8b6ede5ff5b20fc28ea5ef0795945f744ebed16",
   "design_qa": "Centered modal fix verified inside Figma. SVG export download automation timed out; standalone export previously verified.",
-  "tests_passed": 19,
+  "tests_passed": 20,
   "source_repository": "https://github.com/5eeee/sborka-svg-composer",
-  "source_visibility": "private",
+  "source_visibility": "public",
   "demo_url": "http://127.0.0.1:8774/demo.html",
   "demo_qa": "completed all 10 steps; no persistence",
   "logic_version": 6,
-  "spec_audit": "SPEC-AUDIT.txt"
+  "spec_audit": "SPEC-AUDIT.txt",
+  "architecture": "modular_monolith",
+  "rotation": "restored_numeric_degrees",
+  "responsive_widths": [
+    1440,
+    1024,
+    390
+  ],
+  "figma_design": {
+    "components_page": "19:1268",
+    "screens_page": "19:2326",
+    "desktop": "19:2327",
+    "tablet": "19:3418",
+    "mobile": "19:4509"
+  }
 }

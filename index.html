@@ -1,15 +1,448 @@
-<!doctype html><html lang="ru"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Векторный редактор композиций из исходной библиотеки иллюстраций: S/L, палитры, слои и SVG-экспорт."><title>Сборка | Векторная мастерская</title><link rel="stylesheet" href="style.css"><link rel="stylesheet" href="minimal-v3.css"><link rel="stylesheet" href="snap-v4.css"></head><body>
-<header><a class="brand" href="./" aria-label="Сборка, главная"><svg class="logo-mark" viewBox="0 0 40 40" fill="none" aria-hidden="true"><rect x="2" y="9" width="24" height="24" rx="9" fill="currentColor"/><rect x="17" y="2" width="21" height="21" rx="8" fill="currentColor"/><path d="M17 23h9V14" stroke="var(--paper)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Сборка<small>Векторная мастерская</small></span></a><p class="document-name">Новая композиция <span>SVG</span></p><div class="header-actions"><button id="undo" title="Отменить Ctrl+Z">Отменить</button><button id="saveProject">Сохранить проект</button><button class="primary" id="export">Скачать SVG</button></div></header>
-<main class="workbench">
-<aside class="library"><h1>Что соберём?</h1><p class="intro">Соберите свою историю из готовых форм.</p>
-<form id="composeForm"><label for="idea">Идея композиции</label><textarea id="idea" rows="3" placeholder="Например: обучение без отвлечений">Обучение без отвлечений</textarea><button type="submit" class="primary full">Собрать идею</button></form>
-<div class="line-title"><h2>Библиотека</h2><button id="importBtn" title="Добавить свой SVG"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 16V4m-4 4 4-4 4 4M4 15v5h16v-5"/></svg><span>Импорт SVG</span></button><input type="file" id="importFiles" accept="image/svg+xml,.svg" multiple hidden></div>
-<label class="sr" for="assetSearch">Поиск объектов</label><input id="assetSearch" type="search" placeholder="Найти объект"><div id="libraryGrid" class="library-grid" aria-label="Исходные объекты"></div></aside>
-<section class="studio" aria-label="Редактор композиции"><div class="studio-toolbar"><div class="seg" aria-label="Детализация"><button id="sizeS" aria-pressed="false">S</button><button id="sizeL" aria-pressed="true">L</button></div><div><span class="control-caption">Холст</span><select id="format" hidden aria-hidden="true" tabindex="-1"><option value="1200,630">1200 × 630</option><option value="1080,1080">1080 × 1080</option><option value="1080,1350">1080 × 1350</option><option value="custom">Свой размер</option></select><div class="format-options" role="group" aria-label="Размер холста"><button type="button" data-format="1200,630" aria-label="Горизонтальный холст 1200 на 630" aria-pressed="true" title="1200 × 630"><span class="format-glyph landscape" aria-hidden="true"></span><span>Широкий</span></button><button type="button" data-format="1080,1080" aria-label="Квадратный холст 1080 на 1080" aria-pressed="false" title="1080 × 1080"><span class="format-glyph square" aria-hidden="true"></span><span>Квадрат</span></button><button type="button" data-format="1080,1350" aria-label="Вертикальный холст 1080 на 1350" aria-pressed="false" title="1080 × 1350"><span class="format-glyph portrait" aria-hidden="true"></span><span>Портрет</span></button><button type="button" data-format="custom" aria-label="Свой размер холста" aria-pressed="false"><span class="format-glyph custom" aria-hidden="true">+</span><span>Свой</span></button></div></div><div class="custom-size" id="customSize" hidden><input aria-label="Ширина холста" id="canvasW" type="number" min="200" max="5000" value="1200"><span>×</span><input aria-label="Высота холста" id="canvasH" type="number" min="200" max="5000" value="630"><button id="applySize">Применить</button></div></div>
-<div class="workspace-heading"><div><h2>Ваша композиция</h2></div><span class="vector-badge">SVG</span></div><div class="canvas-shell"><svg id="canvas" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-label="Холст композиции" tabindex="0"></svg></div>
-<div class="canvas-footer"><span id="sceneInfo" hidden aria-hidden="true">Загрузка библиотеки…</span><div><button id="shuffle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 7v5h-5M4 17v-5h5M6 8a7 7 0 0 1 12-2l2 3M4 15l2 3a7 7 0 0 0 12-2"/></svg><span>Другой вариант</span></button><button id="clear"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7h16M9 7V4h6v3M6 7l1 14h10l1-14M10 11v6m4-6v6"/></svg><span>Очистить</span></button></div></div>
-<div class="ideas"><span>Попробовать</span><button data-idea="Накопить на мечту">Накопить на мечту</button><button data-idea="Работа с документами">Работа с документами</button><button data-idea="Найти решение вместе">Найти решение вместе</button></div><p id="explanation" hidden aria-hidden="true"></p><noscript>Редактор требует JavaScript. Исходные SVG доступны в папке assets.</noscript></section>
-<aside class="inspector"><h2>Настройки</h2><span class="control-caption">Палитра</span><select id="palette" hidden aria-hidden="true" tabindex="-1"><option value="original">Исходные цвета</option><option value="lilac">Сиреневая</option><option value="apricot">Абрикосовая</option><option value="aqua">Бирюзовая</option><option value="custom">Своя палитра</option></select><div class="palette-options" role="group" aria-label="Цветовая схема"><button type="button" data-palette="original" aria-label="Исходная, цветовая схема" aria-pressed="false"><span class="palette-shape original" aria-hidden="true"><i></i><i></i><i></i></span><span>База</span></button><button type="button" data-palette="lilac" aria-label="Сирень, цветовая схема" aria-pressed="false"><span class="palette-shape lilac" aria-hidden="true"><i></i><i></i><i></i></span><span>Сирень</span></button><button type="button" data-palette="apricot" aria-label="Персик, цветовая схема" aria-pressed="false"><span class="palette-shape apricot" aria-hidden="true"><i></i><i></i><i></i></span><span>Персик</span></button><button type="button" data-palette="aqua" aria-label="Мята, цветовая схема" aria-pressed="false"><span class="palette-shape aqua" aria-hidden="true"><i></i><i></i><i></i></span><span>Мята</span></button><button type="button" data-palette="custom" aria-label="Своя, цветовая схема" aria-pressed="false"><span class="palette-shape custom" aria-hidden="true"><i></i><i></i><i></i></span><span>Своя</span></button></div><label class="check"><input type="checkbox" id="canvasArtwork" checked>Графика фона из Figma</label><label for="bgHex">Цвет холста</label><div class="figma-color"><input id="bgColor" type="color" aria-label="Выбрать цвет холста" value="#f7f5fe"><span>#</span><input id="bgHex" aria-label="HEX цвета холста" maxlength="7" value="F7F5FE" spellcheck="false"><button id="resetBg" title="Цвет из палитры" aria-label="Вернуть цвет холста из палитры">↺</button></div><p id="canvasColorInfo" hidden aria-hidden="true"></p><button id="paletteFileBtn" class="full"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 16V4m-4 4 4-4 4 4M4 15v5h16v-5"/></svg><span>Импорт палитры</span></button><input type="file" id="paletteFile" accept="application/json,.json" hidden><div id="customPalette" hidden><label>Акцент<input type="color" id="accent" value="#aa9bf0"></label><label>Второй цвет<input type="color" id="secondary" value="#f9a3aa"></label><label>Светлый тон<input type="color" id="light" value="#d7cdf5"></label><button id="applyPalette">Применить</button></div>
-<div class="line-title"><h2>Объект</h2><span id="selectedName">Не выбран</span></div><fieldset id="objectControls" disabled><label class="check"><input id="objBackground" type="checkbox">На задний план</label><div class="numeric-grid"><label>X<input type="number" id="objX"></label><label>Y<input type="number" id="objY"></label></div><div class="two-actions"><button id="duplicate">Дублировать</button><button id="delete">Удалить</button></div></fieldset>
-<div class="line-title"><h2>Слои</h2><span id="layerCount">0</span></div><div id="layers" class="layers"></div><div class="two-actions"><button id="backward">Ниже</button><button id="forward">Выше</button></div><label class="check"><input id="backgroundObjects" type="checkbox" checked>Автоматический задний план</label><p id="backgroundInfo" class="hint" aria-live="polite"></p><button id="loadProjectBtn" class="full"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7h7l2 3h9l-3 10H3V7Zm0 0V4h7l2 3"/></svg><span>Открыть проект</span></button><input type="file" id="projectFile" accept="application/json,.json" hidden></aside>
-</main><dialog id="fileDialog" class="file-dialog" aria-labelledby="fileDialogTitle"><button type="button" class="dialog-close" aria-label="Закрыть окно">×</button><div class="dialog-icon" aria-hidden="true">↥</div><span class="dialog-eyebrow">ВАША БИБЛИОТЕКА</span><h2 id="fileDialogTitle"></h2><p id="fileDialogDescription"></p><button type="button" class="file-drop"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M12 16V3m-5 5 5-5 5 5M4 15v5h16v-5"/></svg><strong>Выбрать файл</strong><span id="fileDialogHint"></span></button><p class="dialog-note">Файлы обрабатываются внутри редактора</p></dialog><div id="toast" role="status" aria-live="polite"></div><script type="module" src="app.js"></script></body></html>
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta
+      name="description"
+      content="Векторный редактор композиций из исходной библиотеки иллюстраций: S/L, палитры, слои и SVG-экспорт."
+    />
+    <title>Сборка | Векторная мастерская</title>
+    <link rel="stylesheet" href="src/styles/editor.css" />
+  </head>
+  <body>
+    <header>
+      <a class="brand" href="./" aria-label="Сборка, главная"
+        ><svg
+          class="logo-mark"
+          viewBox="0 0 40 40"
+          fill="none"
+          aria-hidden="true"
+        >
+          <rect x="2" y="9" width="24" height="24" rx="9" fill="currentColor" />
+          <rect
+            x="17"
+            y="2"
+            width="21"
+            height="21"
+            rx="8"
+            fill="currentColor"
+          />
+          <path
+            d="M17 23h9V14"
+            stroke="var(--paper)"
+            stroke-width="3"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          /></svg
+        ><span>Сборка<small>Векторная мастерская</small></span></a
+      >
+      <p class="document-name">Новая композиция <span>SVG</span></p>
+      <div class="header-actions">
+        <button id="undo" title="Отменить Ctrl+Z">Отменить</button
+        ><button id="saveProject">Сохранить проект</button
+        ><button class="primary" id="export">Скачать SVG</button>
+      </div>
+    </header>
+    <main class="workbench">
+      <aside class="library">
+        <h1>Что соберём?</h1>
+        <p class="intro">Соберите свою историю из готовых форм.</p>
+        <form id="composeForm">
+          <label for="idea">Идея композиции</label
+          ><textarea
+            id="idea"
+            rows="3"
+            placeholder="Например: обучение без отвлечений"
+          >
+Обучение без отвлечений</textarea
+          ><button type="submit" class="primary full">Собрать идею</button>
+        </form>
+        <div class="line-title">
+          <h2>Библиотека</h2>
+          <button id="importBtn" title="Добавить свой SVG">
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.6"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <path d="M12 16V4m-4 4 4-4 4 4M4 15v5h16v-5" /></svg
+            ><span>Импорт SVG</span></button
+          ><input
+            type="file"
+            id="importFiles"
+            accept="image/svg+xml,.svg"
+            multiple
+            hidden
+          />
+        </div>
+        <label class="sr" for="assetSearch">Поиск объектов</label
+        ><input id="assetSearch" type="search" placeholder="Найти объект" />
+        <div
+          id="libraryGrid"
+          class="library-grid"
+          aria-label="Исходные объекты"
+        ></div>
+      </aside>
+      <section class="studio" aria-label="Редактор композиции">
+        <div class="studio-toolbar">
+          <div class="seg" aria-label="Детализация">
+            <button id="sizeS" aria-pressed="false">S</button
+            ><button id="sizeL" aria-pressed="true">L</button>
+          </div>
+          <div>
+            <span class="control-caption">Холст</span
+            ><select id="format" hidden aria-hidden="true" tabindex="-1">
+              <option value="1200,630">1200 × 630</option>
+              <option value="1080,1080">1080 × 1080</option>
+              <option value="1080,1350">1080 × 1350</option>
+              <option value="custom">Свой размер</option>
+            </select>
+            <div class="format-options" role="group" aria-label="Размер холста">
+              <button
+                type="button"
+                data-format="1200,630"
+                aria-label="Горизонтальный холст 1200 на 630"
+                aria-pressed="true"
+                title="1200 × 630"
+              >
+                <span class="format-glyph landscape" aria-hidden="true"></span
+                ><span>Широкий</span></button
+              ><button
+                type="button"
+                data-format="1080,1080"
+                aria-label="Квадратный холст 1080 на 1080"
+                aria-pressed="false"
+                title="1080 × 1080"
+              >
+                <span class="format-glyph square" aria-hidden="true"></span
+                ><span>Квадрат</span></button
+              ><button
+                type="button"
+                data-format="1080,1350"
+                aria-label="Вертикальный холст 1080 на 1350"
+                aria-pressed="false"
+                title="1080 × 1350"
+              >
+                <span class="format-glyph portrait" aria-hidden="true"></span
+                ><span>Портрет</span></button
+              ><button
+                type="button"
+                data-format="custom"
+                aria-label="Свой размер холста"
+                aria-pressed="false"
+              >
+                <span class="format-glyph custom" aria-hidden="true">+</span
+                ><span>Свой</span>
+              </button>
+            </div>
+          </div>
+          <div class="custom-size" id="customSize" hidden>
+            <input
+              aria-label="Ширина холста"
+              id="canvasW"
+              type="number"
+              min="200"
+              max="5000"
+              value="1200"
+            /><span>×</span
+            ><input
+              aria-label="Высота холста"
+              id="canvasH"
+              type="number"
+              min="200"
+              max="5000"
+              value="630"
+            /><button id="applySize">Применить</button>
+          </div>
+        </div>
+        <div class="workspace-heading">
+          <div><h2>Ваша композиция</h2></div>
+          <span class="vector-badge">SVG</span>
+        </div>
+        <div class="canvas-shell">
+          <svg
+            id="canvas"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 1200 630"
+            role="img"
+            aria-label="Холст композиции"
+            tabindex="0"
+          ></svg>
+        </div>
+        <div class="canvas-footer">
+          <span id="sceneInfo" hidden aria-hidden="true"
+            >Загрузка библиотеки…</span
+          >
+          <div>
+            <button id="shuffle">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.6"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <path
+                  d="M20 7v5h-5M4 17v-5h5M6 8a7 7 0 0 1 12-2l2 3M4 15l2 3a7 7 0 0 0 12-2"
+                /></svg
+              ><span>Другой вариант</span></button
+            ><button id="clear">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.6"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <path
+                  d="M4 7h16M9 7V4h6v3M6 7l1 14h10l1-14M10 11v6m4-6v6"
+                /></svg
+              ><span>Очистить</span>
+            </button>
+          </div>
+        </div>
+        <div class="ideas">
+          <span>Попробовать</span
+          ><button data-idea="Накопить на мечту">Накопить на мечту</button
+          ><button data-idea="Работа с документами">Работа с документами</button
+          ><button data-idea="Найти решение вместе">
+            Найти решение вместе
+          </button>
+          <button data-idea="Войти в поток">Войти в поток</button
+          ><button data-idea="Разгрести завалы">Разгрести завалы</button
+          ><button data-idea="Включить голову">Включить голову</button>
+        </div>
+        <p id="explanation" hidden aria-hidden="true"></p>
+        <noscript
+          >Редактор требует JavaScript. Исходные SVG доступны в папке
+          assets.</noscript
+        >
+      </section>
+      <aside class="inspector">
+        <section class="inspector-section">
+          <h2>Настройки</h2>
+          <span class="control-caption">Палитра</span
+          ><select id="palette" hidden aria-hidden="true" tabindex="-1">
+            <option value="original">Исходные цвета</option>
+            <option value="lilac">Сиреневая</option>
+            <option value="apricot">Абрикосовая</option>
+            <option value="aqua">Бирюзовая</option>
+            <option value="custom">Своя палитра</option>
+          </select>
+          <div class="palette-options" role="group" aria-label="Цветовая схема">
+            <button
+              type="button"
+              data-palette="original"
+              aria-label="Исходная, цветовая схема"
+              aria-pressed="false"
+            >
+              <span class="palette-shape original" aria-hidden="true"
+                ><i></i><i></i><i></i></span
+              ><span>База</span></button
+            ><button
+              type="button"
+              data-palette="lilac"
+              aria-label="Сирень, цветовая схема"
+              aria-pressed="false"
+            >
+              <span class="palette-shape lilac" aria-hidden="true"
+                ><i></i><i></i><i></i></span
+              ><span>Сирень</span></button
+            ><button
+              type="button"
+              data-palette="apricot"
+              aria-label="Персик, цветовая схема"
+              aria-pressed="false"
+            >
+              <span class="palette-shape apricot" aria-hidden="true"
+                ><i></i><i></i><i></i></span
+              ><span>Персик</span></button
+            ><button
+              type="button"
+              data-palette="aqua"
+              aria-label="Мята, цветовая схема"
+              aria-pressed="false"
+            >
+              <span class="palette-shape aqua" aria-hidden="true"
+                ><i></i><i></i><i></i></span
+              ><span>Мята</span></button
+            ><button
+              type="button"
+              data-palette="custom"
+              aria-label="Своя, цветовая схема"
+              aria-pressed="false"
+            >
+              <span class="palette-shape custom" aria-hidden="true"
+                ><i></i><i></i><i></i></span
+              ><span>Своя</span>
+            </button>
+          </div>
+          <label class="check"
+            ><input type="checkbox" id="canvasArtwork" checked />Графика фона из
+            Figma</label
+          ><label for="bgHex">Цвет холста</label>
+          <div class="figma-color">
+            <input
+              id="bgColor"
+              type="color"
+              aria-label="Выбрать цвет холста"
+              value="#f7f5fe"
+            /><span>#</span
+            ><input
+              id="bgHex"
+              aria-label="HEX цвета холста"
+              maxlength="7"
+              value="F7F5FE"
+              spellcheck="false"
+            /><button
+              id="resetBg"
+              title="Цвет из палитры"
+              aria-label="Вернуть цвет холста из палитры"
+            >
+              ↺
+            </button>
+          </div>
+          <p id="canvasColorInfo" hidden aria-hidden="true"></p>
+          <button id="paletteFileBtn" class="full">
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.6"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <path d="M12 16V4m-4 4 4-4 4 4M4 15v5h16v-5" /></svg
+            ><span>Импорт палитры</span></button
+          ><input
+            type="file"
+            id="paletteFile"
+            accept="application/json,.json"
+            hidden
+          />
+          <div id="customPalette" hidden>
+            <label
+              >Акцент<input type="color" id="accent" value="#aa9bf0" /></label
+            ><label
+              >Второй цвет<input
+                type="color"
+                id="secondary"
+                value="#f9a3aa" /></label
+            ><label
+              >Светлый тон<input
+                type="color"
+                id="light"
+                value="#d7cdf5" /></label
+            ><button id="applyPalette">Применить</button>
+          </div>
+        </section>
+        <section class="inspector-section">
+          <div class="line-title">
+            <h2>Объект</h2>
+            <span id="selectedName">Не выбран</span>
+          </div>
+          <fieldset id="objectControls" disabled>
+            <label class="check"
+              ><input id="objBackground" type="checkbox" />На задний план</label
+            >
+            <div class="numeric-grid">
+              <label>X<input type="number" id="objX" /></label
+              ><label>Y<input type="number" id="objY" /></label
+              ><label class="rotation-field"
+                >Поворот
+                <span class="unit-field"
+                  ><input
+                    type="number"
+                    id="objR"
+                    min="-180"
+                    max="180"
+                    step="1"
+                    aria-label="Поворот"
+                  /><span aria-hidden="true">°</span></span
+                ></label
+              >
+            </div>
+            <div class="two-actions">
+              <button id="duplicate">Дублировать</button
+              ><button id="delete">Удалить</button>
+            </div>
+          </fieldset>
+        </section>
+        <section class="inspector-section">
+          <div class="line-title">
+            <h2>Слои</h2>
+            <span id="layerCount">0</span>
+          </div>
+          <div id="layers" class="layers"></div>
+          <div class="two-actions">
+            <button id="backward">Ниже</button
+            ><button id="forward">Выше</button>
+          </div>
+          <label class="check"
+            ><input
+              id="backgroundObjects"
+              type="checkbox"
+              checked
+            />Автоматический задний план</label
+          >
+          <p id="backgroundInfo" class="hint" aria-live="polite"></p>
+          <button id="loadProjectBtn" class="full">
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.6"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <path d="M3 7h7l2 3h9l-3 10H3V7Zm0 0V4h7l2 3" /></svg
+            ><span>Открыть проект</span></button
+          ><input
+            type="file"
+            id="projectFile"
+            accept="application/json,.json"
+            hidden
+          />
+        </section>
+      </aside>
+    </main>
+    <dialog
+      id="fileDialog"
+      class="file-dialog"
+      aria-labelledby="fileDialogTitle"
+    >
+      <button type="button" class="dialog-close" aria-label="Закрыть окно">
+        ×
+      </button>
+      <div class="dialog-icon" aria-hidden="true">↥</div>
+      <span class="dialog-eyebrow">ВАША БИБЛИОТЕКА</span>
+      <h2 id="fileDialogTitle"></h2>
+      <p id="fileDialogDescription"></p>
+      <button type="button" class="file-drop">
+        <svg
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.5"
+          aria-hidden="true"
+        >
+          <path d="M12 16V3m-5 5 5-5 5 5M4 15v5h16v-5" /></svg
+        ><strong>Выбрать файл</strong><span id="fileDialogHint"></span>
+      </button>
+      <p class="dialog-note">Файлы обрабатываются внутри редактора</p>
+    </dialog>
+    <div id="toast" role="status" aria-live="polite"></div>
+    <script type="module" src="app.js"></script>
+  </body>
+</html>
