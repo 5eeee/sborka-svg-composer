@@ -5,7 +5,7 @@
   "url": "http://127.0.0.1:8774",
   "plugin_id": "2137a770-4ae4-432e-8fb5-81003c111a93",
   "plugin_version": "d97b08395b42f8f5e311584fd1a18424d90aeabf",
-  "figma_runtime": "release_editor_and_editable_design_created",
+  "figma_runtime": "final_responsive_design_verified",
   "external_submission": "not_sent",
   "verification_file": "https://www.figma.com/design/aadh2KN9IgfjlrDEfzDLNM/Untitled",
   "verification_result": "Rotation 15 degrees verified; source-relative scale maintained; 20 tests pass; adaptive 1440/1024/390 checked; editable Figma components and screens created",
@@ -31,6 +31,7 @@
     "screens_page": "19:2326",
     "desktop": "19:2327",
     "tablet": "19:3418",
-    "mobile": "19:4509"
+    "mobile": "19:4509",
+    "tablet_inspector": "three_columns_verified"
   }
 }
