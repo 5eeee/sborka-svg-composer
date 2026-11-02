@@ -1,0 +1,22 @@
+{
+  "name": "Сборка",
+  "id": "2137a770-4ae4-432e-8fb5-81003c111a93",
+  "api": "1.0.0",
+  "main": "code.js",
+  "ui": "ui.html",
+  "editorType": [
+    "figma"
+  ],
+  "documentAccess": "dynamic-page",
+  "networkAccess": {
+    "allowedDomains": [
+      "none"
+    ]
+  },
+  "relaunchButtons": [
+    {
+      "command": "2137a770-4ae4-432e-8fb5-81003c111a93",
+      "name": "Сборка"
+    }
+  ]
+}

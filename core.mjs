@@ -10,7 +10,17 @@ export const OBJECTS=[
  {id:'coin',name:'Монета',tags:['накоп','прибыл','деньг','мечт','инвест','оплат','доход']},
  {id:'flowers',name:'Цветы',tags:['цвет','подар','забот','рост','красот','весн','праздник']}
 ];
-export function pickObjects(text){const t=String(text).toLowerCase().replace(/ё/g,'е');const ranked=OBJECTS.map((o,index)=>({...o,index,score:o.tags.reduce((n,k)=>n+(t.includes(k)?1:0),0)})).filter(o=>o.score>0).sort((a,b)=>b.score-a.score||a.index-b.index);return {ids:ranked.slice(0,4).map(o=>o.id),matched:ranked.length>0};}
+const METAPHORS=[
+ {terms:['свет в конце','озарение','эврика','искр','bright idea','inspiration'],ids:['lamp']},
+ {terms:['знания сила','открыть новые горизонты','пища для ума','learning','education','knowledge'],ids:['book','lamp']},
+ {terms:['плечом к плечу','части целого','одна команда','teamwork','together'],ids:['puzzle']},
+ {terms:['держать руку на пульсе','на одной волне','быть на связи','communication'],ids:['phone','headphones']},
+ {terms:['время деньги','деньги на ветер','финансовая подушка','копейка рубль','money','saving','budget'],ids:['coin','wallet']},
+ {terms:['разложить по полочкам','все под контролем','чистый лист','workflow','documents','organize'],ids:['folder','pen']},
+ {terms:['расцвести','пустить корни','плоды труда','бизнес растет','growth','care','gift'],ids:['flowers']},
+ {terms:['услышать себя','не слышать шум','погрузиться в музыку','music','focus','podcast'],ids:['headphones']}
+];
+export function pickObjects(text){const t=String(text).toLowerCase().replace(/ё/g,'е').replace(/[^a-zа-я0-9]+/g,' ').trim();const boosts=new Map();for(const metaphor of METAPHORS)if(metaphor.terms.some(term=>t.includes(term)))metaphor.ids.forEach((id,i)=>boosts.set(id,(boosts.get(id)||0)+5-i));const ranked=OBJECTS.map((o,index)=>({...o,index,score:(boosts.get(o.id)||0)+o.tags.reduce((n,k)=>n+(t.includes(k)?1:0),0)})).filter(o=>o.score>0).sort((a,b)=>b.score-a.score||a.index-b.index);return {ids:ranked.slice(0,4).map(o=>o.id),matched:ranked.length>0};}
 export function fitObjects(ids,width,height,variant=0){const layouts=[[[.48,.50,.44],[.72,.67,.28],[.23,.72,.27],[.72,.27,.22]],[[.61,.48,.43],[.30,.70,.30],[.26,.28,.25],[.75,.78,.23]],[[.70,.58,.43],[.42,.75,.30],[.79,.22,.22],[.47,.35,.24]]];const slots=layouts[variant%layouts.length];return ids.map((id,i)=>({uid:'o'+Math.random().toString(36).slice(2,10),id,x:width*slots[i%4][0],y:height*slots[i%4][1],w:Math.min(width,height*1.6)*slots[i%4][2],r:0,background:false}));}
 export function clamp(v,min,max){return Math.min(max,Math.max(min,Number(v)||0));}
 export function validPalette(data){const hex=/^#[0-9a-f]{6}$/i;if(!data||!hex.test(data.background)||!Array.isArray(data.objects)||data.objects.length<3||data.objects.length>12||!data.objects.every(c=>hex.test(c)))throw Error('Палитра: background и objects (от 3 до 12 цветов #RRGGBB)');if(data.backgroundObjects&&!data.backgroundObjects.every(c=>hex.test(c)))throw Error('Некорректные фоновые цвета');return data;}
