@@ -18,7 +18,7 @@ test('плагин ограничивает импорт и создаёт ре�
 
 test('оба UI содержат синтаксически корректный скрипт и полную библиотеку',async()=>{
  for(const name of ['ui.html','ui-cloud.html']){const html=await fs.readFile(new URL('../plugin/'+name,import.meta.url),'utf8');const script=html.match(/<script>([\s\S]*)<\/script>/)[1];assert.doesNotThrow(()=>new Function(script));assert.ok(html.includes('Добавить в Figma'));assert.ok(!html.includes('src="app.js"'));}
- const library=JSON.parse(await fs.readFile(new URL('../plugin/library.json',import.meta.url),'utf8'));assert.equal(Object.keys(library).length,40);assert.ok(Object.keys(library).some(k=>k.startsWith('S:background:')));
+ const library=JSON.parse(await fs.readFile(new URL('../plugin/library.json',import.meta.url),'utf8'));assert.equal(Object.keys(library).length,46);assert.ok(Object.keys(library).some(k=>k.startsWith('S:background:')));
 });
 
 test('идентификаторы работают в изолированном iframe без crypto.randomUUID',async()=>{

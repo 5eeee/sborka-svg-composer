@@ -1,0 +1,10 @@
+{
+  "source": "https://www.figma.com/design/4MCFttsSoP7hgQh29zq5G3",
+  "date": "2026-11-02",
+  "exports": [
+    "library-S-fresh.svg",
+    "library-L-fresh.svg"
+  ],
+  "backgrounds": 6,
+  "note": "Fresh exports compared to previously named SVG sections; path geometry comparison printed in verification run."
+}

@@ -5,7 +5,7 @@
     "h": 1080,
     "size": "L",
     "palette": "aqua",
-    "bg": "#eefafa",
+    "bg": "#BEEBEB",
     "objects": [
       {
         "uid": "bgs2o56p8b",
@@ -50,7 +50,8 @@
       ]
     },
     "backgroundEnabled": true,
-    "bgMode": "palette"
+    "bgMode": "palette",
+    "canvasArtwork": true
   },
   "customAssets": []
 }

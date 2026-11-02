@@ -5,7 +5,7 @@
     "h": 630,
     "size": "L",
     "palette": "lilac",
-    "bg": "#f5f1fc",
+    "bg": "#D7CDF5",
     "objects": [
       {
         "uid": "bgg3d6ishi",
@@ -50,7 +50,8 @@
       ]
     },
     "backgroundEnabled": true,
-    "bgMode": "palette"
+    "bgMode": "palette",
+    "canvasArtwork": true
   },
   "customAssets": []
 }
