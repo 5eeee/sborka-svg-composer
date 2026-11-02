@@ -4,12 +4,12 @@
   "entry": "index.html",
   "url": "http://127.0.0.1:8774",
   "plugin_id": "2137a770-4ae4-432e-8fb5-81003c111a93",
-  "plugin_version": "18d25b55141deb0392cb14befb8b280b4802f7a3",
+  "plugin_version": "4f741fc3ccc35d00761f5714206aeb08c7bc59e6",
   "figma_runtime": "verified_in_live_figma",
   "external_submission": "not_sent",
   "verification_file": "https://www.figma.com/design/aadh2KN9IgfjlrDEfzDLNM/Untitled",
   "verification_result": "Frame 1200x630 with three object groups; individual vector path selected in Figma",
-  "design_version": 3,
+  "design_version": 4,
   "last_live_insertion_version": "73a4b5fbe6fcc1facf468b2335e7a711fdedeac6",
-  "design_qa": "v3 web preview checked; format and palette controls verified; plugin UI built"
+  "design_qa": "Graphite v4 browser preview, local font load, palette/format changes and SVG export verified; Figma build successful"
 }
