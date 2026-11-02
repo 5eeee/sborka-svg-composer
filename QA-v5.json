@@ -1,0 +1,24 @@
+{
+  "tests": 16,
+  "palette_conflict_rejected": true,
+  "short_palette_background_colors": [
+    "#FFFFFF",
+    "#8A8988",
+    "#F8F7F5"
+  ],
+  "short_palette_accents": [
+    "#E86570",
+    "#629B89",
+    "#E4B45D"
+  ],
+  "manual_canvas_color_status": "verified",
+  "background_toggle": "verified",
+  "explicit_exclusion": "phone excluded",
+  "demo_steps": 10,
+  "demo_complete": true,
+  "examples_verified": 3,
+  "exports_raster_images": 0,
+  "exports_duplicate_ids": 0,
+  "plugin_version": "12bce1034b55db9cac47c997a4f0d8e151761f76",
+  "source_visibility": "private"
+}

@@ -1,0 +1,22 @@
+<!doctype html><html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Сборка | Демо</title><style>
+:root{--bg:#19191c;--panel:#242427;--ink:#f4f3f6;--muted:#a6a4ae;--accent:#ff5baf;--accent-ink:#29131f;--line:#39383f;--font:Inter,'Segoe UI',Arial,sans-serif}*{box-sizing:border-box}html,body{margin:0;overflow-x:clip}body{font:14px/1.5 var(--font);color:var(--ink);background:var(--bg)}header{max-width:1440px;margin:auto;padding:20px 24px;display:flex;align-items:center;gap:20px}h1{font-size:20px;font-weight:500;margin:0}p{margin:4px 0;color:var(--muted);font-size:12px}button{font:inherit;border:0;border-radius:999px;padding:10px 20px;background:var(--accent);color:var(--accent-ink);cursor:pointer}button:disabled{background:var(--panel);color:var(--muted);cursor:wait}button:focus-visible{outline:2px solid var(--ink);outline-offset:4px}#run{margin-left:auto}iframe{display:block;border:1px solid var(--line);border-radius:24px;width:calc(100% - 32px);height:calc(100vh - 116px);margin:0 16px 16px;background:var(--panel)}@media(max-width:650px){header{flex-wrap:wrap;padding:16px}#run{margin-left:0}iframe{height:75vh}}@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto}}
+</style></head><body><header><div><h1>Сборка в действии</h1><p id="status" aria-live="polite">Демонстрация работает на отдельном холсте и не меняет ваш сохранённый проект.</p></div><button id="run" disabled>Загрузка редактора…</button></header><iframe id="editor" title="Демонстрационный редактор" src="./?demo=1"></iframe><script>
+const frame=document.getElementById('editor'),run=document.getElementById('run'),status=document.getElementById('status');
+const sleep=ms=>new Promise(resolve=>setTimeout(resolve,ms));
+const doc=()=>frame.contentDocument;
+const click=s=>{const e=doc().querySelector(s);if(!e)throw Error('Элемент не найден: '+s);e.click();};
+async function ready(){for(let i=0;i<100;i++){if(doc()?.querySelectorAll('#libraryGrid button').length===10){run.disabled=false;run.textContent='Запустить демо';return;}await sleep(100);}status.textContent='Редактор не загрузился. Запустите проект через node server.mjs и обновите страницу.';}
+frame.onload=ready;
+run.onclick=async()=>{run.disabled=true;const steps=[
+ ['Идея: обучение без отвлечений. Основные предметы и задний план подбираются отдельно.',()=>{const i=doc().querySelector('#idea');i.value='Обучение без отвлечений';click('#composeForm button[type=submit]');}],
+ ['Цвет холста и объектов меняется выбранной палитрой.',()=>click('[data-palette="lilac"]')],
+ ['Другой вариант меняет раскладку и связанный элемент заднего плана.',()=>click('#shuffle')],
+ ['Версия S загружает исходные SVG меньшей детализации.',()=>click('#sizeS')],
+ ['Задний план можно отключить отдельно от цвета холста.',()=>click('#backgroundObjects')],
+ ['При включении возвращаются только фоновые объекты.',()=>click('#backgroundObjects')],
+ ['Вторая идея: накопить на мечту. Сохраняются исходные векторные формы.',()=>{click('[data-format="1080,1080"]');click('[data-idea="Накопить на мечту"]');click('[data-palette="aqua"]');}],
+ ['Третья идея: работа с документами. Автоматическая раскладка учитывает формат.',()=>{click('[data-format="1200,630"]');click('[data-idea="Работа с документами"]');click('[data-palette="apricot"]');click('#sizeL');}],
+ ['Объект можно добавить вручную из библиотеки.',()=>Array.from(doc().querySelectorAll('#libraryGrid button')).find(b=>b.textContent==='Цветы').click()],
+ ['Отмена возвращает предыдущую композицию. Экспорт и вставка в Figma доступны в редакторе.',()=>click('#undo')]
+ ];try{for(let i=0;i<steps.length;i++){status.textContent=(i+1)+' / '+steps.length+'. '+steps[i][0];steps[i][1]();await sleep(2200);}status.textContent='Демонстрация завершена. Можно повторить или поработать в редакторе ниже.';}catch(e){status.textContent='Ошибка демонстрации: '+e.message;}finally{run.disabled=false;run.textContent='Повторить демо';}};
+</script></body></html>

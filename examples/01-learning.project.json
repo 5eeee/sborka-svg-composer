@@ -4,40 +4,53 @@
     "w": 1200,
     "h": 630,
     "size": "L",
-    "palette": "apricot",
-    "bg": "#fff4e9",
+    "palette": "lilac",
+    "bg": "#f5f1fc",
     "objects": [
       {
-        "uid": "bg6f8cfb51-938c-42d3-83f1-23e45e11e53d",
-        "id": "headphones",
-        "x": 240,
-        "y": 189,
-        "w": 348,
-        "r": -12,
+        "uid": "bgg3d6ishi",
+        "id": "lamp",
+        "x": 960,
+        "y": 166.95,
+        "w": 226.97983090572131,
+        "r": 0,
         "background": true
       },
       {
-        "uid": "o134i2eih",
+        "uid": "oanuboq4e",
         "id": "book",
-        "x": 576,
-        "y": 315,
-        "w": 443.52,
+        "x": 612,
+        "y": 362.25,
+        "w": 540.9513777476782,
         "r": 0,
         "background": false
       },
       {
-        "uid": "odn0hcisa",
+        "uid": "ot7a0w28t",
         "id": "headphones",
-        "x": 864,
-        "y": 422.1,
-        "w": 282.24,
+        "x": 228,
+        "y": 321.3,
+        "w": 250.82619679071934,
         "r": 0,
         "background": false
       }
     ],
     "variant": 0,
     "idea": "Обучение без отвлечений",
-    "customPalette": null
+    "customPalette": {
+      "background": "#F4F2EF",
+      "objects": [
+        "#E86570",
+        "#629B89",
+        "#E4B45D"
+      ],
+      "backgroundObjects": [
+        "#F8F7F5",
+        "#8A8988"
+      ]
+    },
+    "backgroundEnabled": true,
+    "bgMode": "palette"
   },
   "customAssets": []
 }

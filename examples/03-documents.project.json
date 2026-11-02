@@ -3,33 +3,33 @@
   "state": {
     "w": 1200,
     "h": 630,
-    "size": "S",
-    "palette": "lilac",
-    "bg": "#f5f1fc",
+    "size": "L",
+    "palette": "apricot",
+    "bg": "#fff4e9",
     "objects": [
       {
-        "uid": "bg3d1abb43-7028-4ab1-ac27-290419933876",
-        "id": "pen",
+        "uid": "bgb8aabxg0",
+        "id": "lamp",
         "x": 240,
-        "y": 189,
-        "w": 182.70000000000002,
-        "r": -12,
+        "y": 151.2,
+        "w": 189,
+        "r": 0,
         "background": true
       },
       {
-        "uid": "og7fjo5kn",
+        "uid": "oi2rccd7q",
         "id": "folder",
-        "x": 576,
-        "y": 315,
-        "w": 277.2,
+        "x": 612,
+        "y": 362.25,
+        "w": 289.8,
         "r": 0,
         "background": false
       },
       {
-        "uid": "ofy8jukhz",
+        "uid": "of5pdf19j",
         "id": "pen",
-        "x": 864,
-        "y": 422.1,
+        "x": 742.3582368398133,
+        "y": 490.092790589812,
         "w": 176.40000000000003,
         "r": 0,
         "background": false
@@ -37,7 +37,20 @@
     ],
     "variant": 0,
     "idea": "Работа с документами",
-    "customPalette": null
+    "customPalette": {
+      "background": "#F4F2EF",
+      "objects": [
+        "#E86570",
+        "#629B89",
+        "#E4B45D"
+      ],
+      "backgroundObjects": [
+        "#F8F7F5",
+        "#8A8988"
+      ]
+    },
+    "backgroundEnabled": true,
+    "bgMode": "palette"
   },
   "customAssets": []
 }

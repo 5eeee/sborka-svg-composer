@@ -1,15 +1,21 @@
 {
-  "status": "web_and_figma_plugin_verified",
+  "status": "ready_for_user_review",
   "date": "2026-11-02",
   "entry": "index.html",
   "url": "http://127.0.0.1:8774",
   "plugin_id": "2137a770-4ae4-432e-8fb5-81003c111a93",
-  "plugin_version": "4f741fc3ccc35d00761f5714206aeb08c7bc59e6",
+  "plugin_version": "12bce1034b55db9cac47c997a4f0d8e151761f76",
   "figma_runtime": "verified_in_live_figma",
   "external_submission": "not_sent",
   "verification_file": "https://www.figma.com/design/aadh2KN9IgfjlrDEfzDLNM/Untitled",
   "verification_result": "Frame 1200x630 with three object groups; individual vector path selected in Figma",
   "design_version": 4,
   "last_live_insertion_version": "73a4b5fbe6fcc1facf468b2335e7a711fdedeac6",
-  "design_qa": "Graphite v4 browser preview, local font load, palette/format changes and SVG export verified; Figma build successful"
+  "design_qa": "Graphite v4 browser preview, local font load, palette/format changes and SVG export verified; Figma build successful",
+  "tests_passed": 16,
+  "source_repository": "https://github.com/5eeee/sborka-svg-composer",
+  "source_visibility": "private",
+  "demo_url": "http://127.0.0.1:8774/demo.html",
+  "demo_qa": "completed all 10 steps; no persistence",
+  "logic_version": 5
 }
