@@ -1,57 +1,45 @@
 {
   "version": 1,
   "state": {
-    "w": 1080,
-    "h": 1080,
-    "size": "L",
+    "w": 1200,
+    "h": 630,
+    "size": "S",
     "palette": "aqua",
     "bg": "#BEEBEB",
     "objects": [
       {
-        "uid": "bgs2o56p8b",
+        "uid": "bg5udx45o3",
         "id": "pen",
-        "x": 864,
-        "y": 237.6,
-        "w": 324,
+        "x": 917.4111556292329,
+        "y": 156.45121420291238,
+        "w": 445.1776887415342,
         "r": 0,
         "background": true
       },
       {
-        "uid": "oq4kv9t92",
+        "uid": "oy787vq7x",
         "id": "coin",
-        "x": 550.8,
-        "y": 621,
-        "w": 496.8,
+        "x": 612,
+        "y": 362.25,
+        "w": 266.87898138380876,
         "r": 0,
         "background": false
       },
       {
-        "uid": "oi9gdgn9h",
+        "uid": "ocbapekmr",
         "id": "wallet",
-        "x": 205.2,
-        "y": 550.8,
-        "w": 279.6028593701275,
+        "x": 320.1,
+        "y": 217.6067623099406,
+        "w": 552,
         "r": 0,
         "background": false
       }
     ],
     "variant": 0,
     "idea": "Накопить на мечту",
-    "customPalette": {
-      "background": "#F4F2EF",
-      "objects": [
-        "#E86570",
-        "#629B89",
-        "#E4B45D"
-      ],
-      "backgroundObjects": [
-        "#F8F7F5",
-        "#8A8988"
-      ]
-    },
+    "customPalette": null,
     "backgroundEnabled": true,
-    "bgMode": "palette",
-    "canvasArtwork": true
+    "bgMode": "palette"
   },
   "customAssets": []
 }

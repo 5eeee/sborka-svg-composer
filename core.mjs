@@ -39,7 +39,7 @@ export function analyzeIdea(text){
  const contexts=CONTEXTS.map((c,index)=>({...c,index,score:c.words.reduce((n,k)=>n+(t.includes(k)?1:0),0)})).filter(c=>c.score>0).sort((a,b)=>b.score-a.score||a.index-b.index);
  const boosts=new Map();for(const m of METAPHORS)if(m.terms.some(term=>t.includes(term)))m.ids.forEach((id,i)=>boosts.set(id,(boosts.get(id)||0)+5-i));
  const ranked=OBJECTS.map((o,index)=>({...o,index,score:(boosts.get(o.id)||0)+(explicit.includes(o.id)?8:0)+o.tags.reduce((n,k)=>n+(t.includes(k)?1:0),0)})).filter(o=>o.score>0&&!excluded.has(o.id)).sort((a,b)=>b.score-a.score||a.index-b.index);
- let ids=ranked.slice(0,3).map(o=>o.id);const context=contexts[0];
+ let ids=explicit.length?[...new Set(explicit)].filter(id=>!excluded.has(id)):ranked.slice(0,3).map(o=>o.id);const context=contexts[0];
  if(!ids.length&&context)ids=context.main.filter(id=>!excluded.has(id)).slice(0,2);
  if(ids.length===1&&context&&explicit.length===0){const support=[...context.main,...context.support].find(id=>!ids.includes(id)&&!excluded.has(id));if(support)ids.push(support);}
  if(!ids.length)return {ids:[],matched:false,backgroundIds:[],reason:'Для этой идеи нет уверенного соответствия в библиотеке'};
@@ -50,11 +50,12 @@ export function pickObjects(text){const {ids,matched}=analyzeIdea(text);return {
 
 const RATIOS={puzzle:.58,book:.68,phone:.58,headphones:.78,lamp:1.19,wallet:.63,pen:.56,folder:.53,coin:.66,flowers:1.27};
 const intersection=(a,b)=>Math.max(0,Math.min(a.x+a.w/2,b.x+b.w/2)-Math.max(a.x-a.w/2,b.x-b.w/2))*Math.max(0,Math.min(a.y+a.h/2,b.y+b.h/2)-Math.max(a.y-a.h/2,b.y-b.h/2));
-export function fitObjects(ids,width,height,variant=0,ratios={}){
+export function fitObjects(ids,width,height,variant=0,ratios={},dimensions={}){
  const margin=Math.min(width,height)*.07,placed=[],phase=((variant%11)+11)%11;
- for(const [i,id] of ids.slice(0,4).entries()){
+ const requested=ids.slice(0,10);const naturalScale=Math.min(...requested.map(id=>{const d=dimensions[id];return d?Math.min(width*.46/d.w,height*.58/d.h):Infinity;}));
+ for(const [i,id] of requested.entries()){
   const ratio=ratios[id]||RATIOS[id]||1;
-  const w=Math.min(width*(i===0?.46:.28),height*(i===0?.58:.31)/ratio),h=w*ratio;
+  const w=dimensions[id]&&Number.isFinite(naturalScale)?dimensions[id].w*naturalScale:Math.min(width*(i===0?.46:.28),height*(i===0?.58:.31)/ratio),h=w*ratio;
   const item={uid:'o'+Math.random().toString(36).slice(2,10),id,x:width*.51,y:height*.55,w,r:0,background:false};
   if(i===0){item.x+=Math.sin(phase*1.7)*width*.035;item.y+=Math.cos(phase*1.3)*height*.025;}
   else{
@@ -75,8 +76,8 @@ export function fitObjects(ids,width,height,variant=0,ratios={}){
  }
  return placed.map(({h,...o})=>o);
 }
-export function fitBackground(id,width,height,objects,variant=0,ratio=RATIOS[id]||1){
- const w=Math.min(width*.30,height*.43/ratio),h=w*ratio;
+export function fitBackground(id,width,height,objects,variant=0,ratio=RATIOS[id]||1,requestedWidth=null){
+ const w=requestedWidth||Math.min(width*.30,height*.43/ratio),h=w*ratio;
  const candidates=[[.20,.24],[.80,.22],[.20,.75],[.80,.75]].map(([x,y],i)=>({x:Math.max(w/2+width*.05,Math.min(width-w/2-width*.05,width*x)),y:Math.max(h/2+height*.05,Math.min(height-h/2-height*.05,height*y)),w,h,i}));
  candidates.sort((a,b)=>{const score=c=>objects.reduce((n,o)=>n+intersection(c,{...o,h:o.w*(RATIOS[o.id]||1)}),0)/(w*h)+((c.i+variant)%4)*.025;return score(a)-score(b);});
  return {uid:'bg'+Math.random().toString(36).slice(2,10),id,x:candidates[0].x,y:candidates[0].y,w,r:0,background:true};

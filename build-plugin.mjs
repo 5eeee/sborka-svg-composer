@@ -9,7 +9,7 @@ const embedded={};for(const a of manifest)embedded[a.size+':'+(a.role==='backgro
 for(const size of ['S','L'])for(const name of ['lilac','apricot','aqua'])embedded['canvas:'+size+':'+name]=await read('assets/backgrounds/'+size+'-'+name+'.svg');
 let app=await read('app.js');
 app=app.replace(/^import[^\n]+\n/,'');
-app=app.replace("manifest=await (await fetch('assets/manifest.json')).json();await Promise.all(manifest.map(async a=>{const raw=await(await fetch(a.path)).text();sanitize(raw);assets.set(a.size+':'+(a.role==='background'?'background:':'')+a.id,raw);}));",'assets=new Map(Object.entries(EMBEDDED_ASSETS));');
+app=app.replace("manifest=await (await fetch('assets/manifest.json')).json();await Promise.all(manifest.map(async a=>{const raw=await(await fetch(a.path)).text();sanitize(raw);assets.set(a.size+':'+(a.role==='background'?'background:':'')+a.id,raw);}));",'manifest='+JSON.stringify(manifest.map(({id,size,role,viewBox})=>({id,size,role,viewBox})))+';assets=new Map(Object.entries(EMBEDDED_ASSETS));');
 app=app.replace("await Promise.all(['S','L'].flatMap(size=>['lilac','apricot','aqua'].map(async name=>{assets.set('canvas:'+size+':'+name,await(await fetch('assets/backgrounds/'+size+'-'+name+'.svg')).text());})));",'');
 if(app.includes("fetch('assets/manifest.json')"))throw Error('Plugin asset embedding failed');
 const core=(await read('core.mjs')).replaceAll('export ','');

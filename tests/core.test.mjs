@@ -28,3 +28,16 @@ test('возврат к исходному формату восстанавли
  assert.deepEqual(state.objects,[{uid:'a',x:333,y:210,w:412,r:17}]);
  delete state.formatBasis;state.objects[0].w=500;resizeScene(state,1080,1080);resizeScene(state,1200,630);assert.equal(state.objects[0].w,500);
 });
+
+test('исходный относительный масштаб сохраняется для всех объектов, размеров и форматов',async()=>{
+ const fs=await import('node:fs/promises');const manifest=JSON.parse(await fs.readFile(new URL('../assets/manifest.json',import.meta.url),'utf8'));
+ for(const size of ['S','L'])for(const [w,h] of [[1200,630],[1080,1080],[1080,1350]]){
+ const entries=manifest.filter(a=>a.size===size&&a.role==='main');const dims=Object.fromEntries(entries.map(a=>[a.id,{w:a.viewBox[2],h:a.viewBox[3]}]));const ratios=Object.fromEntries(entries.map(a=>[a.id,a.viewBox[3]/a.viewBox[2]]));
+ for(let i=0;i<entries.length;i++){const ids=[entries[i].id,entries[(i+1)%entries.length].id,entries[(i+4)%entries.length].id];const objects=fitObjects(ids,w,h,2,ratios,dims);const scales=objects.map(o=>o.w/dims[o.id].w);assert.ok(scales.every(v=>Math.abs(v-scales[0])<1e-10));}
+ }
+});
+
+test('сценарий перечисления сохраняет все явно названные компоненты',()=>{
+ const result=analyzeIdea('Книга, телефон, наушники, лампа, кошелек, ручка, папка, монета, цветы, пазлы');
+ assert.equal(result.ids.length,10);assert.equal(fitObjects(result.ids,1200,630).length,10);
+});

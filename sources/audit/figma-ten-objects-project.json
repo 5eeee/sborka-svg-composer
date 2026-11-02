@@ -1,0 +1,107 @@
+{
+  "version": 1,
+  "state": {
+    "w": 1200,
+    "h": 630,
+    "size": "L",
+    "palette": "original",
+    "bg": "#D7CDF5",
+    "objects": [
+      {
+        "uid": "o17ih7lub",
+        "id": "puzzle",
+        "x": 612,
+        "y": 362.25,
+        "w": 176.12021376266404,
+        "r": 0,
+        "background": false
+      },
+      {
+        "uid": "op3qbeq56",
+        "id": "book",
+        "x": 278.0836722388266,
+        "y": 412.65,
+        "w": 467.9673444776531,
+        "r": 0,
+        "background": false
+      },
+      {
+        "uid": "ooihe2c0z",
+        "id": "phone",
+        "x": 373.5407484087558,
+        "y": 176.3543447287914,
+        "w": 257.7991154067468,
+        "r": 0,
+        "background": false
+      },
+      {
+        "uid": "ozd44gwa0",
+        "id": "headphones",
+        "x": 786,
+        "y": 163.07715872858307,
+        "w": 287.45266897442815,
+        "r": 0,
+        "background": false
+      },
+      {
+        "uid": "odwzwpk4q",
+        "id": "lamp",
+        "x": 922.1614502078112,
+        "y": 403.2,
+        "w": 306.157590705392,
+        "r": 0,
+        "background": false
+      },
+      {
+        "uid": "oje2b53vx",
+        "id": "wallet",
+        "x": 648.5557435058593,
+        "y": 502.4369761729952,
+        "w": 204.03681860812378,
+        "r": 0,
+        "background": false
+      },
+      {
+        "uid": "o36g3k3es",
+        "id": "pen",
+        "x": 551.444256494141,
+        "y": 140.16302382700485,
+        "w": 164.5540704702657,
+        "r": 0,
+        "background": false
+      },
+      {
+        "uid": "o8xrzti4w",
+        "id": "folder",
+        "x": 943.6831860941988,
+        "y": 391.2162630931018,
+        "w": 401.52912292692145,
+        "r": 0,
+        "background": false
+      },
+      {
+        "uid": "obfqgctp4",
+        "id": "coin",
+        "x": 503.7193152218625,
+        "y": 497.7746484630128,
+        "w": 92.78348076056905,
+        "r": 0,
+        "background": false
+      },
+      {
+        "uid": "ockjmhb7t",
+        "id": "flowers",
+        "x": 240.67559262046655,
+        "y": 274.01376045976957,
+        "w": 191.14094275530744,
+        "r": 0,
+        "background": false
+      }
+    ],
+    "variant": 0,
+    "idea": "Книга, телефон, наушники, лампа, кошелек, ручка, папка, монета, цветы, пазлы",
+    "customPalette": null,
+    "backgroundEnabled": true
+  },
+  "customAssets": []
+}

@@ -12,9 +12,8 @@ maps={'L':['Пазлы','Книга','Телефон','Наушники','Лам
 backgrounds={'L':['Пазлы_2','Книга_2','Телефон_2','Наушники_2','Лампа_2','Кошелек_2','Ручка_2','Папка_2','Монета_2','Group 2136136347'],'S':['Пазлы_2','Group 2136136341','Телефон_2','Наушники_2','Лампа_2','Кошелек_2','Group 2136136343','Group 2136136342','Монета_2','Group 2136136346']}
 manifest=[]
 for size in ['L','S']:
- source=Path.home()/'Downloads'/f'Размер {size}.svg'
+ source=ROOT/'sources'/f'library-{size}.svg'
  (ROOT/'sources').mkdir(exist_ok=True)
- (ROOT/'sources'/f'library-{size}.svg').write_bytes(source.read_bytes())
  tree=ET.parse(source).getroot()
  def fixed(s):
   try:return s.encode('latin1').decode('utf-8')
