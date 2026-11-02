@@ -20,3 +20,12 @@ test('оба UI содержат синтаксически корректный
  for(const name of ['ui.html','ui-cloud.html']){const html=await fs.readFile(new URL('../plugin/'+name,import.meta.url),'utf8');const script=html.match(/<script>([\s\S]*)<\/script>/)[1];assert.doesNotThrow(()=>new Function(script));assert.ok(html.includes('Добавить в Figma'));assert.ok(!html.includes('src="app.js"'));}
  const library=JSON.parse(await fs.readFile(new URL('../plugin/library.json',import.meta.url),'utf8'));assert.equal(Object.keys(library).length,40);assert.ok(Object.keys(library).some(k=>k.startsWith('S:background:')));
 });
+
+test('идентификаторы работают в изолированном iframe без crypto.randomUUID',async()=>{
+ const app=await fs.readFile(new URL('../app.js',import.meta.url),'utf8');
+ const prefix=app.slice(app.indexOf('const $='),app.indexOf('const palettes='));
+ const context=vm.createContext({Date:{now:()=>1},Math:{random:()=>0.5}});
+ vm.runInContext(prefix,context);
+ const ids=vm.runInContext('Array.from({length:1000},()=>uniqueId())',context);
+ assert.equal(new Set(ids).size,1000);
+});

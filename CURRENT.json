@@ -1,10 +1,12 @@
 {
-  "status": "web_verified_plugin_build_verified",
+  "status": "web_and_figma_plugin_verified",
   "date": "2026-11-02",
   "entry": "index.html",
   "url": "http://127.0.0.1:8774",
   "plugin_id": "2137a770-4ae4-432e-8fb5-81003c111a93",
-  "plugin_version": "43392c85da1f1c07c01a3cf0ec915e3629e52237",
-  "figma_runtime": "not_confirmed",
-  "external_submission": "not_sent"
+  "plugin_version": "73a4b5fbe6fcc1facf468b2335e7a711fdedeac6",
+  "figma_runtime": "verified_in_live_figma",
+  "external_submission": "not_sent",
+  "verification_file": "https://www.figma.com/design/aadh2KN9IgfjlrDEfzDLNM/Untitled",
+  "verification_result": "Frame 1200x630 with three object groups; individual vector path selected in Figma"
 }
