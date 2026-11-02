@@ -14,8 +14,10 @@ https://www.figma.com/file/new?try-tool-resource-content-id=2137a770-4ae4-432e-8
 
 Файлы `code.js` и `ui.html` готовы к запуску. Для пересборки: `node build-plugin.mjs`, затем `npx esbuild plugin/code.ts --outfile=plugin/code.js --target=es2017`.
 
-Облачная версия: id `2137a770-4ae4-432e-8fb5-81003c111a93`, версия `73a4b5fbe6fcc1facf468b2335e7a711fdedeac6`. Исходники для облачной версии: code-cloud.ts и ui-cloud.html.
+Облачная версия: id `2137a770-4ae4-432e-8fb5-81003c111a93`, версия `18d25b55141deb0392cb14befb8b280b4802f7a3`. Исходники для облачной версии: code-cloud.ts и ui-cloud.html.
 
 Проверка в настоящей Figma выполнена: панель открыта в Edge, library.json загружен, создан фрейм 1200×630 с тремя группами иллюстраций. Группа раскрыта, отдельный контур выбран: инспектор Figma показывает Vector path. Также проверены S/L и палитра внутри плагина. Скриншоты figma-plugin-running.png, figma-composition-result.png, figma-editable-vectors.png.
 
 Исправлена несовместимость изолированного iframe с crypto.randomUUID. Для идентификаторов используется локальный счётчик с временной и случайной частью. Девять автоматических проверок проходят.
+
+Дизайн v3: круги и овалы. Интерфейс новой версии проверен в веб редакторе, сборка плагина успешна. Последняя живая проверка вставки в Figma выполнена на версии 73a4b5fbe6fcc1facf468b2335e7a711fdedeac6; код вставки в версии 3 не менялся.
