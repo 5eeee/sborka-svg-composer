@@ -1,17 +1,17 @@
 {
-  "status": "ready_for_user_review_not_sent",
-  "date": "2026-11-02",
+  "status": "exact_transfer_ready_for_user_review_not_sent",
+  "date": "2026-11-03",
   "entry": "index.html",
   "url": "http://127.0.0.1:8774",
   "plugin_id": "2137a770-4ae4-432e-8fb5-81003c111a93",
   "plugin_version": "d97b08395b42f8f5e311584fd1a18424d90aeabf",
-  "figma_runtime": "final_responsive_design_verified",
+  "figma_runtime": "exact_main_screens_captured",
   "external_submission": "not_sent",
   "verification_file": "https://www.figma.com/design/aadh2KN9IgfjlrDEfzDLNM/Untitled",
-  "verification_result": "Rotation 15 degrees verified; source-relative scale maintained; 20 tests pass; adaptive 1440/1024/390 checked; editable Figma components and screens created",
+  "verification_result": "Three exact browser captures and three import dialogs visually reviewed in Figma. All ten library objects and three layer previews use original embedded SVG. Original approximate component library archived.",
   "design_version": 13,
   "last_live_insertion_version": "341ee176c7a2e96424045bf4b8cd607986286dee",
-  "design_qa": "Centered modal fix verified inside Figma. SVG export download automation timed out; standalone export previously verified.",
+  "design_qa": "Original logo, canvas and all 13 previews transferred as native SVG. Three screen dimensions visually checked in Figma. Component library from approximate version is not accepted.",
   "tests_passed": 20,
   "source_repository": "https://github.com/5eeee/sborka-svg-composer",
   "source_visibility": "public",
@@ -29,9 +29,9 @@
   "figma_design": {
     "components_page": "19:1268",
     "screens_page": "19:2326",
-    "desktop": "19:2327",
-    "tablet": "19:3418",
-    "mobile": "19:4509",
+    "desktop": "37:2",
+    "tablet": "38:2",
+    "mobile": "39:2",
     "tablet_inspector": "three_columns_verified"
   }
 }
