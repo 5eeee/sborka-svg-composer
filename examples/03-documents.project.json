@@ -1,0 +1,43 @@
+{
+  "version": 1,
+  "state": {
+    "w": 1200,
+    "h": 630,
+    "size": "S",
+    "palette": "lilac",
+    "bg": "#f5f1fc",
+    "objects": [
+      {
+        "uid": "bg3d1abb43-7028-4ab1-ac27-290419933876",
+        "id": "pen",
+        "x": 240,
+        "y": 189,
+        "w": 182.70000000000002,
+        "r": -12,
+        "background": true
+      },
+      {
+        "uid": "og7fjo5kn",
+        "id": "folder",
+        "x": 576,
+        "y": 315,
+        "w": 277.2,
+        "r": 0,
+        "background": false
+      },
+      {
+        "uid": "ofy8jukhz",
+        "id": "pen",
+        "x": 864,
+        "y": 422.1,
+        "w": 176.40000000000003,
+        "r": 0,
+        "background": false
+      }
+    ],
+    "variant": 0,
+    "idea": "Работа с документами",
+    "customPalette": null
+  },
+  "customAssets": []
+}

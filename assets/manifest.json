@@ -1,0 +1,602 @@
+[
+  {
+    "id": "puzzle",
+    "name": "Пазлы",
+    "size": "L",
+    "role": "main",
+    "path": "assets/L/puzzle.svg",
+    "viewBox": [
+      3100.2442294538296,
+      3827.7397323197456,
+      544.164296278379,
+      313.5355992359491
+    ],
+    "sourceGroup": "Пазлы",
+    "sha256": "bbe50f8e29f71b7550d51448862309015efd321e10db7cce2b9d4bbdd117b8dc"
+  },
+  {
+    "id": "book",
+    "name": "Книга",
+    "size": "L",
+    "role": "main",
+    "path": "assets/L/book.svg",
+    "viewBox": [
+      391.64412140522404,
+      3467.37,
+      1445.8937747606103,
+      976.6674178690446
+    ],
+    "sourceGroup": "Книга",
+    "sha256": "9dcf8bd4895cd3203673750a1656b5f8a57004a40ac2ee14219394e5817aaa4a"
+  },
+  {
+    "id": "phone",
+    "name": "Телефон",
+    "size": "L",
+    "role": "main",
+    "path": "assets/L/phone.svg",
+    "viewBox": [
+      2038.5779684336144,
+      3718.6384833547127,
+      796.5302290942382,
+      461.67151664528774
+    ],
+    "sourceGroup": "Телефон",
+    "sha256": "7064c2deeeb8f9edacc1bb2a0f4ecc0d2eaa465163730c8f75563a0395e9fe1f"
+  },
+  {
+    "id": "headphones",
+    "name": "Наушники",
+    "size": "L",
+    "role": "main",
+    "path": "assets/L/headphones.svg",
+    "viewBox": [
+      470.02294595565036,
+      4803.09,
+      888.1517685221634,
+      691.5387731095097
+    ],
+    "sourceGroup": "Наушники",
+    "sha256": "6b8265a8fa728ae9820cee3e5cfe5f8836b019ebb6353b76d3ebc37d344a32bb"
+  },
+  {
+    "id": "lamp",
+    "name": "Лампа",
+    "size": "L",
+    "role": "main",
+    "path": "assets/L/lamp.svg",
+    "viewBox": [
+      1822.229608783536,
+      4438.752440656859,
+      945.9449675719245,
+      1128.9881474256508
+    ],
+    "sourceGroup": "Лампа",
+    "sha256": "3022c98dd0a6ac2de7c25bdf5912cf77647f37db782fdf56db4b72f75938dfb6"
+  },
+  {
+    "id": "wallet",
+    "name": "Кошелёк",
+    "size": "L",
+    "role": "main",
+    "path": "assets/L/wallet.svg",
+    "viewBox": [
+      3868.258463036546,
+      5095.109263597008,
+      630.41912930216,
+      396.30771518955135
+    ],
+    "sourceGroup": "Кошелек",
+    "sha256": "988ddcb693c1fc463f89fe6158b2c445cd3b002678b853dadfb9b877da2b0087"
+  },
+  {
+    "id": "pen",
+    "name": "Ручка",
+    "size": "L",
+    "role": "main",
+    "path": "assets/L/pen.svg",
+    "viewBox": [
+      1795.7953063850086,
+      6127.629882949268,
+      508.42801086911686,
+      285.40148006578784
+    ],
+    "sourceGroup": "Ручка",
+    "sha256": "886748e052b17d06cb75e964c0de2e19345592c92209277c1446c3710016978d"
+  },
+  {
+    "id": "folder",
+    "name": "Папка",
+    "size": "L",
+    "role": "main",
+    "path": "assets/L/folder.svg",
+    "viewBox": [
+      365.27239183780614,
+      5920.17789660442,
+      1240.6174620435454,
+      658.583376181814
+    ],
+    "sourceGroup": "Папка",
+    "sha256": "ef664c4a9c96f96629122452d441fe8211ec1ac6dc1d8b848d3c134d7bbb2781"
+  },
+  {
+    "id": "coin",
+    "name": "Монета",
+    "size": "L",
+    "role": "main",
+    "path": "assets/L/coin.svg",
+    "viewBox": [
+      4005.3014523307675,
+      3945.818242104086,
+      286.67610852648704,
+      188.50175789591367
+    ],
+    "sourceGroup": "Монета",
+    "sha256": "bc6c5500f88a286f2bd4dd80383796a76feb5f9573e8d322c7f9568da814f695"
+  },
+  {
+    "id": "flowers",
+    "name": "Цветы",
+    "size": "L",
+    "role": "main",
+    "path": "assets/L/flowers.svg",
+    "viewBox": [
+      3036.018461793357,
+      4712.718153796668,
+      590.5743263779609,
+      747.1058156565077
+    ],
+    "sourceGroup": "Group 2136136344",
+    "sha256": "5edea310be5b425554c3fdc7837c46758cb5d9b082cdd893ea812cd8a02e428b"
+  },
+  {
+    "id": "puzzle",
+    "name": "Пазлы",
+    "size": "L",
+    "role": "background",
+    "path": "assets/L/background/puzzle.svg",
+    "viewBox": [
+      3100.2442294538296,
+      7851.929731254711,
+      544.164296278379,
+      313.5315399649144
+    ],
+    "sourceGroup": "Пазлы_2",
+    "sha256": "744c1f8e67b4b81756c473ea6d4763eeb20e19a727ff3b1f2214296e2191852e"
+  },
+  {
+    "id": "book",
+    "name": "Книга",
+    "size": "L",
+    "role": "background",
+    "path": "assets/L/background/book.svg",
+    "viewBox": [
+      391.64412140522404,
+      7491.56,
+      1445.8937747606103,
+      976.6617432547382
+    ],
+    "sourceGroup": "Книга_2",
+    "sha256": "4e8a6a3a4348e50aeead5ee9038532abb864d8af05079b84466ff17d51e97d34"
+  },
+  {
+    "id": "phone",
+    "name": "Телефон",
+    "size": "L",
+    "role": "background",
+    "path": "assets/L/background/phone.svg",
+    "viewBox": [
+      2038.5779684336144,
+      7742.823487613537,
+      796.5302290942382,
+      461.6665123864632
+    ],
+    "sourceGroup": "Телефон_2",
+    "sha256": "3042e9b3e561d1081833ed758b3f770d8a8f58adb1a5ef884bfa1d4bcbe0ba09"
+  },
+  {
+    "id": "headphones",
+    "name": "Наушники",
+    "size": "L",
+    "role": "background",
+    "path": "assets/L/background/headphones.svg",
+    "viewBox": [
+      470.02294595565036,
+      8827.27,
+      888.1517685221634,
+      691.5437031721904
+    ],
+    "sourceGroup": "Наушники_2",
+    "sha256": "a710a3b3fd41d8472b7fb463e0d4c44a4e349067611793634f50169b4cd31918"
+  },
+  {
+    "id": "lamp",
+    "name": "Лампа",
+    "size": "L",
+    "role": "background",
+    "path": "assets/L/background/lamp.svg",
+    "viewBox": [
+      1822.229608783536,
+      8462.941368547341,
+      945.9449675719245,
+      1128.9835343197228
+    ],
+    "sourceGroup": "Лампа_2",
+    "sha256": "755fd77f609666f113610cae98a0f067dd253eff72c05039bbdf589635c36494"
+  },
+  {
+    "id": "wallet",
+    "name": "Кошелёк",
+    "size": "L",
+    "role": "background",
+    "path": "assets/L/background/wallet.svg",
+    "viewBox": [
+      3868.258463036546,
+      9119.28926359701,
+      630.41912930216,
+      396.3149876705029
+    ],
+    "sourceGroup": "Кошелек_2",
+    "sha256": "21e4c94091248575a8493629e9eddf657355ab008c74cd74962e35a2775433a1"
+  },
+  {
+    "id": "pen",
+    "name": "Ручка",
+    "size": "L",
+    "role": "background",
+    "path": "assets/L/background/pen.svg",
+    "viewBox": [
+      1795.7953063850086,
+      10151.840743653996,
+      508.42801086911686,
+      285.3561262149851
+    ],
+    "sourceGroup": "Ручка_2",
+    "sha256": "59d292d73fc14a6ded98267cbf91332a3fa944555901d0dcab4f3a88a99240ff"
+  },
+  {
+    "id": "folder",
+    "name": "Папка",
+    "size": "L",
+    "role": "background",
+    "path": "assets/L/background/folder.svg",
+    "viewBox": [
+      365.27239183780614,
+      9944.359217395862,
+      1240.6174620435454,
+      658.6144207700545
+    ],
+    "sourceGroup": "Папка_2",
+    "sha256": "4fe740838bd4baec751b4378689c461294485998d8d5f4a77a2c3a02ddc9a802"
+  },
+  {
+    "id": "coin",
+    "name": "Монета",
+    "size": "L",
+    "role": "background",
+    "path": "assets/L/background/coin.svg",
+    "viewBox": [
+      4005.3014523307675,
+      7970.000194170262,
+      286.67610852648704,
+      188.49980582973785
+    ],
+    "sourceGroup": "Монета_2",
+    "sha256": "be5cc481d172f883f15301f11938ad448af0c3f2988ecafb0627460ffc81763e"
+  },
+  {
+    "id": "flowers",
+    "name": "Цветы",
+    "size": "L",
+    "role": "background",
+    "path": "assets/L/background/flowers.svg",
+    "viewBox": [
+      3060.9150361499424,
+      8797.602503866721,
+      590.5685970481131,
+      747.106486491788
+    ],
+    "sourceGroup": "Group 2136136347",
+    "sha256": "df3a00d206f4b45ebdb3fc3601edeaaf2a3583c0d1c2e2ce1927ec37750577e2"
+  },
+  {
+    "id": "puzzle",
+    "name": "Пазлы",
+    "size": "S",
+    "role": "main",
+    "path": "assets/S/puzzle.svg",
+    "viewBox": [
+      1925.3387029344801,
+      2284.1197627392057,
+      272.08204146197,
+      156.7636497266967
+    ],
+    "sourceGroup": "Пазлы",
+    "sha256": "299b1aa83c078174a9a952406aba28f3cc256ddb73f98d0f835a8c3eb8b41f41"
+  },
+  {
+    "id": "book",
+    "name": "Книга",
+    "size": "S",
+    "role": "main",
+    "path": "assets/S/book.svg",
+    "viewBox": [
+      268.389060702612,
+      2060.39,
+      722.9458247909698,
+      488.33168138229166
+    ],
+    "sourceGroup": "Group 2136136335",
+    "sha256": "b559cc44f69252d11c01b011453d2d0ed7388632ae0ef55a1f432e677a247c29"
+  },
+  {
+    "id": "phone",
+    "name": "Телефон",
+    "size": "S",
+    "role": "main",
+    "path": "assets/S/phone.svg",
+    "viewBox": [
+      1294.2322010923165,
+      2253.1637778078034,
+      398.2618976716094,
+      230.8362221921966
+    ],
+    "sourceGroup": "Телефон",
+    "sha256": "907beb362b57c55951ad8b00b69ddd954c4708f6eb477a8ae85f661767f7cbe5"
+  },
+  {
+    "id": "headphones",
+    "name": "Наушники",
+    "size": "S",
+    "role": "main",
+    "path": "assets/S/headphones.svg",
+    "viewBox": [
+      374.85866390273213,
+      2935.98,
+      444.0747834881157,
+      345.76966003634425
+    ],
+    "sourceGroup": "Наушники",
+    "sha256": "773c7d02a4fa8ed470241ccc1645495f6c1f7545252b9f8d596c3c3ef6bf46a2"
+  },
+  {
+    "id": "lamp",
+    "name": "Лампа",
+    "size": "S",
+    "role": "main",
+    "path": "assets/S/lamp.svg",
+    "viewBox": [
+      1192.00234375,
+      2818.268184577664,
+      472.9739943378918,
+      564.4892668558696
+    ],
+    "sourceGroup": "Лампа",
+    "sha256": "24e04d05fc5b8fbe8cdf53d45783d2d93628e101e999ad8aaf0595465dc4c748"
+  },
+  {
+    "id": "wallet",
+    "name": "Кошелёк",
+    "size": "S",
+    "role": "main",
+    "path": "assets/S/wallet.svg",
+    "viewBox": [
+      2399.4986971080402,
+      3187.64555634014,
+      315.20732003759986,
+      198.1543534641928
+    ],
+    "sourceGroup": "Кошелек",
+    "sha256": "53b7153f965c4c75475b945682ecb192fab2dec9db68c9beddae00b73b098b89"
+  },
+  {
+    "id": "pen",
+    "name": "Ручка",
+    "size": "S",
+    "role": "main",
+    "path": "assets/S/pen.svg",
+    "viewBox": [
+      1298.0578494843642,
+      3857.5360560815657,
+      254.20881559556483,
+      142.70377039173127
+    ],
+    "sourceGroup": "Group 2136136336",
+    "sha256": "633b27ad7be4f181f763e071557a014353a29520a48906548d5edea893773742"
+  },
+  {
+    "id": "folder",
+    "name": "Папка",
+    "size": "S",
+    "role": "main",
+    "path": "assets/S/folder.svg",
+    "viewBox": [
+      261.2703649521825,
+      3741.491448285878,
+      620.3092806358095,
+      329.29363861491674
+    ],
+    "sourceGroup": "Group 2136136337",
+    "sha256": "be17107ff85ca70de6d4bacb546aed5d365b1e078ff37fca1c9010333175c9fc"
+  },
+  {
+    "id": "coin",
+    "name": "Монета",
+    "size": "S",
+    "role": "main",
+    "path": "assets/S/coin.svg",
+    "viewBox": [
+      2498.226300529343,
+      2339.8022035628746,
+      152.39530524701968,
+      100.19779643712536
+    ],
+    "sourceGroup": "Монета",
+    "sha256": "a361b8d1a92841cb76becf49f53cd818d6b6782d13058217c1da788d9b4a2686"
+  },
+  {
+    "id": "flowers",
+    "name": "Цветы",
+    "size": "S",
+    "role": "main",
+    "path": "assets/S/flowers.svg",
+    "viewBox": [
+      1918.908891363688,
+      2948.5850814668374,
+      323.26864825769303,
+      408.9454300404882
+    ],
+    "sourceGroup": "Group 2136136345",
+    "sha256": "606e7beaa84768017cef364e9332061f589d8eab1afec34dc67076c4067c5a69"
+  },
+  {
+    "id": "puzzle",
+    "name": "Пазлы",
+    "size": "S",
+    "role": "background",
+    "path": "assets/S/background/puzzle.svg",
+    "viewBox": [
+      1925.3387029344801,
+      5385.51994034431,
+      272.08204146197,
+      156.76792032835237
+    ],
+    "sourceGroup": "Пазлы_2",
+    "sha256": "de36925a7be0acad421ed3c714fad9a4dc213bb64fe44efa2e6d8fb5e748e758"
+  },
+  {
+    "id": "book",
+    "name": "Книга",
+    "size": "S",
+    "role": "background",
+    "path": "assets/S/background/book.svg",
+    "viewBox": [
+      268.389060702612,
+      5161.8,
+      722.9458247909698,
+      488.3266777122253
+    ],
+    "sourceGroup": "Group 2136136341",
+    "sha256": "100c21ea751564c2437c6de3f7593c431c1a597e56d29d9f23e80b68734da24f"
+  },
+  {
+    "id": "phone",
+    "name": "Телефон",
+    "size": "S",
+    "role": "background",
+    "path": "assets/S/background/phone.svg",
+    "viewBox": [
+      1294.2322010923165,
+      5354.573777807804,
+      398.2618976716094,
+      230.83622219219615
+    ],
+    "sourceGroup": "Телефон_2",
+    "sha256": "792ff9b1c13a3e796bb937f6b053a915fe5c9709ab1dd4faca9c1f8d1960c6e9"
+  },
+  {
+    "id": "headphones",
+    "name": "Наушники",
+    "size": "S",
+    "role": "background",
+    "path": "assets/S/background/headphones.svg",
+    "viewBox": [
+      374.85866390273213,
+      6037.39,
+      444.0747834881157,
+      345.76966003634516
+    ],
+    "sourceGroup": "Наушники_2",
+    "sha256": "7f5a5ace9a6dda7827353aef1a3c451d5258e09e494bf55c9ad8e176c933b9da"
+  },
+  {
+    "id": "lamp",
+    "name": "Лампа",
+    "size": "S",
+    "role": "background",
+    "path": "assets/S/background/lamp.svg",
+    "viewBox": [
+      1192.00234375,
+      5919.673183969541,
+      472.9739943378918,
+      564.4942674639906
+    ],
+    "sourceGroup": "Лампа_2",
+    "sha256": "c94f8c7143d38c6496755bdf28496428792d41fd7141213d3dfbdedbd6364657"
+  },
+  {
+    "id": "wallet",
+    "name": "Кошелёк",
+    "size": "S",
+    "role": "background",
+    "path": "assets/S/background/wallet.svg",
+    "viewBox": [
+      2399.4986971080402,
+      6289.053702472586,
+      315.20732003759986,
+      198.15620733174637
+    ],
+    "sourceGroup": "Кошелек_2",
+    "sha256": "4a2473541c8a516b598413f1e4ae83e95c6d7a14cf3b6861e58426353fe9dc3f"
+  },
+  {
+    "id": "pen",
+    "name": "Ручка",
+    "size": "S",
+    "role": "background",
+    "path": "assets/S/background/pen.svg",
+    "viewBox": [
+      1298.0578494843642,
+      6958.940320813603,
+      254.20881559556483,
+      142.70122233458005
+    ],
+    "sourceGroup": "Group 2136136343",
+    "sha256": "fd931ab86e328c154a07b9d19a49090b5985f57ecd0ddddcc361b2f0202e60e0"
+  },
+  {
+    "id": "folder",
+    "name": "Папка",
+    "size": "S",
+    "role": "background",
+    "path": "assets/S/background/folder.svg",
+    "viewBox": [
+      261.2703649521825,
+      6842.897628439714,
+      620.3092806358095,
+      329.29745846108017
+    ],
+    "sourceGroup": "Group 2136136342",
+    "sha256": "1d16fef7959616fa0fe7cff50e185b3b3e55ceb09bd70372ad50f20fb023da1c"
+  },
+  {
+    "id": "coin",
+    "name": "Монета",
+    "size": "S",
+    "role": "background",
+    "path": "assets/S/background/coin.svg",
+    "viewBox": [
+      2498.2288817582257,
+      5441.2041574296145,
+      152.39272401813696,
+      100.20584257038536
+    ],
+    "sourceGroup": "Монета_2",
+    "sha256": "d61959fe07993ba76207eb799f2647e443007b4414612a4d1d872c4b5a8a4401"
+  },
+  {
+    "id": "flowers",
+    "name": "Цветы",
+    "size": "S",
+    "role": "background",
+    "path": "assets/S/background/flowers.svg",
+    "viewBox": [
+      1891.268891363688,
+      6051.979401355418,
+      323.26780351959496,
+      408.94686801491116
+    ],
+    "sourceGroup": "Group 2136136346",
+    "sha256": "b9cfb4886aae36e5825599f8595d5516dd85e470542d0224ef9d8f87a61feda5"
+  }
+]

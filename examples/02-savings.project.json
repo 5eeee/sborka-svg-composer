@@ -1,0 +1,43 @@
+{
+  "version": 1,
+  "state": {
+    "w": 1080,
+    "h": 1080,
+    "size": "L",
+    "palette": "aqua",
+    "bg": "#eefafa",
+    "objects": [
+      {
+        "uid": "bg65261d3a-5b52-4c03-bba3-e88158148fe1",
+        "id": "wallet",
+        "x": 216,
+        "y": 324,
+        "w": 313.2,
+        "r": -12,
+        "background": true
+      },
+      {
+        "uid": "oyrq0etsf",
+        "id": "coin",
+        "x": 518.4,
+        "y": 540,
+        "w": 399.168,
+        "r": 0,
+        "background": false
+      },
+      {
+        "uid": "oqnz15bl3",
+        "id": "wallet",
+        "x": 777.6,
+        "y": 723.6,
+        "w": 254.01600000000002,
+        "r": 0,
+        "background": false
+      }
+    ],
+    "variant": 0,
+    "idea": "Деньги и мечта",
+    "customPalette": null
+  },
+  "customAssets": []
+}

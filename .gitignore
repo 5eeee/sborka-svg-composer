@@ -1,0 +1,8 @@
+node_modules/
+.env
+.env.*
+preview-mobile.png
+hourglass-preview.png
+assets/L/hourglass.svg
+assets/S/hourglass.svg
+tests/security-input.svg
