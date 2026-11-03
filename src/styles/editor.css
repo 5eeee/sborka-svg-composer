@@ -2202,7 +2202,7 @@ textarea#idea {
   }
 }
 .library-loader {
-  font-family: Inter, "Segoe UI", sans-serif;
+  font-family: var(--font-body);
   min-height: calc(100vh - 80px);
   display: flex;
   align-items: center;
@@ -2277,7 +2277,7 @@ textarea#idea {
   padding: 36px;
   text-align: center;
   box-shadow: 0 30px 100px #0007;
-  font-family: Inter, "Segoe UI", sans-serif;
+  font-family: var(--font-body);
 }
 .file-dialog::backdrop {
   background: #09090cb3;
@@ -2420,7 +2420,7 @@ textarea#idea {
   color: var(--ink);
   border: 1px solid var(--rule);
   border-radius: 18px;
-  font-family: Inter, "Segoe UI", sans-serif;
+  font-family: var(--font-body);
   line-height: 1.5;
   text-align: left;
   z-index: 10000;

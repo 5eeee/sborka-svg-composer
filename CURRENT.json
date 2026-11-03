@@ -1,17 +1,17 @@
 {
-  "status": "exact_transfer_ready_for_user_review_not_sent",
+  "status": "final_kit_ready_not_sent",
   "date": "2026-11-03",
   "entry": "index.html",
   "url": "http://127.0.0.1:8774",
   "plugin_id": "2137a770-4ae4-432e-8fb5-81003c111a93",
-  "plugin_version": "d97b08395b42f8f5e311584fd1a18424d90aeabf",
-  "figma_runtime": "exact_main_screens_captured",
+  "plugin_version": "85761b4cec805ee83aef4127e787104e23ff19f1",
+  "figma_runtime": "exact_screens_and_component_library_verified",
   "external_submission": "not_sent",
   "verification_file": "https://www.figma.com/design/aadh2KN9IgfjlrDEfzDLNM/Untitled",
-  "verification_result": "Three exact browser captures and three import dialogs visually reviewed in Figma. All ten library objects and three layer previews use original embedded SVG. Original approximate component library archived.",
+  "verification_result": "20 automated tests pass; exact source screens preserved; component instances available in separate review sheet.",
   "design_version": 13,
   "last_live_insertion_version": "341ee176c7a2e96424045bf4b8cd607986286dee",
-  "design_qa": "Original logo, canvas and all 13 previews transferred as native SVG. Three screen dimensions visually checked in Figma. Component library from approximate version is not accepted.",
+  "design_qa": "169/169 component checks accepted; 110 exact visible pixel matches, remainder within documented edge-antialiasing tolerance. All bounds match. Dialog typography normalized to bundled Inter.",
   "tests_passed": 20,
   "source_repository": "https://github.com/5eeee/sborka-svg-composer",
   "source_visibility": "public",
@@ -28,10 +28,21 @@
   ],
   "figma_design": {
     "components_page": "19:1268",
-    "screens_page": "19:2326",
-    "desktop": "37:2",
-    "tablet": "38:2",
-    "mobile": "39:2",
-    "tablet_inspector": "three_columns_verified"
-  }
+    "screens_page": "0:1",
+    "desktop": "64:2",
+    "tablet": "65:2",
+    "mobile": "66:2",
+    "tablet_inspector": "three_columns_verified",
+    "component_overview": "71:11825",
+    "component_count": 169,
+    "screen_layer_replacement": "disabled_to_preserve_imported_layout"
+  },
+  "component_report": "sources/components-pixel-validation.json",
+  "component_validation": {
+    "total": 169,
+    "accepted": 169,
+    "exact_visible_matches": 110
+  },
+  "figma_local_copy": "figma/Sborka_Editor_Components.fig",
+  "figma_local_copy_sha256": "c67e146786de2c7d91d290f1ba663215af480799e118806a5d0e0e33e5829ece"
 }

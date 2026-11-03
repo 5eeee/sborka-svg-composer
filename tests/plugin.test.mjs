@@ -78,8 +78,12 @@ test("оба UI содержат синтаксически корректный
       new URL("../plugin/" + name, import.meta.url),
       "utf8",
     );
-    const script = html.match(/<script>([\s\S]*)<\/script>/)[1];
-    assert.doesNotThrow(() => new Function(script));
+    const scripts = [...html.matchAll(/<script>([\s\S]*?)<\/script>/g)].map(
+      (match) => match[1],
+    );
+    assert.ok(scripts.length > 0);
+    for (const script of scripts)
+      assert.doesNotThrow(() => new Function(script));
     assert.ok(html.includes("Добавить в Figma"));
     assert.ok(html.includes("<style>"));
     assert.ok(

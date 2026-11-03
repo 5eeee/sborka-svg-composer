@@ -18,3 +18,13 @@ node_modules/
 __pycache__/
 *.pyc
 comments-v6.py
+
+# Local Figma verification payloads
+sources/components-all-pixel-proof.json
+sources/components-pixel-proof.json
+sources/exact-component-inspection.json
+sources/modal-metrics.json
+screenshots/components/sample-*.png
+screenshots/components/proof-*.png
+screenshots/components/screen-*.png
+

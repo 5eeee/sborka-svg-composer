@@ -1,0 +1,3219 @@
+{
+  "component_count": 169,
+  "exact_visible_matches": 110,
+  "accepted": 169,
+  "method": "RGBA composited on application background; bounds at scale 1. Up to 80 antialiasing pixels with channel difference <=28 are allowed. Structural/text differences fail.",
+  "checks": [
+    {
+      "id": "71:11830",
+      "source": "64:6",
+      "name": "Иконки / Icon / 32×32",
+      "source_size": [
+        32,
+        32
+      ],
+      "component_size": [
+        32,
+        32
+      ],
+      "dimensions_equal": true,
+      "visible_pixels_equal": true,
+      "different_pixels": 0,
+      "significant_pixels": 0,
+      "max_channel_difference": 0,
+      "accepted": true
+    },
+    {
+      "id": "71:11838",
+      "source": "64:5",
+      "name": "Логотип / Сборка / 126×32",
+      "source_size": [
+        126,
+        32
+      ],
+      "component_size": [
+        126,
+        32
+      ],
+      "dimensions_equal": true,
+      "visible_pixels_equal": true,
+      "different_pixels": 0,
+      "significant_pixels": 0,
+      "max_channel_difference": 0,
+      "accepted": true
+    },
+    {
+      "id": "71:11841",
+      "source": "64:14",
+      "name": "Кнопки / Отменить / 102×46",
+      "source_size": [
+        102,
+        46
+      ],
+      "component_size": [
+        102,
+        46
+      ],
+      "dimensions_equal": true,
+      "visible_pixels_equal": true,
+      "different_pixels": 0,
+      "significant_pixels": 0,
+      "max_channel_difference": 0,
+      "accepted": true
+    },
+    {
+      "id": "71:11844",
+      "source": "64:17",
+      "name": "Кнопки / Сохранить проект / 156×46",
+      "source_size": [
+        156,
+        46
+      ],
+      "component_size": [
+        156,
+        46
+      ],
+      "dimensions_equal": true,
+      "visible_pixels_equal": true,
+      "different_pixels": 0,
+      "significant_pixels": 0,
+      "max_channel_difference": 0,
+      "accepted": true
+    },
+    {
+      "id": "71:11847",
+      "source": "64:19",
+      "name": "Кнопки / Скачать SVG / 122×46",
+      "source_size": [
+        122,
+        46
+      ],
+      "component_size": [
+        122,
+        46
+      ],
+      "dimensions_equal": true,
+      "visible_pixels_equal": false,
+      "different_pixels": 6,
+      "significant_pixels": 6,
+      "max_channel_difference": 13,
+      "accepted": true
+    },
+    {
+      "id": "71:11850",
+      "source": "64:31",
+      "name": "Поля / Обучение без отвлечений / 216×112",
+      "source_size": [
+        216,
+        112
+      ],
+      "component_size": [
+        216,
+        112
+      ],
+      "dimensions_equal": true,
+      "visible_pixels_equal": false,
+      "different_pixels": 2,
+      "significant_pixels": 2,
+      "max_channel_difference": 13,
+      "accepted": true
+    },
+    {
+      "id": "71:11853",
+      "source": "64:33",
+      "name": "Кнопки / Собрать идею / 216×44",
+      "source_size": [
+        216,
+        44
+      ],
+      "component_size": [
+        216,
+        44
+      ],
+      "dimensions_equal": true,
+      "visible_pixels_equal": true,
+      "different_pixels": 0,
+      "significant_pixels": 0,
+      "max_channel_difference": 0,
+      "accepted": true
+    },
+    {
+      "id": "71:11856",
+      "source": "64:43",
+      "name": "Иконки / Icon / 18×18",
+      "source_size": [
+        18,
+        18
+      ],
+      "component_size": [
+        18,
+        18
+      ],
+      "dimensions_equal": true,
+      "visible_pixels_equal": true,
+      "different_pixels": 0,
+      "significant_pixels": 0,
+      "max_channel_difference": 0,
+      "accepted": true
+    },
+    {
+      "id": "71:11862",
+      "source": "64:42",
+      "name": "Кнопки / Импорт SVG / 118×44",
+      "source_size": [
+        118,
+        44
+      ],
+      "component_size": [
+        118,
+        44
+      ],
+      "dimensions_equal": true,
+      "visible_pixels_equal": true,
+      "different_pixels": 0,
+      "significant_pixels": 0,
+      "max_channel_difference": 0,
+      "accepted": true
+    },
+    {
+      "id": "71:11865",
+      "source": "64:48",
+      "name": "Поля / Найти объект / 216×44",
+      "source_size": [
+        216,
+        44
+      ],
+      "component_size": [
+        216,
+        44
+      ],
+      "dimensions_equal": true,
+      "visible_pixels_equal": true,
+      "different_pixels": 0,
+      "significant_pixels": 0,
+      "max_channel_difference": 0,
+      "accepted": true
+    },
+    {
+      "id": "71:11925",
+      "source": "64:52",
+      "name": "Иконки / Icon - Пазлы / 62×62",
+      "source_size": [
+        62,
+        62
+      ],
+      "component_size": [
+        62,
+        62
+      ],
+      "dimensions_equal": true,
+      "visible_pixels_equal": true,
+      "different_pixels": 0,
+      "significant_pixels": 0,
+      "max_channel_difference": 0,
+      "accepted": true
+    },
+    {
+      "id": "71:11987",
+      "source": "64:51",
+      "name": "Кнопки / Пазлы / 67×87",
+      "source_size": [
+        67,
+        87
+      ],
+      "component_size": [
+        67,
+        87
+      ],
+      "dimensions_equal": true,
+      "visible_pixels_equal": false,
+      "different_pixels": 1,
+      "significant_pixels": 1,
+      "max_channel_difference": 9,
+      "accepted": true
+    },
+    {
+      "id": "71:12043",
+      "source": "64:114",
+      "name": "Иконки / Icon - Книга / 62×62",
+      "source_size": [
+        62,
+        62
+      ],
+      "component_size": [
+        62,
+        62
+      ],
+      "dimensions_equal": true,
+      "visible_pixels_equal": false,
+      "different_pixels": 3,
+      "significant_pixels": 1,
+      "max_channel_difference": 15,
+      "accepted": true
+    },
+    {
+      "id": "71:12101",
+      "source": "64:113",
+      "name": "Кнопки / Книга / 67×87",
+      "source_size": [
+        67,
+        87
+      ],
+      "component_size": [
+        67,
+        87
+      ],
+      "dimensions_equal": true,
+      "visible_pixels_equal": true,
+      "different_pixels": 0,
+      "significant_pixels": 0,
+      "max_channel_difference": 0,
+      "accepted": true
+    },
+    {
+      "id": "71:12259",
+      "source": "64:171",
+      "name": "Иконки / Icon - Телефон / 62×62",
+      "source_size": [
+        62,
+        62
+      ],
+      "component_size": [
+        62,
+        62
+      ],
+      "dimensions_equal": true,
+      "visible_pixels_equal": false,
+      "different_pixels": 1,
+      "significant_pixels": 0,
+      "max_channel_difference": 1,
+      "accepted": true
+    },
+    {
+      "id": "71:12419",
+      "source": "64:170",
+      "name": "Кнопки / Телефон / 67×87",
+      "source_size": [
+        67,
+        87
+      ],
+      "component_size": [
+        67,
+        87
+      ],
+      "dimensions_equal": true,
+      "visible_pixels_equal": false,
+      "different_pixels": 1,
+      "significant_pixels": 0,
+      "max_channel_difference": 1,
+      "accepted": true
+    },
+    {
+      "id": "71:12506",
+      "source": "64:330",
+      "name": "Иконки / Icon - Наушники / 62×62",
+      "source_size": [
+        62,
+        62
+      ],
+      "component_size": [
+        62,
+        62
+      ],
+      "dimensions_equal": true,
+      "visible_pixels_equal": false,
+      "different_pixels": 3,
+      "significant_pixels": 3,
+      "max_channel_difference": 15,
+      "accepted": true
+    },
+    {
+      "id": "71:12595",
+      "source": "64:329",
+      "name": "Кнопки / Наушники / 67×87",
+      "source_size": [
+        67,
+        87
+      ],
+      "component_size": [
+        67,
+        87
+      ],
+      "dimensions_equal": true,
+      "visible_pixels_equal": false,
+      "different_pixels": 1,
+      "significant_pixels": 1,
+      "max_channel_difference": 14,
+      "accepted": true
+    },
+    {
+      "id": "71:12625",
+      "source": "64:418",
+      "name": "Иконки / Icon - Лампа / 62×62",
+      "source_size": [
+        62,
+        62
+      ],
+      "component_size": [
+        62,
+        62
+      ],
+      "dimensions_equal": true,
+      "visible_pixels_equal": true,
+      "different_pixels": 0,
+      "significant_pixels": 0,
+      "max_channel_difference": 0,
+      "accepted": true
+    },
+    {
+      "id": "71:12657",
+      "source": "64:417",
+      "name": "Кнопки / Лампа / 67×87",
+      "source_size": [
+        67,
+        87
+      ],
+      "component_size": [
+        67,
+        87
+      ],
+      "dimensions_equal": true,
+      "visible_pixels_equal": false,
+      "different_pixels": 1,
+      "significant_pixels": 1,
+      "max_channel_difference": 15,
+      "accepted": true
+    },
+    {
+      "id": "71:12746",
+      "source": "64:449",
+      "name": "Иконки / Icon - Кошелёк / 62×62",
+      "source_size": [
+        62,
+        62
+      ],
+      "component_size": [
+        62,
+        62
+      ],
+      "dimensions_equal": true,
+      "visible_pixels_equal": false,
+      "different_pixels": 3,
+      "significant_pixels": 2,
+      "max_channel_difference": 14,
+      "accepted": true
+    },
+    {
+      "id": "71:12837",
+      "source": "64:448",
+      "name": "Кнопки / Кошелёк / 67×87",
+      "source_size": [
+        67,
+        87
+      ],
+      "component_size": [
+        67,
+        87
+      ],
+      "dimensions_equal": true,
+      "visible_pixels_equal": false,
+      "different_pixels": 1,
+      "significant_pixels": 0,
+      "max_channel_difference": 1,
+      "accepted": true
+    },
+    {
+      "id": "71:12864",
+      "source": "64:539",
+      "name": "Иконки / Icon - Ручка / 62×62",
+      "source_size": [
+        62,
+        62
+      ],
+      "component_size": [
+        62,
+        62
+      ],
+      "dimensions_equal": true,
+      "visible_pixels_equal": false,
+      "different_pixels": 2,
+      "significant_pixels": 1,
+      "max_channel_difference": 15,
+      "accepted": true
+    },
+    {
+      "id": "71:12893",
+      "source": "64:538",
+      "name": "Кнопки / Ручка / 67×87",
+      "source_size": [
+        67,
+        87
+      ],
+      "component_size": [
+        67,
+        87
+      ],
+      "dimensions_equal": true,
+      "visible_pixels_equal": true,
+      "different_pixels": 0,
+      "significant_pixels": 0,
+      "max_channel_difference": 0,
+      "accepted": true
+    },
+    {
+      "id": "71:12918",
+      "source": "64:567",
+      "name": "Иконки / Icon - Папка / 62×62",
+      "source_size": [
+        62,
+        62
+      ],
+      "component_size": [
+        62,
+        62
+      ],
+      "dimensions_equal": true,
+      "visible_pixels_equal": false,
+      "different_pixels": 1,
+      "significant_pixels": 1,
+      "max_channel_difference": 13,
+      "accepted": true
+    },
+    {
+      "id": "71:12945",
+      "source": "64:566",
+      "name": "Кнопки / Папка / 67×87",
+      "source_size": [
+        67,
+        87
+      ],
+      "component_size": [
+        67,
+        87
+      ],
+      "dimensions_equal": true,
+      "visible_pixels_equal": false,
+      "different_pixels": 2,
+      "significant_pixels": 2,
+      "max_channel_difference": 15,
+      "accepted": true
+    },
+    {
+      "id": "71:13084",
+      "source": "64:593",
+      "name": "Иконки / Icon - Монета / 62×62",
+      "source_size": [
+        62,
+        62
+      ],
+      "component_size": [
+        62,
+        62
+      ],
+      "dimensions_equal": true,
+      "visible_pixels_equal": false,
+      "different_pixels": 3,
+      "significant_pixels": 1,
+      "max_channel_difference": 15,
+      "accepted": true
+    },
+    {
+      "id": "71:13225",
+      "source": "64:592",
+      "name": "Кнопки / Монета / 67×87",
+      "source_size": [
+        67,
+        87
+      ],
+      "component_size": [
+        67,
+        87
+      ],
+      "dimensions_equal": true,
+      "visible_pixels_equal": false,
+      "different_pixels": 2,
+      "significant_pixels": 1,
+      "max_channel_difference": 15,
+      "accepted": true
+    },
+    {
+      "id": "71:13359",
+      "source": "64:733",
+      "name": "Иконки / Icon - Цветы / 62×62",
+      "source_size": [
+        62,
+        62
+      ],
+      "component_size": [
+        62,
+        62
+      ],
+      "dimensions_equal": true,
+      "visible_pixels_equal": false,
+      "different_pixels": 2,
+      "significant_pixels": 0,
+      "max_channel_difference": 1,
+      "accepted": true
+    },
+    {
+      "id": "71:13495",
+      "source": "64:732",
+      "name": "Кнопки / Цветы / 67×87",
+      "source_size": [
+        67,
+        87
+      ],
+      "component_size": [
+        67,
+        87
+      ],
+      "dimensions_equal": true,
+      "visible_pixels_equal": false,
+      "different_pixels": 2,
+      "significant_pixels": 1,
+      "max_channel_difference": 15,
+      "accepted": true
+    },
+    {
+      "id": "71:13498",
+      "source": "64:874",
+      "name": "Кнопки / S / 32×32",
+      "source_size": [
+        32,
+        32
+      ],
+      "component_size": [
+        32,
+        32
+      ],
+      "dimensions_equal": true,
+      "visible_pixels_equal": true,
+      "different_pixels": 0,
+      "significant_pixels": 0,
+      "max_channel_difference": 0,
+      "accepted": true
+    },
+    {
+      "id": "71:13501",
+      "source": "64:877",
+      "name": "Кнопки / L / 32×32",
+      "source_size": [
+        32,
+        32
+      ],
+      "component_size": [
+        32,
+        32
+      ],
+      "dimensions_equal": true,
+      "visible_pixels_equal": true,
+      "different_pixels": 0,
+      "significant_pixels": 0,
+      "max_channel_difference": 0,
+      "accepted": true
+    },
+    {
+      "id": "71:13507",
+      "source": "64:873",
+      "name": "Сегменты / S L / 86×42",
+      "source_size": [
+        86,
+        42
+      ],
+      "component_size": [
+        86,
+        42
+      ],
+      "dimensions_equal": true,
+      "visible_pixels_equal": true,
+      "different_pixels": 0,
+      "significant_pixels": 0,
+      "max_channel_difference": 0,
+      "accepted": true
+    },
+    {
+      "id": "71:13510",
+      "source": "64:884",
+      "name": "Кнопки / Горизонтальный холст 1200 на 630 / 40×32",
+      "source_size": [
+        40,
+        32
+      ],
+      "component_size": [
+        40,
+        32
+      ],
+      "dimensions_equal": true,
+      "visible_pixels_equal": true,
+      "different_pixels": 0,
+      "significant_pixels": 0,
+      "max_channel_difference": 0,
+      "accepted": true
+    },
+    {
+      "id": "71:13513",
+      "source": "64:886",
+      "name": "Кнопки / Квадратный холст 1080 на 1080 / 40×32",
+      "source_size": [
+        40,
+        32
+      ],
+      "component_size": [
+        40,
+        32
+      ],
+      "dimensions_equal": true,
+      "visible_pixels_equal": true,
+      "different_pixels": 0,
+      "significant_pixels": 0,
+      "max_channel_difference": 0,
+      "accepted": true
+    },
+    {
+      "id": "71:13516",
+      "source": "64:888",
+      "name": "Кнопки / Вертикальный холст 1080 на 1350 / 40×32",
+      "source_size": [
+        40,
+        32
+      ],
+      "component_size": [
+        40,
+        32
+      ],
+      "dimensions_equal": true,
+      "visible_pixels_equal": true,
+      "different_pixels": 0,
+      "significant_pixels": 0,
+      "max_channel_difference": 0,
+      "accepted": true
+    },
+    {
+      "id": "71:13520",
+      "source": "64:890",
+      "name": "Кнопки / + / 40×32",
+      "source_size": [
+        40,
+        32
+      ],
+      "component_size": [
+        40,
+        32
+      ],
+      "dimensions_equal": true,
+      "visible_pixels_equal": true,
+      "different_pixels": 0,
+      "significant_pixels": 0,
+      "max_channel_difference": 0,
+      "accepted": true
+    },
+    {
+      "id": "71:13531",
+      "source": "64:883",
+      "name": "Сегменты / + / 182×42",
+      "source_size": [
+        182,
+        42
+      ],
+      "component_size": [
+        182,
+        42
+      ],
+      "dimensions_equal": true,
+      "visible_pixels_equal": true,
+      "different_pixels": 0,
+      "significant_pixels": 0,
+      "max_channel_difference": 0,
+      "accepted": true
+    },
+    {
+      "id": "71:13722",
+      "source": "64:900",
+      "name": "Холст / Image - Холст композиции / 840×441",
+      "source_size": [
+        840,
+        441
+      ],
+      "component_size": [
+        840,
+        441
+      ],
+      "dimensions_equal": true,
+      "visible_pixels_equal": false,
+      "different_pixels": 27,
+      "significant_pixels": 27,
+      "max_channel_difference": 15,
+      "accepted": true
+    },
+    {
+      "id": "71:13725",
+      "source": "64:1093",
+      "name": "Иконки / Icon / 18×18",
+      "source_size": [
+        18,
+        18
+      ],
+      "component_size": [
+        18,
+        18
+      ],
+      "dimensions_equal": true,
+      "visible_pixels_equal": true,
+      "different_pixels": 0,
+      "significant_pixels": 0,
+      "max_channel_difference": 0,
+      "accepted": true
+    },
+    {
+      "id": "71:13731",
+      "source": "64:1092",
+      "name": "Кнопки / Другой вариант / 153×44",
+      "source_size": [
+        153,
+        44
+      ],
+      "component_size": [
+        153,
+        44
+      ],
+      "dimensions_equal": true,
+      "visible_pixels_equal": true,
+      "different_pixels": 0,
+      "significant_pixels": 0,
+      "max_channel_difference": 0,
+      "accepted": true
+    },
+    {
+      "id": "71:13734",
+      "source": "64:1099",
+      "name": "Иконки / Icon / 18×18",
+      "source_size": [
+        18,
+        18
+      ],
+      "component_size": [
+        18,
+        18
+      ],
+      "dimensions_equal": true,
+      "visible_pixels_equal": true,
+      "different_pixels": 0,
+      "significant_pixels": 0,
+      "max_channel_difference": 0,
+      "accepted": true
+    },
+    {
+      "id": "71:13740",
+      "source": "64:1098",
+      "name": "Кнопки / Очистить / 115×44",
+      "source_size": [
+        115,
+        44
+      ],
+      "component_size": [
+        115,
+        44
+      ],
+      "dimensions_equal": true,
+      "visible_pixels_equal": true,
+      "different_pixels": 0,
+      "significant_pixels": 0,
+      "max_channel_difference": 0,
+      "accepted": true
+    },
+    {
+      "id": "71:13743",
+      "source": "64:1104",
+      "name": "Кнопки / Накопить на мечту / 130×35",
+      "source_size": [
+        130,
+        35
+      ],
+      "component_size": [
+        130,
+        35
+      ],
+      "dimensions_equal": true,
+      "visible_pixels_equal": true,
+      "different_pixels": 0,
+      "significant_pixels": 0,
+      "max_channel_difference": 0,
+      "accepted": true
+    },
+    {
+      "id": "71:13746",
+      "source": "64:1106",
+      "name": "Кнопки / Работа с документами / 150×35",
+      "source_size": [
+        150,
+        35
+      ],
+      "component_size": [
+        150,
+        35
+      ],
+      "dimensions_equal": true,
+      "visible_pixels_equal": true,
+      "different_pixels": 0,
+      "significant_pixels": 0,
+      "max_channel_difference": 0,
+      "accepted": true
+    },
+    {
+      "id": "71:13749",
+      "source": "64:1108",
+      "name": "Кнопки / Найти решение вместе / 153×35",
+      "source_size": [
+        153,
+        35
+      ],
+      "component_size": [
+        153,
+        35
+      ],
+      "dimensions_equal": true,
+      "visible_pixels_equal": false,
+      "different_pixels": 1,
+      "significant_pixels": 1,
+      "max_channel_difference": 9,
+      "accepted": true
+    },
+    {
+      "id": "71:13752",
+      "source": "64:1110",
+      "name": "Кнопки / Войти в поток / 102×35",
+      "source_size": [
+        102,
+        35
+      ],
+      "component_size": [
+        102,
+        35
+      ],
+      "dimensions_equal": true,
+      "visible_pixels_equal": true,
+      "different_pixels": 0,
+      "significant_pixels": 0,
+      "max_channel_difference": 0,
+      "accepted": true
+    },
+    {
+      "id": "71:13755",
+      "source": "64:1112",
+      "name": "Кнопки / Разгрести завалы / 125×35",
+      "source_size": [
+        125,
+        35
+      ],
+      "component_size": [
+        125,
+        35
+      ],
+      "dimensions_equal": true,
+      "visible_pixels_equal": false,
+      "different_pixels": 5,
+      "significant_pixels": 5,
+      "max_channel_difference": 18,
+      "accepted": true
+    },
+    {
+      "id": "71:13758",
+      "source": "64:1114",
+      "name": "Кнопки / Включить голову / 120×35",
+      "source_size": [
+        120,
+        35
+      ],
+      "component_size": [
+        120,
+        35
+      ],
+      "dimensions_equal": true,
+      "visible_pixels_equal": true,
+      "different_pixels": 0,
+      "significant_pixels": 0,
+      "max_channel_difference": 0,
+      "accepted": true
+    },
+    {
+      "id": "71:13766",
+      "source": "64:1128",
+      "name": "Палитры / База / 37×57",
+      "source_size": [
+        38,
+        57
+      ],
+      "component_size": [
+        38,
+        57
+      ],
+      "dimensions_equal": true,
+      "visible_pixels_equal": true,
+      "different_pixels": 0,
+      "significant_pixels": 0,
+      "max_channel_difference": 0,
+      "accepted": true
+    },
+    {
+      "id": "71:13774",
+      "source": "64:1137",
+      "name": "Палитры / Сирень / 37×57",
+      "source_size": [
+        38,
+        57
+      ],
+      "component_size": [
+        38,
+        57
+      ],
+      "dimensions_equal": true,
+      "visible_pixels_equal": true,
+      "different_pixels": 0,
+      "significant_pixels": 0,
+      "max_channel_difference": 0,
+      "accepted": true
+    },
+    {
+      "id": "71:13782",
+      "source": "64:1145",
+      "name": "Палитры / Персик / 37×57",
+      "source_size": [
+        38,
+        57
+      ],
+      "component_size": [
+        38,
+        57
+      ],
+      "dimensions_equal": true,
+      "visible_pixels_equal": true,
+      "different_pixels": 0,
+      "significant_pixels": 0,
+      "max_channel_difference": 0,
+      "accepted": true
+    },
+    {
+      "id": "71:13790",
+      "source": "64:1153",
+      "name": "Палитры / Мята / 37×57",
+      "source_size": [
+        38,
+        57
+      ],
+      "component_size": [
+        38,
+        57
+      ],
+      "dimensions_equal": true,
+      "visible_pixels_equal": true,
+      "different_pixels": 0,
+      "significant_pixels": 0,
+      "max_channel_difference": 0,
+      "accepted": true
+    },
+    {
+      "id": "71:13796",
+      "source": "64:1161",
+      "name": "Палитры / + Своя / 37×57",
+      "source_size": [
+        38,
+        57
+      ],
+      "component_size": [
+        38,
+        57
+      ],
+      "dimensions_equal": true,
+      "visible_pixels_equal": true,
+      "different_pixels": 0,
+      "significant_pixels": 0,
+      "max_channel_difference": 0,
+      "accepted": true
+    },
+    {
+      "id": "71:13831",
+      "source": "64:1127",
+      "name": "Палитры / База Сирень Персик Мята + Своя / 203×57",
+      "source_size": [
+        204,
+        57
+      ],
+      "component_size": [
+        204,
+        57
+      ],
+      "dimensions_equal": true,
+      "visible_pixels_equal": true,
+      "different_pixels": 0,
+      "significant_pixels": 0,
+      "max_channel_difference": 0,
+      "accepted": true
+    },
+    {
+      "id": "71:13833",
+      "source": "64:1169",
+      "name": "Переключатели / Checkbox / 28×18",
+      "source_size": [
+        28,
+        18
+      ],
+      "component_size": [
+        28,
+        18
+      ],
+      "dimensions_equal": true,
+      "visible_pixels_equal": true,
+      "different_pixels": 0,
+      "significant_pixels": 0,
+      "max_channel_difference": 0,
+      "accepted": true
+    },
+    {
+      "id": "71:13835",
+      "source": "64:1176",
+      "name": "Кнопки / Color Picker - Выбрать цвет холста / 30×30",
+      "source_size": [
+        30,
+        30
+      ],
+      "component_size": [
+        30,
+        30
+      ],
+      "dimensions_equal": true,
+      "visible_pixels_equal": true,
+      "different_pixels": 0,
+      "significant_pixels": 0,
+      "max_channel_difference": 0,
+      "accepted": true
+    },
+    {
+      "id": "71:13838",
+      "source": "64:1179",
+      "name": "Поля / D7CDF5 / 93×32",
+      "source_size": [
+        93,
+        32
+      ],
+      "component_size": [
+        93,
+        32
+      ],
+      "dimensions_equal": true,
+      "visible_pixels_equal": true,
+      "different_pixels": 0,
+      "significant_pixels": 0,
+      "max_channel_difference": 0,
+      "accepted": true
+    },
+    {
+      "id": "71:13841",
+      "source": "64:1181",
+      "name": "Кнопки / ↺ / 30×40",
+      "source_size": [
+        30,
+        40
+      ],
+      "component_size": [
+        30,
+        40
+      ],
+      "dimensions_equal": true,
+      "visible_pixels_equal": true,
+      "different_pixels": 0,
+      "significant_pixels": 0,
+      "max_channel_difference": 0,
+      "accepted": true
+    },
+    {
+      "id": "71:13844",
+      "source": "64:1185",
+      "name": "Иконки / Icon / 18×18",
+      "source_size": [
+        18,
+        18
+      ],
+      "component_size": [
+        18,
+        18
+      ],
+      "dimensions_equal": true,
+      "visible_pixels_equal": true,
+      "different_pixels": 0,
+      "significant_pixels": 0,
+      "max_channel_difference": 0,
+      "accepted": true
+    },
+    {
+      "id": "71:13850",
+      "source": "64:1184",
+      "name": "Кнопки / Импорт палитры / 203×44",
+      "source_size": [
+        204,
+        44
+      ],
+      "component_size": [
+        204,
+        44
+      ],
+      "dimensions_equal": true,
+      "visible_pixels_equal": false,
+      "different_pixels": 1,
+      "significant_pixels": 1,
+      "max_channel_difference": 14,
+      "accepted": true
+    },
+    {
+      "id": "71:13853",
+      "source": "64:1198",
+      "name": "Переключатели / Checkbox / 28×18",
+      "source_size": [
+        28,
+        18
+      ],
+      "component_size": [
+        28,
+        18
+      ],
+      "dimensions_equal": true,
+      "visible_pixels_equal": true,
+      "different_pixels": 0,
+      "significant_pixels": 0,
+      "max_channel_difference": 0,
+      "accepted": true
+    },
+    {
+      "id": "71:13856",
+      "source": "64:1206",
+      "name": "Поля / 612 / 96×44",
+      "source_size": [
+        96,
+        44
+      ],
+      "component_size": [
+        96,
+        44
+      ],
+      "dimensions_equal": true,
+      "visible_pixels_equal": false,
+      "different_pixels": 1,
+      "significant_pixels": 1,
+      "max_channel_difference": 13,
+      "accepted": true
+    },
+    {
+      "id": "71:13861",
+      "source": "64:1203",
+      "name": "Поля / X 612 / 96×66",
+      "source_size": [
+        96,
+        67
+      ],
+      "component_size": [
+        96,
+        67
+      ],
+      "dimensions_equal": true,
+      "visible_pixels_equal": false,
+      "different_pixels": 1,
+      "significant_pixels": 1,
+      "max_channel_difference": 13,
+      "accepted": true
+    },
+    {
+      "id": "71:13864",
+      "source": "64:1210",
+      "name": "Поля / 362 / 96×44",
+      "source_size": [
+        96,
+        44
+      ],
+      "component_size": [
+        96,
+        44
+      ],
+      "dimensions_equal": true,
+      "visible_pixels_equal": true,
+      "different_pixels": 0,
+      "significant_pixels": 0,
+      "max_channel_difference": 0,
+      "accepted": true
+    },
+    {
+      "id": "71:13869",
+      "source": "64:1208",
+      "name": "Поля / Y 362 / 96×66",
+      "source_size": [
+        96,
+        67
+      ],
+      "component_size": [
+        96,
+        67
+      ],
+      "dimensions_equal": true,
+      "visible_pixels_equal": true,
+      "different_pixels": 0,
+      "significant_pixels": 0,
+      "max_channel_difference": 0,
+      "accepted": true
+    },
+    {
+      "id": "71:13872",
+      "source": "64:1215",
+      "name": "Поля / 0 / 203×44",
+      "source_size": [
+        204,
+        44
+      ],
+      "component_size": [
+        204,
+        44
+      ],
+      "dimensions_equal": true,
+      "visible_pixels_equal": true,
+      "different_pixels": 0,
+      "significant_pixels": 0,
+      "max_channel_difference": 0,
+      "accepted": true
+    },
+    {
+      "id": "71:13879",
+      "source": "64:1212",
+      "name": "Поля / Поворот 0 ° / 203×66",
+      "source_size": [
+        204,
+        67
+      ],
+      "component_size": [
+        204,
+        67
+      ],
+      "dimensions_equal": true,
+      "visible_pixels_equal": true,
+      "different_pixels": 0,
+      "significant_pixels": 0,
+      "max_channel_difference": 0,
+      "accepted": true
+    },
+    {
+      "id": "71:13882",
+      "source": "64:1220",
+      "name": "Кнопки / Дублировать / 98×32",
+      "source_size": [
+        98,
+        32
+      ],
+      "component_size": [
+        98,
+        32
+      ],
+      "dimensions_equal": true,
+      "visible_pixels_equal": true,
+      "different_pixels": 0,
+      "significant_pixels": 0,
+      "max_channel_difference": 0,
+      "accepted": true
+    },
+    {
+      "id": "71:13885",
+      "source": "64:1222",
+      "name": "Кнопки / Удалить / 98×32",
+      "source_size": [
+        98,
+        32
+      ],
+      "component_size": [
+        98,
+        32
+      ],
+      "dimensions_equal": true,
+      "visible_pixels_equal": false,
+      "different_pixels": 1,
+      "significant_pixels": 1,
+      "max_channel_difference": 9,
+      "accepted": true
+    },
+    {
+      "id": "71:13972",
+      "source": "64:1235",
+      "name": "Иконки / Icon - Наушники / 28×28",
+      "source_size": [
+        28,
+        28
+      ],
+      "component_size": [
+        28,
+        28
+      ],
+      "dimensions_equal": true,
+      "visible_pixels_equal": true,
+      "different_pixels": 0,
+      "significant_pixels": 0,
+      "max_channel_difference": 0,
+      "accepted": true
+    },
+    {
+      "id": "71:14062",
+      "source": "64:1234",
+      "name": "Кнопки / Наушники / 199×46",
+      "source_size": [
+        200,
+        46
+      ],
+      "component_size": [
+        200,
+        46
+      ],
+      "dimensions_equal": true,
+      "visible_pixels_equal": false,
+      "different_pixels": 8,
+      "significant_pixels": 7,
+      "max_channel_difference": 19,
+      "accepted": true
+    },
+    {
+      "id": "71:14118",
+      "source": "64:1325",
+      "name": "Иконки / Icon - Книга / 28×28",
+      "source_size": [
+        28,
+        28
+      ],
+      "component_size": [
+        28,
+        28
+      ],
+      "dimensions_equal": true,
+      "visible_pixels_equal": true,
+      "different_pixels": 0,
+      "significant_pixels": 0,
+      "max_channel_difference": 0,
+      "accepted": true
+    },
+    {
+      "id": "71:14177",
+      "source": "64:1324",
+      "name": "Кнопки / Книга / 199×46",
+      "source_size": [
+        200,
+        46
+      ],
+      "component_size": [
+        200,
+        46
+      ],
+      "dimensions_equal": true,
+      "visible_pixels_equal": false,
+      "different_pixels": 1,
+      "significant_pixels": 1,
+      "max_channel_difference": 15,
+      "accepted": true
+    },
+    {
+      "id": "71:14207",
+      "source": "64:1383",
+      "name": "Иконки / Icon - Лампафон / 28×28",
+      "source_size": [
+        28,
+        28
+      ],
+      "component_size": [
+        28,
+        28
+      ],
+      "dimensions_equal": true,
+      "visible_pixels_equal": true,
+      "different_pixels": 0,
+      "significant_pixels": 0,
+      "max_channel_difference": 0,
+      "accepted": true
+    },
+    {
+      "id": "71:14243",
+      "source": "64:1382",
+      "name": "Кнопки / Лампа фон / 199×46",
+      "source_size": [
+        200,
+        46
+      ],
+      "component_size": [
+        200,
+        46
+      ],
+      "dimensions_equal": true,
+      "visible_pixels_equal": false,
+      "different_pixels": 2,
+      "significant_pixels": 2,
+      "max_channel_difference": 9,
+      "accepted": true
+    },
+    {
+      "id": "71:14246",
+      "source": "64:1419",
+      "name": "Кнопки / Ниже / 98×32",
+      "source_size": [
+        98,
+        32
+      ],
+      "component_size": [
+        98,
+        32
+      ],
+      "dimensions_equal": true,
+      "visible_pixels_equal": true,
+      "different_pixels": 0,
+      "significant_pixels": 0,
+      "max_channel_difference": 0,
+      "accepted": true
+    },
+    {
+      "id": "71:14249",
+      "source": "64:1421",
+      "name": "Кнопки / Выше / 98×32",
+      "source_size": [
+        98,
+        32
+      ],
+      "component_size": [
+        98,
+        32
+      ],
+      "dimensions_equal": true,
+      "visible_pixels_equal": true,
+      "different_pixels": 0,
+      "significant_pixels": 0,
+      "max_channel_difference": 0,
+      "accepted": true
+    },
+    {
+      "id": "71:14252",
+      "source": "64:1431",
+      "name": "Иконки / Icon / 18×18",
+      "source_size": [
+        18,
+        18
+      ],
+      "component_size": [
+        18,
+        18
+      ],
+      "dimensions_equal": true,
+      "visible_pixels_equal": true,
+      "different_pixels": 0,
+      "significant_pixels": 0,
+      "max_channel_difference": 0,
+      "accepted": true
+    },
+    {
+      "id": "71:14258",
+      "source": "64:1430",
+      "name": "Кнопки / Открыть проект / 203×44",
+      "source_size": [
+        204,
+        44
+      ],
+      "component_size": [
+        204,
+        44
+      ],
+      "dimensions_equal": true,
+      "visible_pixels_equal": true,
+      "different_pixels": 0,
+      "significant_pixels": 0,
+      "max_channel_difference": 0,
+      "accepted": true
+    },
+    {
+      "id": "71:14261",
+      "source": "65:31",
+      "name": "Поля / Обучение без отвлечений / 194×112",
+      "source_size": [
+        194,
+        112
+      ],
+      "component_size": [
+        194,
+        112
+      ],
+      "dimensions_equal": true,
+      "visible_pixels_equal": true,
+      "different_pixels": 0,
+      "significant_pixels": 0,
+      "max_channel_difference": 0,
+      "accepted": true
+    },
+    {
+      "id": "71:14264",
+      "source": "65:33",
+      "name": "Кнопки / Собрать идею / 194×44",
+      "source_size": [
+        194,
+        44
+      ],
+      "component_size": [
+        194,
+        44
+      ],
+      "dimensions_equal": true,
+      "visible_pixels_equal": true,
+      "different_pixels": 0,
+      "significant_pixels": 0,
+      "max_channel_difference": 0,
+      "accepted": true
+    },
+    {
+      "id": "71:14270",
+      "source": "65:42",
+      "name": "Кнопки / Импорт SVG / 108×50",
+      "source_size": [
+        108,
+        50
+      ],
+      "component_size": [
+        108,
+        50
+      ],
+      "dimensions_equal": true,
+      "visible_pixels_equal": true,
+      "different_pixels": 0,
+      "significant_pixels": 0,
+      "max_channel_difference": 0,
+      "accepted": true
+    },
+    {
+      "id": "71:14273",
+      "source": "65:48",
+      "name": "Поля / Найти объект / 194×44",
+      "source_size": [
+        194,
+        44
+      ],
+      "component_size": [
+        194,
+        44
+      ],
+      "dimensions_equal": true,
+      "visible_pixels_equal": true,
+      "different_pixels": 0,
+      "significant_pixels": 0,
+      "max_channel_difference": 0,
+      "accepted": true
+    },
+    {
+      "id": "71:14335",
+      "source": "65:51",
+      "name": "Кнопки / Пазлы / 59×87",
+      "source_size": [
+        60,
+        87
+      ],
+      "component_size": [
+        60,
+        87
+      ],
+      "dimensions_equal": true,
+      "visible_pixels_equal": true,
+      "different_pixels": 0,
+      "significant_pixels": 0,
+      "max_channel_difference": 0,
+      "accepted": true
+    },
+    {
+      "id": "71:14393",
+      "source": "65:113",
+      "name": "Кнопки / Книга / 59×87",
+      "source_size": [
+        60,
+        87
+      ],
+      "component_size": [
+        60,
+        87
+      ],
+      "dimensions_equal": true,
+      "visible_pixels_equal": true,
+      "different_pixels": 0,
+      "significant_pixels": 0,
+      "max_channel_difference": 0,
+      "accepted": true
+    },
+    {
+      "id": "71:14553",
+      "source": "65:170",
+      "name": "Кнопки / Телефон / 59×87",
+      "source_size": [
+        60,
+        87
+      ],
+      "component_size": [
+        60,
+        87
+      ],
+      "dimensions_equal": true,
+      "visible_pixels_equal": false,
+      "different_pixels": 1,
+      "significant_pixels": 1,
+      "max_channel_difference": 13,
+      "accepted": true
+    },
+    {
+      "id": "71:14642",
+      "source": "65:329",
+      "name": "Кнопки / Наушники / 59×87",
+      "source_size": [
+        60,
+        87
+      ],
+      "component_size": [
+        60,
+        87
+      ],
+      "dimensions_equal": true,
+      "visible_pixels_equal": false,
+      "different_pixels": 2,
+      "significant_pixels": 2,
+      "max_channel_difference": 15,
+      "accepted": true
+    },
+    {
+      "id": "71:14674",
+      "source": "65:417",
+      "name": "Кнопки / Лампа / 59×87",
+      "source_size": [
+        60,
+        87
+      ],
+      "component_size": [
+        60,
+        87
+      ],
+      "dimensions_equal": true,
+      "visible_pixels_equal": false,
+      "different_pixels": 4,
+      "significant_pixels": 3,
+      "max_channel_difference": 14,
+      "accepted": true
+    },
+    {
+      "id": "71:14765",
+      "source": "65:448",
+      "name": "Кнопки / Кошелёк / 59×87",
+      "source_size": [
+        60,
+        87
+      ],
+      "component_size": [
+        60,
+        87
+      ],
+      "dimensions_equal": true,
+      "visible_pixels_equal": false,
+      "different_pixels": 1,
+      "significant_pixels": 1,
+      "max_channel_difference": 14,
+      "accepted": true
+    },
+    {
+      "id": "71:14794",
+      "source": "65:538",
+      "name": "Кнопки / Ручка / 59×87",
+      "source_size": [
+        60,
+        87
+      ],
+      "component_size": [
+        60,
+        87
+      ],
+      "dimensions_equal": true,
+      "visible_pixels_equal": true,
+      "different_pixels": 0,
+      "significant_pixels": 0,
+      "max_channel_difference": 0,
+      "accepted": true
+    },
+    {
+      "id": "71:14821",
+      "source": "65:566",
+      "name": "Кнопки / Папка / 59×87",
+      "source_size": [
+        60,
+        87
+      ],
+      "component_size": [
+        60,
+        87
+      ],
+      "dimensions_equal": true,
+      "visible_pixels_equal": true,
+      "different_pixels": 0,
+      "significant_pixels": 0,
+      "max_channel_difference": 0,
+      "accepted": true
+    },
+    {
+      "id": "71:14962",
+      "source": "65:592",
+      "name": "Кнопки / Монета / 59×87",
+      "source_size": [
+        60,
+        87
+      ],
+      "component_size": [
+        60,
+        87
+      ],
+      "dimensions_equal": true,
+      "visible_pixels_equal": false,
+      "different_pixels": 2,
+      "significant_pixels": 1,
+      "max_channel_difference": 14,
+      "accepted": true
+    },
+    {
+      "id": "71:15098",
+      "source": "65:732",
+      "name": "Кнопки / Цветы / 59×87",
+      "source_size": [
+        60,
+        87
+      ],
+      "component_size": [
+        60,
+        87
+      ],
+      "dimensions_equal": true,
+      "visible_pixels_equal": false,
+      "different_pixels": 3,
+      "significant_pixels": 2,
+      "max_channel_difference": 14,
+      "accepted": true
+    },
+    {
+      "id": "71:15289",
+      "source": "65:900",
+      "name": "Холст / Image - Холст композиции / 726×381",
+      "source_size": [
+        726,
+        382
+      ],
+      "component_size": [
+        726,
+        382
+      ],
+      "dimensions_equal": true,
+      "visible_pixels_equal": false,
+      "different_pixels": 29,
+      "significant_pixels": 29,
+      "max_channel_difference": 15,
+      "accepted": true
+    },
+    {
+      "id": "71:15297",
+      "source": "65:1128",
+      "name": "Палитры / База / 41×57",
+      "source_size": [
+        41,
+        57
+      ],
+      "component_size": [
+        41,
+        57
+      ],
+      "dimensions_equal": true,
+      "visible_pixels_equal": true,
+      "different_pixels": 0,
+      "significant_pixels": 0,
+      "max_channel_difference": 0,
+      "accepted": true
+    },
+    {
+      "id": "71:15305",
+      "source": "65:1137",
+      "name": "Палитры / Сирень / 41×57",
+      "source_size": [
+        41,
+        57
+      ],
+      "component_size": [
+        41,
+        57
+      ],
+      "dimensions_equal": true,
+      "visible_pixels_equal": true,
+      "different_pixels": 0,
+      "significant_pixels": 0,
+      "max_channel_difference": 0,
+      "accepted": true
+    },
+    {
+      "id": "71:15313",
+      "source": "65:1145",
+      "name": "Палитры / Персик / 41×57",
+      "source_size": [
+        41,
+        57
+      ],
+      "component_size": [
+        41,
+        57
+      ],
+      "dimensions_equal": true,
+      "visible_pixels_equal": true,
+      "different_pixels": 0,
+      "significant_pixels": 0,
+      "max_channel_difference": 0,
+      "accepted": true
+    },
+    {
+      "id": "71:15321",
+      "source": "65:1153",
+      "name": "Палитры / Мята / 41×57",
+      "source_size": [
+        41,
+        57
+      ],
+      "component_size": [
+        41,
+        57
+      ],
+      "dimensions_equal": true,
+      "visible_pixels_equal": true,
+      "different_pixels": 0,
+      "significant_pixels": 0,
+      "max_channel_difference": 0,
+      "accepted": true
+    },
+    {
+      "id": "71:15327",
+      "source": "65:1161",
+      "name": "Палитры / + Своя / 41×57",
+      "source_size": [
+        41,
+        57
+      ],
+      "component_size": [
+        41,
+        57
+      ],
+      "dimensions_equal": true,
+      "visible_pixels_equal": true,
+      "different_pixels": 0,
+      "significant_pixels": 0,
+      "max_channel_difference": 0,
+      "accepted": true
+    },
+    {
+      "id": "71:15362",
+      "source": "65:1127",
+      "name": "Палитры / База Сирень Персик Мята + Своя / 220×57",
+      "source_size": [
+        220,
+        57
+      ],
+      "component_size": [
+        220,
+        57
+      ],
+      "dimensions_equal": true,
+      "visible_pixels_equal": false,
+      "different_pixels": 1,
+      "significant_pixels": 1,
+      "max_channel_difference": 9,
+      "accepted": true
+    },
+    {
+      "id": "71:15365",
+      "source": "65:1179",
+      "name": "Поля / D7CDF5 / 196×32",
+      "source_size": [
+        197,
+        32
+      ],
+      "component_size": [
+        197,
+        32
+      ],
+      "dimensions_equal": true,
+      "visible_pixels_equal": true,
+      "different_pixels": 0,
+      "significant_pixels": 0,
+      "max_channel_difference": 0,
+      "accepted": true
+    },
+    {
+      "id": "71:15371",
+      "source": "65:1184",
+      "name": "Кнопки / Импорт палитры / 307×44",
+      "source_size": [
+        307,
+        44
+      ],
+      "component_size": [
+        307,
+        44
+      ],
+      "dimensions_equal": true,
+      "visible_pixels_equal": true,
+      "different_pixels": 0,
+      "significant_pixels": 0,
+      "max_channel_difference": 0,
+      "accepted": true
+    },
+    {
+      "id": "71:15374",
+      "source": "65:1198",
+      "name": "Переключатели / Checkbox / 28×18",
+      "source_size": [
+        28,
+        18
+      ],
+      "component_size": [
+        28,
+        18
+      ],
+      "dimensions_equal": true,
+      "visible_pixels_equal": true,
+      "different_pixels": 0,
+      "significant_pixels": 0,
+      "max_channel_difference": 0,
+      "accepted": true
+    },
+    {
+      "id": "71:15377",
+      "source": "65:1206",
+      "name": "Поля / 612 / 147×44",
+      "source_size": [
+        148,
+        44
+      ],
+      "component_size": [
+        148,
+        44
+      ],
+      "dimensions_equal": true,
+      "visible_pixels_equal": false,
+      "different_pixels": 1,
+      "significant_pixels": 1,
+      "max_channel_difference": 13,
+      "accepted": true
+    },
+    {
+      "id": "71:15382",
+      "source": "65:1203",
+      "name": "Поля / X 612 / 147×66",
+      "source_size": [
+        148,
+        67
+      ],
+      "component_size": [
+        148,
+        67
+      ],
+      "dimensions_equal": true,
+      "visible_pixels_equal": false,
+      "different_pixels": 1,
+      "significant_pixels": 1,
+      "max_channel_difference": 13,
+      "accepted": true
+    },
+    {
+      "id": "71:15385",
+      "source": "65:1210",
+      "name": "Поля / 362 / 147×44",
+      "source_size": [
+        148,
+        44
+      ],
+      "component_size": [
+        148,
+        44
+      ],
+      "dimensions_equal": true,
+      "visible_pixels_equal": true,
+      "different_pixels": 0,
+      "significant_pixels": 0,
+      "max_channel_difference": 0,
+      "accepted": true
+    },
+    {
+      "id": "71:15390",
+      "source": "65:1208",
+      "name": "Поля / Y 362 / 147×66",
+      "source_size": [
+        148,
+        67
+      ],
+      "component_size": [
+        148,
+        67
+      ],
+      "dimensions_equal": true,
+      "visible_pixels_equal": true,
+      "different_pixels": 0,
+      "significant_pixels": 0,
+      "max_channel_difference": 0,
+      "accepted": true
+    },
+    {
+      "id": "71:15393",
+      "source": "65:1215",
+      "name": "Поля / 0 / 307×44",
+      "source_size": [
+        307,
+        44
+      ],
+      "component_size": [
+        307,
+        44
+      ],
+      "dimensions_equal": true,
+      "visible_pixels_equal": true,
+      "different_pixels": 0,
+      "significant_pixels": 0,
+      "max_channel_difference": 0,
+      "accepted": true
+    },
+    {
+      "id": "71:15400",
+      "source": "65:1212",
+      "name": "Поля / Поворот 0 ° / 307×66",
+      "source_size": [
+        307,
+        67
+      ],
+      "component_size": [
+        307,
+        67
+      ],
+      "dimensions_equal": true,
+      "visible_pixels_equal": true,
+      "different_pixels": 0,
+      "significant_pixels": 0,
+      "max_channel_difference": 0,
+      "accepted": true
+    },
+    {
+      "id": "71:15403",
+      "source": "65:1220",
+      "name": "Кнопки / Дублировать / 149×32",
+      "source_size": [
+        150,
+        32
+      ],
+      "component_size": [
+        150,
+        32
+      ],
+      "dimensions_equal": true,
+      "visible_pixels_equal": true,
+      "different_pixels": 0,
+      "significant_pixels": 0,
+      "max_channel_difference": 0,
+      "accepted": true
+    },
+    {
+      "id": "71:15406",
+      "source": "65:1222",
+      "name": "Кнопки / Удалить / 149×32",
+      "source_size": [
+        150,
+        32
+      ],
+      "component_size": [
+        150,
+        32
+      ],
+      "dimensions_equal": true,
+      "visible_pixels_equal": true,
+      "different_pixels": 0,
+      "significant_pixels": 0,
+      "max_channel_difference": 0,
+      "accepted": true
+    },
+    {
+      "id": "71:15496",
+      "source": "65:1234",
+      "name": "Кнопки / Наушники / 303×46",
+      "source_size": [
+        303,
+        46
+      ],
+      "component_size": [
+        303,
+        46
+      ],
+      "dimensions_equal": true,
+      "visible_pixels_equal": false,
+      "different_pixels": 9,
+      "significant_pixels": 8,
+      "max_channel_difference": 19,
+      "accepted": true
+    },
+    {
+      "id": "71:15555",
+      "source": "65:1324",
+      "name": "Кнопки / Книга / 303×46",
+      "source_size": [
+        303,
+        46
+      ],
+      "component_size": [
+        303,
+        46
+      ],
+      "dimensions_equal": true,
+      "visible_pixels_equal": true,
+      "different_pixels": 0,
+      "significant_pixels": 0,
+      "max_channel_difference": 0,
+      "accepted": true
+    },
+    {
+      "id": "71:15591",
+      "source": "65:1382",
+      "name": "Кнопки / Лампа фон / 303×46",
+      "source_size": [
+        303,
+        46
+      ],
+      "component_size": [
+        303,
+        46
+      ],
+      "dimensions_equal": true,
+      "visible_pixels_equal": false,
+      "different_pixels": 2,
+      "significant_pixels": 2,
+      "max_channel_difference": 9,
+      "accepted": true
+    },
+    {
+      "id": "71:15594",
+      "source": "65:1419",
+      "name": "Кнопки / Ниже / 149×32",
+      "source_size": [
+        150,
+        32
+      ],
+      "component_size": [
+        150,
+        32
+      ],
+      "dimensions_equal": true,
+      "visible_pixels_equal": true,
+      "different_pixels": 0,
+      "significant_pixels": 0,
+      "max_channel_difference": 0,
+      "accepted": true
+    },
+    {
+      "id": "71:15597",
+      "source": "65:1421",
+      "name": "Кнопки / Выше / 149×32",
+      "source_size": [
+        150,
+        32
+      ],
+      "component_size": [
+        150,
+        32
+      ],
+      "dimensions_equal": true,
+      "visible_pixels_equal": true,
+      "different_pixels": 0,
+      "significant_pixels": 0,
+      "max_channel_difference": 0,
+      "accepted": true
+    },
+    {
+      "id": "71:15603",
+      "source": "65:1430",
+      "name": "Кнопки / Открыть проект / 307×44",
+      "source_size": [
+        307,
+        44
+      ],
+      "component_size": [
+        307,
+        44
+      ],
+      "dimensions_equal": true,
+      "visible_pixels_equal": true,
+      "different_pixels": 0,
+      "significant_pixels": 0,
+      "max_channel_difference": 0,
+      "accepted": true
+    },
+    {
+      "id": "71:15606",
+      "source": "66:14",
+      "name": "Кнопки / Отменить / 111×62",
+      "source_size": [
+        112,
+        62
+      ],
+      "component_size": [
+        112,
+        62
+      ],
+      "dimensions_equal": true,
+      "visible_pixels_equal": true,
+      "different_pixels": 0,
+      "significant_pixels": 0,
+      "max_channel_difference": 0,
+      "accepted": true
+    },
+    {
+      "id": "71:15609",
+      "source": "66:17",
+      "name": "Кнопки / Сохранить проект / 111×62",
+      "source_size": [
+        112,
+        62
+      ],
+      "component_size": [
+        112,
+        62
+      ],
+      "dimensions_equal": true,
+      "visible_pixels_equal": true,
+      "different_pixels": 0,
+      "significant_pixels": 0,
+      "max_channel_difference": 0,
+      "accepted": true
+    },
+    {
+      "id": "71:15612",
+      "source": "66:19",
+      "name": "Кнопки / Скачать SVG / 111×62",
+      "source_size": [
+        112,
+        62
+      ],
+      "component_size": [
+        112,
+        62
+      ],
+      "dimensions_equal": true,
+      "visible_pixels_equal": true,
+      "different_pixels": 0,
+      "significant_pixels": 0,
+      "max_channel_difference": 0,
+      "accepted": true
+    },
+    {
+      "id": "71:15803",
+      "source": "66:899",
+      "name": "Холст / Image - Холст композиции / 358×188",
+      "source_size": [
+        359,
+        189
+      ],
+      "component_size": [
+        359,
+        189
+      ],
+      "dimensions_equal": true,
+      "visible_pixels_equal": false,
+      "different_pixels": 14,
+      "significant_pixels": 14,
+      "max_channel_difference": 15,
+      "accepted": true
+    },
+    {
+      "id": "71:15806",
+      "source": "66:30",
+      "name": "Поля / Обучение без отвлечений / 342×112",
+      "source_size": [
+        343,
+        112
+      ],
+      "component_size": [
+        343,
+        112
+      ],
+      "dimensions_equal": true,
+      "visible_pixels_equal": false,
+      "different_pixels": 2,
+      "significant_pixels": 2,
+      "max_channel_difference": 13,
+      "accepted": true
+    },
+    {
+      "id": "71:15809",
+      "source": "66:32",
+      "name": "Кнопки / Собрать идею / 342×44",
+      "source_size": [
+        343,
+        44
+      ],
+      "component_size": [
+        343,
+        44
+      ],
+      "dimensions_equal": true,
+      "visible_pixels_equal": true,
+      "different_pixels": 0,
+      "significant_pixels": 0,
+      "max_channel_difference": 0,
+      "accepted": true
+    },
+    {
+      "id": "71:15812",
+      "source": "66:47",
+      "name": "Поля / Найти объект / 342×44",
+      "source_size": [
+        343,
+        44
+      ],
+      "component_size": [
+        343,
+        44
+      ],
+      "dimensions_equal": true,
+      "visible_pixels_equal": true,
+      "different_pixels": 0,
+      "significant_pixels": 0,
+      "max_channel_difference": 0,
+      "accepted": true
+    },
+    {
+      "id": "71:15874",
+      "source": "66:50",
+      "name": "Кнопки / Пазлы / 80×87",
+      "source_size": [
+        80,
+        87
+      ],
+      "component_size": [
+        80,
+        87
+      ],
+      "dimensions_equal": true,
+      "visible_pixels_equal": false,
+      "different_pixels": 3,
+      "significant_pixels": 3,
+      "max_channel_difference": 14,
+      "accepted": true
+    },
+    {
+      "id": "71:15932",
+      "source": "66:112",
+      "name": "Кнопки / Книга / 80×87",
+      "source_size": [
+        80,
+        87
+      ],
+      "component_size": [
+        80,
+        87
+      ],
+      "dimensions_equal": true,
+      "visible_pixels_equal": false,
+      "different_pixels": 1,
+      "significant_pixels": 1,
+      "max_channel_difference": 14,
+      "accepted": true
+    },
+    {
+      "id": "71:16092",
+      "source": "66:169",
+      "name": "Кнопки / Телефон / 80×87",
+      "source_size": [
+        80,
+        87
+      ],
+      "component_size": [
+        80,
+        87
+      ],
+      "dimensions_equal": true,
+      "visible_pixels_equal": false,
+      "different_pixels": 11,
+      "significant_pixels": 11,
+      "max_channel_difference": 18,
+      "accepted": true
+    },
+    {
+      "id": "71:16181",
+      "source": "66:328",
+      "name": "Кнопки / Наушники / 80×87",
+      "source_size": [
+        80,
+        87
+      ],
+      "component_size": [
+        80,
+        87
+      ],
+      "dimensions_equal": true,
+      "visible_pixels_equal": false,
+      "different_pixels": 3,
+      "significant_pixels": 2,
+      "max_channel_difference": 14,
+      "accepted": true
+    },
+    {
+      "id": "71:16213",
+      "source": "66:416",
+      "name": "Кнопки / Лампа / 80×87",
+      "source_size": [
+        80,
+        87
+      ],
+      "component_size": [
+        80,
+        87
+      ],
+      "dimensions_equal": true,
+      "visible_pixels_equal": true,
+      "different_pixels": 0,
+      "significant_pixels": 0,
+      "max_channel_difference": 0,
+      "accepted": true
+    },
+    {
+      "id": "71:16304",
+      "source": "66:447",
+      "name": "Кнопки / Кошелёк / 80×87",
+      "source_size": [
+        80,
+        87
+      ],
+      "component_size": [
+        80,
+        87
+      ],
+      "dimensions_equal": true,
+      "visible_pixels_equal": false,
+      "different_pixels": 2,
+      "significant_pixels": 2,
+      "max_channel_difference": 15,
+      "accepted": true
+    },
+    {
+      "id": "71:16333",
+      "source": "66:537",
+      "name": "Кнопки / Ручка / 80×87",
+      "source_size": [
+        80,
+        87
+      ],
+      "component_size": [
+        80,
+        87
+      ],
+      "dimensions_equal": true,
+      "visible_pixels_equal": true,
+      "different_pixels": 0,
+      "significant_pixels": 0,
+      "max_channel_difference": 0,
+      "accepted": true
+    },
+    {
+      "id": "71:16360",
+      "source": "66:565",
+      "name": "Кнопки / Папка / 80×87",
+      "source_size": [
+        80,
+        87
+      ],
+      "component_size": [
+        80,
+        87
+      ],
+      "dimensions_equal": true,
+      "visible_pixels_equal": false,
+      "different_pixels": 3,
+      "significant_pixels": 2,
+      "max_channel_difference": 15,
+      "accepted": true
+    },
+    {
+      "id": "71:16501",
+      "source": "66:591",
+      "name": "Кнопки / Монета / 80×87",
+      "source_size": [
+        80,
+        87
+      ],
+      "component_size": [
+        80,
+        87
+      ],
+      "dimensions_equal": true,
+      "visible_pixels_equal": true,
+      "different_pixels": 0,
+      "significant_pixels": 0,
+      "max_channel_difference": 0,
+      "accepted": true
+    },
+    {
+      "id": "71:16637",
+      "source": "66:731",
+      "name": "Кнопки / Цветы / 80×87",
+      "source_size": [
+        80,
+        87
+      ],
+      "component_size": [
+        80,
+        87
+      ],
+      "dimensions_equal": true,
+      "visible_pixels_equal": false,
+      "different_pixels": 7,
+      "significant_pixels": 5,
+      "max_channel_difference": 15,
+      "accepted": true
+    },
+    {
+      "id": "71:16645",
+      "source": "66:1126",
+      "name": "Палитры / База / 42×65",
+      "source_size": [
+        43,
+        65
+      ],
+      "component_size": [
+        43,
+        65
+      ],
+      "dimensions_equal": true,
+      "visible_pixels_equal": true,
+      "different_pixels": 0,
+      "significant_pixels": 0,
+      "max_channel_difference": 0,
+      "accepted": true
+    },
+    {
+      "id": "71:16653",
+      "source": "66:1134",
+      "name": "Палитры / Сирень / 42×65",
+      "source_size": [
+        43,
+        65
+      ],
+      "component_size": [
+        43,
+        65
+      ],
+      "dimensions_equal": true,
+      "visible_pixels_equal": true,
+      "different_pixels": 0,
+      "significant_pixels": 0,
+      "max_channel_difference": 0,
+      "accepted": true
+    },
+    {
+      "id": "71:16661",
+      "source": "66:1142",
+      "name": "Палитры / Персик / 42×65",
+      "source_size": [
+        43,
+        65
+      ],
+      "component_size": [
+        43,
+        65
+      ],
+      "dimensions_equal": true,
+      "visible_pixels_equal": true,
+      "different_pixels": 0,
+      "significant_pixels": 0,
+      "max_channel_difference": 0,
+      "accepted": true
+    },
+    {
+      "id": "71:16669",
+      "source": "66:1150",
+      "name": "Палитры / Мята / 42×65",
+      "source_size": [
+        43,
+        65
+      ],
+      "component_size": [
+        43,
+        65
+      ],
+      "dimensions_equal": true,
+      "visible_pixels_equal": true,
+      "different_pixels": 0,
+      "significant_pixels": 0,
+      "max_channel_difference": 0,
+      "accepted": true
+    },
+    {
+      "id": "71:16675",
+      "source": "66:1158",
+      "name": "Палитры / + Своя / 42×65",
+      "source_size": [
+        43,
+        65
+      ],
+      "component_size": [
+        43,
+        65
+      ],
+      "dimensions_equal": true,
+      "visible_pixels_equal": true,
+      "different_pixels": 0,
+      "significant_pixels": 0,
+      "max_channel_difference": 0,
+      "accepted": true
+    },
+    {
+      "id": "71:16710",
+      "source": "66:1125",
+      "name": "Палитры / База Сирень Персик Мята + Своя / 260×65",
+      "source_size": [
+        260,
+        65
+      ],
+      "component_size": [
+        260,
+        65
+      ],
+      "dimensions_equal": true,
+      "visible_pixels_equal": true,
+      "different_pixels": 0,
+      "significant_pixels": 0,
+      "max_channel_difference": 0,
+      "accepted": true
+    },
+    {
+      "id": "71:16713",
+      "source": "66:1176",
+      "name": "Поля / D7CDF5 / 232×32",
+      "source_size": [
+        232,
+        32
+      ],
+      "component_size": [
+        232,
+        32
+      ],
+      "dimensions_equal": true,
+      "visible_pixels_equal": true,
+      "different_pixels": 0,
+      "significant_pixels": 0,
+      "max_channel_difference": 0,
+      "accepted": true
+    },
+    {
+      "id": "71:16719",
+      "source": "66:1181",
+      "name": "Кнопки / Импорт палитры / 342×44",
+      "source_size": [
+        343,
+        44
+      ],
+      "component_size": [
+        343,
+        44
+      ],
+      "dimensions_equal": true,
+      "visible_pixels_equal": true,
+      "different_pixels": 0,
+      "significant_pixels": 0,
+      "max_channel_difference": 0,
+      "accepted": true
+    },
+    {
+      "id": "71:16722",
+      "source": "66:1195",
+      "name": "Переключатели / Checkbox / 28×18",
+      "source_size": [
+        28,
+        18
+      ],
+      "component_size": [
+        28,
+        18
+      ],
+      "dimensions_equal": true,
+      "visible_pixels_equal": true,
+      "different_pixels": 0,
+      "significant_pixels": 0,
+      "max_channel_difference": 0,
+      "accepted": true
+    },
+    {
+      "id": "71:16725",
+      "source": "66:1203",
+      "name": "Поля / 612 / 165×44",
+      "source_size": [
+        166,
+        44
+      ],
+      "component_size": [
+        166,
+        44
+      ],
+      "dimensions_equal": true,
+      "visible_pixels_equal": false,
+      "different_pixels": 1,
+      "significant_pixels": 1,
+      "max_channel_difference": 13,
+      "accepted": true
+    },
+    {
+      "id": "71:16730",
+      "source": "66:1200",
+      "name": "Поля / X 612 / 165×66",
+      "source_size": [
+        166,
+        67
+      ],
+      "component_size": [
+        166,
+        67
+      ],
+      "dimensions_equal": true,
+      "visible_pixels_equal": false,
+      "different_pixels": 1,
+      "significant_pixels": 1,
+      "max_channel_difference": 13,
+      "accepted": true
+    },
+    {
+      "id": "71:16733",
+      "source": "66:1207",
+      "name": "Поля / 362 / 165×44",
+      "source_size": [
+        166,
+        44
+      ],
+      "component_size": [
+        166,
+        44
+      ],
+      "dimensions_equal": true,
+      "visible_pixels_equal": true,
+      "different_pixels": 0,
+      "significant_pixels": 0,
+      "max_channel_difference": 0,
+      "accepted": true
+    },
+    {
+      "id": "71:16738",
+      "source": "66:1205",
+      "name": "Поля / Y 362 / 165×66",
+      "source_size": [
+        166,
+        67
+      ],
+      "component_size": [
+        166,
+        67
+      ],
+      "dimensions_equal": true,
+      "visible_pixels_equal": true,
+      "different_pixels": 0,
+      "significant_pixels": 0,
+      "max_channel_difference": 0,
+      "accepted": true
+    },
+    {
+      "id": "71:16741",
+      "source": "66:1212",
+      "name": "Поля / 0 / 342×44",
+      "source_size": [
+        343,
+        44
+      ],
+      "component_size": [
+        343,
+        44
+      ],
+      "dimensions_equal": true,
+      "visible_pixels_equal": true,
+      "different_pixels": 0,
+      "significant_pixels": 0,
+      "max_channel_difference": 0,
+      "accepted": true
+    },
+    {
+      "id": "71:16748",
+      "source": "66:1209",
+      "name": "Поля / Поворот 0 ° / 342×66",
+      "source_size": [
+        343,
+        67
+      ],
+      "component_size": [
+        343,
+        67
+      ],
+      "dimensions_equal": true,
+      "visible_pixels_equal": true,
+      "different_pixels": 0,
+      "significant_pixels": 0,
+      "max_channel_difference": 0,
+      "accepted": true
+    },
+    {
+      "id": "71:16751",
+      "source": "66:1217",
+      "name": "Кнопки / Дублировать / 167×32",
+      "source_size": [
+        168,
+        32
+      ],
+      "component_size": [
+        168,
+        32
+      ],
+      "dimensions_equal": true,
+      "visible_pixels_equal": true,
+      "different_pixels": 0,
+      "significant_pixels": 0,
+      "max_channel_difference": 0,
+      "accepted": true
+    },
+    {
+      "id": "71:16754",
+      "source": "66:1219",
+      "name": "Кнопки / Удалить / 167×32",
+      "source_size": [
+        168,
+        32
+      ],
+      "component_size": [
+        168,
+        32
+      ],
+      "dimensions_equal": true,
+      "visible_pixels_equal": true,
+      "different_pixels": 0,
+      "significant_pixels": 0,
+      "max_channel_difference": 0,
+      "accepted": true
+    },
+    {
+      "id": "71:16844",
+      "source": "66:1231",
+      "name": "Кнопки / Наушники / 338×46",
+      "source_size": [
+        339,
+        46
+      ],
+      "component_size": [
+        339,
+        46
+      ],
+      "dimensions_equal": true,
+      "visible_pixels_equal": false,
+      "different_pixels": 9,
+      "significant_pixels": 8,
+      "max_channel_difference": 19,
+      "accepted": true
+    },
+    {
+      "id": "71:16903",
+      "source": "66:1321",
+      "name": "Кнопки / Книга / 338×46",
+      "source_size": [
+        339,
+        46
+      ],
+      "component_size": [
+        339,
+        46
+      ],
+      "dimensions_equal": true,
+      "visible_pixels_equal": true,
+      "different_pixels": 0,
+      "significant_pixels": 0,
+      "max_channel_difference": 0,
+      "accepted": true
+    },
+    {
+      "id": "71:16939",
+      "source": "66:1379",
+      "name": "Кнопки / Лампа фон / 338×46",
+      "source_size": [
+        339,
+        46
+      ],
+      "component_size": [
+        339,
+        46
+      ],
+      "dimensions_equal": true,
+      "visible_pixels_equal": true,
+      "different_pixels": 0,
+      "significant_pixels": 0,
+      "max_channel_difference": 0,
+      "accepted": true
+    },
+    {
+      "id": "71:16942",
+      "source": "66:1416",
+      "name": "Кнопки / Ниже / 167×32",
+      "source_size": [
+        168,
+        32
+      ],
+      "component_size": [
+        168,
+        32
+      ],
+      "dimensions_equal": true,
+      "visible_pixels_equal": true,
+      "different_pixels": 0,
+      "significant_pixels": 0,
+      "max_channel_difference": 0,
+      "accepted": true
+    },
+    {
+      "id": "71:16945",
+      "source": "66:1418",
+      "name": "Кнопки / Выше / 167×32",
+      "source_size": [
+        168,
+        32
+      ],
+      "component_size": [
+        168,
+        32
+      ],
+      "dimensions_equal": true,
+      "visible_pixels_equal": true,
+      "different_pixels": 0,
+      "significant_pixels": 0,
+      "max_channel_difference": 0,
+      "accepted": true
+    },
+    {
+      "id": "71:16951",
+      "source": "66:1427",
+      "name": "Кнопки / Открыть проект / 342×44",
+      "source_size": [
+        343,
+        44
+      ],
+      "component_size": [
+        343,
+        44
+      ],
+      "dimensions_equal": true,
+      "visible_pixels_equal": true,
+      "different_pixels": 0,
+      "significant_pixels": 0,
+      "max_channel_difference": 0,
+      "accepted": true
+    },
+    {
+      "id": "71:17142",
+      "source": "67:900",
+      "name": "Холст / Image - Холст композиции / 840×441",
+      "source_size": [
+        840,
+        441
+      ],
+      "component_size": [
+        840,
+        441
+      ],
+      "dimensions_equal": true,
+      "visible_pixels_equal": false,
+      "different_pixels": 43,
+      "significant_pixels": 43,
+      "max_channel_difference": 15,
+      "accepted": true
+    },
+    {
+      "id": "71:17145",
+      "source": "67:1458",
+      "name": "Иконки / Icon / 26×26",
+      "source_size": [
+        26,
+        26
+      ],
+      "component_size": [
+        26,
+        26
+      ],
+      "dimensions_equal": true,
+      "visible_pixels_equal": true,
+      "different_pixels": 0,
+      "significant_pixels": 0,
+      "max_channel_difference": 0,
+      "accepted": true
+    },
+    {
+      "id": "71:17151",
+      "source": "67:1457",
+      "name": "Кнопки / Выбрать файл SVG · несколько файлов / 386×144",
+      "source_size": [
+        387,
+        144
+      ],
+      "component_size": [
+        387,
+        144
+      ],
+      "dimensions_equal": true,
+      "visible_pixels_equal": true,
+      "different_pixels": 0,
+      "significant_pixels": 0,
+      "max_channel_difference": 0,
+      "accepted": true
+    },
+    {
+      "id": "71:17154",
+      "source": "67:1443",
+      "name": "Кнопки / × / 36×36",
+      "source_size": [
+        36,
+        36
+      ],
+      "component_size": [
+        36,
+        36
+      ],
+      "dimensions_equal": true,
+      "visible_pixels_equal": true,
+      "different_pixels": 0,
+      "significant_pixels": 0,
+      "max_channel_difference": 0,
+      "accepted": true
+    },
+    {
+      "id": "71:17174",
+      "source": "67:1442",
+      "name": "Окна / Импорт SVG / 460×484",
+      "source_size": [
+        460,
+        485
+      ],
+      "component_size": [
+        460,
+        485
+      ],
+      "dimensions_equal": true,
+      "visible_pixels_equal": false,
+      "different_pixels": 1,
+      "significant_pixels": 1,
+      "max_channel_difference": 9,
+      "accepted": true
+    },
+    {
+      "id": "71:17365",
+      "source": "68:900",
+      "name": "Холст / Image - Холст композиции / 840×441",
+      "source_size": [
+        840,
+        441
+      ],
+      "component_size": [
+        840,
+        441
+      ],
+      "dimensions_equal": true,
+      "visible_pixels_equal": false,
+      "different_pixels": 38,
+      "significant_pixels": 38,
+      "max_channel_difference": 15,
+      "accepted": true
+    },
+    {
+      "id": "71:17371",
+      "source": "68:1457",
+      "name": "Кнопки / Выбрать файл JSON · цветовая схема / 386×144",
+      "source_size": [
+        387,
+        144
+      ],
+      "component_size": [
+        387,
+        144
+      ],
+      "dimensions_equal": true,
+      "visible_pixels_equal": false,
+      "different_pixels": 1,
+      "significant_pixels": 1,
+      "max_channel_difference": 9,
+      "accepted": true
+    },
+    {
+      "id": "71:17391",
+      "source": "68:1442",
+      "name": "Окна / Импорт палитры / 460×484",
+      "source_size": [
+        460,
+        485
+      ],
+      "component_size": [
+        460,
+        485
+      ],
+      "dimensions_equal": true,
+      "visible_pixels_equal": false,
+      "different_pixels": 9,
+      "significant_pixels": 9,
+      "max_channel_difference": 10,
+      "accepted": true
+    },
+    {
+      "id": "71:17582",
+      "source": "70:900",
+      "name": "Холст / Image - Холст композиции / 840×441",
+      "source_size": [
+        840,
+        441
+      ],
+      "component_size": [
+        840,
+        441
+      ],
+      "dimensions_equal": true,
+      "visible_pixels_equal": false,
+      "different_pixels": 46,
+      "significant_pixels": 46,
+      "max_channel_difference": 15,
+      "accepted": true
+    },
+    {
+      "id": "71:17588",
+      "source": "70:1457",
+      "name": "Кнопки / Выбрать файл JSON · проект «Сборки» / 386×144",
+      "source_size": [
+        387,
+        144
+      ],
+      "component_size": [
+        387,
+        144
+      ],
+      "dimensions_equal": true,
+      "visible_pixels_equal": true,
+      "different_pixels": 0,
+      "significant_pixels": 0,
+      "max_channel_difference": 0,
+      "accepted": true
+    },
+    {
+      "id": "71:17608",
+      "source": "70:1442",
+      "name": "Окна / Открыть проект / 460×484",
+      "source_size": [
+        460,
+        485
+      ],
+      "component_size": [
+        460,
+        485
+      ],
+      "dimensions_equal": true,
+      "visible_pixels_equal": false,
+      "different_pixels": 9,
+      "significant_pixels": 9,
+      "max_channel_difference": 9,
+      "accepted": true
+    }
+  ]
+}

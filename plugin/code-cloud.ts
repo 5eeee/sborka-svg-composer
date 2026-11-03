@@ -1,574 +1,722 @@
-function organizeInspector(node: FrameNode, width: number) {
-  const resize = (n: SceneNode, w: number) => {
-    if (n.type === "INSTANCE") {
-      n.resize(w, n.height);
-      return;
-    }
-    if (n.type !== "FRAME") return;
-    const children = n.children.filter(
-      (c) => c.type === "FRAME" || c.type === "INSTANCE",
-    );
-    const old = children.map((c) => c.width);
-    n.resize(w, n.height);
-    if (n.layoutMode === "HORIZONTAL") {
-      const usable = Math.max(
-        10,
-        w - n.itemSpacing * Math.max(0, children.length - 1),
-      );
-      const sum = old.reduce((a, b) => a + b, 0) || 1;
-      children.forEach((c, i) => resize(c, (usable * old[i]) / sum));
-    } else
-      for (const c of children) resize(c, w - n.paddingLeft - n.paddingRight);
+// Source of truth: the six verified browser transfers in this file.
+const EXACT_ROOT_IDS = ["64:2", "65:2", "66:2", "67:2", "68:2", "70:2"];
+const EXACT_LIBRARY_PAGE = "Сборка · Компоненты приложения";
+type ExactReport = { kind: string; [key: string]: unknown };
+async function inspectExactDesign(): Promise<ExactReport> {
+  if (!figma.root.children.some((p) => p.name === EXACT_LIBRARY_PAGE))
+    throw Error("Сначала соберите компоненты точного макета.");
+  await repairModalTypography();
+  return {
+    ...(await inspectComponentProofs()),
+    modalMetrics: await inspectModalMetrics(),
   };
-  if (node.children.some((c) => c.name === "Settings section")) return;
-  const children = [...node.children];
-  const object = children.findIndex(
-    (c) => c.type === "TEXT" && c.characters.startsWith("Объект"),
-  );
-  const layers = children.findIndex(
-    (c) => c.type === "TEXT" && c.characters === "Слои",
-  );
-  if (object < 0 || layers < 0) return;
-  node.layoutMode = "HORIZONTAL";
-  node.resize(width, 100);
-  node.primaryAxisSizingMode = "FIXED";
-  node.counterAxisSizingMode = "AUTO";
-  node.itemSpacing = 24;
-  const col = (width - 48) / 3;
-  for (const [i, items] of [
-    children.slice(0, object),
-    children.slice(object, layers),
-    children.slice(layers),
-  ].entries()) {
-    const section = figma.createFrame();
-    section.name = ["Settings section", "Object section", "Layers section"][i];
-    section.fills = [];
-    section.layoutMode = "VERTICAL";
-    section.resize(col, 100);
-    section.primaryAxisSizingMode = "AUTO";
-    section.counterAxisSizingMode = "FIXED";
-    section.itemSpacing = 16;
-    section.clipsContent = false;
-    node.appendChild(section);
-    for (const item of items) {
-      section.appendChild(item);
-      resize(item, col);
-    }
-  }
 }
-
-async function createResponsiveDesign(
-  previewSvg: string,
-  vectorLibrary: Record<string, string> = {},
-) {
+async function buildExactComponents(): Promise<ExactReport> {
+  for (const p of figma.root.children) await p.loadAsync();
+  const roots: FrameNode[] = [];
+  for (const id of EXACT_ROOT_IDS) {
+    const n = await figma.getNodeByIdAsync(id);
+    if (!n || n.type !== "FRAME") throw Error("Не найден точный экран " + id);
+    roots.push(n);
+  }
   const existing = figma.root.children.find(
-    (p) => p.name === "Сборка · Экраны",
+    (p) => p.name === EXACT_LIBRARY_PAGE,
   );
-  if (existing) {
-    await figma.loadFontAsync({ family: "Inter", style: "Regular" });
-    await figma.loadFontAsync({ family: "Inter", style: "Medium" });
+  if (
+    existing &&
+    existing.children.some((n) => n.name === "Основные компоненты v3")
+  ) {
     await figma.setCurrentPageAsync(existing);
-    const frames = existing.findAll((n) => n.type === "FRAME") as FrameNode[];
-    for (const n of frames) {
-      if (n.layoutMode === "HORIZONTAL") {
-        n.primaryAxisSizingMode = "FIXED";
-        n.counterAxisSizingMode = "AUTO";
-      }
-      n.clipsContent = false;
-    }
-    const tablet = existing.children.find((n) => n.name === "Tablet / 1024");
-    if (tablet && tablet.type === "FRAME") {
-      const inspector = tablet.children.find((n) => n.name === "Inspector");
-      if (inspector && inspector.type === "FRAME")
-        organizeInspector(inspector, tablet.width - 48);
-    }
-    const top = existing.children.filter((n) =>
-      ["Desktop / 1440", "Tablet / 1024", "Mobile / 390"].includes(n.name),
-    ) as FrameNode[];
-    figma.currentPage.selection = top;
-    figma.viewport.scrollAndZoomIntoView(top);
+    const preview = existing.children.find(
+      (n) => n.name === "Обзор компонентов",
+    );
+    if (preview) figma.viewport.scrollAndZoomIntoView([preview]);
     return {
-      createdNodeIds: [],
-      mutatedNodeIds: frames.map((n) => n.id),
-      pages: [existing.id],
-      desktop: top.find((n) => n.name === "Desktop / 1440")?.id,
-      tablet: top.find((n) => n.name === "Tablet / 1024")?.id,
-      mobile: top.find((n) => n.name === "Mobile / 390")?.id,
+      kind: "existing",
+      page: existing.id,
+      components: existing
+        .findAllWithCriteria({ types: ["COMPONENT"] })
+        .map((n) => ({ id: n.id, name: n.name })),
+      message: "Компоненты уже собраны. Повторный запуск не создаёт дублей.",
     };
   }
-  await figma.loadFontAsync({ family: "Inter", style: "Regular" });
-  await figma.loadFontAsync({ family: "Inter", style: "Medium" });
-  const C: Record<string, string> = {
-    bg: "#19191C",
-    panel: "#242427",
-    ink: "#F4F3F6",
-    muted: "#A6A4AE",
-    line: "#39383F",
-    pink: "#FF5BAF",
-    pinkInk: "#29131F",
-    selected: "#492B43",
-  };
-  const paint = (h: string) => ({
-    type: "SOLID" as const,
-    color: {
-      r: parseInt(h.slice(1, 3), 16) / 255,
-      g: parseInt(h.slice(3, 5), 16) / 255,
-      b: parseInt(h.slice(5, 7), 16) / 255,
-    },
-  });
-  const ids: string[] = [];
-  const record = <T extends BaseNode>(n: T): T => {
-    ids.push(n.id);
-    return n;
-  };
-  const kit = record(figma.createPage());
-  kit.name = "Сборка · Компоненты";
-  await figma.setCurrentPageAsync(kit);
-  const collection = figma.variables.createVariableCollection(
-    "Сборка / Foundations",
-  );
-  const vars: Record<string, Variable> = {};
-  for (const [name, color] of Object.entries(C)) {
-    const v = figma.variables.createVariable(name, collection, "COLOR");
-    v.scopes = ["ALL_FILLS"];
-    v.setValueForMode(collection.defaultModeId, paint(color).color);
-    vars[name] = v;
-  }
-  for (const [name, value] of Object.entries({
-    space4: 4,
-    space8: 8,
-    space12: 12,
-    space16: 16,
-    space24: 24,
-    radius12: 12,
-    radius24: 24,
-  })) {
-    const v = figma.variables.createVariable(name, collection, "FLOAT");
-    v.scopes = ["GAP", "CORNER_RADIUS"];
-    v.setValueForMode(collection.defaultModeId, value);
-  }
-  function fill(n: GeometryMixin, key: string) {
-    n.fills = [
-      figma.variables.setBoundVariableForPaint(
-        paint(C[key]),
-        "color",
-        vars[key],
+  const fonts = new Map<string, FontName>();
+  for (const r of roots)
+    for (const t of r.findAllWithCriteria({ types: ["TEXT"] }))
+      for (const s of t.getStyledTextSegments(["fontName"]))
+        fonts.set(JSON.stringify(s.fontName), s.fontName);
+  for (const f of fonts.values()) await figma.loadFontAsync(f);
+  const before = [];
+  for (const r of roots)
+    before.push(
+      exactBase64(
+        await r.exportAsync({
+          format: "PNG",
+          useAbsoluteBounds: true,
+          constraint: { type: "SCALE", value: 1 },
+        }),
       ),
+    );
+  const page = figma.root.children.find((p) => p.id === "19:1268");
+  if (!page) throw Error("Не найдена страница компонентов.");
+  const archive = figma.root.children.find((p) => p.id === "19:2326");
+  if (!archive) throw Error("Не найдена страница архива.");
+  for (const id of ["37:2", "38:2", "39:2", "44:2", "46:2", "47:2"]) {
+    const n = await figma.getNodeByIdAsync(id);
+    if (n && "x" in n) {
+      archive.appendChild(n as SceneNode);
+      (n as SceneNode).x += 20000;
+    }
+  }
+  const names = [
+    "Desktop 1440 · Точный перенос приложения",
+    "Tablet 1024 · Точный перенос приложения",
+    "Mobile 390 · Точный перенос приложения",
+    "Окно · Импорт SVG · Из приложения",
+    "Окно · Импорт палитры · Из приложения",
+    "Окно · Открыть проект · Из приложения",
+  ];
+  roots.forEach((r, i) => {
+    r.name = names[i];
+    r.x = i < 3 ? [0, 1500, 2584][i] : (i - 3) * 1500;
+    r.y = i < 3 ? 0 : 3000;
+  });
+  for (const child of [...page.children]) {
+    archive.appendChild(child);
+    child.x += 12000;
+  }
+  page.name = EXACT_LIBRARY_PAGE;
+  await figma.setCurrentPageAsync(page);
+  const collection = figma.variables.createVariableCollection(
+    "Сборка · CSS приложения",
+  );
+  const mode = collection.modes[0].modeId;
+  const definitions: Record<string, string> = {
+    paper: "#242427",
+    surface: "#19191c",
+    ink: "#f4f3f6",
+    muted: "#a6a4ae",
+    rule: "#39383f",
+    accent: "#ff5baf",
+    focus: "#ff79bb",
+    selected: "#47293b",
+    danger: "#ffa0ad",
+    "choice-bg": "#2b2b30",
+    "choice-hover": "#36333c",
+    stage: "#202023",
+    "accent-ink": "#29131f",
+    "selected-ink": "#ff9acc",
+  };
+  const vars: { hex: string; variable: Variable }[] = [];
+  for (const [name, hex] of Object.entries(definitions)) {
+    const c = {
+      r: parseInt(hex.slice(1, 3), 16) / 255,
+      g: parseInt(hex.slice(3, 5), 16) / 255,
+      b: parseInt(hex.slice(5, 7), 16) / 255,
+    };
+    const primitive = figma.variables.createVariable(
+      "raw/" + name,
+      collection,
+      "COLOR",
+    );
+    primitive.scopes = [];
+    primitive.setValueForMode(mode, c);
+    primitive.setVariableCodeSyntax("WEB", "var(--" + name + ")");
+    const v = figma.variables.createVariable(
+      "color/" + name,
+      collection,
+      "COLOR",
+    );
+    v.scopes = ["FRAME_FILL", "SHAPE_FILL", "TEXT_FILL", "STROKE_COLOR"];
+    v.setValueForMode(mode, { type: "VARIABLE_ALIAS", id: primitive.id });
+    v.setVariableCodeSyntax("WEB", "var(--" + name + ")");
+    vars.push({ hex, variable: v });
+  }
+  const styles = new Map<string, TextStyle>();
+  const allStyles = await figma.getLocalTextStylesAsync();
+  async function bindTree(n: SceneNode) {
+    const nodes = [n, ...("findAll" in n ? n.findAll(() => true) : [])];
+    for (const item of nodes) {
+      for (const field of ["fills", "strokes"] as const) {
+        if (!(field in item)) continue;
+        const paints = item[field as keyof typeof item] as
+          readonly Paint[] | typeof figma.mixed;
+        if (paints === figma.mixed || !Array.isArray(paints)) continue;
+        let changed = false;
+        const out = paints.map((p) => {
+          if (p.type !== "SOLID") return p;
+          const hex =
+            "#" +
+            [p.color.r, p.color.g, p.color.b]
+              .map((x) =>
+                Math.round(x * 255)
+                  .toString(16)
+                  .padStart(2, "0"),
+              )
+              .join("");
+          const v = vars.find((v) => v.hex === hex);
+          if (!v) return p;
+          changed = true;
+          return figma.variables.setBoundVariableForPaint(
+            p,
+            "color",
+            v.variable,
+          );
+        });
+        if (changed) {
+          if (field === "fills" && "fills" in item) item.fills = out;
+          if (field === "strokes" && "strokes" in item) item.strokes = out;
+        }
+      }
+      if (
+        item.type === "TEXT" &&
+        typeof item.fontSize === "number" &&
+        item.fontName !== figma.mixed &&
+        item.lineHeight !== figma.mixed &&
+        item.letterSpacing !== figma.mixed
+      ) {
+        const f = item.fontName;
+        const key = JSON.stringify([
+          f,
+          item.fontSize,
+          item.lineHeight,
+          item.letterSpacing,
+        ]);
+        let style = styles.get(key);
+        if (!style) {
+          const name =
+            "Сборка / " + f.style + " " + item.fontSize + " / " + styles.size;
+          style =
+            allStyles.find((s) => s.name === name) || figma.createTextStyle();
+          style.name = name;
+          style.fontName = f;
+          style.fontSize = item.fontSize;
+          style.lineHeight = item.lineHeight;
+          style.letterSpacing = item.letterSpacing;
+          styles.set(key, style);
+        }
+        // Keep source variable-font metrics; shared styles remain available as foundations.
+      }
+    }
+  }
+  const masters = figma.createFrame();
+  masters.name = "Основные компоненты v3";
+  masters.fills = [];
+  masters.clipsContent = false;
+  masters.x = 4000;
+  masters.y = 0;
+  masters.resize(2400, 6000);
+  page.appendChild(masters);
+  const preview = figma.createFrame();
+  preview.name = "Обзор компонентов";
+  preview.fills = [
+    { type: "SOLID", color: { r: 25 / 255, g: 25 / 255, b: 28 / 255 } },
+  ];
+  preview.layoutMode = "VERTICAL";
+  preview.primaryAxisSizingMode = "AUTO";
+  preview.counterAxisSizingMode = "FIXED";
+  preview.resize(1400, 100);
+  preview.paddingLeft = 40;
+  preview.paddingRight = 40;
+  preview.paddingTop = 40;
+  preview.paddingBottom = 40;
+  preview.itemSpacing = 32;
+  page.appendChild(preview);
+  preview.x = 0;
+  preview.y = 0;
+  const records: {
+    id: string;
+    name: string;
+    source: string;
+    width: number;
+    height: number;
+    vectors: number;
+    texts: number;
+    instanceCount: number;
+  }[] = [];
+  const byKey = new Map<string, ComponentNode>();
+  const texts = (n: SceneNode) =>
+    n.type === "TEXT"
+      ? [n]
+      : "findAllWithCriteria" in n
+        ? n.findAllWithCriteria({ types: ["TEXT"] })
+        : [];
+  const label = (n: SceneNode) =>
+    texts(n)
+      .map((t) => t.characters.trim())
+      .filter(Boolean)
+      .join(" ")
+      .slice(0, 70) || n.name.replace(/^Button - /, "");
+  const candidate = (n: SceneNode) =>
+    n.type === "FRAME" &&
+    (/^(Button(?: -|$)|Text Area$|Search Input$|Text Input|Number Input|Checkbox$|Color Picker|Link - Сборка|Icon(?: -|$)|Dialog)/.test(
+      n.name,
+    ) ||
+      [
+        "Детализация",
+        "Размер холста",
+        "Цветовая схема",
+        "Image - Холст композиции",
+      ].includes(n.name) ||
+      (n.name === "Label" && /^(X\b|Y\b|Поворот(?:\s|$))/.test(label(n))));
+  const signature = (n: SceneNode): string => {
+    const data: unknown[] = [n.type, n.name, n.width, n.height];
+    if ("fills" in n) data.push(n.fills);
+    if ("strokes" in n) data.push(n.strokes);
+    if (n.type === "TEXT")
+      data.push(
+        n.characters,
+        n.fontName,
+        n.fontSize,
+        n.lineHeight,
+        n.letterSpacing,
+      );
+    if (n.type === "VECTOR") data.push(n.vectorPaths);
+    if ("children" in n)
+      data.push(n.children.map((c) => [c.x, c.y, signature(c)]));
+    return JSON.stringify(data);
+  };
+  function family(n: SceneNode) {
+    if (n.name.startsWith("Icon")) return "Иконки";
+    if (n.name.startsWith("Link")) return "Логотип";
+    if (n.name.includes("Холст композиции")) return "Холст";
+    if (n.name.startsWith("Dialog")) return "Окна";
+    if (n.name === "Checkbox") return "Переключатели";
+    if (n.name === "Детализация" || n.name === "Размер холста")
+      return "Сегменты";
+    if (
+      n.name.includes("Input") ||
+      n.name === "Text Area" ||
+      n.name === "Label"
+    )
+      return "Поля";
+    if (n.name === "Цветовая схема" || n.name.includes("цветовая схема"))
+      return "Палитры";
+    return "Кнопки";
+  }
+  const targets: SceneNode[] = [];
+  function collect(n: SceneNode) {
+    if ("children" in n) for (const c of [...n.children]) collect(c);
+    if (candidate(n)) targets.push(n);
+  }
+  for (const r of roots) collect(r);
+  let masterX = 0,
+    masterY = 0,
+    rowH = 0;
+  for (const target of targets) {
+    const original = target as FrameNode;
+    if (!original.parent || !("children" in original.parent)) continue;
+    const w = original.width,
+      h = original.height;
+    const key = signature(original);
+    let comp = byKey.get(key);
+    if (!comp) {
+      const copy = original.clone();
+      comp = figma.createComponentFromNode(copy);
+      masters.appendChild(comp);
+      comp.name =
+        family(original) +
+        " / " +
+        label(original) +
+        " / " +
+        Math.round(w) +
+        "×" +
+        Math.round(h);
+      comp.description =
+        "Точная геометрия и оригинальные SVG из " +
+        original.id +
+        ". Источник: работающий редактор Сборка.";
+      comp.resize(w, h);
+      await bindTree(comp);
+      if (original.name === "Checkbox") comp.clipsContent = true;
+      if (masterX + w > 2200) {
+        masterX = 0;
+        masterY += rowH + 80;
+        rowH = 0;
+      }
+      comp.x = masterX;
+      comp.y = masterY;
+      masterX += w + 48;
+      rowH = Math.max(rowH, h);
+      const editable = texts(comp).find((t) => {
+        let p = t.parent;
+        while (p && p !== comp) {
+          if (p.type === "INSTANCE") return false;
+          p = p.parent;
+        }
+        return t.characters.length > 0 && !["S", "L"].includes(t.characters);
+      });
+      if (
+        editable &&
+        !original.name.startsWith("Icon") &&
+        !original.name.includes("Холст")
+      ) {
+        const prop = comp.addComponentProperty(
+          "Текст",
+          "TEXT",
+          editable.characters,
+        );
+        editable.componentPropertyReferences = {
+          ...editable.componentPropertyReferences,
+          characters: prop,
+        };
+      }
+      byKey.set(key, comp);
+      records.push({
+        id: comp.id,
+        name: comp.name,
+        source: original.id,
+        width: w,
+        height: h,
+        vectors: comp.findAllWithCriteria({ types: ["VECTOR"] }).length,
+        texts: texts(comp).length,
+        instanceCount: 0,
+      });
+    }
+    // Keep the verified source screens untouched. Review instances are created below.
+  }
+  masters.resize(2400, Math.max(100, masterY + rowH + 80));
+  // Review cards contain live instances; masters stay outside the review frame.
+  const regularFont = { family: "Inter", style: "Regular" };
+  await figma.loadFontAsync(regularFont);
+  function title(text: string, size = 18) {
+    const t = figma.createText();
+    t.fontName = regularFont;
+    t.characters = text;
+    t.fontSize = size;
+    t.fills = [
+      { type: "SOLID", color: { r: 244 / 255, g: 243 / 255, b: 246 / 255 } },
     ];
-  }
-  function text(value: string, size = 13, key = "ink", medium = false) {
-    const n = record(figma.createText());
-    n.fontName = { family: "Inter", style: medium ? "Medium" : "Regular" };
-    n.fontSize = size;
-    n.characters = value;
-    fill(n, key);
-    return n;
-  }
-  function box(
-    name: string,
-    w: number,
-    vertical = true,
-    key: string | null = null,
-    pad = 0,
-    gap = 12,
-  ) {
-    const n = record(figma.createFrame());
-    n.name = name;
-    n.layoutMode = vertical ? "VERTICAL" : "HORIZONTAL";
-    n.resize(w, 40);
-    n.primaryAxisSizingMode = vertical ? "AUTO" : "FIXED";
-    n.counterAxisSizingMode = vertical ? "FIXED" : "AUTO";
-    n.clipsContent = false;
-    n.paddingLeft = n.paddingRight = n.paddingTop = n.paddingBottom = pad;
-    n.itemSpacing = gap;
-    n.fills = [];
-    if (key) fill(n, key);
-    return n;
-  }
-  function label(
-    parent: FrameNode | ComponentNode,
-    value: string,
-    size = 12,
-    key = "muted",
-  ) {
-    const t = text(value, size, key);
-    parent.appendChild(t);
     return t;
   }
-  function component(
-    name: string,
-    value: string,
-    w: number,
-    h: number,
-    key = "panel",
-    ink = "ink",
-    round = 999,
-  ) {
-    const n = record(figma.createComponent());
-    n.name = name;
-    n.resize(w, h);
-    n.layoutMode = "HORIZONTAL";
-    n.primaryAxisAlignItems = "CENTER";
-    n.counterAxisAlignItems = "CENTER";
-    n.itemSpacing = 8;
-    n.cornerRadius = round;
-    fill(n, key);
-    n.appendChild(text(value, 13, ink));
-    return n;
+  preview.appendChild(title("Сборка / Компоненты приложения", 28));
+  preview.appendChild(
+    title(
+      "Оригинальные SVG, размеры и типографика из точного макета. Экземпляры связаны с основными компонентами.",
+      14,
+    ),
+  );
+  for (const group of [
+    "Логотип",
+    "Сегменты",
+    "Кнопки",
+    "Поля",
+    "Переключатели",
+    "Палитры",
+    "Иконки",
+    "Холст",
+    "Окна",
+  ]) {
+    const members = records.filter((r) => r.name.startsWith(group + " / "));
+    if (!members.length) continue;
+    const section = figma.createFrame();
+    section.name = group;
+    section.fills = [];
+    section.layoutMode = "VERTICAL";
+    section.primaryAxisSizingMode = "AUTO";
+    section.counterAxisSizingMode = "FIXED";
+    section.resize(1320, 100);
+    section.itemSpacing = 20;
+    preview.appendChild(section);
+    section.appendChild(title(group));
+    let row: FrameNode | null = null,
+      used = 0;
+    for (const rec of members) {
+      const comp = (await figma.getNodeByIdAsync(rec.id)) as ComponentNode;
+      const cw = Math.max(280, rec.width + 32);
+      if (!row || used + cw > 1320) {
+        row = figma.createFrame();
+        row.name = "Ряд";
+        row.fills = [];
+        row.layoutMode = "HORIZONTAL";
+        row.primaryAxisSizingMode = "AUTO";
+        row.counterAxisSizingMode = "AUTO";
+        row.itemSpacing = 24;
+        row.counterAxisAlignItems = "MIN";
+        section.appendChild(row);
+        used = 0;
+      }
+      const card = figma.createFrame();
+      card.name = rec.name;
+      card.fills = [
+        { type: "SOLID", color: { r: 32 / 255, g: 32 / 255, b: 35 / 255 } },
+      ];
+      card.layoutMode = "VERTICAL";
+      card.primaryAxisSizingMode = "AUTO";
+      card.counterAxisSizingMode = "FIXED";
+      card.resize(cw, 100);
+      card.paddingLeft = 16;
+      card.paddingRight = 16;
+      card.paddingTop = 16;
+      card.paddingBottom = 20;
+      card.itemSpacing = 20;
+      card.cornerRadius = 16;
+      row.appendChild(card);
+      const caption = title(rec.name.split(" / ").slice(1).join(" / "), 12);
+      caption.textAutoResize = "HEIGHT";
+      caption.resize(cw - 32, caption.height);
+      card.appendChild(caption);
+      const inst = comp.createInstance();
+      card.appendChild(inst);
+      inst.layoutPositioning = "AUTO";
+      inst.layoutGrow = 0;
+      inst.layoutAlign = "INHERIT";
+      inst.resize(rec.width, rec.height);
+      inst.layoutSizingHorizontal = "FIXED";
+      inst.layoutSizingVertical = "FIXED";
+      used += cw + 24;
+    }
   }
-  const primary = component(
-    "Button / Primary",
-    "Собрать идею",
-    220,
-    46,
-    "pink",
-    "pinkInk",
-  );
-  const secondary = component(
-    "Button / Secondary",
-    "Сохранить проект",
-    160,
-    44,
-  );
-  const chip = component("Chip / Default", "Накопить на мечту", 154, 32);
-  const selectedChip = component("Chip / Selected", "L", 38, 36, "ink", "bg");
-  const field = component("Field / Number", "612", 104, 44, "panel", "ink", 12);
-  const search = component(
-    "Field / Search",
-    "Найти объект",
-    220,
-    44,
-    "panel",
-    "muted",
-  );
-  const textarea = component(
-    "Field / Idea",
-    "Обучение без отвлечений",
-    220,
-    112,
-    "panel",
-    "ink",
-    20,
-  );
-  const tile = component("Asset / Tile", "Книга", 66, 76, "panel", "ink", 24);
-  const layer = component(
-    "Layer / Selected",
-    "Книга",
-    220,
-    44,
-    "selected",
-    "ink",
-  );
-  const assetComponents: Record<string, ComponentNode> = {};
-  const assetNames: Record<string, string> = {
-    puzzle: "Пазлы",
-    book: "Книга",
-    phone: "Телефон",
-    headphones: "Наушники",
-    lamp: "Лампа",
-    wallet: "Кошелёк",
-    pen: "Ручка",
-    folder: "Папка",
-    coin: "Монета",
-    flowers: "Цветы",
-  };
-  for (const [id, svg] of Object.entries(vectorLibrary)) {
-    const c = record(figma.createComponent());
-    c.name = "Asset / " + assetNames[id];
-    c.resize(74, 90);
-    c.layoutMode = "VERTICAL";
-    c.primaryAxisAlignItems = "CENTER";
-    c.counterAxisAlignItems = "CENTER";
-    c.itemSpacing = 8;
-    c.cornerRadius = 16;
-    fill(c, "bg");
-    const icon = record(figma.createNodeFromSvg(svg));
-    icon.rescale(Math.min(46 / icon.width, 46 / icon.height));
-    c.appendChild(icon);
-    const caption = text(assetNames[id], 10, "muted");
-    c.appendChild(caption);
-    kit.appendChild(c);
-    c.x = 900 + (Object.keys(assetComponents).length % 3) * 100;
-    c.y = 150 + Math.floor(Object.keys(assetComponents).length / 3) * 120;
-    assetComponents[assetNames[id]] = c;
-  }
-  const all = [
-    primary,
-    secondary,
-    chip,
-    selectedChip,
-    field,
-    search,
-    textarea,
-    tile,
-    layer,
-  ];
-  all.forEach((n, i) => {
-    kit.appendChild(n);
-    n.x = (i % 3) * 280;
-    n.y = Math.floor(i / 3) * 170 + 150;
-  });
-  const heading = text("Сборка / UI kit", 32, "ink", true);
-  kit.appendChild(heading);
-  heading.x = 0;
-  heading.y = 30;
-  const palette = box("Foundations / Colors", 800, false, null, 0, 16);
-  kit.appendChild(palette);
-  palette.x = 0;
-  palette.y = 700;
-  for (const key of Object.keys(C)) {
-    const sw = component(
-      "Color / " + key,
-      key,
-      90,
-      70,
-      key,
-      key === "pink" ? "pinkInk" : "ink",
-      12,
+  const checks = [];
+  for (let i = 0; i < roots.length; i++) {
+    const after = exactBase64(
+      await roots[i].exportAsync({
+        format: "PNG",
+        useAbsoluteBounds: true,
+        constraint: { type: "SCALE", value: 1 },
+      }),
     );
-    palette.appendChild(sw);
+    checks.push({
+      id: roots[i].id,
+      sourceBase64: before[i],
+      componentBase64: after,
+    });
   }
-  const art = record(figma.createComponent());
-  art.name = "Canvas / Editable vector composition";
-  art.clipsContent = true;
-  art.resize(1200, 630);
-  art.fills = [];
-  const vector = record(figma.createNodeFromSvg(previewSvg));
-  art.appendChild(vector);
-  vector.x = 0;
-  vector.y = 0;
-  kit.appendChild(art);
-  art.x = 0;
-  art.y = 900;
-  function instance(
-    c: ComponentNode,
-    parent: FrameNode | ComponentNode,
-    value?: string,
-    w?: number,
-  ) {
-    const n = record(c.createInstance());
-    parent.appendChild(n);
-    if (w) n.resize(w, n.height);
-    if (value) {
-      const t = n.findOne((x: SceneNode) => x.type === "TEXT");
-      if (t && t.type === "TEXT") t.characters = value;
-    }
-    return n;
-  }
-  function fields(parent: FrameNode | ComponentNode, w: number) {
-    const names = ["X", "Y"];
-    const row = box("Coordinates", w, false, null, 0, 12);
-    parent.appendChild(row);
-    for (const name of names) {
-      const cell = box(name, (w - 12) / 2, true, null, 0, 8);
-      row.appendChild(cell);
-      label(cell, name);
-      instance(field, cell, name === "X" ? "612" : "362", (w - 12) / 2);
-    }
-    label(parent, "Поворот");
-    instance(field, parent, "0°", w);
-  }
-  function library(w: number) {
-    const n = box("Library", w, true, null, 0, 16);
-    label(n, "Что соберём?", 25, "ink");
-    label(n, "Идея композиции");
-    instance(textarea, n, "Обучение без отвлечений", w);
-    instance(primary, n, undefined, w);
-    label(n, "Библиотека", 15, "ink");
-    instance(search, n, undefined, w);
-    const names = [
-      "Пазлы",
-      "Книга",
-      "Телефон",
-      "Наушники",
-      "Лампа",
-      "Кошелёк",
-      "Ручка",
-      "Папка",
-      "Монета",
-      "Цветы",
-    ];
-    for (let i = 0; i < names.length; i += 3) {
-      const row = box("Objects / " + (i / 3 + 1), w, false, null, 0, 8);
-      n.appendChild(row);
-      for (const name of names.slice(i, i + 3))
-        instance(
-          assetComponents[name] || tile,
-          row,
-          assetComponents[name] ? undefined : name,
-          (w - 16) / 3,
-        );
-    }
-    instance(secondary, n, "↑ Импорт SVG", w);
-    return n;
-  }
-  function inspector(w: number, wide = false) {
-    const n = box("Inspector", w, true, null, 0, 16);
-    label(n, "Настройки", 17, "ink");
-    label(n, "Палитра");
-    const row = box("Palettes", w, false, null, 0, 6);
-    n.appendChild(row);
-    for (const name of ["База", "Сирень", "Персик", "Мята"])
-      instance(chip, row, name, (w - 18) / 4);
-    label(n, "Цвет холста");
-    instance(field, n, "# D7CDF5", w);
-    instance(secondary, n, "↑ Импорт палитры", w);
-    label(n, "Объект · Книга", 15, "ink");
-    fields(n, w);
-    const actions = box("Object actions", w, false, null, 0, 8);
-    n.appendChild(actions);
-    instance(secondary, actions, "Копия", (w - 8) / 2);
-    instance(secondary, actions, "Удалить", (w - 8) / 2);
-    label(n, "Слои", 15, "ink");
-    instance(layer, n, "Книга", w);
-    instance(layer, n, "Наушники", w);
-    instance(layer, n, "Лампа · фон", w);
-    instance(secondary, n, "Открыть проект", w);
-    if (wide) organizeInspector(n, w);
-    return n;
-  }
-  function workspace(w: number) {
-    const n = box("Workspace", w, true, null, 0, 20);
-    const toolbar = box("Canvas toolbar", w, false, null, 0, 8);
-    n.appendChild(toolbar);
-    instance(selectedChip, toolbar, "S");
-    instance(selectedChip, toolbar, "L");
-    instance(chip, toolbar, "▭    □    ▯    +", Math.min(220, w - 92));
-    label(n, "Ваша композиция", 18, "ink");
-    const a = record(art.createInstance());
-    n.appendChild(a);
-    a.rescale(w / 1200);
-    const actions = box("Canvas actions", w, false, null, 0, 8);
-    n.appendChild(actions);
-    instance(
-      secondary,
-      actions,
-      "↻ Другой вариант",
-      Math.min(170, (w - 8) / 2),
-    );
-    instance(secondary, actions, "Очистить", Math.min(110, (w - 8) / 2));
-    label(n, "Попробовать другую идею");
-    instance(chip, n, "Накопить на мечту");
-    return n;
-  }
-  const screens = record(figma.createPage());
-  screens.name = "Сборка · Экраны";
-  await figma.setCurrentPageAsync(screens);
-  function screen(name: string, w: number, x: number) {
-    const mobile = w < 600,
-      tablet = w < 1200;
-    const n = box(name, w, true, "bg", 24, 28);
-    screens.appendChild(n);
-    n.x = x;
-    n.y = 0;
-    n.clipsContent = false;
-    const header = box("Header", w - 48, !mobile ? false : true, null, 0, 16);
-    n.appendChild(header);
-    label(header, "◕ Сборка", 28, "ink");
-    const ha = box(
-      "Header actions",
-      w - 48 - (mobile ? 0 : 250),
-      false,
-      null,
-      0,
-      8,
-    );
-    header.appendChild(ha);
-    instance(secondary, ha, "Отменить", mobile ? 96 : 100);
-    instance(primary, ha, "Скачать SVG", mobile ? 170 : 150);
-    if (mobile) {
-      n.appendChild(workspace(w - 48));
-      n.appendChild(library(w - 48));
-      n.appendChild(inspector(w - 48));
-    } else {
-      const row = box("Editor layout", w - 48, false, null, 0, 24);
-      n.appendChild(row);
-      row.counterAxisAlignItems = "MIN";
-      row.appendChild(library(220));
-      row.appendChild(workspace(w - 48 - 220 - 24 - (tablet ? 0 : 244)));
-      if (!tablet) row.appendChild(inspector(220));
-      else n.appendChild(inspector(w - 48, true));
-    }
-    return n;
-  }
-  const desktop = screen("Desktop / 1440", 1440, 0),
-    tablet = screen("Tablet / 1024", 1024, 1520),
-    mobile = screen("Mobile / 390", 390, 2624);
-  function modal(
-    base: FrameNode,
-    title: string,
-    desc: string,
-    x: number,
-    y: number,
-  ) {
-    const n = record(base.clone());
-    screens.appendChild(n);
-    n.name = base.name + " / " + title;
-    n.x = x;
-    n.y = y;
-    const overlay = record(figma.createRectangle());
-    n.appendChild(overlay);
-    overlay.layoutPositioning = "ABSOLUTE";
-    overlay.resize(n.width, n.height);
-    overlay.fills = [{ ...paint("#09090C"), opacity: 0.86 }];
-    overlay.x = 0;
-    overlay.y = 0;
-    const w = Math.min(420, n.width - 32);
-    const card = box("Dialog / " + title, w, true, "bg", 28, 20);
-    n.appendChild(card);
-    card.layoutPositioning = "ABSOLUTE";
-    card.cornerRadius = 28;
-    label(card, "↑", 28, "pink");
-    label(card, title, 24, "ink");
-    const description = text(desc, 13, "muted");
-    card.appendChild(description);
-    description.resize(w - 56, 60);
-    description.textAutoResize = "HEIGHT";
-    instance(primary, card, "Выбрать файл", w - 56);
-    label(card, "Файлы остаются внутри редактора", 10);
-    card.x = (n.width - w) / 2;
-    card.y = 160;
-    return n;
-  }
-  const below = Math.max(desktop.height, tablet.height, mobile.height) + 160;
-  modal(
-    desktop,
-    "Импорт SVG",
-    "Добавьте исходные векторные элементы в библиотеку.",
-    0,
-    below,
-  );
-  modal(
-    tablet,
-    "Импорт палитры",
-    "Загрузите цветовую схему для всей композиции.",
-    1520,
-    below,
-  );
-  modal(
-    mobile,
-    "Открыть проект",
-    "Продолжите работу с сохранённой композицией.",
-    2624,
-    below,
-  );
-  const note = text(
-    "Редактируемые экраны, векторный холст и экземпляры компонентов. Модульный монолит: одна логика для веба и плагина.",
-    18,
-    "muted",
-  );
-  screens.appendChild(note);
-  note.x = 0;
-  note.y = -80;
-  figma.currentPage.selection = [desktop, tablet, mobile];
-  figma.viewport.scrollAndZoomIntoView([desktop, tablet, mobile]);
+  figma.currentPage.selection = [preview];
+  figma.viewport.scrollAndZoomIntoView([preview]);
   return {
-    createdNodeIds: ids,
-    desktop: desktop.id,
-    tablet: tablet.id,
-    mobile: mobile.id,
-    components: all.map((n) => n.id),
-    pages: [kit.id, screens.id],
+    kind: "built",
+    page: page.id,
+    preview: preview.id,
+    masters: masters.id,
+    collection: collection.id,
+    components: records,
+    componentCount: records.length,
+    replacedInstances: 0,
+    checks,
+    sourceScreensPreserved: true,
+    createdNodeIds: [preview.id, masters.id, ...records.map((r) => r.id)],
+    textStyles: [...styles.values()].map((s) => s.id),
+  };
+}
+async function createResponsiveDesign(
+  _svg: string,
+  _library: Record<string, string> = {},
+) {
+  return buildExactComponents();
+}
+
+function exactBase64(bytes: Uint8Array) {
+  const chars =
+    "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/";
+  let out = "";
+  for (let i = 0; i < bytes.length; i += 3) {
+    const a = bytes[i],
+      b = bytes[i + 1] || 0,
+      c = bytes[i + 2] || 0;
+    out +=
+      chars[a >> 2] +
+      chars[((a & 3) << 4) | (b >> 4)] +
+      (i + 1 < bytes.length ? chars[((b & 15) << 2) | (c >> 6)] : "=") +
+      (i + 2 < bytes.length ? chars[c & 63] : "=");
+  }
+  return out;
+}
+async function inspectComponentProofs(): Promise<ExactReport> {
+  for (const p of figma.root.children) await p.loadAsync();
+  const p = figma.root.children.find((p) => p.name === EXACT_LIBRARY_PAGE);
+  if (!p) throw Error("Нет страницы компонентов");
+  const master = p.children.find((n) => n.name === "Основные компоненты v3");
+  if (!master || !("findAllWithCriteria" in master))
+    throw Error("Нужна библиотека v2");
+  const samples = [];
+  const components = master.findAllWithCriteria({ types: ["COMPONENT"] });
+  let done = 0;
+  for (const c of components) {
+    const match = c.description.match(/из (\d+:\d+)/);
+    if (!match) continue;
+    const original = (await figma.getNodeByIdAsync(match[1])) as SceneNode;
+    if (!original) continue;
+    const a = await original.exportAsync({
+      format: "PNG",
+      useAbsoluteBounds: true,
+      constraint: { type: "SCALE", value: 1 },
+    });
+    const b = await c.exportAsync({
+      format: "PNG",
+      useAbsoluteBounds: true,
+      constraint: { type: "SCALE", value: 1 },
+    });
+    samples.push({
+      name: c.name,
+      id: c.id,
+      source: original.id,
+      original: [original.width, original.height],
+      component: [c.width, c.height],
+      sourceBase64: exactBase64(a),
+      componentBase64: exactBase64(b),
+    });
+    done++;
+    if (done % 20 === 0)
+      figma.ui.postMessage({
+        type: "components-report",
+        report: { kind: "progress", done, total: components.length },
+      });
+  }
+  return { kind: "proofs", componentCount: components.length, samples };
+}
+
+async function inspectModalMetrics(): Promise<ExactReport> {
+  for (const p of figma.root.children) await p.loadAsync();
+  const page = figma.root.children.find((p) => p.name === EXACT_LIBRARY_PAGE);
+  if (!page) throw Error("No library");
+  const comps = page
+    .findAllWithCriteria({ types: ["COMPONENT"] })
+    .filter((n) => n.name.startsWith("Окна / "));
+  const rows = [];
+  for (const c of comps) {
+    const id = c.description.match(/из (\d+:\d+)/)?.[1];
+    if (!id) continue;
+    const source = (await figma.getNodeByIdAsync(id)) as FrameNode;
+    const info = (n: FrameNode | ComponentNode) => ({
+      layout: n.layoutMode,
+      spacing: n.itemSpacing,
+      padding: [n.paddingLeft, n.paddingTop, n.paddingRight, n.paddingBottom],
+      texts: n.findAllWithCriteria({ types: ["TEXT"] }).map((t) => ({
+        id: t.id,
+        text: t.characters,
+        x: t.x,
+        y: t.y,
+        width: t.width,
+        height: t.height,
+        font: t.fontName,
+        weight: t.fontWeight,
+        size: t.fontSize,
+        lineHeight: t.lineHeight,
+        letterSpacing: t.letterSpacing,
+        align: t.textAlignHorizontal,
+      })),
+    });
+    rows.push({ id: c.id, source: info(source), component: info(c) });
+  }
+  return { kind: "modal-metrics", rows };
+}
+
+async function repairModalTypography() {
+  const p = figma.root.children.find((p) => p.name === EXACT_LIBRARY_PAGE);
+  if (!p) throw Error("Нет компонентов");
+  await p.loadAsync();
+  const regular = { family: "Inter", style: "Regular" };
+  await figma.loadFontAsync(regular);
+  let count = 0;
+  const nodes: SceneNode[] = [];
+  for (const id of EXACT_ROOT_IDS.slice(3)) {
+    const n = await figma.getNodeByIdAsync(id);
+    if (n && "findAllWithCriteria" in n)
+      nodes.push(...(n as FrameNode).findAllWithCriteria({ types: ["TEXT"] }));
+  }
+  for (const c of p.findAllWithCriteria({ types: ["COMPONENT"] }))
+    if (c.name.startsWith("Окна / "))
+      nodes.push(...c.findAllWithCriteria({ types: ["TEXT"] }));
+  for (const n of nodes)
+    if (
+      n.type === "TEXT" &&
+      n.fontName !== figma.mixed &&
+      n.fontName.family === "Segoe UI"
+    ) {
+      n.fontName = regular;
+      count++;
+    }
+  return { count };
+}
+
+async function finalizeExactHandoff(): Promise<ExactReport> {
+  for (const p of figma.root.children) await p.loadAsync();
+  const page = figma.root.children.find((p) => p.name === EXACT_LIBRARY_PAGE);
+  if (!page) throw Error("Сначала соберите библиотеку");
+  const master = page.children.find((n) => n.name === "Основные компоненты v3");
+  if (!master || !("findAllWithCriteria" in master))
+    throw Error("Нужна финальная библиотека");
+  const count = master.findAllWithCriteria({ types: ["COMPONENT"] }).length;
+  if (count !== 169)
+    throw Error("Ожидается 169 компонентов, получено " + count);
+  const archive = figma.root.children.find(
+    (p) => p.id === "19:2326" && p.name === "Архив · Приближённые экраны",
+  );
+  if (archive) archive.remove();
+  const source = await figma.getNodeByIdAsync(EXACT_ROOT_IDS[0]);
+  if (!source || source.parent?.type !== "PAGE")
+    throw Error("Нет страницы экранов");
+  const sourcePage = source.parent;
+  const removed: string[] = [];
+  for (const n of [...sourcePage.children])
+    if (!EXACT_ROOT_IDS.includes(n.id) && n.name.startsWith("Сборка /")) {
+      removed.push(n.id);
+      n.remove();
+    }
+  const collections = await figma.variables.getLocalVariableCollectionsAsync();
+  for (const c of collections)
+    if (
+      c.name === "Сборка · CSS приложения" &&
+      c.id !== "VariableCollectionId:71:11795"
+    )
+      c.remove();
+  const preview = page.children.find(
+    (n) => n.name === "Обзор компонентов",
+  ) as FrameNode;
+  if (!preview) throw Error("Нет обзора");
+  await figma.setCurrentPageAsync(page);
+  for (const instance of preview.findAllWithCriteria({ types: ["INSTANCE"] })) {
+    const main = await instance.getMainComponentAsync();
+    if (!main) continue;
+    instance.layoutPositioning = "AUTO";
+    instance.layoutGrow = 0;
+    instance.layoutAlign = "INHERIT";
+    instance.resize(main.width, main.height);
+    instance.layoutSizingHorizontal = "FIXED";
+    instance.layoutSizingVertical = "FIXED";
+  }
+  await figma.loadFontAsync({ family: "Inter", style: "Regular" });
+  for (const c of master.findAllWithCriteria({ types: ["COMPONENT"] })) {
+    if (!c.name.startsWith("Окна / ")) continue;
+    const oldName = c.name;
+    const short = ["Импорт SVG", "Импорт палитры", "Открыть проект"].find((t) =>
+      oldName.includes(t),
+    );
+    if (!short) continue;
+    c.name =
+      "Окна / " +
+      short +
+      " / " +
+      Math.round(c.width) +
+      "×" +
+      Math.round(c.height);
+    const card = preview.findOne(
+      (n) => n.type === "FRAME" && n.name === oldName,
+    ) as FrameNode | null;
+    if (card) {
+      card.name = c.name;
+      const caption = card.children.find((n) => n.type === "TEXT") as
+        TextNode | undefined;
+      if (caption)
+        caption.characters =
+          short + " / " + Math.round(c.width) + "×" + Math.round(c.height);
+    }
+  }
+  const sections = preview.children
+    .filter((n) => n.type === "FRAME")
+    .map((n) => ({ id: n.id, name: n.name, width: n.width, height: n.height }));
+  figma.currentPage.selection = [preview];
+  figma.viewport.scrollAndZoomIntoView([preview]);
+  return {
+    kind: "finalized",
+    page: page.id,
+    preview: preview.id,
+    componentCount: count,
+    sourceScreens: EXACT_ROOT_IDS,
+    removedTestNodes: removed,
+    sections,
+    externalSubmission: "not_sent",
   };
 }
 
@@ -576,9 +724,10 @@ const PACKED_TAIL="";
 const COMMAND='2137a770-4ae4-432e-8fb5-81003c111a93';
 figma.showUI(__html__,{width:1180,height:780,themeColors:true});
 figma.root.setRelaunchData({[COMMAND]:'Собрать новую иллюстрацию'});
-let busy=false;
+let busy=false;let componentBusy=false;
 figma.ui.onmessage=async(message:{type:string;svg?:string;name?:string;width?:number;height?:number;library?:Record<string,string>})=>{
- if(message.type==='design'){try{const result=await createResponsiveDesign(String(message.svg||''),message.library||{});figma.ui.postMessage({type:'status',text:'Макеты готовы: desktop, tablet, mobile и отдельные компоненты. '+JSON.stringify({pages:result.pages,desktop:result.desktop,tablet:result.tablet,mobile:result.mobile})});}catch(e){figma.ui.postMessage({type:'status',text:'Ошибка создания макетов: '+String(e)});}return;}
+ if(message.type==='components-inspect'||message.type==='components-build'||message.type==='components-finalize'){if(componentBusy)return;componentBusy=true;try{const report=message.type==='components-inspect'?await inspectExactDesign():message.type==='components-finalize'?await finalizeExactHandoff():await buildExactComponents();figma.ui.postMessage({type:'components-report',report});}catch(e){figma.ui.postMessage({type:'components-report',report:{error:String(e)}});}finally{componentBusy=false;}return;}
+ if(message.type==='design'){try{const result=await createResponsiveDesign(String(message.svg||''),message.library||{});figma.ui.postMessage({type:'status',text:'Макеты готовы: desktop, tablet, mobile и отдельные компоненты. '+JSON.stringify(result)});}catch(e){figma.ui.postMessage({type:'status',text:'Ошибка создания макетов: '+String(e)});}return;}
  if(message.type==='boot'){figma.ui.postMessage({type:'assets',tail:PACKED_TAIL});return;}
  if(message.type!=='insert'||busy)return;
  busy=true;

@@ -20,7 +20,7 @@ const editor = await read("src/editor.mjs");
 const shim = `try{localStorage.getItem('test')}catch{Object.defineProperty(window,'localStorage',{value:{getItem:()=>null,setItem:()=>{},removeItem:()=>{}},configurable:true})}`;
 const bridge = `
 const insert=document.createElement('button');insert.className='primary';insert.id='insertFigma';insert.textContent='Добавить в Figma';document.querySelector('.header-actions').append(insert);
-const designButton=document.createElement('button');designButton.textContent='Макеты UI';designButton.id='designFigma';document.querySelector('.header-actions').append(designButton);designButton.onclick=()=>{const svg=$('#canvas').cloneNode(true);svg.querySelectorAll('[data-selection]').forEach(n=>n.remove());svg.removeAttribute('style');svg.setAttribute('width',state.w);svg.setAttribute('height',state.h);parent.postMessage({pluginMessage:{type:'design',svg:new XMLSerializer().serializeToString(svg),library:Object.fromEntries(OBJECTS.map(o=>[o.id,assets.get('L:'+o.id)]))}},'*');toast('Создаю редактируемые макеты и компоненты…');};
+const designButton=document.createElement('button');designButton.textContent='Компоненты макета';designButton.id='designFigma';document.querySelector('.header-actions').append(designButton);designButton.onclick=()=>{const svg=$('#canvas').cloneNode(true);svg.querySelectorAll('[data-selection]').forEach(n=>n.remove());svg.removeAttribute('style');svg.setAttribute('width',state.w);svg.setAttribute('height',state.h);parent.postMessage({pluginMessage:{type:'design',svg:new XMLSerializer().serializeToString(svg),library:Object.fromEntries(OBJECTS.map(o=>[o.id,assets.get('L:'+o.id)]))}},'*');toast('Создаю редактируемые макеты и компоненты…');};
 insert.onclick=()=>{try{const out=$('#canvas').cloneNode(true);out.querySelectorAll('[data-selection]').forEach(n=>n.remove());out.removeAttribute('id');out.removeAttribute('style');out.setAttribute('width',state.w);out.setAttribute('height',state.h);insert.disabled=true;parent.postMessage({pluginMessage:{type:'insert',svg:new XMLSerializer().serializeToString(out),name:state.idea||'Композиция',width:state.w,height:state.h}},'*');toast('Создаю векторные слои…');}catch(e){toast(e.message);insert.disabled=false;}};
 window.addEventListener('message',e=>{const m=e.data.pluginMessage;if(m?.type==='status'){toast(m.text);insert.disabled=false;}});
 `;
@@ -70,15 +70,18 @@ html = html.replace(
 );
 // Docs are bundled with the project; no dead navigation inside a plugin iframe.
 html = html.replace(/<a href="(?:README.md|plugin\/README.md)">.*?<\/a>/g, "");
+const componentPanel = `<details style="margin:12px 20px;padding:16px;border:1px solid #39393e;border-radius:20px"><summary>Компоненты точного макета</summary><p>Проверка и сборка из перенесённых экранов. Исходный макет сохраняется.</p><button id="componentInspect">Проверить структуру</button><button id="componentBuild">Собрать компоненты</button><button id="componentFinalize">Подготовить сдачу</button><pre id="componentsReport" style="max-height:220px;overflow:auto;white-space:pre-wrap;font:11px monospace"></pre></details><script>for(const [id,type] of [['componentInspect','components-inspect'],['componentBuild','components-build'],['componentFinalize','components-finalize']])document.getElementById(id).onclick=()=>{document.getElementById('componentsReport').textContent='Выполняю…';parent.postMessage({pluginMessage:{type}},'*')};window.addEventListener('message',e=>{if(e.data.pluginMessage?.type==='components-report')document.getElementById('componentsReport').textContent=JSON.stringify(e.data.pluginMessage.report,null,2)});</script>`;
+html = html.replace("<body>", "<body>" + componentPanel);
 const designGenerator = await read("design-generator.ts");
 const code = `${designGenerator}
 const PACKED_TAIL='${tail}';
 const COMMAND='2137a770-4ae4-432e-8fb5-81003c111a93';
 figma.showUI(__html__,{width:1180,height:780,themeColors:true});
 figma.root.setRelaunchData({[COMMAND]:'Собрать новую иллюстрацию'});
-let busy=false;
+let busy=false;let componentBusy=false;
 figma.ui.onmessage=async(message:{type:string;svg?:string;name?:string;width?:number;height?:number;library?:Record<string,string>})=>{
- if(message.type==='design'){try{const result=await createResponsiveDesign(String(message.svg||''),message.library||{});figma.ui.postMessage({type:'status',text:'Макеты готовы: desktop, tablet, mobile и отдельные компоненты. '+JSON.stringify({pages:result.pages,desktop:result.desktop,tablet:result.tablet,mobile:result.mobile})});}catch(e){figma.ui.postMessage({type:'status',text:'Ошибка создания макетов: '+String(e)});}return;}
+ if(message.type==='components-inspect'||message.type==='components-build'||message.type==='components-finalize'){if(componentBusy)return;componentBusy=true;try{const report=message.type==='components-inspect'?await inspectExactDesign():message.type==='components-finalize'?await finalizeExactHandoff():await buildExactComponents();figma.ui.postMessage({type:'components-report',report});}catch(e){figma.ui.postMessage({type:'components-report',report:{error:String(e)}});}finally{componentBusy=false;}return;}
+ if(message.type==='design'){try{const result=await createResponsiveDesign(String(message.svg||''),message.library||{});figma.ui.postMessage({type:'status',text:'Макеты готовы: desktop, tablet, mobile и отдельные компоненты. '+JSON.stringify(result)});}catch(e){figma.ui.postMessage({type:'status',text:'Ошибка создания макетов: '+String(e)});}return;}
  if(message.type==='boot'){figma.ui.postMessage({type:'assets',tail:PACKED_TAIL});return;}
  if(message.type!=='insert'||busy)return;
  busy=true;
