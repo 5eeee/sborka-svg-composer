@@ -1,12 +1,12 @@
 {
-  "status": "v26_functional_audit_completed_with_documented_coverage_limits",
+  "status": "released_v1.0.0_sent_to_amira",
   "date": "2026-11-03",
   "entry": "index.html",
   "url": "http://127.0.0.1:8774",
   "plugin_id": "2137a770-4ae4-432e-8fb5-81003c111a93",
   "plugin_version": "d04ae364cfc372df0516935e7e593f549645f22f",
   "figma_runtime": "live_plugin_verified_1180x697",
-  "external_submission": "not_sent",
+  "external_submission": "sent_to_amira_telegram_2026-11-03",
   "verification_file": "https://www.figma.com/design/aadh2KN9IgfjlrDEfzDLNM/Untitled",
   "verification_result": "20 automated tests pass. Actual Figma plugin: corrected panel dimensions, hidden scrollbars with functional scrolling, switch masks and disclosure controls corrected. Reference app has identical panel widths at matching viewport.",
   "design_version": 14,
@@ -65,5 +65,10 @@
     "right": "independent_vertical",
     "visible_scrollbars": false
   },
-  "functional_audit": "sources/functional-audit-v26.json"
+  "functional_audit": "sources/functional-audit-v26.json",
+  "release_url": "https://github.com/5eeee/sborka-svg-composer/releases/tag/v1.0.0",
+  "repository_architecture": "modular_monolith",
+  "repository_owner": "5eeee",
+  "ci_result": "Node 20 and 22 passed",
+  "figma_community": "not_published_account_plugin_and_installable_zip_available"
 }
