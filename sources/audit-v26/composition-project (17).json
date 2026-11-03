@@ -1,0 +1,45 @@
+{
+  "version": 1,
+  "state": {
+    "w": 1200,
+    "h": 630,
+    "size": "L",
+    "palette": "original",
+    "bg": "#D7CDF5",
+    "objects": [
+      {
+        "uid": "bgighupaym",
+        "id": "lamp",
+        "x": 960,
+        "y": 242.6929690152418,
+        "w": 353.90582794800173,
+        "r": 0,
+        "background": true
+      },
+      {
+        "uid": "o8vwifl3b",
+        "id": "book",
+        "x": 612,
+        "y": 362.25,
+        "w": 540.9513777476782,
+        "r": 0,
+        "background": false
+      },
+      {
+        "uid": "om7nyvtfm",
+        "id": "headphones",
+        "x": 228,
+        "y": 321.3,
+        "w": 332.2836927703396,
+        "r": 0,
+        "background": false
+      }
+    ],
+    "variant": 0,
+    "idea": "Обучение без отвлечений",
+    "customPalette": null,
+    "backgroundEnabled": true,
+    "draftIdea": "Черновик новой идеи"
+  },
+  "customAssets": []
+}

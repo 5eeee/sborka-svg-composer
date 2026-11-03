@@ -19,19 +19,29 @@ for (const size of ["S", "L"])
 const editor = await read("src/editor.mjs");
 const shim = `try{localStorage.getItem('test')}catch{Object.defineProperty(window,'localStorage',{value:{getItem:()=>null,setItem:()=>{},removeItem:()=>{}},configurable:true})}`;
 const bridge = `
+document.body.classList.add('sborka-plugin');
 const insert=document.createElement('button');insert.className='primary';insert.id='insertFigma';insert.textContent='Добавить в Figma';document.querySelector('.header-actions').append(insert);
 const designButton=document.createElement('button');designButton.textContent='Компоненты макета';designButton.id='designFigma';designButton.hidden=true;document.querySelector('.header-actions').append(designButton);designButton.onclick=()=>{const svg=$('#canvas').cloneNode(true);svg.querySelectorAll('[data-selection]').forEach(n=>n.remove());svg.removeAttribute('style');svg.setAttribute('width',state.w);svg.setAttribute('height',state.h);parent.postMessage({pluginMessage:{type:'design',svg:new XMLSerializer().serializeToString(svg),library:Object.fromEntries(OBJECTS.map(o=>[o.id,assets.get('L:'+o.id)]))}},'*');toast('Создаю редактируемые макеты и компоненты…');};
 insert.onclick=()=>{try{const out=$('#canvas').cloneNode(true);out.querySelectorAll('[data-selection]').forEach(n=>n.remove());out.removeAttribute('id');out.removeAttribute('style');out.setAttribute('width',state.w);out.setAttribute('height',state.h);insert.disabled=true;parent.postMessage({pluginMessage:{type:'insert',svg:new XMLSerializer().serializeToString(out),name:state.idea||'Композиция',width:state.w,height:state.h}},'*');toast('Создаю векторные слои…');}catch(e){toast(e.message);insert.disabled=false;}};
 window.addEventListener('message',e=>{const m=e.data.pluginMessage;if(m?.type==='status'){toast(m.text);insert.disabled=false;}});
 `;
 let html = (await read("index.html"))
+  .replace(
+    /<link\s+rel="stylesheet"\s+href="src\/styles\/workspace-polish\.css"\s*\/?>/,
+    "",
+  )
   .replace(/\n\s*/g, " ")
   .replace(/>\s+</g, "><");
 const css = (
-  await transform(await read("src/styles/editor.css"), {
-    loader: "css",
-    minify: true,
-  })
+  await transform(
+    (await read("src/styles/editor.css")) +
+      "\n" +
+      (await read("src/styles/workspace-polish.css")),
+    {
+      loader: "css",
+      minify: true,
+    },
+  )
 ).code;
 const bundled = await build({
   stdin: {
@@ -50,7 +60,7 @@ const bundled = await build({
 const app = bundled.outputFiles[0].text;
 html = html.replace(
   /<link\s+rel="stylesheet"\s+href="src\/styles\/editor\.css"\s*\/?>/,
-  `<style>${css}\nheader{padding:14px 20px;min-height:80px}.workbench{padding:0 16px 16px;gap:12px;grid-template-columns:220px minmax(0,1fr) 220px}.studio{padding:18px}.library,.inspector{padding:22px 16px}.header-actions button{font-size:12px;padding:10px 14px;min-height:44px}.document-name{display:none}footer{padding:0 20px 15px}.canvas-shell{min-height:0}.inspector{display:block;grid-column:auto}#insertFigma{order:2}.asset{height:auto;min-height:88px}.asset img,.palette-shape{flex-shrink:0}.palette-options button{height:auto;min-height:58px}</style>`,
+  `<style>${css}</style>`,
 );
 html = html.replace(
   "url(/assets/fonts/Inter-ui.woff2)",
@@ -84,7 +94,7 @@ const designGenerator =
 const code = `${designGenerator}
 const PACKED_TAIL='${tail}';
 const COMMAND='2137a770-4ae4-432e-8fb5-81003c111a93';
-figma.showUI(__html__,{width:1180,height:780,themeColors:true});
+figma.showUI(__html__,{width:1180,height:700,themeColors:true});
 figma.root.setRelaunchData({[COMMAND]:'Собрать новую иллюстрацию'});
 let busy=false;let componentBusy=false;
 figma.ui.onmessage=async(message:{type:string;svg?:string;name?:string;width?:number;height?:number;library?:Record<string,string>})=>{
@@ -136,7 +146,10 @@ cloudHtml = cloudHtml.replace(
     return `<style>body{margin:0;background:#19191c;color:#f4f3f6}.startup{position:fixed;inset:0;display:grid;place-content:center;background:#19191c;z-index:10000}</style><script>globalThis.__SBORKA_STYLES_READY__=(async()=>{const b=Uint8Array.from(atob('${packedCss}'),c=>c.charCodeAt(0));const css=await new Response(new Blob([b]).stream().pipeThrough(new DecompressionStream('gzip'))).text();const s=document.createElement('style');s.textContent=css;document.head.append(s);})();</script>`;
   },
 );
-await fs.writeFile(path.join(root, "plugin/ui-cloud.html"), cloudHtml.trimEnd());
+await fs.writeFile(
+  path.join(root, "plugin/ui-cloud.html"),
+  cloudHtml.trimEnd(),
+);
 await fs.writeFile(
   path.join(root, "plugin/code-cloud.ts"),
   code.replace(`const PACKED_TAIL='${tail}';`, 'const PACKED_TAIL="";'),

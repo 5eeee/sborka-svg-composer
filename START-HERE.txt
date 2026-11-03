@@ -1,0 +1,12 @@
+СБОРКА · КОМПЛЕКТ ДЛЯ ПРОВЕРКИ
+
+Веб: Node.js 18+, start.cmd. Откройте http://127.0.0.1:8774.
+Демо: http://127.0.0.1:8774/demo.html.
+Плагин: Figma Desktop → Plugins → Development → Import plugin from manifest → plugin/manifest.json.
+Документация: README.md, ARCHITECTURE.md, plugin/README.md.
+Примеры: examples, три пары SVG/JSON.
+Проверки: FUNCTIONAL-AUDIT.txt.
+Макеты: figma/Sborka_Editor_Components.fig, снимок v14; интерфейс программы новее.
+Исходники: https://github.com/5eeee/sborka-svg-composer
+
+Генерация метафор ограничена локальным словарём. Все предоставленные иллюстрации остаются векторными. Публичная карточка Figma Community не заявляется.

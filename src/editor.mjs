@@ -451,8 +451,8 @@ function backgroundFor(result, objects, variant) {
     objectDimensions(true)[id]?.w * sceneScale(),
   );
 }
-function compose(variant = 0) {
-  const result = analyzeIdea($("#idea").value);
+function compose(variant = 0, idea = $("#idea").value) {
+  const result = analyzeIdea(idea);
   if (!result.matched) {
     toast(
       "Нет уверенного соответствия в библиотеке. Добавьте нужные предметы вручную.",
@@ -462,7 +462,8 @@ function compose(variant = 0) {
     return;
   }
   snapshot();
-  state.idea = $("#idea").value;
+  state.idea = idea;
+  delete state.draftIdea;
   state.variant = variant;
   state.backgroundEnabled = $("#backgroundObjects").checked;
   state.objects = fitObjects(
@@ -541,7 +542,7 @@ $("#composeForm").onsubmit = (e) => {
   e.preventDefault();
   compose(0);
 };
-$("#shuffle").onclick = () => compose(state.variant + 1);
+$("#shuffle").onclick = () => compose(state.variant + 1, state.idea);
 document.querySelectorAll("[data-idea]").forEach(
   (b) =>
     (b.onclick = () => {
@@ -641,6 +642,9 @@ $("#bgHex").onchange = (e) => {
   state.bg = color;
   state.bgMode = "manual";
   render();
+};
+$("#bgHex").oninput = (e) => {
+  if (/^#?[0-9a-f]{6}$/i.test(e.target.value)) $("#bgHex").onchange(e);
 };
 $("#resetBg").onclick = () => {
   snapshot();
@@ -777,7 +781,15 @@ $("#export").onclick = () => {
 $("#saveProject").onclick = () =>
   download(
     "composition-project.json",
-    JSON.stringify({ version: 1, state, customAssets }, null, 2),
+    JSON.stringify(
+      {
+        version: 1,
+        state: { ...state, draftIdea: $("#idea").value },
+        customAssets,
+      },
+      null,
+      2,
+    ),
     "application/json",
   );
 $("#loadProjectBtn").onclick = () => openFileDialog("project");
@@ -827,7 +839,7 @@ $("#projectFile").onchange = async (e) => {
     registerCustom();
     state = p.state;
     normalizeSceneSizes();
-    $("#idea").value = state.idea || "";
+    $("#idea").value = state.draftIdea ?? state.idea ?? "";
     selected = null;
     renderLibrary();
     render();
@@ -984,7 +996,8 @@ async function init() {
     document
       .querySelectorAll("button,input,textarea,select")
       .forEach((e) => (e.disabled = false));
-    $("#idea").value = state.idea || "Обучение без отвлечений";
+    $("#idea").value =
+      state.draftIdea ?? state.idea ?? "Обучение без отвлечений";
     renderLibrary();
     if (state.backgroundEnabled === undefined)
       state.backgroundEnabled = !state.objects.some(

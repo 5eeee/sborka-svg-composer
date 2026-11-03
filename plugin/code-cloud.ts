@@ -997,7 +997,7 @@ async function buildResponsiveFlows(): Promise<ExactReport> {
 
 const PACKED_TAIL="";
 const COMMAND='2137a770-4ae4-432e-8fb5-81003c111a93';
-figma.showUI(__html__,{width:1180,height:780,themeColors:true});
+figma.showUI(__html__,{width:1180,height:700,themeColors:true});
 figma.root.setRelaunchData({[COMMAND]:'Собрать новую иллюстрацию'});
 let busy=false;let componentBusy=false;
 figma.ui.onmessage=async(message:{type:string;svg?:string;name?:string;width?:number;height?:number;library?:Record<string,string>})=>{

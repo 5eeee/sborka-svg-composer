@@ -99,11 +99,32 @@ export function setupWorkspace() {
   };
   grid.after(expand);
   const ideas = $(".ideas");
+  document.querySelector("#composeForm").after(ideas);
+  const compose = document.querySelector("#composeForm");
+  const submit = compose.querySelector("button[type=submit]");
+  submit.textContent = "Собрать идею";
+  const actions = document.createElement("div");
+  actions.className = "compose-actions";
+  submit.before(actions);
+  actions.append(submit);
+  const generate = document.createElement("button");
+  generate.type = "button";
+  generate.id = "generateIdea";
+  generate.setAttribute("aria-label", "Сгенерировать идею");
+  generate.innerHTML = `<svg width="30" height="30" viewBox="0 0 32 32" fill="none" aria-hidden="true"><path d="M15 3l3.5 8.5L27 15l-8.5 3.5L15 27l-3.5-8.5L3 15l8.5-3.5L15 3Z" fill="#D9C5FF"/><path d="M15 3v12H3l8.5-3.5L15 3Z" fill="#FF63BC"/><path d="M27 15H15v12l3.5-8.5L27 15Z" fill="#83E4DA"/><path d="M26 2l1.3 3.7L31 7l-3.7 1.3L26 12l-1.3-3.7L21 7l3.7-1.3L26 2Z" fill="#FFE598"/><circle cx="5" cy="26" r="2" fill="#FF85B8"/></svg>`;
+  generate.title = "Предложить идею для композиции";
+  generate.addEventListener("click", () => {
+    const field = document.querySelector("#idea");
+    const examples = [...document.querySelectorAll("[data-idea]")]
+      .map((b) => b.dataset.idea)
+      .filter((t) => t !== field.value);
+    field.value = examples[Math.floor(Math.random() * examples.length)];
+    field.dispatchEvent(new Event("input", { bubbles: true }));
+    field.focus({ preventScroll: true });
+  });
+  actions.append(generate);
   ideas.tabIndex = 0;
-  ideas.setAttribute(
-    "aria-label",
-    "Примеры идей, прокручиваются горизонтально",
-  );
+  ideas.setAttribute("aria-label", "Примеры идей для генерации");
   $('[data-palette="custom"]').title = "Настроить собственные цвета";
   $('[data-palette="custom"]').addEventListener("click", () => {
     $("#customPalette").scrollIntoView({
@@ -129,10 +150,64 @@ export async function finishStartup(error) {
   await document.fonts.ready;
   const imgs = [...document.querySelectorAll(".asset img")];
   await Promise.all(imgs.map((i) => i.decode().catch(() => {})));
+  setupIdeaTyping();
   document.body.classList.add("workspace-ready");
   splash.classList.add("leaving");
   splash.addEventListener("transitionend", () => splash.remove(), {
     once: true,
   });
   if (matchMedia("(prefers-reduced-motion: reduce)").matches) splash.remove();
+}
+
+function setupIdeaTyping() {
+  const field = document.querySelector("#idea");
+  if (!field || field.dataset.typingReady) return;
+  field.dataset.typingReady = "true";
+  // Keep saved user text; the initial example becomes an animated hint only.
+  if (
+    field.value.trim() === "Обучение без отвлечений" &&
+    !localStorage.getItem("svg-assembly")
+  )
+    field.value = "";
+  const examples = [...document.querySelectorAll("[data-idea]")].map(
+    (b) => b.dataset.idea,
+  );
+  if (matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    field.placeholder = "Например: " + examples[0];
+    return;
+  }
+  let index = 0,
+    chars = 0,
+    deleting = false,
+    timer;
+  const tick = () => {
+    clearTimeout(timer);
+    if (document.activeElement === field || field.value || document.hidden)
+      return;
+    const text = examples[index];
+    chars += deleting ? -1 : 1;
+    field.placeholder = text.slice(0, chars) + "│";
+    let delay = deleting ? 35 : 85;
+    if (chars >= text.length) {
+      deleting = true;
+      delay = 1600;
+    }
+    if (chars <= 0) {
+      deleting = false;
+      index = (index + 1) % examples.length;
+      delay = 350;
+    }
+    timer = setTimeout(tick, delay);
+  };
+  field.addEventListener("focus", () => {
+    clearTimeout(timer);
+    field.placeholder = "Опишите вашу идею";
+  });
+  field.addEventListener("input", () => clearTimeout(timer));
+  field.addEventListener("blur", tick);
+  document.addEventListener("visibilitychange", () => {
+    clearTimeout(timer);
+    if (!document.hidden) tick();
+  });
+  tick();
 }

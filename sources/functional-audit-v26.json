@@ -1,0 +1,209 @@
+{
+  "date": "2026-11-03",
+  "runtime_revision": 26,
+  "automated": {
+    "passed": 20,
+    "failed": 0
+  },
+  "checks": [
+    {
+      "id": "startup",
+      "status": "PASS",
+      "evidence": "Загрузка библиотеки и запуск веб-редактора и плагина Figma"
+    },
+    {
+      "id": "metaphor",
+      "status": "PASS_LIMITED",
+      "evidence": "Обучение выбирает книгу и наушники. Неизвестный текст отклоняется без подмены сцены. Локальный словарь, не универсальный AI."
+    },
+    {
+      "id": "explicit_objects",
+      "status": "PASS",
+      "evidence": "Все десять названных предметов присутствуют в одной сцене."
+    },
+    {
+      "id": "generate_text",
+      "status": "PASS",
+      "evidence": "Круглая кнопка заполняет поле; композиция запускается отдельной кнопкой."
+    },
+    {
+      "id": "typing_hint",
+      "status": "PASS",
+      "evidence": "Подсказка печатается в пустом поле; фокус и ввод останавливают анимацию."
+    },
+    {
+      "id": "SL",
+      "status": "PASS",
+      "evidence": "Переключены S и L; aria-pressed S=true. Исходный относительный масштаб проверен автоматическими тестами."
+    },
+    {
+      "id": "formats",
+      "status": "PASS",
+      "evidence": "1200x630,1080x1080,1080x1350,800x600 подтверждены viewBox."
+    },
+    {
+      "id": "size_limits",
+      "status": "PASS",
+      "evidence": "1x99999 ограничен до 200x5000."
+    },
+    {
+      "id": "search",
+      "status": "PASS",
+      "evidence": "Книга даёт один результат; неизвестная строка даёт ноль."
+    },
+    {
+      "id": "library_views",
+      "status": "PASS",
+      "evidence": "Лента, сетка, раскрытие и сворачивание библиотеки нажаты."
+    },
+    {
+      "id": "library_arrows",
+      "status": "PASS",
+      "evidence": "Перелистывание вперёд и назад проверено. На краю кнопка отключается; при плавном скролле состояние обновляется после завершения движения."
+    },
+    {
+      "id": "add",
+      "status": "PASS",
+      "evidence": "Книга добавлена: 10 объектов стали 11."
+    },
+    {
+      "id": "drag",
+      "status": "PASS",
+      "evidence": "Перетаскивание мышью изменило X с 501 до 554."
+    },
+    {
+      "id": "keyboard",
+      "status": "PASS",
+      "evidence": "ArrowRight изменил X с 500 до 501."
+    },
+    {
+      "id": "coordinates_rotation",
+      "status": "PASS",
+      "evidence": "Подтверждено transform translate(500 300) rotate(45)."
+    },
+    {
+      "id": "duplicate_delete_undo",
+      "status": "PASS",
+      "evidence": "11 -> 12 -> 11 -> 12 объектов."
+    },
+    {
+      "id": "clear_undo",
+      "status": "PASS",
+      "evidence": "Очистка даёт 0 объектов; отмена восстанавливает сцену."
+    },
+    {
+      "id": "layer_order",
+      "status": "PASS",
+      "evidence": "Ниже и Выше меняют порядок групп сцены."
+    },
+    {
+      "id": "role",
+      "status": "PASS",
+      "evidence": "Книга переключена в background-book и обратно."
+    },
+    {
+      "id": "background_objects",
+      "status": "PASS",
+      "evidence": "Отключение ставит display=none фоновой группе; включение возвращает."
+    },
+    {
+      "id": "artwork",
+      "status": "PASS",
+      "evidence": "Фоновая SVG-иллюстрация выключена и включена."
+    },
+    {
+      "id": "palettes",
+      "status": "PASS",
+      "evidence": "original,lilac,apricot,aqua: фон и заливки изменяются."
+    },
+    {
+      "id": "custom_colors",
+      "status": "PASS",
+      "evidence": "Редактирование accent/secondary/light и Применить; native color value #223344 применён."
+    },
+    {
+      "id": "hex",
+      "status": "PASS_FIXED",
+      "evidence": "Полный HEX #112233 применяется по input. Некорректный XYZ не изменяет цвет."
+    },
+    {
+      "id": "reset_bg",
+      "status": "PASS",
+      "evidence": "Вернуть цвет из палитры восстанавливает палитру."
+    },
+    {
+      "id": "palette_import",
+      "status": "PASS",
+      "evidence": "Полная и короткая JSON-палитры загружены через выбор файла."
+    },
+    {
+      "id": "palette_reject",
+      "status": "PASS",
+      "evidence": "Акцент в backgroundObjects отклонён сообщением о совпадении цветовых ролей."
+    },
+    {
+      "id": "svg_import",
+      "status": "PASS",
+      "evidence": "03-documents.svg добавлен в библиотеку, затем в сцену и экспортирован."
+    },
+    {
+      "id": "save_load",
+      "status": "PASS_FIXED",
+      "evidence": "Файл JSON реально скачан и загружен обратно; #112233 и три объекта восстановлены."
+    },
+    {
+      "id": "draft_roundtrip",
+      "status": "PASS_FIXED",
+      "evidence": "Черновик новой идеи сохранён отдельно от текста существующей сцены; после загрузки Другой вариант работает с исходной сценой."
+    },
+    {
+      "id": "shuffle",
+      "status": "PASS_FIXED",
+      "evidence": "Работает при пустом поле и при несобранном новом черновике."
+    },
+    {
+      "id": "svg_export",
+      "status": "PASS",
+      "evidence": "Реально скачанный SVG: 161 path, 0 image, 0 data-selection; 1200x630."
+    },
+    {
+      "id": "dialogs",
+      "status": "PASS",
+      "evidence": "SVG/palette/project открыты; закрытие крестиком и Escape проверено."
+    },
+    {
+      "id": "collapse",
+      "status": "PASS",
+      "evidence": "Секция объекта свернулась и раскрылась."
+    },
+    {
+      "id": "insert_figma",
+      "status": "PASS",
+      "evidence": "Плагин подтвердил вставку; Figma выбрала созданный Frame 1200x630, node 167:3."
+    },
+    {
+      "id": "console",
+      "status": "PASS",
+      "evidence": "В локальной вкладке нет записей error в журнале проверки."
+    },
+    {
+      "id": "responsive_recheck",
+      "status": "NOT_VERIFIED",
+      "evidence": "Команда viewport не изменила innerWidth, оставшийся 1528. Новый мобильный/планшетный функциональный прогон не подтверждён."
+    },
+    {
+      "id": "all_device_variants",
+      "status": "NOT_VERIFIED",
+      "evidence": "Каждая функция не повторялась во всех размерах и во всех сочетаниях. Полного 100% покрытия не заявляем."
+    }
+  ],
+  "fixes": [
+    "shuffle uses scene idea",
+    "valid HEX applies immediately",
+    "preserve saved example text",
+    "separate pending draft from scene idea",
+    "invalid palette uses error indicator"
+  ],
+  "figma_version": "d04ae364cfc372df0516935e7e593f549645f22f",
+  "external_submission": "not_sent"
+}

@@ -1,0 +1,44 @@
+{
+  "revision": 15,
+  "plugin_version": "b4de6a145a119c5968bc7e87b98c874d6735ecad",
+  "verified_surface": "Actual plugin inside Figma in Edge",
+  "viewport": [
+    1180,
+    697
+  ],
+  "panels": {
+    "library": 224,
+    "studio": 608,
+    "inspector": 268
+  },
+  "horizontal_overflow": false,
+  "scrollbars": "hidden",
+  "horizontal_library_scroll_verified_px": 178.4,
+  "vertical_inspector_scroll_verified_px": 664.8,
+  "custom_palette_opens": true,
+  "object_section_collapses": true,
+  "import_dialog": {
+    "width": 460,
+    "height": 460.7,
+    "within_viewport": true
+  },
+  "host_checkbox_mask": "none",
+  "host_summary_before": "none",
+  "responsive_app_checks": [
+    {
+      "width": 1024,
+      "horizontal_overflow": false
+    },
+    {
+      "width": 390,
+      "horizontal_overflow": false
+    }
+  ],
+  "tests_passed": 20,
+  "screenshots": [
+    "screenshots/components/final-plugin-v15.png",
+    "screenshots/components/final-plugin-import-v15.png"
+  ],
+  "static_figma_snapshot_revision": 14,
+  "external_submission": "not_sent"
+}

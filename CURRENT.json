@@ -1,17 +1,17 @@
 {
-  "status": "v14_ready_not_sent",
+  "status": "v26_functional_audit_completed_with_documented_coverage_limits",
   "date": "2026-11-03",
   "entry": "index.html",
   "url": "http://127.0.0.1:8774",
   "plugin_id": "2137a770-4ae4-432e-8fb5-81003c111a93",
-  "plugin_version": "09c8f13505e064a31690e53873505b68968b892a",
-  "figma_runtime": "21_exact_responsive_states_and_199_components",
+  "plugin_version": "d04ae364cfc372df0516935e7e593f549645f22f",
+  "figma_runtime": "live_plugin_verified_1180x697",
   "external_submission": "not_sent",
   "verification_file": "https://www.figma.com/design/aadh2KN9IgfjlrDEfzDLNM/Untitled",
-  "verification_result": "20 automated tests pass; exact source screens preserved; component instances available in separate review sheet.",
+  "verification_result": "20 automated tests pass. Actual Figma plugin: corrected panel dimensions, hidden scrollbars with functional scrolling, switch masks and disclosure controls corrected. Reference app has identical panel widths at matching viewport.",
   "design_version": 14,
   "last_live_insertion_version": "341ee176c7a2e96424045bf4b8cd607986286dee",
-  "design_qa": "Final verification: 199/199 accepted, 144 exact visible pixel matches; remaining differences within documented antialiasing tolerance. No frozen startup overlays in working states.",
+  "design_qa": "Existing 21 screens and 199 components are the v14 snapshot. Their prior pixel audit does not certify v15 runtime styling.",
   "tests_passed": 20,
   "source_repository": "https://github.com/5eeee/sborka-svg-composer",
   "source_visibility": "public",
@@ -56,5 +56,14 @@
     "startup": "animated_auto_library",
     "cloud_requires_network": true,
     "standalone_library_embedded": true
-  }
+  },
+  "runtime_revision": 26,
+  "runtime_audit": "sources/plugin-v15-audit.json",
+  "scroll_layout": {
+    "center": "fixed",
+    "left": "independent_vertical",
+    "right": "independent_vertical",
+    "visible_scrollbars": false
+  },
+  "functional_audit": "sources/functional-audit-v26.json"
 }

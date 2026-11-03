@@ -5,7 +5,7 @@ export function toast(t) {
   const icon = document.createElement("span");
   icon.className = "toast-icon";
   const bad =
-    /ошиб|некоррект|не удалось|нужн|выберите|нет |заполнен|отклон|недопустим|введите/i.test(
+    /ошиб|некоррект|не удалось|нужн|выберите|нет |заполнен|отклон|недопустим|введите|цвет заднего плана совпадает/i.test(
       t,
     );
   icon.textContent = bad ? "!" : "✓";
