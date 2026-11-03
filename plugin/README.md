@@ -15,4 +15,3 @@ https://www.figma.com/file/new?try-tool-resource-content-id=2137a770-4ae4-432e-8
 Исходники: code.ts, ui.html; аккаунтная сборка: code-cloud.ts, ui-cloud.html. Готовый code.js включён. Пересборка из корня: npm ci, npm run build:plugin.
 
 Макеты и ссылки: ../DESIGN.md. Актуальная версия в ../CURRENT.json. Получателю ничего не отправлено.
-
