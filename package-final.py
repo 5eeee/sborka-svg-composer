@@ -9,11 +9,11 @@ files += [p.name for p in root.glob('*.md')]
 paths=[root/f for f in files]
 for folder in folders: paths += [p for p in (root/folder).rglob('*') if p.is_file() and '__pycache__' not in p.parts]
 
-paths += [p for p in (root/'screenshots'/'components').glob('*.png') if p.name.startswith('final-')]
+paths += [p for p in (root/'screenshots'/'components').glob('*.png') if p.name in {'final-functional-audit-v26.png','final-round-generator-v25.png','final-plugin-import-v15.png'}]
 paths += [root/'CURRENT.json',root/'SPEC-AUDIT.txt',root/'FUNCTIONAL-AUDIT.txt',root/'START-HERE.txt']
 paths += list((root/'figma').glob('*.fig')) if (root/'figma').exists() else []
 # Exclude engineering inspection dumps and deliberately unsafe test fixtures from the client archive.
-paths=[p for p in paths if p.is_file() and p.name not in {'exact-component-inspection.json','security-input.svg','components-all-pixel-proof.json','components-pixel-proof.json','modal-metrics.json','final-archive-verification.json','responsive-structure.json','figma-handoff.json'}]
+paths=[p for p in paths if p.is_file() and p.name not in {'exact-component-inspection.json','security-input.svg','components-all-pixel-proof.json','components-pixel-proof.json','modal-metrics.json','final-archive-verification.json','responsive-structure.json','figma-handoff.json','RELEASE-v15.md'}]
 with ZipFile(out,'w',ZIP_DEFLATED,compresslevel=9) as z:
  for p in sorted(set(paths)): z.write(p,Path('Sborka')/p.relative_to(root))
 with ZipFile(out) as z:
