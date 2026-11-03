@@ -1,3 +1,4 @@
+import { setupWorkspace, finishStartup } from "./ui/workspace.mjs";
 import { uniqueId } from "./domain/ids.mjs";
 import { toast, openFileDialog, bindFileDialogs } from "./ui/dialogs.mjs";
 import {
@@ -931,6 +932,7 @@ document.onkeydown = (e) => {
   if (e.key === "ArrowDown") o.y += step;
   render();
 };
+setupWorkspace();
 async function init() {
   try {
     if (globalThis.__SBORKA_LIBRARY__) {
@@ -1006,7 +1008,10 @@ async function init() {
   } catch (e) {
     $("#sceneInfo").textContent = "Не удалось загрузить библиотеку";
     toast(e.message);
+    await finishStartup(e);
+    return;
   }
+  await finishStartup();
 }
 document
   .querySelectorAll("button,input,textarea,select")

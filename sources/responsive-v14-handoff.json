@@ -1,0 +1,7050 @@
+{
+  "kind": "v14-organized",
+  "removedStartup": [],
+  "normalizedPrimary": 48,
+  "page": "0:1",
+  "roots": [
+    {
+      "state": "Редактор",
+      "screens": [
+        {
+          "id": "98:2",
+          "name": "Десктоп · Редактор · v14",
+          "w": 1440,
+          "h": 1344
+        },
+        {
+          "id": "105:2",
+          "name": "Планшет · Редактор · v14",
+          "w": 1024,
+          "h": 1268
+        },
+        {
+          "id": "112:2",
+          "name": "Телефон · Редактор · v14",
+          "w": 390,
+          "h": 2478
+        }
+      ]
+    },
+    {
+      "state": "Импорт SVG",
+      "screens": [
+        {
+          "id": "99:2",
+          "name": "Десктоп · Импорт SVG · v14",
+          "w": 1528,
+          "h": 1344
+        },
+        {
+          "id": "106:2",
+          "name": "Планшет · Импорт SVG · v14",
+          "w": 1024,
+          "h": 1268
+        },
+        {
+          "id": "130:2",
+          "name": "Телефон · Импорт SVG · v14",
+          "w": 390,
+          "h": 2478
+        }
+      ]
+    },
+    {
+      "state": "Импорт палитры",
+      "screens": [
+        {
+          "id": "121:2",
+          "name": "Десктоп · Импорт палитры · v14",
+          "w": 1440,
+          "h": 1344
+        },
+        {
+          "id": "125:2",
+          "name": "Планшет · Импорт палитры · v14",
+          "w": 1024,
+          "h": 1268
+        },
+        {
+          "id": "114:2",
+          "name": "Телефон · Импорт палитры · v14",
+          "w": 390,
+          "h": 2478
+        }
+      ]
+    },
+    {
+      "state": "Открыть проект",
+      "screens": [
+        {
+          "id": "101:2",
+          "name": "Десктоп · Открыть проект · v14",
+          "w": 1528,
+          "h": 1344
+        },
+        {
+          "id": "109:2",
+          "name": "Планшет · Открыть проект · v14",
+          "w": 1024,
+          "h": 1268
+        },
+        {
+          "id": "115:2",
+          "name": "Телефон · Открыть проект · v14",
+          "w": 390,
+          "h": 2478
+        }
+      ]
+    },
+    {
+      "state": "Своя палитра",
+      "screens": [
+        {
+          "id": "102:2",
+          "name": "Десктоп · Своя палитра · v14",
+          "w": 1528,
+          "h": 1554
+        },
+        {
+          "id": "108:2",
+          "name": "Планшет · Своя палитра · v14",
+          "w": 1024,
+          "h": 1456
+        },
+        {
+          "id": "116:2",
+          "name": "Телефон · Своя палитра · v14",
+          "w": 390,
+          "h": 2673
+        }
+      ]
+    },
+    {
+      "state": "Библиотека 3 × 3",
+      "screens": [
+        {
+          "id": "103:2",
+          "name": "Десктоп · Библиотека 3 × 3 · v14",
+          "w": 1528,
+          "h": 1344
+        },
+        {
+          "id": "127:2",
+          "name": "Планшет · Библиотека 3 × 3 · v14",
+          "w": 1024,
+          "h": 1470
+        },
+        {
+          "id": "117:2",
+          "name": "Телефон · Библиотека 3 × 3 · v14",
+          "w": 390,
+          "h": 2742
+        }
+      ]
+    },
+    {
+      "state": "Свёрнутые настройки",
+      "screens": [
+        {
+          "id": "104:2",
+          "name": "Десктоп · Свёрнутые настройки · v14",
+          "w": 1528,
+          "h": 912
+        },
+        {
+          "id": "111:2",
+          "name": "Планшет · Свёрнутые настройки · v14",
+          "w": 1024,
+          "h": 933
+        },
+        {
+          "id": "118:2",
+          "name": "Телефон · Свёрнутые настройки · v14",
+          "w": 390,
+          "h": 1479
+        }
+      ]
+    }
+  ],
+  "coverage": [
+    {
+      "id": "98:5",
+      "label": "Link - Сборка, главная Сборка",
+      "destination": "working-editor"
+    },
+    {
+      "id": "98:14",
+      "label": "Button - Отменить Отменить",
+      "destination": "working-editor"
+    },
+    {
+      "id": "98:20",
+      "label": "Button - Сохранить проект Сохранить проект",
+      "destination": "working-editor"
+    },
+    {
+      "id": "98:25",
+      "label": "Button - Скачать SVG Скачать SVG",
+      "destination": "working-editor"
+    },
+    {
+      "id": "98:40",
+      "label": "Text Area Обучение без отвлечений",
+      "destination": "working-editor"
+    },
+    {
+      "id": "98:42",
+      "label": "Button Собрать идею",
+      "destination": "working-editor"
+    },
+    {
+      "id": "98:51",
+      "label": "Button Импорт SVG",
+      "destination": "99:2"
+    },
+    {
+      "id": "98:57",
+      "label": "Search Input Найти объект",
+      "destination": "working-editor"
+    },
+    {
+      "id": "98:61",
+      "label": "Button - Библиотека лентой ",
+      "destination": "working-editor"
+    },
+    {
+      "id": "98:64",
+      "label": "Button - Библиотека сеткой три на три ",
+      "destination": "103:2"
+    },
+    {
+      "id": "98:68",
+      "label": "Button - Предыдущие объекты ",
+      "destination": "working-editor"
+    },
+    {
+      "id": "98:71",
+      "label": "Button - Следующие объекты ",
+      "destination": "working-editor"
+    },
+    {
+      "id": "98:76",
+      "label": "Button Пазлы",
+      "destination": "working-editor"
+    },
+    {
+      "id": "98:138",
+      "label": "Button Книга",
+      "destination": "working-editor"
+    },
+    {
+      "id": "98:195",
+      "label": "Button Телефон",
+      "destination": "working-editor"
+    },
+    {
+      "id": "98:354",
+      "label": "Button Наушники",
+      "destination": "working-editor"
+    },
+    {
+      "id": "98:442",
+      "label": "Button Лампа",
+      "destination": "working-editor"
+    },
+    {
+      "id": "98:473",
+      "label": "Button Кошелёк",
+      "destination": "working-editor"
+    },
+    {
+      "id": "98:563",
+      "label": "Button Ручка",
+      "destination": "working-editor"
+    },
+    {
+      "id": "98:591",
+      "label": "Button Папка",
+      "destination": "working-editor"
+    },
+    {
+      "id": "98:617",
+      "label": "Button Монета",
+      "destination": "working-editor"
+    },
+    {
+      "id": "98:757",
+      "label": "Button Цветы",
+      "destination": "working-editor"
+    },
+    {
+      "id": "98:900",
+      "label": "Button S",
+      "destination": "working-editor"
+    },
+    {
+      "id": "98:903",
+      "label": "Button L",
+      "destination": "working-editor"
+    },
+    {
+      "id": "98:910",
+      "label": "Button - Горизонтальный холст 1200 на 630 ",
+      "destination": "working-editor"
+    },
+    {
+      "id": "98:912",
+      "label": "Button - Квадратный холст 1080 на 1080 ",
+      "destination": "working-editor"
+    },
+    {
+      "id": "98:914",
+      "label": "Button - Вертикальный холст 1080 на 1350 ",
+      "destination": "working-editor"
+    },
+    {
+      "id": "98:916",
+      "label": "Button - Свой размер холста +",
+      "destination": "working-editor"
+    },
+    {
+      "id": "98:1118",
+      "label": "Button Другой вариант",
+      "destination": "working-editor"
+    },
+    {
+      "id": "98:1124",
+      "label": "Button Очистить",
+      "destination": "working-editor"
+    },
+    {
+      "id": "98:1130",
+      "label": "Button Накопить на мечту",
+      "destination": "working-editor"
+    },
+    {
+      "id": "98:1132",
+      "label": "Button Работа с документами",
+      "destination": "working-editor"
+    },
+    {
+      "id": "98:1134",
+      "label": "Button Найти решение вместе",
+      "destination": "working-editor"
+    },
+    {
+      "id": "98:1136",
+      "label": "Button Войти в поток",
+      "destination": "working-editor"
+    },
+    {
+      "id": "98:1138",
+      "label": "Button Разгрести завалы",
+      "destination": "working-editor"
+    },
+    {
+      "id": "98:1140",
+      "label": "Button Включить голову",
+      "destination": "working-editor"
+    },
+    {
+      "id": "98:1149",
+      "label": "Summary - Настройки палитры Настройки",
+      "destination": "104:2"
+    },
+    {
+      "id": "98:1160",
+      "label": "Button - Исходная, цветовая схема База",
+      "destination": "working-editor"
+    },
+    {
+      "id": "98:1169",
+      "label": "Button - Сирень, цветовая схема Сирень",
+      "destination": "working-editor"
+    },
+    {
+      "id": "98:1177",
+      "label": "Button - Персик, цветовая схема Персик",
+      "destination": "working-editor"
+    },
+    {
+      "id": "98:1185",
+      "label": "Button - Мята, цветовая схема Мята",
+      "destination": "working-editor"
+    },
+    {
+      "id": "98:1193",
+      "label": "Button - Своя, цветовая схема + Своя",
+      "destination": "102:2"
+    },
+    {
+      "id": "98:1203",
+      "label": "Checkbox:margin ",
+      "destination": "working-editor"
+    },
+    {
+      "id": "98:1201",
+      "label": "Checkbox ",
+      "destination": "working-editor"
+    },
+    {
+      "id": "98:1208",
+      "label": "Color Picker - Выбрать цвет холста ",
+      "destination": "working-editor"
+    },
+    {
+      "id": "98:1213",
+      "label": "Button - Вернуть цвет холста из палитры ↺",
+      "destination": "working-editor"
+    },
+    {
+      "id": "98:1216",
+      "label": "Button Импорт палитры",
+      "destination": "121:2"
+    },
+    {
+      "id": "98:1223",
+      "label": "Summary - Настройки объекта Объект Книга",
+      "destination": "104:2"
+    },
+    {
+      "id": "98:1239",
+      "label": "Checkbox:margin ",
+      "destination": "working-editor"
+    },
+    {
+      "id": "98:1236",
+      "label": "Checkbox ",
+      "destination": "working-editor"
+    },
+    {
+      "id": "98:1244",
+      "label": "Number Input 612",
+      "destination": "working-editor"
+    },
+    {
+      "id": "98:1248",
+      "label": "Number Input 362",
+      "destination": "working-editor"
+    },
+    {
+      "id": "98:1253",
+      "label": "Number Input - Поворот 0",
+      "destination": "working-editor"
+    },
+    {
+      "id": "98:1258",
+      "label": "Button Дублировать",
+      "destination": "working-editor"
+    },
+    {
+      "id": "98:1260",
+      "label": "Button Удалить",
+      "destination": "working-editor"
+    },
+    {
+      "id": "98:1267",
+      "label": "Summary - Слои Слои 3",
+      "destination": "104:2"
+    },
+    {
+      "id": "98:1278",
+      "label": "Button Наушники",
+      "destination": "working-editor"
+    },
+    {
+      "id": "98:1368",
+      "label": "Button Книга",
+      "destination": "working-editor"
+    },
+    {
+      "id": "98:1426",
+      "label": "Button Лампа фон",
+      "destination": "working-editor"
+    },
+    {
+      "id": "98:1463",
+      "label": "Button Ниже",
+      "destination": "working-editor"
+    },
+    {
+      "id": "98:1465",
+      "label": "Button Выше",
+      "destination": "working-editor"
+    },
+    {
+      "id": "98:1470",
+      "label": "Checkbox:margin ",
+      "destination": "working-editor"
+    },
+    {
+      "id": "98:1468",
+      "label": "Checkbox ",
+      "destination": "working-editor"
+    },
+    {
+      "id": "98:1474",
+      "label": "Button Открыть проект",
+      "destination": "101:2"
+    },
+    {
+      "id": "105:5",
+      "label": "Link - Сборка, главная Сборка",
+      "destination": "working-editor"
+    },
+    {
+      "id": "105:14",
+      "label": "Button - Отменить Отменить",
+      "destination": "working-editor"
+    },
+    {
+      "id": "105:20",
+      "label": "Button - Сохранить проект Сохранить проект",
+      "destination": "working-editor"
+    },
+    {
+      "id": "105:25",
+      "label": "Button - Скачать SVG Скачать SVG",
+      "destination": "working-editor"
+    },
+    {
+      "id": "105:40",
+      "label": "Text Area Обучение без отвлечений",
+      "destination": "working-editor"
+    },
+    {
+      "id": "105:42",
+      "label": "Button Собрать идею",
+      "destination": "working-editor"
+    },
+    {
+      "id": "105:51",
+      "label": "Button Импорт SVG",
+      "destination": "106:2"
+    },
+    {
+      "id": "105:57",
+      "label": "Search Input Найти объект",
+      "destination": "working-editor"
+    },
+    {
+      "id": "105:61",
+      "label": "Button - Библиотека лентой ",
+      "destination": "working-editor"
+    },
+    {
+      "id": "105:64",
+      "label": "Button - Библиотека сеткой три на три ",
+      "destination": "127:2"
+    },
+    {
+      "id": "105:68",
+      "label": "Button - Предыдущие объекты ",
+      "destination": "working-editor"
+    },
+    {
+      "id": "105:71",
+      "label": "Button - Следующие объекты ",
+      "destination": "working-editor"
+    },
+    {
+      "id": "105:76",
+      "label": "Button Пазлы",
+      "destination": "working-editor"
+    },
+    {
+      "id": "105:138",
+      "label": "Button Книга",
+      "destination": "working-editor"
+    },
+    {
+      "id": "105:195",
+      "label": "Button Телефон",
+      "destination": "working-editor"
+    },
+    {
+      "id": "105:354",
+      "label": "Button Наушники",
+      "destination": "working-editor"
+    },
+    {
+      "id": "105:442",
+      "label": "Button Лампа",
+      "destination": "working-editor"
+    },
+    {
+      "id": "105:473",
+      "label": "Button Кошелёк",
+      "destination": "working-editor"
+    },
+    {
+      "id": "105:563",
+      "label": "Button Ручка",
+      "destination": "working-editor"
+    },
+    {
+      "id": "105:591",
+      "label": "Button Папка",
+      "destination": "working-editor"
+    },
+    {
+      "id": "105:617",
+      "label": "Button Монета",
+      "destination": "working-editor"
+    },
+    {
+      "id": "105:757",
+      "label": "Button Цветы",
+      "destination": "working-editor"
+    },
+    {
+      "id": "105:900",
+      "label": "Button S",
+      "destination": "working-editor"
+    },
+    {
+      "id": "105:903",
+      "label": "Button L",
+      "destination": "working-editor"
+    },
+    {
+      "id": "105:910",
+      "label": "Button - Горизонтальный холст 1200 на 630 ",
+      "destination": "working-editor"
+    },
+    {
+      "id": "105:912",
+      "label": "Button - Квадратный холст 1080 на 1080 ",
+      "destination": "working-editor"
+    },
+    {
+      "id": "105:914",
+      "label": "Button - Вертикальный холст 1080 на 1350 ",
+      "destination": "working-editor"
+    },
+    {
+      "id": "105:916",
+      "label": "Button - Свой размер холста +",
+      "destination": "working-editor"
+    },
+    {
+      "id": "105:1118",
+      "label": "Button Другой вариант",
+      "destination": "working-editor"
+    },
+    {
+      "id": "105:1124",
+      "label": "Button Очистить",
+      "destination": "working-editor"
+    },
+    {
+      "id": "105:1130",
+      "label": "Button Накопить на мечту",
+      "destination": "working-editor"
+    },
+    {
+      "id": "105:1132",
+      "label": "Button Работа с документами",
+      "destination": "working-editor"
+    },
+    {
+      "id": "105:1134",
+      "label": "Button Найти решение вместе",
+      "destination": "working-editor"
+    },
+    {
+      "id": "105:1136",
+      "label": "Button Войти в поток",
+      "destination": "working-editor"
+    },
+    {
+      "id": "105:1138",
+      "label": "Button Разгрести завалы",
+      "destination": "working-editor"
+    },
+    {
+      "id": "105:1140",
+      "label": "Button Включить голову",
+      "destination": "working-editor"
+    },
+    {
+      "id": "105:1149",
+      "label": "Summary - Настройки палитры Настройки",
+      "destination": "111:2"
+    },
+    {
+      "id": "105:1160",
+      "label": "Button - Исходная, цветовая схема База",
+      "destination": "working-editor"
+    },
+    {
+      "id": "105:1169",
+      "label": "Button - Сирень, цветовая схема Сирень",
+      "destination": "working-editor"
+    },
+    {
+      "id": "105:1177",
+      "label": "Button - Персик, цветовая схема Персик",
+      "destination": "working-editor"
+    },
+    {
+      "id": "105:1185",
+      "label": "Button - Мята, цветовая схема Мята",
+      "destination": "working-editor"
+    },
+    {
+      "id": "105:1193",
+      "label": "Button - Своя, цветовая схема + Своя",
+      "destination": "108:2"
+    },
+    {
+      "id": "105:1203",
+      "label": "Checkbox:margin ",
+      "destination": "working-editor"
+    },
+    {
+      "id": "105:1201",
+      "label": "Checkbox ",
+      "destination": "working-editor"
+    },
+    {
+      "id": "105:1208",
+      "label": "Color Picker - Выбрать цвет холста ",
+      "destination": "working-editor"
+    },
+    {
+      "id": "105:1213",
+      "label": "Button - Вернуть цвет холста из палитры ↺",
+      "destination": "working-editor"
+    },
+    {
+      "id": "105:1216",
+      "label": "Button Импорт палитры",
+      "destination": "125:2"
+    },
+    {
+      "id": "105:1223",
+      "label": "Summary - Настройки объекта Объект Книга",
+      "destination": "111:2"
+    },
+    {
+      "id": "105:1239",
+      "label": "Checkbox:margin ",
+      "destination": "working-editor"
+    },
+    {
+      "id": "105:1236",
+      "label": "Checkbox ",
+      "destination": "working-editor"
+    },
+    {
+      "id": "105:1244",
+      "label": "Number Input 612",
+      "destination": "working-editor"
+    },
+    {
+      "id": "105:1248",
+      "label": "Number Input 362",
+      "destination": "working-editor"
+    },
+    {
+      "id": "105:1253",
+      "label": "Number Input - Поворот 0",
+      "destination": "working-editor"
+    },
+    {
+      "id": "105:1258",
+      "label": "Button Дублировать",
+      "destination": "working-editor"
+    },
+    {
+      "id": "105:1260",
+      "label": "Button Удалить",
+      "destination": "working-editor"
+    },
+    {
+      "id": "105:1267",
+      "label": "Summary - Слои Слои 3",
+      "destination": "111:2"
+    },
+    {
+      "id": "105:1278",
+      "label": "Button Наушники",
+      "destination": "working-editor"
+    },
+    {
+      "id": "105:1368",
+      "label": "Button Книга",
+      "destination": "working-editor"
+    },
+    {
+      "id": "105:1426",
+      "label": "Button Лампа фон",
+      "destination": "working-editor"
+    },
+    {
+      "id": "105:1463",
+      "label": "Button Ниже",
+      "destination": "working-editor"
+    },
+    {
+      "id": "105:1465",
+      "label": "Button Выше",
+      "destination": "working-editor"
+    },
+    {
+      "id": "105:1470",
+      "label": "Checkbox:margin ",
+      "destination": "working-editor"
+    },
+    {
+      "id": "105:1468",
+      "label": "Checkbox ",
+      "destination": "working-editor"
+    },
+    {
+      "id": "105:1474",
+      "label": "Button Открыть проект",
+      "destination": "109:2"
+    },
+    {
+      "id": "112:5",
+      "label": "Link - Сборка, главная Сборка",
+      "destination": "working-editor"
+    },
+    {
+      "id": "112:14",
+      "label": "Button - Отменить ",
+      "destination": "working-editor"
+    },
+    {
+      "id": "112:17",
+      "label": "Button - Сохранить проект Проект",
+      "destination": "working-editor"
+    },
+    {
+      "id": "112:23",
+      "label": "Button - Скачать SVG SVG",
+      "destination": "working-editor"
+    },
+    {
+      "id": "112:897",
+      "label": "Button S",
+      "destination": "working-editor"
+    },
+    {
+      "id": "112:900",
+      "label": "Button L",
+      "destination": "working-editor"
+    },
+    {
+      "id": "112:907",
+      "label": "Button - Горизонтальный холст 1200 на 630 ",
+      "destination": "working-editor"
+    },
+    {
+      "id": "112:909",
+      "label": "Button - Квадратный холст 1080 на 1080 ",
+      "destination": "working-editor"
+    },
+    {
+      "id": "112:911",
+      "label": "Button - Вертикальный холст 1080 на 1350 ",
+      "destination": "working-editor"
+    },
+    {
+      "id": "112:913",
+      "label": "Button - Свой размер холста +",
+      "destination": "working-editor"
+    },
+    {
+      "id": "112:1115",
+      "label": "Button Другой вариант",
+      "destination": "working-editor"
+    },
+    {
+      "id": "112:1121",
+      "label": "Button Очистить",
+      "destination": "working-editor"
+    },
+    {
+      "id": "112:1127",
+      "label": "Button Накопить на мечту",
+      "destination": "working-editor"
+    },
+    {
+      "id": "112:1129",
+      "label": "Button Работа с документами",
+      "destination": "working-editor"
+    },
+    {
+      "id": "112:1131",
+      "label": "Button Найти решение вместе",
+      "destination": "working-editor"
+    },
+    {
+      "id": "112:1133",
+      "label": "Button Войти в поток",
+      "destination": "working-editor"
+    },
+    {
+      "id": "112:1135",
+      "label": "Button Разгрести завалы",
+      "destination": "working-editor"
+    },
+    {
+      "id": "112:1137",
+      "label": "Button Включить голову",
+      "destination": "working-editor"
+    },
+    {
+      "id": "112:37",
+      "label": "Text Area Обучение без отвлечений",
+      "destination": "working-editor"
+    },
+    {
+      "id": "112:39",
+      "label": "Button Собрать идею",
+      "destination": "working-editor"
+    },
+    {
+      "id": "112:48",
+      "label": "Button Импорт SVG",
+      "destination": "130:2"
+    },
+    {
+      "id": "112:54",
+      "label": "Search Input Найти объект",
+      "destination": "working-editor"
+    },
+    {
+      "id": "112:58",
+      "label": "Button - Библиотека лентой ",
+      "destination": "working-editor"
+    },
+    {
+      "id": "112:61",
+      "label": "Button - Библиотека сеткой три на три ",
+      "destination": "117:2"
+    },
+    {
+      "id": "112:65",
+      "label": "Button - Предыдущие объекты ",
+      "destination": "working-editor"
+    },
+    {
+      "id": "112:68",
+      "label": "Button - Следующие объекты ",
+      "destination": "working-editor"
+    },
+    {
+      "id": "112:73",
+      "label": "Button Пазлы",
+      "destination": "working-editor"
+    },
+    {
+      "id": "112:135",
+      "label": "Button Книга",
+      "destination": "working-editor"
+    },
+    {
+      "id": "112:192",
+      "label": "Button Телефон",
+      "destination": "working-editor"
+    },
+    {
+      "id": "112:351",
+      "label": "Button Наушники",
+      "destination": "working-editor"
+    },
+    {
+      "id": "112:439",
+      "label": "Button Лампа",
+      "destination": "working-editor"
+    },
+    {
+      "id": "112:470",
+      "label": "Button Кошелёк",
+      "destination": "working-editor"
+    },
+    {
+      "id": "112:560",
+      "label": "Button Ручка",
+      "destination": "working-editor"
+    },
+    {
+      "id": "112:588",
+      "label": "Button Папка",
+      "destination": "working-editor"
+    },
+    {
+      "id": "112:614",
+      "label": "Button Монета",
+      "destination": "working-editor"
+    },
+    {
+      "id": "112:754",
+      "label": "Button Цветы",
+      "destination": "working-editor"
+    },
+    {
+      "id": "112:1146",
+      "label": "Summary - Настройки палитры Настройки",
+      "destination": "118:2"
+    },
+    {
+      "id": "112:1157",
+      "label": "Button - Исходная, цветовая схема База",
+      "destination": "working-editor"
+    },
+    {
+      "id": "112:1165",
+      "label": "Button - Сирень, цветовая схема Сирень",
+      "destination": "working-editor"
+    },
+    {
+      "id": "112:1173",
+      "label": "Button - Персик, цветовая схема Персик",
+      "destination": "working-editor"
+    },
+    {
+      "id": "112:1181",
+      "label": "Button - Мята, цветовая схема Мята",
+      "destination": "working-editor"
+    },
+    {
+      "id": "112:1189",
+      "label": "Button - Своя, цветовая схема + Своя",
+      "destination": "116:2"
+    },
+    {
+      "id": "112:1199",
+      "label": "Checkbox:margin ",
+      "destination": "working-editor"
+    },
+    {
+      "id": "112:1197",
+      "label": "Checkbox ",
+      "destination": "working-editor"
+    },
+    {
+      "id": "112:1204",
+      "label": "Color Picker - Выбрать цвет холста ",
+      "destination": "working-editor"
+    },
+    {
+      "id": "112:1209",
+      "label": "Button - Вернуть цвет холста из палитры ↺",
+      "destination": "working-editor"
+    },
+    {
+      "id": "112:1212",
+      "label": "Button Импорт палитры",
+      "destination": "114:2"
+    },
+    {
+      "id": "112:1219",
+      "label": "Summary - Настройки объекта Объект Книга",
+      "destination": "118:2"
+    },
+    {
+      "id": "112:1235",
+      "label": "Checkbox:margin ",
+      "destination": "working-editor"
+    },
+    {
+      "id": "112:1232",
+      "label": "Checkbox ",
+      "destination": "working-editor"
+    },
+    {
+      "id": "112:1240",
+      "label": "Number Input 612",
+      "destination": "working-editor"
+    },
+    {
+      "id": "112:1244",
+      "label": "Number Input 362",
+      "destination": "working-editor"
+    },
+    {
+      "id": "112:1249",
+      "label": "Number Input - Поворот 0",
+      "destination": "working-editor"
+    },
+    {
+      "id": "112:1254",
+      "label": "Button Дублировать",
+      "destination": "working-editor"
+    },
+    {
+      "id": "112:1256",
+      "label": "Button Удалить",
+      "destination": "working-editor"
+    },
+    {
+      "id": "112:1263",
+      "label": "Summary - Слои Слои 3",
+      "destination": "118:2"
+    },
+    {
+      "id": "112:1274",
+      "label": "Button Наушники",
+      "destination": "working-editor"
+    },
+    {
+      "id": "112:1364",
+      "label": "Button Книга",
+      "destination": "working-editor"
+    },
+    {
+      "id": "112:1422",
+      "label": "Button Лампа фон",
+      "destination": "working-editor"
+    },
+    {
+      "id": "112:1459",
+      "label": "Button Ниже",
+      "destination": "working-editor"
+    },
+    {
+      "id": "112:1461",
+      "label": "Button Выше",
+      "destination": "working-editor"
+    },
+    {
+      "id": "112:1466",
+      "label": "Checkbox:margin ",
+      "destination": "working-editor"
+    },
+    {
+      "id": "112:1464",
+      "label": "Checkbox ",
+      "destination": "working-editor"
+    },
+    {
+      "id": "112:1470",
+      "label": "Button Открыть проект",
+      "destination": "115:2"
+    },
+    {
+      "id": "99:5",
+      "label": "Link - Сборка, главная Сборка",
+      "destination": "98:2"
+    },
+    {
+      "id": "99:14",
+      "label": "Button - Отменить Отменить",
+      "destination": "working-editor"
+    },
+    {
+      "id": "99:20",
+      "label": "Button - Сохранить проект Сохранить проект",
+      "destination": "working-editor"
+    },
+    {
+      "id": "99:25",
+      "label": "Button - Скачать SVG Скачать SVG",
+      "destination": "working-editor"
+    },
+    {
+      "id": "99:40",
+      "label": "Text Area Обучение без отвлечений",
+      "destination": "working-editor"
+    },
+    {
+      "id": "99:42",
+      "label": "Button Собрать идею",
+      "destination": "working-editor"
+    },
+    {
+      "id": "99:51",
+      "label": "Button Импорт SVG",
+      "destination": "working-editor"
+    },
+    {
+      "id": "99:57",
+      "label": "Search Input Найти объект",
+      "destination": "working-editor"
+    },
+    {
+      "id": "99:61",
+      "label": "Button - Библиотека лентой ",
+      "destination": "98:2"
+    },
+    {
+      "id": "99:64",
+      "label": "Button - Библиотека сеткой три на три ",
+      "destination": "103:2"
+    },
+    {
+      "id": "99:68",
+      "label": "Button - Предыдущие объекты ",
+      "destination": "working-editor"
+    },
+    {
+      "id": "99:71",
+      "label": "Button - Следующие объекты ",
+      "destination": "working-editor"
+    },
+    {
+      "id": "99:76",
+      "label": "Button Пазлы",
+      "destination": "working-editor"
+    },
+    {
+      "id": "99:138",
+      "label": "Button Книга",
+      "destination": "working-editor"
+    },
+    {
+      "id": "99:195",
+      "label": "Button Телефон",
+      "destination": "working-editor"
+    },
+    {
+      "id": "99:354",
+      "label": "Button Наушники",
+      "destination": "working-editor"
+    },
+    {
+      "id": "99:442",
+      "label": "Button Лампа",
+      "destination": "working-editor"
+    },
+    {
+      "id": "99:473",
+      "label": "Button Кошелёк",
+      "destination": "working-editor"
+    },
+    {
+      "id": "99:563",
+      "label": "Button Ручка",
+      "destination": "working-editor"
+    },
+    {
+      "id": "99:591",
+      "label": "Button Папка",
+      "destination": "working-editor"
+    },
+    {
+      "id": "99:617",
+      "label": "Button Монета",
+      "destination": "working-editor"
+    },
+    {
+      "id": "99:757",
+      "label": "Button Цветы",
+      "destination": "working-editor"
+    },
+    {
+      "id": "99:900",
+      "label": "Button S",
+      "destination": "working-editor"
+    },
+    {
+      "id": "99:903",
+      "label": "Button L",
+      "destination": "working-editor"
+    },
+    {
+      "id": "99:910",
+      "label": "Button - Горизонтальный холст 1200 на 630 ",
+      "destination": "working-editor"
+    },
+    {
+      "id": "99:912",
+      "label": "Button - Квадратный холст 1080 на 1080 ",
+      "destination": "working-editor"
+    },
+    {
+      "id": "99:914",
+      "label": "Button - Вертикальный холст 1080 на 1350 ",
+      "destination": "working-editor"
+    },
+    {
+      "id": "99:916",
+      "label": "Button - Свой размер холста +",
+      "destination": "working-editor"
+    },
+    {
+      "id": "99:1118",
+      "label": "Button Другой вариант",
+      "destination": "working-editor"
+    },
+    {
+      "id": "99:1124",
+      "label": "Button Очистить",
+      "destination": "working-editor"
+    },
+    {
+      "id": "99:1130",
+      "label": "Button Накопить на мечту",
+      "destination": "working-editor"
+    },
+    {
+      "id": "99:1132",
+      "label": "Button Работа с документами",
+      "destination": "working-editor"
+    },
+    {
+      "id": "99:1134",
+      "label": "Button Найти решение вместе",
+      "destination": "working-editor"
+    },
+    {
+      "id": "99:1136",
+      "label": "Button Войти в поток",
+      "destination": "working-editor"
+    },
+    {
+      "id": "99:1138",
+      "label": "Button Разгрести завалы",
+      "destination": "working-editor"
+    },
+    {
+      "id": "99:1140",
+      "label": "Button Включить голову",
+      "destination": "working-editor"
+    },
+    {
+      "id": "99:1149",
+      "label": "Summary - Настройки палитры Настройки",
+      "destination": "104:2"
+    },
+    {
+      "id": "99:1160",
+      "label": "Button - Исходная, цветовая схема База",
+      "destination": "working-editor"
+    },
+    {
+      "id": "99:1169",
+      "label": "Button - Сирень, цветовая схема Сирень",
+      "destination": "working-editor"
+    },
+    {
+      "id": "99:1177",
+      "label": "Button - Персик, цветовая схема Персик",
+      "destination": "working-editor"
+    },
+    {
+      "id": "99:1185",
+      "label": "Button - Мята, цветовая схема Мята",
+      "destination": "working-editor"
+    },
+    {
+      "id": "99:1193",
+      "label": "Button - Своя, цветовая схема + Своя",
+      "destination": "102:2"
+    },
+    {
+      "id": "99:1203",
+      "label": "Checkbox:margin ",
+      "destination": "working-editor"
+    },
+    {
+      "id": "99:1201",
+      "label": "Checkbox ",
+      "destination": "working-editor"
+    },
+    {
+      "id": "99:1208",
+      "label": "Color Picker - Выбрать цвет холста ",
+      "destination": "working-editor"
+    },
+    {
+      "id": "99:1213",
+      "label": "Button - Вернуть цвет холста из палитры ↺",
+      "destination": "working-editor"
+    },
+    {
+      "id": "99:1216",
+      "label": "Button Импорт палитры",
+      "destination": "121:2"
+    },
+    {
+      "id": "99:1223",
+      "label": "Summary - Настройки объекта Объект Книга",
+      "destination": "104:2"
+    },
+    {
+      "id": "99:1239",
+      "label": "Checkbox:margin ",
+      "destination": "working-editor"
+    },
+    {
+      "id": "99:1236",
+      "label": "Checkbox ",
+      "destination": "working-editor"
+    },
+    {
+      "id": "99:1244",
+      "label": "Number Input 612",
+      "destination": "working-editor"
+    },
+    {
+      "id": "99:1248",
+      "label": "Number Input 362",
+      "destination": "working-editor"
+    },
+    {
+      "id": "99:1253",
+      "label": "Number Input - Поворот 0",
+      "destination": "working-editor"
+    },
+    {
+      "id": "99:1258",
+      "label": "Button Дублировать",
+      "destination": "working-editor"
+    },
+    {
+      "id": "99:1260",
+      "label": "Button Удалить",
+      "destination": "working-editor"
+    },
+    {
+      "id": "99:1267",
+      "label": "Summary - Слои Слои 3",
+      "destination": "104:2"
+    },
+    {
+      "id": "99:1278",
+      "label": "Button Наушники",
+      "destination": "working-editor"
+    },
+    {
+      "id": "99:1368",
+      "label": "Button Книга",
+      "destination": "working-editor"
+    },
+    {
+      "id": "99:1426",
+      "label": "Button Лампа фон",
+      "destination": "working-editor"
+    },
+    {
+      "id": "99:1463",
+      "label": "Button Ниже",
+      "destination": "working-editor"
+    },
+    {
+      "id": "99:1465",
+      "label": "Button Выше",
+      "destination": "working-editor"
+    },
+    {
+      "id": "99:1470",
+      "label": "Checkbox:margin ",
+      "destination": "working-editor"
+    },
+    {
+      "id": "99:1468",
+      "label": "Checkbox ",
+      "destination": "working-editor"
+    },
+    {
+      "id": "99:1474",
+      "label": "Button Открыть проект",
+      "destination": "101:2"
+    },
+    {
+      "id": "99:1500",
+      "label": "Button Выбрать файл SVG · несколько файлов",
+      "destination": "working-editor"
+    },
+    {
+      "id": "99:1486",
+      "label": "Button - Закрыть окно ×",
+      "destination": "98:2"
+    },
+    {
+      "id": "106:5",
+      "label": "Link - Сборка, главная Сборка",
+      "destination": "105:2"
+    },
+    {
+      "id": "106:14",
+      "label": "Button - Отменить Отменить",
+      "destination": "working-editor"
+    },
+    {
+      "id": "106:20",
+      "label": "Button - Сохранить проект Сохранить проект",
+      "destination": "working-editor"
+    },
+    {
+      "id": "106:25",
+      "label": "Button - Скачать SVG Скачать SVG",
+      "destination": "working-editor"
+    },
+    {
+      "id": "106:40",
+      "label": "Text Area Обучение без отвлечений",
+      "destination": "working-editor"
+    },
+    {
+      "id": "106:42",
+      "label": "Button Собрать идею",
+      "destination": "working-editor"
+    },
+    {
+      "id": "106:51",
+      "label": "Button Импорт SVG",
+      "destination": "working-editor"
+    },
+    {
+      "id": "106:57",
+      "label": "Search Input Найти объект",
+      "destination": "working-editor"
+    },
+    {
+      "id": "106:61",
+      "label": "Button - Библиотека лентой ",
+      "destination": "105:2"
+    },
+    {
+      "id": "106:64",
+      "label": "Button - Библиотека сеткой три на три ",
+      "destination": "127:2"
+    },
+    {
+      "id": "106:68",
+      "label": "Button - Предыдущие объекты ",
+      "destination": "working-editor"
+    },
+    {
+      "id": "106:71",
+      "label": "Button - Следующие объекты ",
+      "destination": "working-editor"
+    },
+    {
+      "id": "106:76",
+      "label": "Button Пазлы",
+      "destination": "working-editor"
+    },
+    {
+      "id": "106:138",
+      "label": "Button Книга",
+      "destination": "working-editor"
+    },
+    {
+      "id": "106:195",
+      "label": "Button Телефон",
+      "destination": "working-editor"
+    },
+    {
+      "id": "106:354",
+      "label": "Button Наушники",
+      "destination": "working-editor"
+    },
+    {
+      "id": "106:442",
+      "label": "Button Лампа",
+      "destination": "working-editor"
+    },
+    {
+      "id": "106:473",
+      "label": "Button Кошелёк",
+      "destination": "working-editor"
+    },
+    {
+      "id": "106:563",
+      "label": "Button Ручка",
+      "destination": "working-editor"
+    },
+    {
+      "id": "106:591",
+      "label": "Button Папка",
+      "destination": "working-editor"
+    },
+    {
+      "id": "106:617",
+      "label": "Button Монета",
+      "destination": "working-editor"
+    },
+    {
+      "id": "106:757",
+      "label": "Button Цветы",
+      "destination": "working-editor"
+    },
+    {
+      "id": "106:900",
+      "label": "Button S",
+      "destination": "working-editor"
+    },
+    {
+      "id": "106:903",
+      "label": "Button L",
+      "destination": "working-editor"
+    },
+    {
+      "id": "106:910",
+      "label": "Button - Горизонтальный холст 1200 на 630 ",
+      "destination": "working-editor"
+    },
+    {
+      "id": "106:912",
+      "label": "Button - Квадратный холст 1080 на 1080 ",
+      "destination": "working-editor"
+    },
+    {
+      "id": "106:914",
+      "label": "Button - Вертикальный холст 1080 на 1350 ",
+      "destination": "working-editor"
+    },
+    {
+      "id": "106:916",
+      "label": "Button - Свой размер холста +",
+      "destination": "working-editor"
+    },
+    {
+      "id": "106:1118",
+      "label": "Button Другой вариант",
+      "destination": "working-editor"
+    },
+    {
+      "id": "106:1124",
+      "label": "Button Очистить",
+      "destination": "working-editor"
+    },
+    {
+      "id": "106:1130",
+      "label": "Button Накопить на мечту",
+      "destination": "working-editor"
+    },
+    {
+      "id": "106:1132",
+      "label": "Button Работа с документами",
+      "destination": "working-editor"
+    },
+    {
+      "id": "106:1134",
+      "label": "Button Найти решение вместе",
+      "destination": "working-editor"
+    },
+    {
+      "id": "106:1136",
+      "label": "Button Войти в поток",
+      "destination": "working-editor"
+    },
+    {
+      "id": "106:1138",
+      "label": "Button Разгрести завалы",
+      "destination": "working-editor"
+    },
+    {
+      "id": "106:1140",
+      "label": "Button Включить голову",
+      "destination": "working-editor"
+    },
+    {
+      "id": "106:1149",
+      "label": "Summary - Настройки палитры Настройки",
+      "destination": "111:2"
+    },
+    {
+      "id": "106:1160",
+      "label": "Button - Исходная, цветовая схема База",
+      "destination": "working-editor"
+    },
+    {
+      "id": "106:1169",
+      "label": "Button - Сирень, цветовая схема Сирень",
+      "destination": "working-editor"
+    },
+    {
+      "id": "106:1177",
+      "label": "Button - Персик, цветовая схема Персик",
+      "destination": "working-editor"
+    },
+    {
+      "id": "106:1185",
+      "label": "Button - Мята, цветовая схема Мята",
+      "destination": "working-editor"
+    },
+    {
+      "id": "106:1193",
+      "label": "Button - Своя, цветовая схема + Своя",
+      "destination": "108:2"
+    },
+    {
+      "id": "106:1203",
+      "label": "Checkbox:margin ",
+      "destination": "working-editor"
+    },
+    {
+      "id": "106:1201",
+      "label": "Checkbox ",
+      "destination": "working-editor"
+    },
+    {
+      "id": "106:1208",
+      "label": "Color Picker - Выбрать цвет холста ",
+      "destination": "working-editor"
+    },
+    {
+      "id": "106:1213",
+      "label": "Button - Вернуть цвет холста из палитры ↺",
+      "destination": "working-editor"
+    },
+    {
+      "id": "106:1216",
+      "label": "Button Импорт палитры",
+      "destination": "125:2"
+    },
+    {
+      "id": "106:1223",
+      "label": "Summary - Настройки объекта Объект Книга",
+      "destination": "111:2"
+    },
+    {
+      "id": "106:1239",
+      "label": "Checkbox:margin ",
+      "destination": "working-editor"
+    },
+    {
+      "id": "106:1236",
+      "label": "Checkbox ",
+      "destination": "working-editor"
+    },
+    {
+      "id": "106:1244",
+      "label": "Number Input 612",
+      "destination": "working-editor"
+    },
+    {
+      "id": "106:1248",
+      "label": "Number Input 362",
+      "destination": "working-editor"
+    },
+    {
+      "id": "106:1253",
+      "label": "Number Input - Поворот 0",
+      "destination": "working-editor"
+    },
+    {
+      "id": "106:1258",
+      "label": "Button Дублировать",
+      "destination": "working-editor"
+    },
+    {
+      "id": "106:1260",
+      "label": "Button Удалить",
+      "destination": "working-editor"
+    },
+    {
+      "id": "106:1267",
+      "label": "Summary - Слои Слои 3",
+      "destination": "111:2"
+    },
+    {
+      "id": "106:1278",
+      "label": "Button Наушники",
+      "destination": "working-editor"
+    },
+    {
+      "id": "106:1368",
+      "label": "Button Книга",
+      "destination": "working-editor"
+    },
+    {
+      "id": "106:1426",
+      "label": "Button Лампа фон",
+      "destination": "working-editor"
+    },
+    {
+      "id": "106:1463",
+      "label": "Button Ниже",
+      "destination": "working-editor"
+    },
+    {
+      "id": "106:1465",
+      "label": "Button Выше",
+      "destination": "working-editor"
+    },
+    {
+      "id": "106:1470",
+      "label": "Checkbox:margin ",
+      "destination": "working-editor"
+    },
+    {
+      "id": "106:1468",
+      "label": "Checkbox ",
+      "destination": "working-editor"
+    },
+    {
+      "id": "106:1474",
+      "label": "Button Открыть проект",
+      "destination": "109:2"
+    },
+    {
+      "id": "106:1498",
+      "label": "Button Выбрать файл SVG · несколько файлов",
+      "destination": "working-editor"
+    },
+    {
+      "id": "106:1484",
+      "label": "Button - Закрыть окно ×",
+      "destination": "105:2"
+    },
+    {
+      "id": "130:5",
+      "label": "Link - Сборка, главная Сборка",
+      "destination": "112:2"
+    },
+    {
+      "id": "130:14",
+      "label": "Button - Отменить ",
+      "destination": "working-editor"
+    },
+    {
+      "id": "130:17",
+      "label": "Button - Сохранить проект Проект",
+      "destination": "working-editor"
+    },
+    {
+      "id": "130:23",
+      "label": "Button - Скачать SVG SVG",
+      "destination": "working-editor"
+    },
+    {
+      "id": "130:897",
+      "label": "Button S",
+      "destination": "working-editor"
+    },
+    {
+      "id": "130:900",
+      "label": "Button L",
+      "destination": "working-editor"
+    },
+    {
+      "id": "130:907",
+      "label": "Button - Горизонтальный холст 1200 на 630 ",
+      "destination": "working-editor"
+    },
+    {
+      "id": "130:909",
+      "label": "Button - Квадратный холст 1080 на 1080 ",
+      "destination": "working-editor"
+    },
+    {
+      "id": "130:911",
+      "label": "Button - Вертикальный холст 1080 на 1350 ",
+      "destination": "working-editor"
+    },
+    {
+      "id": "130:913",
+      "label": "Button - Свой размер холста +",
+      "destination": "working-editor"
+    },
+    {
+      "id": "130:1115",
+      "label": "Button Другой вариант",
+      "destination": "working-editor"
+    },
+    {
+      "id": "130:1121",
+      "label": "Button Очистить",
+      "destination": "working-editor"
+    },
+    {
+      "id": "130:1127",
+      "label": "Button Накопить на мечту",
+      "destination": "working-editor"
+    },
+    {
+      "id": "130:1129",
+      "label": "Button Работа с документами",
+      "destination": "working-editor"
+    },
+    {
+      "id": "130:1131",
+      "label": "Button Найти решение вместе",
+      "destination": "working-editor"
+    },
+    {
+      "id": "130:1133",
+      "label": "Button Войти в поток",
+      "destination": "working-editor"
+    },
+    {
+      "id": "130:1135",
+      "label": "Button Разгрести завалы",
+      "destination": "working-editor"
+    },
+    {
+      "id": "130:1137",
+      "label": "Button Включить голову",
+      "destination": "working-editor"
+    },
+    {
+      "id": "130:37",
+      "label": "Text Area Обучение без отвлечений",
+      "destination": "working-editor"
+    },
+    {
+      "id": "130:39",
+      "label": "Button Собрать идею",
+      "destination": "working-editor"
+    },
+    {
+      "id": "130:48",
+      "label": "Button Импорт SVG",
+      "destination": "working-editor"
+    },
+    {
+      "id": "130:54",
+      "label": "Search Input Найти объект",
+      "destination": "working-editor"
+    },
+    {
+      "id": "130:58",
+      "label": "Button - Библиотека лентой ",
+      "destination": "112:2"
+    },
+    {
+      "id": "130:61",
+      "label": "Button - Библиотека сеткой три на три ",
+      "destination": "117:2"
+    },
+    {
+      "id": "130:65",
+      "label": "Button - Предыдущие объекты ",
+      "destination": "working-editor"
+    },
+    {
+      "id": "130:68",
+      "label": "Button - Следующие объекты ",
+      "destination": "working-editor"
+    },
+    {
+      "id": "130:73",
+      "label": "Button Пазлы",
+      "destination": "working-editor"
+    },
+    {
+      "id": "130:135",
+      "label": "Button Книга",
+      "destination": "working-editor"
+    },
+    {
+      "id": "130:192",
+      "label": "Button Телефон",
+      "destination": "working-editor"
+    },
+    {
+      "id": "130:351",
+      "label": "Button Наушники",
+      "destination": "working-editor"
+    },
+    {
+      "id": "130:439",
+      "label": "Button Лампа",
+      "destination": "working-editor"
+    },
+    {
+      "id": "130:470",
+      "label": "Button Кошелёк",
+      "destination": "working-editor"
+    },
+    {
+      "id": "130:560",
+      "label": "Button Ручка",
+      "destination": "working-editor"
+    },
+    {
+      "id": "130:588",
+      "label": "Button Папка",
+      "destination": "working-editor"
+    },
+    {
+      "id": "130:614",
+      "label": "Button Монета",
+      "destination": "working-editor"
+    },
+    {
+      "id": "130:754",
+      "label": "Button Цветы",
+      "destination": "working-editor"
+    },
+    {
+      "id": "130:1146",
+      "label": "Summary - Настройки палитры Настройки",
+      "destination": "118:2"
+    },
+    {
+      "id": "130:1157",
+      "label": "Button - Исходная, цветовая схема База",
+      "destination": "working-editor"
+    },
+    {
+      "id": "130:1165",
+      "label": "Button - Сирень, цветовая схема Сирень",
+      "destination": "working-editor"
+    },
+    {
+      "id": "130:1173",
+      "label": "Button - Персик, цветовая схема Персик",
+      "destination": "working-editor"
+    },
+    {
+      "id": "130:1181",
+      "label": "Button - Мята, цветовая схема Мята",
+      "destination": "working-editor"
+    },
+    {
+      "id": "130:1189",
+      "label": "Button - Своя, цветовая схема + Своя",
+      "destination": "116:2"
+    },
+    {
+      "id": "130:1199",
+      "label": "Checkbox:margin ",
+      "destination": "working-editor"
+    },
+    {
+      "id": "130:1197",
+      "label": "Checkbox ",
+      "destination": "working-editor"
+    },
+    {
+      "id": "130:1204",
+      "label": "Color Picker - Выбрать цвет холста ",
+      "destination": "working-editor"
+    },
+    {
+      "id": "130:1209",
+      "label": "Button - Вернуть цвет холста из палитры ↺",
+      "destination": "working-editor"
+    },
+    {
+      "id": "130:1212",
+      "label": "Button Импорт палитры",
+      "destination": "114:2"
+    },
+    {
+      "id": "130:1219",
+      "label": "Summary - Настройки объекта Объект Книга",
+      "destination": "118:2"
+    },
+    {
+      "id": "130:1235",
+      "label": "Checkbox:margin ",
+      "destination": "working-editor"
+    },
+    {
+      "id": "130:1232",
+      "label": "Checkbox ",
+      "destination": "working-editor"
+    },
+    {
+      "id": "130:1240",
+      "label": "Number Input 612",
+      "destination": "working-editor"
+    },
+    {
+      "id": "130:1244",
+      "label": "Number Input 362",
+      "destination": "working-editor"
+    },
+    {
+      "id": "130:1249",
+      "label": "Number Input - Поворот 0",
+      "destination": "working-editor"
+    },
+    {
+      "id": "130:1254",
+      "label": "Button Дублировать",
+      "destination": "working-editor"
+    },
+    {
+      "id": "130:1256",
+      "label": "Button Удалить",
+      "destination": "working-editor"
+    },
+    {
+      "id": "130:1263",
+      "label": "Summary - Слои Слои 3",
+      "destination": "118:2"
+    },
+    {
+      "id": "130:1274",
+      "label": "Button Наушники",
+      "destination": "working-editor"
+    },
+    {
+      "id": "130:1364",
+      "label": "Button Книга",
+      "destination": "working-editor"
+    },
+    {
+      "id": "130:1422",
+      "label": "Button Лампа фон",
+      "destination": "working-editor"
+    },
+    {
+      "id": "130:1459",
+      "label": "Button Ниже",
+      "destination": "working-editor"
+    },
+    {
+      "id": "130:1461",
+      "label": "Button Выше",
+      "destination": "working-editor"
+    },
+    {
+      "id": "130:1466",
+      "label": "Checkbox:margin ",
+      "destination": "working-editor"
+    },
+    {
+      "id": "130:1464",
+      "label": "Checkbox ",
+      "destination": "working-editor"
+    },
+    {
+      "id": "130:1470",
+      "label": "Button Открыть проект",
+      "destination": "115:2"
+    },
+    {
+      "id": "130:1495",
+      "label": "Button Выбрать файл SVG · несколько файлов",
+      "destination": "working-editor"
+    },
+    {
+      "id": "130:1481",
+      "label": "Button - Закрыть окно ×",
+      "destination": "112:2"
+    },
+    {
+      "id": "121:5",
+      "label": "Link - Сборка, главная Сборка",
+      "destination": "98:2"
+    },
+    {
+      "id": "121:14",
+      "label": "Button - Отменить Отменить",
+      "destination": "working-editor"
+    },
+    {
+      "id": "121:20",
+      "label": "Button - Сохранить проект Сохранить проект",
+      "destination": "working-editor"
+    },
+    {
+      "id": "121:25",
+      "label": "Button - Скачать SVG Скачать SVG",
+      "destination": "working-editor"
+    },
+    {
+      "id": "121:40",
+      "label": "Text Area Обучение без отвлечений",
+      "destination": "working-editor"
+    },
+    {
+      "id": "121:42",
+      "label": "Button Собрать идею",
+      "destination": "working-editor"
+    },
+    {
+      "id": "121:51",
+      "label": "Button Импорт SVG",
+      "destination": "99:2"
+    },
+    {
+      "id": "121:57",
+      "label": "Search Input Найти объект",
+      "destination": "working-editor"
+    },
+    {
+      "id": "121:61",
+      "label": "Button - Библиотека лентой ",
+      "destination": "98:2"
+    },
+    {
+      "id": "121:64",
+      "label": "Button - Библиотека сеткой три на три ",
+      "destination": "103:2"
+    },
+    {
+      "id": "121:68",
+      "label": "Button - Предыдущие объекты ",
+      "destination": "working-editor"
+    },
+    {
+      "id": "121:71",
+      "label": "Button - Следующие объекты ",
+      "destination": "working-editor"
+    },
+    {
+      "id": "121:76",
+      "label": "Button Пазлы",
+      "destination": "working-editor"
+    },
+    {
+      "id": "121:138",
+      "label": "Button Книга",
+      "destination": "working-editor"
+    },
+    {
+      "id": "121:195",
+      "label": "Button Телефон",
+      "destination": "working-editor"
+    },
+    {
+      "id": "121:354",
+      "label": "Button Наушники",
+      "destination": "working-editor"
+    },
+    {
+      "id": "121:442",
+      "label": "Button Лампа",
+      "destination": "working-editor"
+    },
+    {
+      "id": "121:473",
+      "label": "Button Кошелёк",
+      "destination": "working-editor"
+    },
+    {
+      "id": "121:563",
+      "label": "Button Ручка",
+      "destination": "working-editor"
+    },
+    {
+      "id": "121:591",
+      "label": "Button Папка",
+      "destination": "working-editor"
+    },
+    {
+      "id": "121:617",
+      "label": "Button Монета",
+      "destination": "working-editor"
+    },
+    {
+      "id": "121:757",
+      "label": "Button Цветы",
+      "destination": "working-editor"
+    },
+    {
+      "id": "121:900",
+      "label": "Button S",
+      "destination": "working-editor"
+    },
+    {
+      "id": "121:903",
+      "label": "Button L",
+      "destination": "working-editor"
+    },
+    {
+      "id": "121:910",
+      "label": "Button - Горизонтальный холст 1200 на 630 ",
+      "destination": "working-editor"
+    },
+    {
+      "id": "121:912",
+      "label": "Button - Квадратный холст 1080 на 1080 ",
+      "destination": "working-editor"
+    },
+    {
+      "id": "121:914",
+      "label": "Button - Вертикальный холст 1080 на 1350 ",
+      "destination": "working-editor"
+    },
+    {
+      "id": "121:916",
+      "label": "Button - Свой размер холста +",
+      "destination": "working-editor"
+    },
+    {
+      "id": "121:1118",
+      "label": "Button Другой вариант",
+      "destination": "working-editor"
+    },
+    {
+      "id": "121:1124",
+      "label": "Button Очистить",
+      "destination": "working-editor"
+    },
+    {
+      "id": "121:1130",
+      "label": "Button Накопить на мечту",
+      "destination": "working-editor"
+    },
+    {
+      "id": "121:1132",
+      "label": "Button Работа с документами",
+      "destination": "working-editor"
+    },
+    {
+      "id": "121:1134",
+      "label": "Button Найти решение вместе",
+      "destination": "working-editor"
+    },
+    {
+      "id": "121:1136",
+      "label": "Button Войти в поток",
+      "destination": "working-editor"
+    },
+    {
+      "id": "121:1138",
+      "label": "Button Разгрести завалы",
+      "destination": "working-editor"
+    },
+    {
+      "id": "121:1140",
+      "label": "Button Включить голову",
+      "destination": "working-editor"
+    },
+    {
+      "id": "121:1149",
+      "label": "Summary - Настройки палитры Настройки",
+      "destination": "104:2"
+    },
+    {
+      "id": "121:1160",
+      "label": "Button - Исходная, цветовая схема База",
+      "destination": "working-editor"
+    },
+    {
+      "id": "121:1169",
+      "label": "Button - Сирень, цветовая схема Сирень",
+      "destination": "working-editor"
+    },
+    {
+      "id": "121:1177",
+      "label": "Button - Персик, цветовая схема Персик",
+      "destination": "working-editor"
+    },
+    {
+      "id": "121:1185",
+      "label": "Button - Мята, цветовая схема Мята",
+      "destination": "working-editor"
+    },
+    {
+      "id": "121:1193",
+      "label": "Button - Своя, цветовая схема + Своя",
+      "destination": "102:2"
+    },
+    {
+      "id": "121:1203",
+      "label": "Checkbox:margin ",
+      "destination": "working-editor"
+    },
+    {
+      "id": "121:1201",
+      "label": "Checkbox ",
+      "destination": "working-editor"
+    },
+    {
+      "id": "121:1208",
+      "label": "Color Picker - Выбрать цвет холста ",
+      "destination": "working-editor"
+    },
+    {
+      "id": "121:1213",
+      "label": "Button - Вернуть цвет холста из палитры ↺",
+      "destination": "working-editor"
+    },
+    {
+      "id": "121:1216",
+      "label": "Button Импорт палитры",
+      "destination": "working-editor"
+    },
+    {
+      "id": "121:1223",
+      "label": "Summary - Настройки объекта Объект Книга",
+      "destination": "104:2"
+    },
+    {
+      "id": "121:1239",
+      "label": "Checkbox:margin ",
+      "destination": "working-editor"
+    },
+    {
+      "id": "121:1236",
+      "label": "Checkbox ",
+      "destination": "working-editor"
+    },
+    {
+      "id": "121:1244",
+      "label": "Number Input 612",
+      "destination": "working-editor"
+    },
+    {
+      "id": "121:1248",
+      "label": "Number Input 362",
+      "destination": "working-editor"
+    },
+    {
+      "id": "121:1253",
+      "label": "Number Input - Поворот 0",
+      "destination": "working-editor"
+    },
+    {
+      "id": "121:1258",
+      "label": "Button Дублировать",
+      "destination": "working-editor"
+    },
+    {
+      "id": "121:1260",
+      "label": "Button Удалить",
+      "destination": "working-editor"
+    },
+    {
+      "id": "121:1267",
+      "label": "Summary - Слои Слои 3",
+      "destination": "104:2"
+    },
+    {
+      "id": "121:1278",
+      "label": "Button Наушники",
+      "destination": "working-editor"
+    },
+    {
+      "id": "121:1368",
+      "label": "Button Книга",
+      "destination": "working-editor"
+    },
+    {
+      "id": "121:1426",
+      "label": "Button Лампа фон",
+      "destination": "working-editor"
+    },
+    {
+      "id": "121:1463",
+      "label": "Button Ниже",
+      "destination": "working-editor"
+    },
+    {
+      "id": "121:1465",
+      "label": "Button Выше",
+      "destination": "working-editor"
+    },
+    {
+      "id": "121:1470",
+      "label": "Checkbox:margin ",
+      "destination": "working-editor"
+    },
+    {
+      "id": "121:1468",
+      "label": "Checkbox ",
+      "destination": "working-editor"
+    },
+    {
+      "id": "121:1474",
+      "label": "Button Открыть проект",
+      "destination": "101:2"
+    },
+    {
+      "id": "121:1501",
+      "label": "Button Выбрать файл JSON · цветовая схема",
+      "destination": "working-editor"
+    },
+    {
+      "id": "121:1487",
+      "label": "Button - Закрыть окно ×",
+      "destination": "98:2"
+    },
+    {
+      "id": "125:5",
+      "label": "Link - Сборка, главная Сборка",
+      "destination": "105:2"
+    },
+    {
+      "id": "125:14",
+      "label": "Button - Отменить Отменить",
+      "destination": "working-editor"
+    },
+    {
+      "id": "125:20",
+      "label": "Button - Сохранить проект Сохранить проект",
+      "destination": "working-editor"
+    },
+    {
+      "id": "125:25",
+      "label": "Button - Скачать SVG Скачать SVG",
+      "destination": "working-editor"
+    },
+    {
+      "id": "125:40",
+      "label": "Text Area Обучение без отвлечений",
+      "destination": "working-editor"
+    },
+    {
+      "id": "125:42",
+      "label": "Button Собрать идею",
+      "destination": "working-editor"
+    },
+    {
+      "id": "125:51",
+      "label": "Button Импорт SVG",
+      "destination": "106:2"
+    },
+    {
+      "id": "125:57",
+      "label": "Search Input Найти объект",
+      "destination": "working-editor"
+    },
+    {
+      "id": "125:61",
+      "label": "Button - Библиотека лентой ",
+      "destination": "105:2"
+    },
+    {
+      "id": "125:64",
+      "label": "Button - Библиотека сеткой три на три ",
+      "destination": "127:2"
+    },
+    {
+      "id": "125:68",
+      "label": "Button - Предыдущие объекты ",
+      "destination": "working-editor"
+    },
+    {
+      "id": "125:71",
+      "label": "Button - Следующие объекты ",
+      "destination": "working-editor"
+    },
+    {
+      "id": "125:76",
+      "label": "Button Пазлы",
+      "destination": "working-editor"
+    },
+    {
+      "id": "125:138",
+      "label": "Button Книга",
+      "destination": "working-editor"
+    },
+    {
+      "id": "125:195",
+      "label": "Button Телефон",
+      "destination": "working-editor"
+    },
+    {
+      "id": "125:354",
+      "label": "Button Наушники",
+      "destination": "working-editor"
+    },
+    {
+      "id": "125:442",
+      "label": "Button Лампа",
+      "destination": "working-editor"
+    },
+    {
+      "id": "125:473",
+      "label": "Button Кошелёк",
+      "destination": "working-editor"
+    },
+    {
+      "id": "125:563",
+      "label": "Button Ручка",
+      "destination": "working-editor"
+    },
+    {
+      "id": "125:591",
+      "label": "Button Папка",
+      "destination": "working-editor"
+    },
+    {
+      "id": "125:617",
+      "label": "Button Монета",
+      "destination": "working-editor"
+    },
+    {
+      "id": "125:757",
+      "label": "Button Цветы",
+      "destination": "working-editor"
+    },
+    {
+      "id": "125:900",
+      "label": "Button S",
+      "destination": "working-editor"
+    },
+    {
+      "id": "125:903",
+      "label": "Button L",
+      "destination": "working-editor"
+    },
+    {
+      "id": "125:910",
+      "label": "Button - Горизонтальный холст 1200 на 630 ",
+      "destination": "working-editor"
+    },
+    {
+      "id": "125:912",
+      "label": "Button - Квадратный холст 1080 на 1080 ",
+      "destination": "working-editor"
+    },
+    {
+      "id": "125:914",
+      "label": "Button - Вертикальный холст 1080 на 1350 ",
+      "destination": "working-editor"
+    },
+    {
+      "id": "125:916",
+      "label": "Button - Свой размер холста +",
+      "destination": "working-editor"
+    },
+    {
+      "id": "125:1118",
+      "label": "Button Другой вариант",
+      "destination": "working-editor"
+    },
+    {
+      "id": "125:1124",
+      "label": "Button Очистить",
+      "destination": "working-editor"
+    },
+    {
+      "id": "125:1130",
+      "label": "Button Накопить на мечту",
+      "destination": "working-editor"
+    },
+    {
+      "id": "125:1132",
+      "label": "Button Работа с документами",
+      "destination": "working-editor"
+    },
+    {
+      "id": "125:1134",
+      "label": "Button Найти решение вместе",
+      "destination": "working-editor"
+    },
+    {
+      "id": "125:1136",
+      "label": "Button Войти в поток",
+      "destination": "working-editor"
+    },
+    {
+      "id": "125:1138",
+      "label": "Button Разгрести завалы",
+      "destination": "working-editor"
+    },
+    {
+      "id": "125:1140",
+      "label": "Button Включить голову",
+      "destination": "working-editor"
+    },
+    {
+      "id": "125:1149",
+      "label": "Summary - Настройки палитры Настройки",
+      "destination": "111:2"
+    },
+    {
+      "id": "125:1160",
+      "label": "Button - Исходная, цветовая схема База",
+      "destination": "working-editor"
+    },
+    {
+      "id": "125:1169",
+      "label": "Button - Сирень, цветовая схема Сирень",
+      "destination": "working-editor"
+    },
+    {
+      "id": "125:1177",
+      "label": "Button - Персик, цветовая схема Персик",
+      "destination": "working-editor"
+    },
+    {
+      "id": "125:1185",
+      "label": "Button - Мята, цветовая схема Мята",
+      "destination": "working-editor"
+    },
+    {
+      "id": "125:1193",
+      "label": "Button - Своя, цветовая схема + Своя",
+      "destination": "108:2"
+    },
+    {
+      "id": "125:1203",
+      "label": "Checkbox:margin ",
+      "destination": "working-editor"
+    },
+    {
+      "id": "125:1201",
+      "label": "Checkbox ",
+      "destination": "working-editor"
+    },
+    {
+      "id": "125:1208",
+      "label": "Color Picker - Выбрать цвет холста ",
+      "destination": "working-editor"
+    },
+    {
+      "id": "125:1213",
+      "label": "Button - Вернуть цвет холста из палитры ↺",
+      "destination": "working-editor"
+    },
+    {
+      "id": "125:1216",
+      "label": "Button Импорт палитры",
+      "destination": "working-editor"
+    },
+    {
+      "id": "125:1223",
+      "label": "Summary - Настройки объекта Объект Книга",
+      "destination": "111:2"
+    },
+    {
+      "id": "125:1239",
+      "label": "Checkbox:margin ",
+      "destination": "working-editor"
+    },
+    {
+      "id": "125:1236",
+      "label": "Checkbox ",
+      "destination": "working-editor"
+    },
+    {
+      "id": "125:1244",
+      "label": "Number Input 612",
+      "destination": "working-editor"
+    },
+    {
+      "id": "125:1248",
+      "label": "Number Input 362",
+      "destination": "working-editor"
+    },
+    {
+      "id": "125:1253",
+      "label": "Number Input - Поворот 0",
+      "destination": "working-editor"
+    },
+    {
+      "id": "125:1258",
+      "label": "Button Дублировать",
+      "destination": "working-editor"
+    },
+    {
+      "id": "125:1260",
+      "label": "Button Удалить",
+      "destination": "working-editor"
+    },
+    {
+      "id": "125:1267",
+      "label": "Summary - Слои Слои 3",
+      "destination": "111:2"
+    },
+    {
+      "id": "125:1278",
+      "label": "Button Наушники",
+      "destination": "working-editor"
+    },
+    {
+      "id": "125:1368",
+      "label": "Button Книга",
+      "destination": "working-editor"
+    },
+    {
+      "id": "125:1426",
+      "label": "Button Лампа фон",
+      "destination": "working-editor"
+    },
+    {
+      "id": "125:1463",
+      "label": "Button Ниже",
+      "destination": "working-editor"
+    },
+    {
+      "id": "125:1465",
+      "label": "Button Выше",
+      "destination": "working-editor"
+    },
+    {
+      "id": "125:1470",
+      "label": "Checkbox:margin ",
+      "destination": "working-editor"
+    },
+    {
+      "id": "125:1468",
+      "label": "Checkbox ",
+      "destination": "working-editor"
+    },
+    {
+      "id": "125:1474",
+      "label": "Button Открыть проект",
+      "destination": "109:2"
+    },
+    {
+      "id": "125:1498",
+      "label": "Button Выбрать файл JSON · цветовая схема",
+      "destination": "working-editor"
+    },
+    {
+      "id": "125:1484",
+      "label": "Button - Закрыть окно ×",
+      "destination": "105:2"
+    },
+    {
+      "id": "114:5",
+      "label": "Link - Сборка, главная Сборка",
+      "destination": "112:2"
+    },
+    {
+      "id": "114:14",
+      "label": "Button - Отменить ",
+      "destination": "working-editor"
+    },
+    {
+      "id": "114:17",
+      "label": "Button - Сохранить проект Проект",
+      "destination": "working-editor"
+    },
+    {
+      "id": "114:23",
+      "label": "Button - Скачать SVG SVG",
+      "destination": "working-editor"
+    },
+    {
+      "id": "114:897",
+      "label": "Button S",
+      "destination": "working-editor"
+    },
+    {
+      "id": "114:900",
+      "label": "Button L",
+      "destination": "working-editor"
+    },
+    {
+      "id": "114:907",
+      "label": "Button - Горизонтальный холст 1200 на 630 ",
+      "destination": "working-editor"
+    },
+    {
+      "id": "114:909",
+      "label": "Button - Квадратный холст 1080 на 1080 ",
+      "destination": "working-editor"
+    },
+    {
+      "id": "114:911",
+      "label": "Button - Вертикальный холст 1080 на 1350 ",
+      "destination": "working-editor"
+    },
+    {
+      "id": "114:913",
+      "label": "Button - Свой размер холста +",
+      "destination": "working-editor"
+    },
+    {
+      "id": "114:1115",
+      "label": "Button Другой вариант",
+      "destination": "working-editor"
+    },
+    {
+      "id": "114:1121",
+      "label": "Button Очистить",
+      "destination": "working-editor"
+    },
+    {
+      "id": "114:1127",
+      "label": "Button Накопить на мечту",
+      "destination": "working-editor"
+    },
+    {
+      "id": "114:1129",
+      "label": "Button Работа с документами",
+      "destination": "working-editor"
+    },
+    {
+      "id": "114:1131",
+      "label": "Button Найти решение вместе",
+      "destination": "working-editor"
+    },
+    {
+      "id": "114:1133",
+      "label": "Button Войти в поток",
+      "destination": "working-editor"
+    },
+    {
+      "id": "114:1135",
+      "label": "Button Разгрести завалы",
+      "destination": "working-editor"
+    },
+    {
+      "id": "114:1137",
+      "label": "Button Включить голову",
+      "destination": "working-editor"
+    },
+    {
+      "id": "114:37",
+      "label": "Text Area Обучение без отвлечений",
+      "destination": "working-editor"
+    },
+    {
+      "id": "114:39",
+      "label": "Button Собрать идею",
+      "destination": "working-editor"
+    },
+    {
+      "id": "114:48",
+      "label": "Button Импорт SVG",
+      "destination": "130:2"
+    },
+    {
+      "id": "114:54",
+      "label": "Search Input Найти объект",
+      "destination": "working-editor"
+    },
+    {
+      "id": "114:58",
+      "label": "Button - Библиотека лентой ",
+      "destination": "112:2"
+    },
+    {
+      "id": "114:61",
+      "label": "Button - Библиотека сеткой три на три ",
+      "destination": "117:2"
+    },
+    {
+      "id": "114:65",
+      "label": "Button - Предыдущие объекты ",
+      "destination": "working-editor"
+    },
+    {
+      "id": "114:68",
+      "label": "Button - Следующие объекты ",
+      "destination": "working-editor"
+    },
+    {
+      "id": "114:73",
+      "label": "Button Пазлы",
+      "destination": "working-editor"
+    },
+    {
+      "id": "114:135",
+      "label": "Button Книга",
+      "destination": "working-editor"
+    },
+    {
+      "id": "114:192",
+      "label": "Button Телефон",
+      "destination": "working-editor"
+    },
+    {
+      "id": "114:351",
+      "label": "Button Наушники",
+      "destination": "working-editor"
+    },
+    {
+      "id": "114:439",
+      "label": "Button Лампа",
+      "destination": "working-editor"
+    },
+    {
+      "id": "114:470",
+      "label": "Button Кошелёк",
+      "destination": "working-editor"
+    },
+    {
+      "id": "114:560",
+      "label": "Button Ручка",
+      "destination": "working-editor"
+    },
+    {
+      "id": "114:588",
+      "label": "Button Папка",
+      "destination": "working-editor"
+    },
+    {
+      "id": "114:614",
+      "label": "Button Монета",
+      "destination": "working-editor"
+    },
+    {
+      "id": "114:754",
+      "label": "Button Цветы",
+      "destination": "working-editor"
+    },
+    {
+      "id": "114:1146",
+      "label": "Summary - Настройки палитры Настройки",
+      "destination": "118:2"
+    },
+    {
+      "id": "114:1157",
+      "label": "Button - Исходная, цветовая схема База",
+      "destination": "working-editor"
+    },
+    {
+      "id": "114:1165",
+      "label": "Button - Сирень, цветовая схема Сирень",
+      "destination": "working-editor"
+    },
+    {
+      "id": "114:1173",
+      "label": "Button - Персик, цветовая схема Персик",
+      "destination": "working-editor"
+    },
+    {
+      "id": "114:1181",
+      "label": "Button - Мята, цветовая схема Мята",
+      "destination": "working-editor"
+    },
+    {
+      "id": "114:1189",
+      "label": "Button - Своя, цветовая схема + Своя",
+      "destination": "116:2"
+    },
+    {
+      "id": "114:1199",
+      "label": "Checkbox:margin ",
+      "destination": "working-editor"
+    },
+    {
+      "id": "114:1197",
+      "label": "Checkbox ",
+      "destination": "working-editor"
+    },
+    {
+      "id": "114:1204",
+      "label": "Color Picker - Выбрать цвет холста ",
+      "destination": "working-editor"
+    },
+    {
+      "id": "114:1209",
+      "label": "Button - Вернуть цвет холста из палитры ↺",
+      "destination": "working-editor"
+    },
+    {
+      "id": "114:1212",
+      "label": "Button Импорт палитры",
+      "destination": "working-editor"
+    },
+    {
+      "id": "114:1219",
+      "label": "Summary - Настройки объекта Объект Книга",
+      "destination": "118:2"
+    },
+    {
+      "id": "114:1235",
+      "label": "Checkbox:margin ",
+      "destination": "working-editor"
+    },
+    {
+      "id": "114:1232",
+      "label": "Checkbox ",
+      "destination": "working-editor"
+    },
+    {
+      "id": "114:1240",
+      "label": "Number Input 612",
+      "destination": "working-editor"
+    },
+    {
+      "id": "114:1244",
+      "label": "Number Input 362",
+      "destination": "working-editor"
+    },
+    {
+      "id": "114:1249",
+      "label": "Number Input - Поворот 0",
+      "destination": "working-editor"
+    },
+    {
+      "id": "114:1254",
+      "label": "Button Дублировать",
+      "destination": "working-editor"
+    },
+    {
+      "id": "114:1256",
+      "label": "Button Удалить",
+      "destination": "working-editor"
+    },
+    {
+      "id": "114:1263",
+      "label": "Summary - Слои Слои 3",
+      "destination": "118:2"
+    },
+    {
+      "id": "114:1274",
+      "label": "Button Наушники",
+      "destination": "working-editor"
+    },
+    {
+      "id": "114:1364",
+      "label": "Button Книга",
+      "destination": "working-editor"
+    },
+    {
+      "id": "114:1422",
+      "label": "Button Лампа фон",
+      "destination": "working-editor"
+    },
+    {
+      "id": "114:1459",
+      "label": "Button Ниже",
+      "destination": "working-editor"
+    },
+    {
+      "id": "114:1461",
+      "label": "Button Выше",
+      "destination": "working-editor"
+    },
+    {
+      "id": "114:1466",
+      "label": "Checkbox:margin ",
+      "destination": "working-editor"
+    },
+    {
+      "id": "114:1464",
+      "label": "Checkbox ",
+      "destination": "working-editor"
+    },
+    {
+      "id": "114:1470",
+      "label": "Button Открыть проект",
+      "destination": "115:2"
+    },
+    {
+      "id": "114:1495",
+      "label": "Button Выбрать файл JSON · цветовая схема",
+      "destination": "working-editor"
+    },
+    {
+      "id": "114:1481",
+      "label": "Button - Закрыть окно ×",
+      "destination": "112:2"
+    },
+    {
+      "id": "101:5",
+      "label": "Link - Сборка, главная Сборка",
+      "destination": "98:2"
+    },
+    {
+      "id": "101:14",
+      "label": "Button - Отменить Отменить",
+      "destination": "working-editor"
+    },
+    {
+      "id": "101:20",
+      "label": "Button - Сохранить проект Сохранить проект",
+      "destination": "working-editor"
+    },
+    {
+      "id": "101:25",
+      "label": "Button - Скачать SVG Скачать SVG",
+      "destination": "working-editor"
+    },
+    {
+      "id": "101:40",
+      "label": "Text Area Обучение без отвлечений",
+      "destination": "working-editor"
+    },
+    {
+      "id": "101:42",
+      "label": "Button Собрать идею",
+      "destination": "working-editor"
+    },
+    {
+      "id": "101:51",
+      "label": "Button Импорт SVG",
+      "destination": "99:2"
+    },
+    {
+      "id": "101:57",
+      "label": "Search Input Найти объект",
+      "destination": "working-editor"
+    },
+    {
+      "id": "101:61",
+      "label": "Button - Библиотека лентой ",
+      "destination": "98:2"
+    },
+    {
+      "id": "101:64",
+      "label": "Button - Библиотека сеткой три на три ",
+      "destination": "103:2"
+    },
+    {
+      "id": "101:68",
+      "label": "Button - Предыдущие объекты ",
+      "destination": "working-editor"
+    },
+    {
+      "id": "101:71",
+      "label": "Button - Следующие объекты ",
+      "destination": "working-editor"
+    },
+    {
+      "id": "101:76",
+      "label": "Button Пазлы",
+      "destination": "working-editor"
+    },
+    {
+      "id": "101:138",
+      "label": "Button Книга",
+      "destination": "working-editor"
+    },
+    {
+      "id": "101:195",
+      "label": "Button Телефон",
+      "destination": "working-editor"
+    },
+    {
+      "id": "101:354",
+      "label": "Button Наушники",
+      "destination": "working-editor"
+    },
+    {
+      "id": "101:442",
+      "label": "Button Лампа",
+      "destination": "working-editor"
+    },
+    {
+      "id": "101:473",
+      "label": "Button Кошелёк",
+      "destination": "working-editor"
+    },
+    {
+      "id": "101:563",
+      "label": "Button Ручка",
+      "destination": "working-editor"
+    },
+    {
+      "id": "101:591",
+      "label": "Button Папка",
+      "destination": "working-editor"
+    },
+    {
+      "id": "101:617",
+      "label": "Button Монета",
+      "destination": "working-editor"
+    },
+    {
+      "id": "101:757",
+      "label": "Button Цветы",
+      "destination": "working-editor"
+    },
+    {
+      "id": "101:900",
+      "label": "Button S",
+      "destination": "working-editor"
+    },
+    {
+      "id": "101:903",
+      "label": "Button L",
+      "destination": "working-editor"
+    },
+    {
+      "id": "101:910",
+      "label": "Button - Горизонтальный холст 1200 на 630 ",
+      "destination": "working-editor"
+    },
+    {
+      "id": "101:912",
+      "label": "Button - Квадратный холст 1080 на 1080 ",
+      "destination": "working-editor"
+    },
+    {
+      "id": "101:914",
+      "label": "Button - Вертикальный холст 1080 на 1350 ",
+      "destination": "working-editor"
+    },
+    {
+      "id": "101:916",
+      "label": "Button - Свой размер холста +",
+      "destination": "working-editor"
+    },
+    {
+      "id": "101:1118",
+      "label": "Button Другой вариант",
+      "destination": "working-editor"
+    },
+    {
+      "id": "101:1124",
+      "label": "Button Очистить",
+      "destination": "working-editor"
+    },
+    {
+      "id": "101:1130",
+      "label": "Button Накопить на мечту",
+      "destination": "working-editor"
+    },
+    {
+      "id": "101:1132",
+      "label": "Button Работа с документами",
+      "destination": "working-editor"
+    },
+    {
+      "id": "101:1134",
+      "label": "Button Найти решение вместе",
+      "destination": "working-editor"
+    },
+    {
+      "id": "101:1136",
+      "label": "Button Войти в поток",
+      "destination": "working-editor"
+    },
+    {
+      "id": "101:1138",
+      "label": "Button Разгрести завалы",
+      "destination": "working-editor"
+    },
+    {
+      "id": "101:1140",
+      "label": "Button Включить голову",
+      "destination": "working-editor"
+    },
+    {
+      "id": "101:1149",
+      "label": "Summary - Настройки палитры Настройки",
+      "destination": "104:2"
+    },
+    {
+      "id": "101:1160",
+      "label": "Button - Исходная, цветовая схема База",
+      "destination": "working-editor"
+    },
+    {
+      "id": "101:1169",
+      "label": "Button - Сирень, цветовая схема Сирень",
+      "destination": "working-editor"
+    },
+    {
+      "id": "101:1177",
+      "label": "Button - Персик, цветовая схема Персик",
+      "destination": "working-editor"
+    },
+    {
+      "id": "101:1185",
+      "label": "Button - Мята, цветовая схема Мята",
+      "destination": "working-editor"
+    },
+    {
+      "id": "101:1193",
+      "label": "Button - Своя, цветовая схема + Своя",
+      "destination": "102:2"
+    },
+    {
+      "id": "101:1203",
+      "label": "Checkbox:margin ",
+      "destination": "working-editor"
+    },
+    {
+      "id": "101:1201",
+      "label": "Checkbox ",
+      "destination": "working-editor"
+    },
+    {
+      "id": "101:1208",
+      "label": "Color Picker - Выбрать цвет холста ",
+      "destination": "working-editor"
+    },
+    {
+      "id": "101:1213",
+      "label": "Button - Вернуть цвет холста из палитры ↺",
+      "destination": "working-editor"
+    },
+    {
+      "id": "101:1216",
+      "label": "Button Импорт палитры",
+      "destination": "121:2"
+    },
+    {
+      "id": "101:1223",
+      "label": "Summary - Настройки объекта Объект Книга",
+      "destination": "104:2"
+    },
+    {
+      "id": "101:1239",
+      "label": "Checkbox:margin ",
+      "destination": "working-editor"
+    },
+    {
+      "id": "101:1236",
+      "label": "Checkbox ",
+      "destination": "working-editor"
+    },
+    {
+      "id": "101:1244",
+      "label": "Number Input 612",
+      "destination": "working-editor"
+    },
+    {
+      "id": "101:1248",
+      "label": "Number Input 362",
+      "destination": "working-editor"
+    },
+    {
+      "id": "101:1253",
+      "label": "Number Input - Поворот 0",
+      "destination": "working-editor"
+    },
+    {
+      "id": "101:1258",
+      "label": "Button Дублировать",
+      "destination": "working-editor"
+    },
+    {
+      "id": "101:1260",
+      "label": "Button Удалить",
+      "destination": "working-editor"
+    },
+    {
+      "id": "101:1267",
+      "label": "Summary - Слои Слои 3",
+      "destination": "104:2"
+    },
+    {
+      "id": "101:1278",
+      "label": "Button Наушники",
+      "destination": "working-editor"
+    },
+    {
+      "id": "101:1368",
+      "label": "Button Книга",
+      "destination": "working-editor"
+    },
+    {
+      "id": "101:1426",
+      "label": "Button Лампа фон",
+      "destination": "working-editor"
+    },
+    {
+      "id": "101:1463",
+      "label": "Button Ниже",
+      "destination": "working-editor"
+    },
+    {
+      "id": "101:1465",
+      "label": "Button Выше",
+      "destination": "working-editor"
+    },
+    {
+      "id": "101:1470",
+      "label": "Checkbox:margin ",
+      "destination": "working-editor"
+    },
+    {
+      "id": "101:1468",
+      "label": "Checkbox ",
+      "destination": "working-editor"
+    },
+    {
+      "id": "101:1474",
+      "label": "Button Открыть проект",
+      "destination": "working-editor"
+    },
+    {
+      "id": "101:1500",
+      "label": "Button Выбрать файл JSON · проект «Сборки»",
+      "destination": "working-editor"
+    },
+    {
+      "id": "101:1486",
+      "label": "Button - Закрыть окно ×",
+      "destination": "98:2"
+    },
+    {
+      "id": "109:5",
+      "label": "Link - Сборка, главная Сборка",
+      "destination": "105:2"
+    },
+    {
+      "id": "109:14",
+      "label": "Button - Отменить Отменить",
+      "destination": "working-editor"
+    },
+    {
+      "id": "109:20",
+      "label": "Button - Сохранить проект Сохранить проект",
+      "destination": "working-editor"
+    },
+    {
+      "id": "109:25",
+      "label": "Button - Скачать SVG Скачать SVG",
+      "destination": "working-editor"
+    },
+    {
+      "id": "109:40",
+      "label": "Text Area Обучение без отвлечений",
+      "destination": "working-editor"
+    },
+    {
+      "id": "109:42",
+      "label": "Button Собрать идею",
+      "destination": "working-editor"
+    },
+    {
+      "id": "109:51",
+      "label": "Button Импорт SVG",
+      "destination": "106:2"
+    },
+    {
+      "id": "109:57",
+      "label": "Search Input Найти объект",
+      "destination": "working-editor"
+    },
+    {
+      "id": "109:61",
+      "label": "Button - Библиотека лентой ",
+      "destination": "105:2"
+    },
+    {
+      "id": "109:64",
+      "label": "Button - Библиотека сеткой три на три ",
+      "destination": "127:2"
+    },
+    {
+      "id": "109:68",
+      "label": "Button - Предыдущие объекты ",
+      "destination": "working-editor"
+    },
+    {
+      "id": "109:71",
+      "label": "Button - Следующие объекты ",
+      "destination": "working-editor"
+    },
+    {
+      "id": "109:76",
+      "label": "Button Пазлы",
+      "destination": "working-editor"
+    },
+    {
+      "id": "109:138",
+      "label": "Button Книга",
+      "destination": "working-editor"
+    },
+    {
+      "id": "109:195",
+      "label": "Button Телефон",
+      "destination": "working-editor"
+    },
+    {
+      "id": "109:354",
+      "label": "Button Наушники",
+      "destination": "working-editor"
+    },
+    {
+      "id": "109:442",
+      "label": "Button Лампа",
+      "destination": "working-editor"
+    },
+    {
+      "id": "109:473",
+      "label": "Button Кошелёк",
+      "destination": "working-editor"
+    },
+    {
+      "id": "109:563",
+      "label": "Button Ручка",
+      "destination": "working-editor"
+    },
+    {
+      "id": "109:591",
+      "label": "Button Папка",
+      "destination": "working-editor"
+    },
+    {
+      "id": "109:617",
+      "label": "Button Монета",
+      "destination": "working-editor"
+    },
+    {
+      "id": "109:757",
+      "label": "Button Цветы",
+      "destination": "working-editor"
+    },
+    {
+      "id": "109:900",
+      "label": "Button S",
+      "destination": "working-editor"
+    },
+    {
+      "id": "109:903",
+      "label": "Button L",
+      "destination": "working-editor"
+    },
+    {
+      "id": "109:910",
+      "label": "Button - Горизонтальный холст 1200 на 630 ",
+      "destination": "working-editor"
+    },
+    {
+      "id": "109:912",
+      "label": "Button - Квадратный холст 1080 на 1080 ",
+      "destination": "working-editor"
+    },
+    {
+      "id": "109:914",
+      "label": "Button - Вертикальный холст 1080 на 1350 ",
+      "destination": "working-editor"
+    },
+    {
+      "id": "109:916",
+      "label": "Button - Свой размер холста +",
+      "destination": "working-editor"
+    },
+    {
+      "id": "109:1118",
+      "label": "Button Другой вариант",
+      "destination": "working-editor"
+    },
+    {
+      "id": "109:1124",
+      "label": "Button Очистить",
+      "destination": "working-editor"
+    },
+    {
+      "id": "109:1130",
+      "label": "Button Накопить на мечту",
+      "destination": "working-editor"
+    },
+    {
+      "id": "109:1132",
+      "label": "Button Работа с документами",
+      "destination": "working-editor"
+    },
+    {
+      "id": "109:1134",
+      "label": "Button Найти решение вместе",
+      "destination": "working-editor"
+    },
+    {
+      "id": "109:1136",
+      "label": "Button Войти в поток",
+      "destination": "working-editor"
+    },
+    {
+      "id": "109:1138",
+      "label": "Button Разгрести завалы",
+      "destination": "working-editor"
+    },
+    {
+      "id": "109:1140",
+      "label": "Button Включить голову",
+      "destination": "working-editor"
+    },
+    {
+      "id": "109:1149",
+      "label": "Summary - Настройки палитры Настройки",
+      "destination": "111:2"
+    },
+    {
+      "id": "109:1160",
+      "label": "Button - Исходная, цветовая схема База",
+      "destination": "working-editor"
+    },
+    {
+      "id": "109:1169",
+      "label": "Button - Сирень, цветовая схема Сирень",
+      "destination": "working-editor"
+    },
+    {
+      "id": "109:1177",
+      "label": "Button - Персик, цветовая схема Персик",
+      "destination": "working-editor"
+    },
+    {
+      "id": "109:1185",
+      "label": "Button - Мята, цветовая схема Мята",
+      "destination": "working-editor"
+    },
+    {
+      "id": "109:1193",
+      "label": "Button - Своя, цветовая схема + Своя",
+      "destination": "108:2"
+    },
+    {
+      "id": "109:1203",
+      "label": "Checkbox:margin ",
+      "destination": "working-editor"
+    },
+    {
+      "id": "109:1201",
+      "label": "Checkbox ",
+      "destination": "working-editor"
+    },
+    {
+      "id": "109:1208",
+      "label": "Color Picker - Выбрать цвет холста ",
+      "destination": "working-editor"
+    },
+    {
+      "id": "109:1213",
+      "label": "Button - Вернуть цвет холста из палитры ↺",
+      "destination": "working-editor"
+    },
+    {
+      "id": "109:1216",
+      "label": "Button Импорт палитры",
+      "destination": "125:2"
+    },
+    {
+      "id": "109:1223",
+      "label": "Summary - Настройки объекта Объект Книга",
+      "destination": "111:2"
+    },
+    {
+      "id": "109:1239",
+      "label": "Checkbox:margin ",
+      "destination": "working-editor"
+    },
+    {
+      "id": "109:1236",
+      "label": "Checkbox ",
+      "destination": "working-editor"
+    },
+    {
+      "id": "109:1244",
+      "label": "Number Input 612",
+      "destination": "working-editor"
+    },
+    {
+      "id": "109:1248",
+      "label": "Number Input 362",
+      "destination": "working-editor"
+    },
+    {
+      "id": "109:1253",
+      "label": "Number Input - Поворот 0",
+      "destination": "working-editor"
+    },
+    {
+      "id": "109:1258",
+      "label": "Button Дублировать",
+      "destination": "working-editor"
+    },
+    {
+      "id": "109:1260",
+      "label": "Button Удалить",
+      "destination": "working-editor"
+    },
+    {
+      "id": "109:1267",
+      "label": "Summary - Слои Слои 3",
+      "destination": "111:2"
+    },
+    {
+      "id": "109:1278",
+      "label": "Button Наушники",
+      "destination": "working-editor"
+    },
+    {
+      "id": "109:1368",
+      "label": "Button Книга",
+      "destination": "working-editor"
+    },
+    {
+      "id": "109:1426",
+      "label": "Button Лампа фон",
+      "destination": "working-editor"
+    },
+    {
+      "id": "109:1463",
+      "label": "Button Ниже",
+      "destination": "working-editor"
+    },
+    {
+      "id": "109:1465",
+      "label": "Button Выше",
+      "destination": "working-editor"
+    },
+    {
+      "id": "109:1470",
+      "label": "Checkbox:margin ",
+      "destination": "working-editor"
+    },
+    {
+      "id": "109:1468",
+      "label": "Checkbox ",
+      "destination": "working-editor"
+    },
+    {
+      "id": "109:1474",
+      "label": "Button Открыть проект",
+      "destination": "working-editor"
+    },
+    {
+      "id": "109:1498",
+      "label": "Button Выбрать файл JSON · проект «Сборки»",
+      "destination": "working-editor"
+    },
+    {
+      "id": "109:1484",
+      "label": "Button - Закрыть окно ×",
+      "destination": "105:2"
+    },
+    {
+      "id": "115:5",
+      "label": "Link - Сборка, главная Сборка",
+      "destination": "112:2"
+    },
+    {
+      "id": "115:14",
+      "label": "Button - Отменить ",
+      "destination": "working-editor"
+    },
+    {
+      "id": "115:17",
+      "label": "Button - Сохранить проект Проект",
+      "destination": "working-editor"
+    },
+    {
+      "id": "115:23",
+      "label": "Button - Скачать SVG SVG",
+      "destination": "working-editor"
+    },
+    {
+      "id": "115:897",
+      "label": "Button S",
+      "destination": "working-editor"
+    },
+    {
+      "id": "115:900",
+      "label": "Button L",
+      "destination": "working-editor"
+    },
+    {
+      "id": "115:907",
+      "label": "Button - Горизонтальный холст 1200 на 630 ",
+      "destination": "working-editor"
+    },
+    {
+      "id": "115:909",
+      "label": "Button - Квадратный холст 1080 на 1080 ",
+      "destination": "working-editor"
+    },
+    {
+      "id": "115:911",
+      "label": "Button - Вертикальный холст 1080 на 1350 ",
+      "destination": "working-editor"
+    },
+    {
+      "id": "115:913",
+      "label": "Button - Свой размер холста +",
+      "destination": "working-editor"
+    },
+    {
+      "id": "115:1115",
+      "label": "Button Другой вариант",
+      "destination": "working-editor"
+    },
+    {
+      "id": "115:1121",
+      "label": "Button Очистить",
+      "destination": "working-editor"
+    },
+    {
+      "id": "115:1127",
+      "label": "Button Накопить на мечту",
+      "destination": "working-editor"
+    },
+    {
+      "id": "115:1129",
+      "label": "Button Работа с документами",
+      "destination": "working-editor"
+    },
+    {
+      "id": "115:1131",
+      "label": "Button Найти решение вместе",
+      "destination": "working-editor"
+    },
+    {
+      "id": "115:1133",
+      "label": "Button Войти в поток",
+      "destination": "working-editor"
+    },
+    {
+      "id": "115:1135",
+      "label": "Button Разгрести завалы",
+      "destination": "working-editor"
+    },
+    {
+      "id": "115:1137",
+      "label": "Button Включить голову",
+      "destination": "working-editor"
+    },
+    {
+      "id": "115:37",
+      "label": "Text Area Обучение без отвлечений",
+      "destination": "working-editor"
+    },
+    {
+      "id": "115:39",
+      "label": "Button Собрать идею",
+      "destination": "working-editor"
+    },
+    {
+      "id": "115:48",
+      "label": "Button Импорт SVG",
+      "destination": "130:2"
+    },
+    {
+      "id": "115:54",
+      "label": "Search Input Найти объект",
+      "destination": "working-editor"
+    },
+    {
+      "id": "115:58",
+      "label": "Button - Библиотека лентой ",
+      "destination": "112:2"
+    },
+    {
+      "id": "115:61",
+      "label": "Button - Библиотека сеткой три на три ",
+      "destination": "117:2"
+    },
+    {
+      "id": "115:65",
+      "label": "Button - Предыдущие объекты ",
+      "destination": "working-editor"
+    },
+    {
+      "id": "115:68",
+      "label": "Button - Следующие объекты ",
+      "destination": "working-editor"
+    },
+    {
+      "id": "115:73",
+      "label": "Button Пазлы",
+      "destination": "working-editor"
+    },
+    {
+      "id": "115:135",
+      "label": "Button Книга",
+      "destination": "working-editor"
+    },
+    {
+      "id": "115:192",
+      "label": "Button Телефон",
+      "destination": "working-editor"
+    },
+    {
+      "id": "115:351",
+      "label": "Button Наушники",
+      "destination": "working-editor"
+    },
+    {
+      "id": "115:439",
+      "label": "Button Лампа",
+      "destination": "working-editor"
+    },
+    {
+      "id": "115:470",
+      "label": "Button Кошелёк",
+      "destination": "working-editor"
+    },
+    {
+      "id": "115:560",
+      "label": "Button Ручка",
+      "destination": "working-editor"
+    },
+    {
+      "id": "115:588",
+      "label": "Button Папка",
+      "destination": "working-editor"
+    },
+    {
+      "id": "115:614",
+      "label": "Button Монета",
+      "destination": "working-editor"
+    },
+    {
+      "id": "115:754",
+      "label": "Button Цветы",
+      "destination": "working-editor"
+    },
+    {
+      "id": "115:1146",
+      "label": "Summary - Настройки палитры Настройки",
+      "destination": "118:2"
+    },
+    {
+      "id": "115:1157",
+      "label": "Button - Исходная, цветовая схема База",
+      "destination": "working-editor"
+    },
+    {
+      "id": "115:1165",
+      "label": "Button - Сирень, цветовая схема Сирень",
+      "destination": "working-editor"
+    },
+    {
+      "id": "115:1173",
+      "label": "Button - Персик, цветовая схема Персик",
+      "destination": "working-editor"
+    },
+    {
+      "id": "115:1181",
+      "label": "Button - Мята, цветовая схема Мята",
+      "destination": "working-editor"
+    },
+    {
+      "id": "115:1189",
+      "label": "Button - Своя, цветовая схема + Своя",
+      "destination": "116:2"
+    },
+    {
+      "id": "115:1199",
+      "label": "Checkbox:margin ",
+      "destination": "working-editor"
+    },
+    {
+      "id": "115:1197",
+      "label": "Checkbox ",
+      "destination": "working-editor"
+    },
+    {
+      "id": "115:1204",
+      "label": "Color Picker - Выбрать цвет холста ",
+      "destination": "working-editor"
+    },
+    {
+      "id": "115:1209",
+      "label": "Button - Вернуть цвет холста из палитры ↺",
+      "destination": "working-editor"
+    },
+    {
+      "id": "115:1212",
+      "label": "Button Импорт палитры",
+      "destination": "114:2"
+    },
+    {
+      "id": "115:1219",
+      "label": "Summary - Настройки объекта Объект Книга",
+      "destination": "118:2"
+    },
+    {
+      "id": "115:1235",
+      "label": "Checkbox:margin ",
+      "destination": "working-editor"
+    },
+    {
+      "id": "115:1232",
+      "label": "Checkbox ",
+      "destination": "working-editor"
+    },
+    {
+      "id": "115:1240",
+      "label": "Number Input 612",
+      "destination": "working-editor"
+    },
+    {
+      "id": "115:1244",
+      "label": "Number Input 362",
+      "destination": "working-editor"
+    },
+    {
+      "id": "115:1249",
+      "label": "Number Input - Поворот 0",
+      "destination": "working-editor"
+    },
+    {
+      "id": "115:1254",
+      "label": "Button Дублировать",
+      "destination": "working-editor"
+    },
+    {
+      "id": "115:1256",
+      "label": "Button Удалить",
+      "destination": "working-editor"
+    },
+    {
+      "id": "115:1263",
+      "label": "Summary - Слои Слои 3",
+      "destination": "118:2"
+    },
+    {
+      "id": "115:1274",
+      "label": "Button Наушники",
+      "destination": "working-editor"
+    },
+    {
+      "id": "115:1364",
+      "label": "Button Книга",
+      "destination": "working-editor"
+    },
+    {
+      "id": "115:1422",
+      "label": "Button Лампа фон",
+      "destination": "working-editor"
+    },
+    {
+      "id": "115:1459",
+      "label": "Button Ниже",
+      "destination": "working-editor"
+    },
+    {
+      "id": "115:1461",
+      "label": "Button Выше",
+      "destination": "working-editor"
+    },
+    {
+      "id": "115:1466",
+      "label": "Checkbox:margin ",
+      "destination": "working-editor"
+    },
+    {
+      "id": "115:1464",
+      "label": "Checkbox ",
+      "destination": "working-editor"
+    },
+    {
+      "id": "115:1470",
+      "label": "Button Открыть проект",
+      "destination": "working-editor"
+    },
+    {
+      "id": "115:1494",
+      "label": "Button Выбрать файл JSON · проект «Сборки»",
+      "destination": "working-editor"
+    },
+    {
+      "id": "115:1480",
+      "label": "Button - Закрыть окно ×",
+      "destination": "112:2"
+    },
+    {
+      "id": "102:5",
+      "label": "Link - Сборка, главная Сборка",
+      "destination": "98:2"
+    },
+    {
+      "id": "102:14",
+      "label": "Button - Отменить Отменить",
+      "destination": "working-editor"
+    },
+    {
+      "id": "102:20",
+      "label": "Button - Сохранить проект Сохранить проект",
+      "destination": "working-editor"
+    },
+    {
+      "id": "102:25",
+      "label": "Button - Скачать SVG Скачать SVG",
+      "destination": "working-editor"
+    },
+    {
+      "id": "102:40",
+      "label": "Text Area Обучение без отвлечений",
+      "destination": "working-editor"
+    },
+    {
+      "id": "102:42",
+      "label": "Button Собрать идею",
+      "destination": "working-editor"
+    },
+    {
+      "id": "102:51",
+      "label": "Button Импорт SVG",
+      "destination": "99:2"
+    },
+    {
+      "id": "102:57",
+      "label": "Search Input Найти объект",
+      "destination": "working-editor"
+    },
+    {
+      "id": "102:61",
+      "label": "Button - Библиотека лентой ",
+      "destination": "98:2"
+    },
+    {
+      "id": "102:64",
+      "label": "Button - Библиотека сеткой три на три ",
+      "destination": "103:2"
+    },
+    {
+      "id": "102:68",
+      "label": "Button - Предыдущие объекты ",
+      "destination": "working-editor"
+    },
+    {
+      "id": "102:71",
+      "label": "Button - Следующие объекты ",
+      "destination": "working-editor"
+    },
+    {
+      "id": "102:76",
+      "label": "Button Пазлы",
+      "destination": "working-editor"
+    },
+    {
+      "id": "102:138",
+      "label": "Button Книга",
+      "destination": "working-editor"
+    },
+    {
+      "id": "102:195",
+      "label": "Button Телефон",
+      "destination": "working-editor"
+    },
+    {
+      "id": "102:354",
+      "label": "Button Наушники",
+      "destination": "working-editor"
+    },
+    {
+      "id": "102:442",
+      "label": "Button Лампа",
+      "destination": "working-editor"
+    },
+    {
+      "id": "102:473",
+      "label": "Button Кошелёк",
+      "destination": "working-editor"
+    },
+    {
+      "id": "102:563",
+      "label": "Button Ручка",
+      "destination": "working-editor"
+    },
+    {
+      "id": "102:591",
+      "label": "Button Папка",
+      "destination": "working-editor"
+    },
+    {
+      "id": "102:617",
+      "label": "Button Монета",
+      "destination": "working-editor"
+    },
+    {
+      "id": "102:757",
+      "label": "Button Цветы",
+      "destination": "working-editor"
+    },
+    {
+      "id": "102:900",
+      "label": "Button S",
+      "destination": "working-editor"
+    },
+    {
+      "id": "102:903",
+      "label": "Button L",
+      "destination": "working-editor"
+    },
+    {
+      "id": "102:910",
+      "label": "Button - Горизонтальный холст 1200 на 630 ",
+      "destination": "working-editor"
+    },
+    {
+      "id": "102:912",
+      "label": "Button - Квадратный холст 1080 на 1080 ",
+      "destination": "working-editor"
+    },
+    {
+      "id": "102:914",
+      "label": "Button - Вертикальный холст 1080 на 1350 ",
+      "destination": "working-editor"
+    },
+    {
+      "id": "102:916",
+      "label": "Button - Свой размер холста +",
+      "destination": "working-editor"
+    },
+    {
+      "id": "102:1104",
+      "label": "Button Другой вариант",
+      "destination": "working-editor"
+    },
+    {
+      "id": "102:1110",
+      "label": "Button Очистить",
+      "destination": "working-editor"
+    },
+    {
+      "id": "102:1116",
+      "label": "Button Накопить на мечту",
+      "destination": "working-editor"
+    },
+    {
+      "id": "102:1118",
+      "label": "Button Работа с документами",
+      "destination": "working-editor"
+    },
+    {
+      "id": "102:1120",
+      "label": "Button Найти решение вместе",
+      "destination": "working-editor"
+    },
+    {
+      "id": "102:1122",
+      "label": "Button Войти в поток",
+      "destination": "working-editor"
+    },
+    {
+      "id": "102:1124",
+      "label": "Button Разгрести завалы",
+      "destination": "working-editor"
+    },
+    {
+      "id": "102:1126",
+      "label": "Button Включить голову",
+      "destination": "working-editor"
+    },
+    {
+      "id": "102:1135",
+      "label": "Summary - Настройки палитры Настройки",
+      "destination": "104:2"
+    },
+    {
+      "id": "102:1146",
+      "label": "Button - Исходная, цветовая схема База",
+      "destination": "working-editor"
+    },
+    {
+      "id": "102:1155",
+      "label": "Button - Сирень, цветовая схема Сирень",
+      "destination": "working-editor"
+    },
+    {
+      "id": "102:1163",
+      "label": "Button - Персик, цветовая схема Персик",
+      "destination": "working-editor"
+    },
+    {
+      "id": "102:1171",
+      "label": "Button - Мята, цветовая схема Мята",
+      "destination": "working-editor"
+    },
+    {
+      "id": "102:1179",
+      "label": "Button - Своя, цветовая схема + Своя",
+      "destination": "working-editor"
+    },
+    {
+      "id": "102:1189",
+      "label": "Checkbox:margin ",
+      "destination": "working-editor"
+    },
+    {
+      "id": "102:1187",
+      "label": "Checkbox ",
+      "destination": "working-editor"
+    },
+    {
+      "id": "102:1194",
+      "label": "Color Picker - Выбрать цвет холста ",
+      "destination": "working-editor"
+    },
+    {
+      "id": "102:1199",
+      "label": "Button - Вернуть цвет холста из палитры ↺",
+      "destination": "working-editor"
+    },
+    {
+      "id": "102:1202",
+      "label": "Button Импорт палитры",
+      "destination": "121:2"
+    },
+    {
+      "id": "102:1211",
+      "label": "Color Picker ",
+      "destination": "working-editor"
+    },
+    {
+      "id": "102:1214",
+      "label": "Color Picker ",
+      "destination": "working-editor"
+    },
+    {
+      "id": "102:1217",
+      "label": "Color Picker ",
+      "destination": "working-editor"
+    },
+    {
+      "id": "102:1218",
+      "label": "Button Применить",
+      "destination": "working-editor"
+    },
+    {
+      "id": "102:1225",
+      "label": "Summary - Настройки объекта Объект Книга",
+      "destination": "104:2"
+    },
+    {
+      "id": "102:1241",
+      "label": "Checkbox:margin ",
+      "destination": "working-editor"
+    },
+    {
+      "id": "102:1238",
+      "label": "Checkbox ",
+      "destination": "working-editor"
+    },
+    {
+      "id": "102:1246",
+      "label": "Number Input 612",
+      "destination": "working-editor"
+    },
+    {
+      "id": "102:1250",
+      "label": "Number Input 362",
+      "destination": "working-editor"
+    },
+    {
+      "id": "102:1255",
+      "label": "Number Input - Поворот 0",
+      "destination": "working-editor"
+    },
+    {
+      "id": "102:1260",
+      "label": "Button Дублировать",
+      "destination": "working-editor"
+    },
+    {
+      "id": "102:1262",
+      "label": "Button Удалить",
+      "destination": "working-editor"
+    },
+    {
+      "id": "102:1269",
+      "label": "Summary - Слои Слои 3",
+      "destination": "104:2"
+    },
+    {
+      "id": "102:1280",
+      "label": "Button Наушники",
+      "destination": "working-editor"
+    },
+    {
+      "id": "102:1284",
+      "label": "Button Книга",
+      "destination": "working-editor"
+    },
+    {
+      "id": "102:1288",
+      "label": "Button Лампа фон",
+      "destination": "working-editor"
+    },
+    {
+      "id": "102:1297",
+      "label": "Button Ниже",
+      "destination": "working-editor"
+    },
+    {
+      "id": "102:1299",
+      "label": "Button Выше",
+      "destination": "working-editor"
+    },
+    {
+      "id": "102:1304",
+      "label": "Checkbox:margin ",
+      "destination": "working-editor"
+    },
+    {
+      "id": "102:1302",
+      "label": "Checkbox ",
+      "destination": "working-editor"
+    },
+    {
+      "id": "102:1308",
+      "label": "Button Открыть проект",
+      "destination": "101:2"
+    },
+    {
+      "id": "108:5",
+      "label": "Link - Сборка, главная Сборка",
+      "destination": "105:2"
+    },
+    {
+      "id": "108:14",
+      "label": "Button - Отменить Отменить",
+      "destination": "working-editor"
+    },
+    {
+      "id": "108:20",
+      "label": "Button - Сохранить проект Сохранить проект",
+      "destination": "working-editor"
+    },
+    {
+      "id": "108:25",
+      "label": "Button - Скачать SVG Скачать SVG",
+      "destination": "working-editor"
+    },
+    {
+      "id": "108:40",
+      "label": "Text Area Обучение без отвлечений",
+      "destination": "working-editor"
+    },
+    {
+      "id": "108:42",
+      "label": "Button Собрать идею",
+      "destination": "working-editor"
+    },
+    {
+      "id": "108:51",
+      "label": "Button Импорт SVG",
+      "destination": "106:2"
+    },
+    {
+      "id": "108:57",
+      "label": "Search Input Найти объект",
+      "destination": "working-editor"
+    },
+    {
+      "id": "108:61",
+      "label": "Button - Библиотека лентой ",
+      "destination": "105:2"
+    },
+    {
+      "id": "108:64",
+      "label": "Button - Библиотека сеткой три на три ",
+      "destination": "127:2"
+    },
+    {
+      "id": "108:68",
+      "label": "Button - Предыдущие объекты ",
+      "destination": "working-editor"
+    },
+    {
+      "id": "108:71",
+      "label": "Button - Следующие объекты ",
+      "destination": "working-editor"
+    },
+    {
+      "id": "108:76",
+      "label": "Button Пазлы",
+      "destination": "working-editor"
+    },
+    {
+      "id": "108:138",
+      "label": "Button Книга",
+      "destination": "working-editor"
+    },
+    {
+      "id": "108:195",
+      "label": "Button Телефон",
+      "destination": "working-editor"
+    },
+    {
+      "id": "108:354",
+      "label": "Button Наушники",
+      "destination": "working-editor"
+    },
+    {
+      "id": "108:442",
+      "label": "Button Лампа",
+      "destination": "working-editor"
+    },
+    {
+      "id": "108:473",
+      "label": "Button Кошелёк",
+      "destination": "working-editor"
+    },
+    {
+      "id": "108:563",
+      "label": "Button Ручка",
+      "destination": "working-editor"
+    },
+    {
+      "id": "108:591",
+      "label": "Button Папка",
+      "destination": "working-editor"
+    },
+    {
+      "id": "108:617",
+      "label": "Button Монета",
+      "destination": "working-editor"
+    },
+    {
+      "id": "108:757",
+      "label": "Button Цветы",
+      "destination": "working-editor"
+    },
+    {
+      "id": "108:900",
+      "label": "Button S",
+      "destination": "working-editor"
+    },
+    {
+      "id": "108:903",
+      "label": "Button L",
+      "destination": "working-editor"
+    },
+    {
+      "id": "108:910",
+      "label": "Button - Горизонтальный холст 1200 на 630 ",
+      "destination": "working-editor"
+    },
+    {
+      "id": "108:912",
+      "label": "Button - Квадратный холст 1080 на 1080 ",
+      "destination": "working-editor"
+    },
+    {
+      "id": "108:914",
+      "label": "Button - Вертикальный холст 1080 на 1350 ",
+      "destination": "working-editor"
+    },
+    {
+      "id": "108:916",
+      "label": "Button - Свой размер холста +",
+      "destination": "working-editor"
+    },
+    {
+      "id": "108:1104",
+      "label": "Button Другой вариант",
+      "destination": "working-editor"
+    },
+    {
+      "id": "108:1110",
+      "label": "Button Очистить",
+      "destination": "working-editor"
+    },
+    {
+      "id": "108:1116",
+      "label": "Button Накопить на мечту",
+      "destination": "working-editor"
+    },
+    {
+      "id": "108:1118",
+      "label": "Button Работа с документами",
+      "destination": "working-editor"
+    },
+    {
+      "id": "108:1120",
+      "label": "Button Найти решение вместе",
+      "destination": "working-editor"
+    },
+    {
+      "id": "108:1122",
+      "label": "Button Войти в поток",
+      "destination": "working-editor"
+    },
+    {
+      "id": "108:1124",
+      "label": "Button Разгрести завалы",
+      "destination": "working-editor"
+    },
+    {
+      "id": "108:1126",
+      "label": "Button Включить голову",
+      "destination": "working-editor"
+    },
+    {
+      "id": "108:1135",
+      "label": "Summary - Настройки палитры Настройки",
+      "destination": "111:2"
+    },
+    {
+      "id": "108:1146",
+      "label": "Button - Исходная, цветовая схема База",
+      "destination": "working-editor"
+    },
+    {
+      "id": "108:1155",
+      "label": "Button - Сирень, цветовая схема Сирень",
+      "destination": "working-editor"
+    },
+    {
+      "id": "108:1163",
+      "label": "Button - Персик, цветовая схема Персик",
+      "destination": "working-editor"
+    },
+    {
+      "id": "108:1171",
+      "label": "Button - Мята, цветовая схема Мята",
+      "destination": "working-editor"
+    },
+    {
+      "id": "108:1179",
+      "label": "Button - Своя, цветовая схема + Своя",
+      "destination": "working-editor"
+    },
+    {
+      "id": "108:1189",
+      "label": "Checkbox:margin ",
+      "destination": "working-editor"
+    },
+    {
+      "id": "108:1187",
+      "label": "Checkbox ",
+      "destination": "working-editor"
+    },
+    {
+      "id": "108:1194",
+      "label": "Color Picker - Выбрать цвет холста ",
+      "destination": "working-editor"
+    },
+    {
+      "id": "108:1199",
+      "label": "Button - Вернуть цвет холста из палитры ↺",
+      "destination": "working-editor"
+    },
+    {
+      "id": "108:1202",
+      "label": "Button Импорт палитры",
+      "destination": "125:2"
+    },
+    {
+      "id": "108:1211",
+      "label": "Color Picker ",
+      "destination": "working-editor"
+    },
+    {
+      "id": "108:1214",
+      "label": "Color Picker ",
+      "destination": "working-editor"
+    },
+    {
+      "id": "108:1217",
+      "label": "Color Picker ",
+      "destination": "working-editor"
+    },
+    {
+      "id": "108:1218",
+      "label": "Button Применить",
+      "destination": "working-editor"
+    },
+    {
+      "id": "108:1225",
+      "label": "Summary - Настройки объекта Объект Книга",
+      "destination": "111:2"
+    },
+    {
+      "id": "108:1241",
+      "label": "Checkbox:margin ",
+      "destination": "working-editor"
+    },
+    {
+      "id": "108:1238",
+      "label": "Checkbox ",
+      "destination": "working-editor"
+    },
+    {
+      "id": "108:1246",
+      "label": "Number Input 612",
+      "destination": "working-editor"
+    },
+    {
+      "id": "108:1250",
+      "label": "Number Input 362",
+      "destination": "working-editor"
+    },
+    {
+      "id": "108:1255",
+      "label": "Number Input - Поворот 0",
+      "destination": "working-editor"
+    },
+    {
+      "id": "108:1260",
+      "label": "Button Дублировать",
+      "destination": "working-editor"
+    },
+    {
+      "id": "108:1262",
+      "label": "Button Удалить",
+      "destination": "working-editor"
+    },
+    {
+      "id": "108:1269",
+      "label": "Summary - Слои Слои 3",
+      "destination": "111:2"
+    },
+    {
+      "id": "108:1280",
+      "label": "Button Наушники",
+      "destination": "working-editor"
+    },
+    {
+      "id": "108:1284",
+      "label": "Button Книга",
+      "destination": "working-editor"
+    },
+    {
+      "id": "108:1288",
+      "label": "Button Лампа фон",
+      "destination": "working-editor"
+    },
+    {
+      "id": "108:1297",
+      "label": "Button Ниже",
+      "destination": "working-editor"
+    },
+    {
+      "id": "108:1299",
+      "label": "Button Выше",
+      "destination": "working-editor"
+    },
+    {
+      "id": "108:1304",
+      "label": "Checkbox:margin ",
+      "destination": "working-editor"
+    },
+    {
+      "id": "108:1302",
+      "label": "Checkbox ",
+      "destination": "working-editor"
+    },
+    {
+      "id": "108:1308",
+      "label": "Button Открыть проект",
+      "destination": "109:2"
+    },
+    {
+      "id": "116:5",
+      "label": "Link - Сборка, главная Сборка",
+      "destination": "112:2"
+    },
+    {
+      "id": "116:14",
+      "label": "Button - Отменить ",
+      "destination": "working-editor"
+    },
+    {
+      "id": "116:17",
+      "label": "Button - Сохранить проект Проект",
+      "destination": "working-editor"
+    },
+    {
+      "id": "116:23",
+      "label": "Button - Скачать SVG SVG",
+      "destination": "working-editor"
+    },
+    {
+      "id": "116:897",
+      "label": "Button S",
+      "destination": "working-editor"
+    },
+    {
+      "id": "116:900",
+      "label": "Button L",
+      "destination": "working-editor"
+    },
+    {
+      "id": "116:907",
+      "label": "Button - Горизонтальный холст 1200 на 630 ",
+      "destination": "working-editor"
+    },
+    {
+      "id": "116:909",
+      "label": "Button - Квадратный холст 1080 на 1080 ",
+      "destination": "working-editor"
+    },
+    {
+      "id": "116:911",
+      "label": "Button - Вертикальный холст 1080 на 1350 ",
+      "destination": "working-editor"
+    },
+    {
+      "id": "116:913",
+      "label": "Button - Свой размер холста +",
+      "destination": "working-editor"
+    },
+    {
+      "id": "116:1101",
+      "label": "Button Другой вариант",
+      "destination": "working-editor"
+    },
+    {
+      "id": "116:1107",
+      "label": "Button Очистить",
+      "destination": "working-editor"
+    },
+    {
+      "id": "116:1113",
+      "label": "Button Накопить на мечту",
+      "destination": "working-editor"
+    },
+    {
+      "id": "116:1115",
+      "label": "Button Работа с документами",
+      "destination": "working-editor"
+    },
+    {
+      "id": "116:1117",
+      "label": "Button Найти решение вместе",
+      "destination": "working-editor"
+    },
+    {
+      "id": "116:1119",
+      "label": "Button Войти в поток",
+      "destination": "working-editor"
+    },
+    {
+      "id": "116:1121",
+      "label": "Button Разгрести завалы",
+      "destination": "working-editor"
+    },
+    {
+      "id": "116:1123",
+      "label": "Button Включить голову",
+      "destination": "working-editor"
+    },
+    {
+      "id": "116:37",
+      "label": "Text Area Обучение без отвлечений",
+      "destination": "working-editor"
+    },
+    {
+      "id": "116:39",
+      "label": "Button Собрать идею",
+      "destination": "working-editor"
+    },
+    {
+      "id": "116:48",
+      "label": "Button Импорт SVG",
+      "destination": "130:2"
+    },
+    {
+      "id": "116:54",
+      "label": "Search Input Найти объект",
+      "destination": "working-editor"
+    },
+    {
+      "id": "116:58",
+      "label": "Button - Библиотека лентой ",
+      "destination": "112:2"
+    },
+    {
+      "id": "116:61",
+      "label": "Button - Библиотека сеткой три на три ",
+      "destination": "117:2"
+    },
+    {
+      "id": "116:65",
+      "label": "Button - Предыдущие объекты ",
+      "destination": "working-editor"
+    },
+    {
+      "id": "116:68",
+      "label": "Button - Следующие объекты ",
+      "destination": "working-editor"
+    },
+    {
+      "id": "116:73",
+      "label": "Button Пазлы",
+      "destination": "working-editor"
+    },
+    {
+      "id": "116:135",
+      "label": "Button Книга",
+      "destination": "working-editor"
+    },
+    {
+      "id": "116:192",
+      "label": "Button Телефон",
+      "destination": "working-editor"
+    },
+    {
+      "id": "116:351",
+      "label": "Button Наушники",
+      "destination": "working-editor"
+    },
+    {
+      "id": "116:439",
+      "label": "Button Лампа",
+      "destination": "working-editor"
+    },
+    {
+      "id": "116:470",
+      "label": "Button Кошелёк",
+      "destination": "working-editor"
+    },
+    {
+      "id": "116:560",
+      "label": "Button Ручка",
+      "destination": "working-editor"
+    },
+    {
+      "id": "116:588",
+      "label": "Button Папка",
+      "destination": "working-editor"
+    },
+    {
+      "id": "116:614",
+      "label": "Button Монета",
+      "destination": "working-editor"
+    },
+    {
+      "id": "116:754",
+      "label": "Button Цветы",
+      "destination": "working-editor"
+    },
+    {
+      "id": "116:1132",
+      "label": "Summary - Настройки палитры Настройки",
+      "destination": "118:2"
+    },
+    {
+      "id": "116:1143",
+      "label": "Button - Исходная, цветовая схема База",
+      "destination": "working-editor"
+    },
+    {
+      "id": "116:1151",
+      "label": "Button - Сирень, цветовая схема Сирень",
+      "destination": "working-editor"
+    },
+    {
+      "id": "116:1159",
+      "label": "Button - Персик, цветовая схема Персик",
+      "destination": "working-editor"
+    },
+    {
+      "id": "116:1167",
+      "label": "Button - Мята, цветовая схема Мята",
+      "destination": "working-editor"
+    },
+    {
+      "id": "116:1175",
+      "label": "Button - Своя, цветовая схема + Своя",
+      "destination": "working-editor"
+    },
+    {
+      "id": "116:1185",
+      "label": "Checkbox:margin ",
+      "destination": "working-editor"
+    },
+    {
+      "id": "116:1183",
+      "label": "Checkbox ",
+      "destination": "working-editor"
+    },
+    {
+      "id": "116:1190",
+      "label": "Color Picker - Выбрать цвет холста ",
+      "destination": "working-editor"
+    },
+    {
+      "id": "116:1195",
+      "label": "Button - Вернуть цвет холста из палитры ↺",
+      "destination": "working-editor"
+    },
+    {
+      "id": "116:1198",
+      "label": "Button Импорт палитры",
+      "destination": "114:2"
+    },
+    {
+      "id": "116:1207",
+      "label": "Color Picker ",
+      "destination": "working-editor"
+    },
+    {
+      "id": "116:1210",
+      "label": "Color Picker ",
+      "destination": "working-editor"
+    },
+    {
+      "id": "116:1213",
+      "label": "Color Picker ",
+      "destination": "working-editor"
+    },
+    {
+      "id": "116:1214",
+      "label": "Button Применить",
+      "destination": "working-editor"
+    },
+    {
+      "id": "116:1221",
+      "label": "Summary - Настройки объекта Объект Книга",
+      "destination": "118:2"
+    },
+    {
+      "id": "116:1237",
+      "label": "Checkbox:margin ",
+      "destination": "working-editor"
+    },
+    {
+      "id": "116:1234",
+      "label": "Checkbox ",
+      "destination": "working-editor"
+    },
+    {
+      "id": "116:1242",
+      "label": "Number Input 612",
+      "destination": "working-editor"
+    },
+    {
+      "id": "116:1246",
+      "label": "Number Input 362",
+      "destination": "working-editor"
+    },
+    {
+      "id": "116:1251",
+      "label": "Number Input - Поворот 0",
+      "destination": "working-editor"
+    },
+    {
+      "id": "116:1256",
+      "label": "Button Дублировать",
+      "destination": "working-editor"
+    },
+    {
+      "id": "116:1258",
+      "label": "Button Удалить",
+      "destination": "working-editor"
+    },
+    {
+      "id": "116:1265",
+      "label": "Summary - Слои Слои 3",
+      "destination": "118:2"
+    },
+    {
+      "id": "116:1276",
+      "label": "Button Наушники",
+      "destination": "working-editor"
+    },
+    {
+      "id": "116:1280",
+      "label": "Button Книга",
+      "destination": "working-editor"
+    },
+    {
+      "id": "116:1284",
+      "label": "Button Лампа фон",
+      "destination": "working-editor"
+    },
+    {
+      "id": "116:1293",
+      "label": "Button Ниже",
+      "destination": "working-editor"
+    },
+    {
+      "id": "116:1295",
+      "label": "Button Выше",
+      "destination": "working-editor"
+    },
+    {
+      "id": "116:1300",
+      "label": "Checkbox:margin ",
+      "destination": "working-editor"
+    },
+    {
+      "id": "116:1298",
+      "label": "Checkbox ",
+      "destination": "working-editor"
+    },
+    {
+      "id": "116:1304",
+      "label": "Button Открыть проект",
+      "destination": "115:2"
+    },
+    {
+      "id": "103:5",
+      "label": "Link - Сборка, главная Сборка",
+      "destination": "98:2"
+    },
+    {
+      "id": "103:14",
+      "label": "Button - Отменить Отменить",
+      "destination": "working-editor"
+    },
+    {
+      "id": "103:20",
+      "label": "Button - Сохранить проект Сохранить проект",
+      "destination": "working-editor"
+    },
+    {
+      "id": "103:25",
+      "label": "Button - Скачать SVG Скачать SVG",
+      "destination": "working-editor"
+    },
+    {
+      "id": "103:40",
+      "label": "Text Area Обучение без отвлечений",
+      "destination": "working-editor"
+    },
+    {
+      "id": "103:42",
+      "label": "Button Собрать идею",
+      "destination": "working-editor"
+    },
+    {
+      "id": "103:51",
+      "label": "Button Импорт SVG",
+      "destination": "99:2"
+    },
+    {
+      "id": "103:57",
+      "label": "Search Input Найти объект",
+      "destination": "working-editor"
+    },
+    {
+      "id": "103:61",
+      "label": "Button - Библиотека лентой ",
+      "destination": "98:2"
+    },
+    {
+      "id": "103:64",
+      "label": "Button - Библиотека сеткой три на три ",
+      "destination": "working-editor"
+    },
+    {
+      "id": "103:68",
+      "label": "Button Пазлы",
+      "destination": "working-editor"
+    },
+    {
+      "id": "103:130",
+      "label": "Button Книга",
+      "destination": "working-editor"
+    },
+    {
+      "id": "103:187",
+      "label": "Button Телефон",
+      "destination": "working-editor"
+    },
+    {
+      "id": "103:346",
+      "label": "Button Наушники",
+      "destination": "working-editor"
+    },
+    {
+      "id": "103:434",
+      "label": "Button Лампа",
+      "destination": "working-editor"
+    },
+    {
+      "id": "103:465",
+      "label": "Button Кошелёк",
+      "destination": "working-editor"
+    },
+    {
+      "id": "103:555",
+      "label": "Button Ручка",
+      "destination": "working-editor"
+    },
+    {
+      "id": "103:583",
+      "label": "Button Папка",
+      "destination": "working-editor"
+    },
+    {
+      "id": "103:609",
+      "label": "Button Монета",
+      "destination": "working-editor"
+    },
+    {
+      "id": "103:749",
+      "label": "Button Цветы",
+      "destination": "working-editor"
+    },
+    {
+      "id": "103:884",
+      "label": "Button Показать все объекты",
+      "destination": "working-editor"
+    },
+    {
+      "id": "103:896",
+      "label": "Button S",
+      "destination": "working-editor"
+    },
+    {
+      "id": "103:899",
+      "label": "Button L",
+      "destination": "working-editor"
+    },
+    {
+      "id": "103:906",
+      "label": "Button - Горизонтальный холст 1200 на 630 ",
+      "destination": "working-editor"
+    },
+    {
+      "id": "103:908",
+      "label": "Button - Квадратный холст 1080 на 1080 ",
+      "destination": "working-editor"
+    },
+    {
+      "id": "103:910",
+      "label": "Button - Вертикальный холст 1080 на 1350 ",
+      "destination": "working-editor"
+    },
+    {
+      "id": "103:912",
+      "label": "Button - Свой размер холста +",
+      "destination": "working-editor"
+    },
+    {
+      "id": "103:1114",
+      "label": "Button Другой вариант",
+      "destination": "working-editor"
+    },
+    {
+      "id": "103:1119",
+      "label": "Button Очистить",
+      "destination": "working-editor"
+    },
+    {
+      "id": "103:1125",
+      "label": "Button Накопить на мечту",
+      "destination": "working-editor"
+    },
+    {
+      "id": "103:1127",
+      "label": "Button Работа с документами",
+      "destination": "working-editor"
+    },
+    {
+      "id": "103:1129",
+      "label": "Button Найти решение вместе",
+      "destination": "working-editor"
+    },
+    {
+      "id": "103:1131",
+      "label": "Button Войти в поток",
+      "destination": "working-editor"
+    },
+    {
+      "id": "103:1133",
+      "label": "Button Разгрести завалы",
+      "destination": "working-editor"
+    },
+    {
+      "id": "103:1135",
+      "label": "Button Включить голову",
+      "destination": "working-editor"
+    },
+    {
+      "id": "103:1144",
+      "label": "Summary - Настройки палитры Настройки",
+      "destination": "104:2"
+    },
+    {
+      "id": "103:1155",
+      "label": "Button - Исходная, цветовая схема База",
+      "destination": "working-editor"
+    },
+    {
+      "id": "103:1164",
+      "label": "Button - Сирень, цветовая схема Сирень",
+      "destination": "working-editor"
+    },
+    {
+      "id": "103:1172",
+      "label": "Button - Персик, цветовая схема Персик",
+      "destination": "working-editor"
+    },
+    {
+      "id": "103:1180",
+      "label": "Button - Мята, цветовая схема Мята",
+      "destination": "working-editor"
+    },
+    {
+      "id": "103:1188",
+      "label": "Button - Своя, цветовая схема + Своя",
+      "destination": "102:2"
+    },
+    {
+      "id": "103:1198",
+      "label": "Checkbox:margin ",
+      "destination": "working-editor"
+    },
+    {
+      "id": "103:1196",
+      "label": "Checkbox ",
+      "destination": "working-editor"
+    },
+    {
+      "id": "103:1203",
+      "label": "Color Picker - Выбрать цвет холста ",
+      "destination": "working-editor"
+    },
+    {
+      "id": "103:1208",
+      "label": "Button - Вернуть цвет холста из палитры ↺",
+      "destination": "working-editor"
+    },
+    {
+      "id": "103:1211",
+      "label": "Button Импорт палитры",
+      "destination": "121:2"
+    },
+    {
+      "id": "103:1218",
+      "label": "Summary - Настройки объекта Объект Книга",
+      "destination": "104:2"
+    },
+    {
+      "id": "103:1234",
+      "label": "Checkbox:margin ",
+      "destination": "working-editor"
+    },
+    {
+      "id": "103:1231",
+      "label": "Checkbox ",
+      "destination": "working-editor"
+    },
+    {
+      "id": "103:1239",
+      "label": "Number Input 612",
+      "destination": "working-editor"
+    },
+    {
+      "id": "103:1243",
+      "label": "Number Input 362",
+      "destination": "working-editor"
+    },
+    {
+      "id": "103:1248",
+      "label": "Number Input - Поворот 0",
+      "destination": "working-editor"
+    },
+    {
+      "id": "103:1253",
+      "label": "Button Дублировать",
+      "destination": "working-editor"
+    },
+    {
+      "id": "103:1255",
+      "label": "Button Удалить",
+      "destination": "working-editor"
+    },
+    {
+      "id": "103:1262",
+      "label": "Summary - Слои Слои 3",
+      "destination": "104:2"
+    },
+    {
+      "id": "103:1273",
+      "label": "Button Наушники",
+      "destination": "working-editor"
+    },
+    {
+      "id": "103:1363",
+      "label": "Button Книга",
+      "destination": "working-editor"
+    },
+    {
+      "id": "103:1421",
+      "label": "Button Лампа фон",
+      "destination": "working-editor"
+    },
+    {
+      "id": "103:1458",
+      "label": "Button Ниже",
+      "destination": "working-editor"
+    },
+    {
+      "id": "103:1460",
+      "label": "Button Выше",
+      "destination": "working-editor"
+    },
+    {
+      "id": "103:1465",
+      "label": "Checkbox:margin ",
+      "destination": "working-editor"
+    },
+    {
+      "id": "103:1463",
+      "label": "Checkbox ",
+      "destination": "working-editor"
+    },
+    {
+      "id": "103:1469",
+      "label": "Button Открыть проект",
+      "destination": "101:2"
+    },
+    {
+      "id": "127:5",
+      "label": "Link - Сборка, главная Сборка",
+      "destination": "105:2"
+    },
+    {
+      "id": "127:14",
+      "label": "Button - Отменить Отменить",
+      "destination": "working-editor"
+    },
+    {
+      "id": "127:20",
+      "label": "Button - Сохранить проект Сохранить проект",
+      "destination": "working-editor"
+    },
+    {
+      "id": "127:25",
+      "label": "Button - Скачать SVG Скачать SVG",
+      "destination": "working-editor"
+    },
+    {
+      "id": "127:40",
+      "label": "Text Area Обучение без отвлечений",
+      "destination": "working-editor"
+    },
+    {
+      "id": "127:42",
+      "label": "Button Собрать идею",
+      "destination": "working-editor"
+    },
+    {
+      "id": "127:51",
+      "label": "Button Импорт SVG",
+      "destination": "106:2"
+    },
+    {
+      "id": "127:57",
+      "label": "Search Input Найти объект",
+      "destination": "working-editor"
+    },
+    {
+      "id": "127:61",
+      "label": "Button - Библиотека лентой ",
+      "destination": "105:2"
+    },
+    {
+      "id": "127:64",
+      "label": "Button - Библиотека сеткой три на три ",
+      "destination": "working-editor"
+    },
+    {
+      "id": "127:68",
+      "label": "Button Пазлы",
+      "destination": "working-editor"
+    },
+    {
+      "id": "127:130",
+      "label": "Button Книга",
+      "destination": "working-editor"
+    },
+    {
+      "id": "127:187",
+      "label": "Button Телефон",
+      "destination": "working-editor"
+    },
+    {
+      "id": "127:346",
+      "label": "Button Наушники",
+      "destination": "working-editor"
+    },
+    {
+      "id": "127:434",
+      "label": "Button Лампа",
+      "destination": "working-editor"
+    },
+    {
+      "id": "127:465",
+      "label": "Button Кошелёк",
+      "destination": "working-editor"
+    },
+    {
+      "id": "127:555",
+      "label": "Button Ручка",
+      "destination": "working-editor"
+    },
+    {
+      "id": "127:583",
+      "label": "Button Папка",
+      "destination": "working-editor"
+    },
+    {
+      "id": "127:609",
+      "label": "Button Монета",
+      "destination": "working-editor"
+    },
+    {
+      "id": "127:749",
+      "label": "Button Цветы",
+      "destination": "working-editor"
+    },
+    {
+      "id": "127:884",
+      "label": "Button Показать все объекты",
+      "destination": "working-editor"
+    },
+    {
+      "id": "127:896",
+      "label": "Button S",
+      "destination": "working-editor"
+    },
+    {
+      "id": "127:899",
+      "label": "Button L",
+      "destination": "working-editor"
+    },
+    {
+      "id": "127:906",
+      "label": "Button - Горизонтальный холст 1200 на 630 ",
+      "destination": "working-editor"
+    },
+    {
+      "id": "127:908",
+      "label": "Button - Квадратный холст 1080 на 1080 ",
+      "destination": "working-editor"
+    },
+    {
+      "id": "127:910",
+      "label": "Button - Вертикальный холст 1080 на 1350 ",
+      "destination": "working-editor"
+    },
+    {
+      "id": "127:912",
+      "label": "Button - Свой размер холста +",
+      "destination": "working-editor"
+    },
+    {
+      "id": "127:1114",
+      "label": "Button Другой вариант",
+      "destination": "working-editor"
+    },
+    {
+      "id": "127:1119",
+      "label": "Button Очистить",
+      "destination": "working-editor"
+    },
+    {
+      "id": "127:1125",
+      "label": "Button Накопить на мечту",
+      "destination": "working-editor"
+    },
+    {
+      "id": "127:1127",
+      "label": "Button Работа с документами",
+      "destination": "working-editor"
+    },
+    {
+      "id": "127:1129",
+      "label": "Button Найти решение вместе",
+      "destination": "working-editor"
+    },
+    {
+      "id": "127:1131",
+      "label": "Button Войти в поток",
+      "destination": "working-editor"
+    },
+    {
+      "id": "127:1133",
+      "label": "Button Разгрести завалы",
+      "destination": "working-editor"
+    },
+    {
+      "id": "127:1135",
+      "label": "Button Включить голову",
+      "destination": "working-editor"
+    },
+    {
+      "id": "127:1144",
+      "label": "Summary - Настройки палитры Настройки",
+      "destination": "111:2"
+    },
+    {
+      "id": "127:1155",
+      "label": "Button - Исходная, цветовая схема База",
+      "destination": "working-editor"
+    },
+    {
+      "id": "127:1164",
+      "label": "Button - Сирень, цветовая схема Сирень",
+      "destination": "working-editor"
+    },
+    {
+      "id": "127:1172",
+      "label": "Button - Персик, цветовая схема Персик",
+      "destination": "working-editor"
+    },
+    {
+      "id": "127:1180",
+      "label": "Button - Мята, цветовая схема Мята",
+      "destination": "working-editor"
+    },
+    {
+      "id": "127:1188",
+      "label": "Button - Своя, цветовая схема + Своя",
+      "destination": "108:2"
+    },
+    {
+      "id": "127:1198",
+      "label": "Checkbox:margin ",
+      "destination": "working-editor"
+    },
+    {
+      "id": "127:1196",
+      "label": "Checkbox ",
+      "destination": "working-editor"
+    },
+    {
+      "id": "127:1203",
+      "label": "Color Picker - Выбрать цвет холста ",
+      "destination": "working-editor"
+    },
+    {
+      "id": "127:1208",
+      "label": "Button - Вернуть цвет холста из палитры ↺",
+      "destination": "working-editor"
+    },
+    {
+      "id": "127:1211",
+      "label": "Button Импорт палитры",
+      "destination": "125:2"
+    },
+    {
+      "id": "127:1218",
+      "label": "Summary - Настройки объекта Объект Книга",
+      "destination": "111:2"
+    },
+    {
+      "id": "127:1234",
+      "label": "Checkbox:margin ",
+      "destination": "working-editor"
+    },
+    {
+      "id": "127:1231",
+      "label": "Checkbox ",
+      "destination": "working-editor"
+    },
+    {
+      "id": "127:1239",
+      "label": "Number Input 612",
+      "destination": "working-editor"
+    },
+    {
+      "id": "127:1243",
+      "label": "Number Input 362",
+      "destination": "working-editor"
+    },
+    {
+      "id": "127:1248",
+      "label": "Number Input - Поворот 0",
+      "destination": "working-editor"
+    },
+    {
+      "id": "127:1253",
+      "label": "Button Дублировать",
+      "destination": "working-editor"
+    },
+    {
+      "id": "127:1255",
+      "label": "Button Удалить",
+      "destination": "working-editor"
+    },
+    {
+      "id": "127:1262",
+      "label": "Summary - Слои Слои 3",
+      "destination": "111:2"
+    },
+    {
+      "id": "127:1273",
+      "label": "Button Наушники",
+      "destination": "working-editor"
+    },
+    {
+      "id": "127:1363",
+      "label": "Button Книга",
+      "destination": "working-editor"
+    },
+    {
+      "id": "127:1421",
+      "label": "Button Лампа фон",
+      "destination": "working-editor"
+    },
+    {
+      "id": "127:1458",
+      "label": "Button Ниже",
+      "destination": "working-editor"
+    },
+    {
+      "id": "127:1460",
+      "label": "Button Выше",
+      "destination": "working-editor"
+    },
+    {
+      "id": "127:1465",
+      "label": "Checkbox:margin ",
+      "destination": "working-editor"
+    },
+    {
+      "id": "127:1463",
+      "label": "Checkbox ",
+      "destination": "working-editor"
+    },
+    {
+      "id": "127:1469",
+      "label": "Button Открыть проект",
+      "destination": "109:2"
+    },
+    {
+      "id": "117:5",
+      "label": "Link - Сборка, главная Сборка",
+      "destination": "112:2"
+    },
+    {
+      "id": "117:14",
+      "label": "Button - Отменить ",
+      "destination": "working-editor"
+    },
+    {
+      "id": "117:17",
+      "label": "Button - Сохранить проект Проект",
+      "destination": "working-editor"
+    },
+    {
+      "id": "117:23",
+      "label": "Button - Скачать SVG SVG",
+      "destination": "working-editor"
+    },
+    {
+      "id": "117:893",
+      "label": "Button S",
+      "destination": "working-editor"
+    },
+    {
+      "id": "117:896",
+      "label": "Button L",
+      "destination": "working-editor"
+    },
+    {
+      "id": "117:903",
+      "label": "Button - Горизонтальный холст 1200 на 630 ",
+      "destination": "working-editor"
+    },
+    {
+      "id": "117:905",
+      "label": "Button - Квадратный холст 1080 на 1080 ",
+      "destination": "working-editor"
+    },
+    {
+      "id": "117:907",
+      "label": "Button - Вертикальный холст 1080 на 1350 ",
+      "destination": "working-editor"
+    },
+    {
+      "id": "117:909",
+      "label": "Button - Свой размер холста +",
+      "destination": "working-editor"
+    },
+    {
+      "id": "117:1111",
+      "label": "Button Другой вариант",
+      "destination": "working-editor"
+    },
+    {
+      "id": "117:1116",
+      "label": "Button Очистить",
+      "destination": "working-editor"
+    },
+    {
+      "id": "117:1122",
+      "label": "Button Накопить на мечту",
+      "destination": "working-editor"
+    },
+    {
+      "id": "117:1124",
+      "label": "Button Работа с документами",
+      "destination": "working-editor"
+    },
+    {
+      "id": "117:1126",
+      "label": "Button Найти решение вместе",
+      "destination": "working-editor"
+    },
+    {
+      "id": "117:1128",
+      "label": "Button Войти в поток",
+      "destination": "working-editor"
+    },
+    {
+      "id": "117:1130",
+      "label": "Button Разгрести завалы",
+      "destination": "working-editor"
+    },
+    {
+      "id": "117:1132",
+      "label": "Button Включить голову",
+      "destination": "working-editor"
+    },
+    {
+      "id": "117:37",
+      "label": "Text Area Обучение без отвлечений",
+      "destination": "working-editor"
+    },
+    {
+      "id": "117:39",
+      "label": "Button Собрать идею",
+      "destination": "working-editor"
+    },
+    {
+      "id": "117:48",
+      "label": "Button Импорт SVG",
+      "destination": "130:2"
+    },
+    {
+      "id": "117:54",
+      "label": "Search Input Найти объект",
+      "destination": "working-editor"
+    },
+    {
+      "id": "117:58",
+      "label": "Button - Библиотека лентой ",
+      "destination": "112:2"
+    },
+    {
+      "id": "117:61",
+      "label": "Button - Библиотека сеткой три на три ",
+      "destination": "working-editor"
+    },
+    {
+      "id": "117:65",
+      "label": "Button Пазлы",
+      "destination": "working-editor"
+    },
+    {
+      "id": "117:127",
+      "label": "Button Книга",
+      "destination": "working-editor"
+    },
+    {
+      "id": "117:184",
+      "label": "Button Телефон",
+      "destination": "working-editor"
+    },
+    {
+      "id": "117:343",
+      "label": "Button Наушники",
+      "destination": "working-editor"
+    },
+    {
+      "id": "117:431",
+      "label": "Button Лампа",
+      "destination": "working-editor"
+    },
+    {
+      "id": "117:462",
+      "label": "Button Кошелёк",
+      "destination": "working-editor"
+    },
+    {
+      "id": "117:552",
+      "label": "Button Ручка",
+      "destination": "working-editor"
+    },
+    {
+      "id": "117:580",
+      "label": "Button Папка",
+      "destination": "working-editor"
+    },
+    {
+      "id": "117:606",
+      "label": "Button Монета",
+      "destination": "working-editor"
+    },
+    {
+      "id": "117:746",
+      "label": "Button Цветы",
+      "destination": "working-editor"
+    },
+    {
+      "id": "117:881",
+      "label": "Button Показать все объекты",
+      "destination": "working-editor"
+    },
+    {
+      "id": "117:1141",
+      "label": "Summary - Настройки палитры Настройки",
+      "destination": "118:2"
+    },
+    {
+      "id": "117:1152",
+      "label": "Button - Исходная, цветовая схема База",
+      "destination": "working-editor"
+    },
+    {
+      "id": "117:1160",
+      "label": "Button - Сирень, цветовая схема Сирень",
+      "destination": "working-editor"
+    },
+    {
+      "id": "117:1168",
+      "label": "Button - Персик, цветовая схема Персик",
+      "destination": "working-editor"
+    },
+    {
+      "id": "117:1176",
+      "label": "Button - Мята, цветовая схема Мята",
+      "destination": "working-editor"
+    },
+    {
+      "id": "117:1184",
+      "label": "Button - Своя, цветовая схема + Своя",
+      "destination": "116:2"
+    },
+    {
+      "id": "117:1194",
+      "label": "Checkbox:margin ",
+      "destination": "working-editor"
+    },
+    {
+      "id": "117:1192",
+      "label": "Checkbox ",
+      "destination": "working-editor"
+    },
+    {
+      "id": "117:1199",
+      "label": "Color Picker - Выбрать цвет холста ",
+      "destination": "working-editor"
+    },
+    {
+      "id": "117:1204",
+      "label": "Button - Вернуть цвет холста из палитры ↺",
+      "destination": "working-editor"
+    },
+    {
+      "id": "117:1207",
+      "label": "Button Импорт палитры",
+      "destination": "114:2"
+    },
+    {
+      "id": "117:1214",
+      "label": "Summary - Настройки объекта Объект Книга",
+      "destination": "118:2"
+    },
+    {
+      "id": "117:1230",
+      "label": "Checkbox:margin ",
+      "destination": "working-editor"
+    },
+    {
+      "id": "117:1227",
+      "label": "Checkbox ",
+      "destination": "working-editor"
+    },
+    {
+      "id": "117:1235",
+      "label": "Number Input 612",
+      "destination": "working-editor"
+    },
+    {
+      "id": "117:1239",
+      "label": "Number Input 362",
+      "destination": "working-editor"
+    },
+    {
+      "id": "117:1244",
+      "label": "Number Input - Поворот 0",
+      "destination": "working-editor"
+    },
+    {
+      "id": "117:1249",
+      "label": "Button Дублировать",
+      "destination": "working-editor"
+    },
+    {
+      "id": "117:1251",
+      "label": "Button Удалить",
+      "destination": "working-editor"
+    },
+    {
+      "id": "117:1258",
+      "label": "Summary - Слои Слои 3",
+      "destination": "118:2"
+    },
+    {
+      "id": "117:1269",
+      "label": "Button Наушники",
+      "destination": "working-editor"
+    },
+    {
+      "id": "117:1359",
+      "label": "Button Книга",
+      "destination": "working-editor"
+    },
+    {
+      "id": "117:1417",
+      "label": "Button Лампа фон",
+      "destination": "working-editor"
+    },
+    {
+      "id": "117:1454",
+      "label": "Button Ниже",
+      "destination": "working-editor"
+    },
+    {
+      "id": "117:1456",
+      "label": "Button Выше",
+      "destination": "working-editor"
+    },
+    {
+      "id": "117:1461",
+      "label": "Checkbox:margin ",
+      "destination": "working-editor"
+    },
+    {
+      "id": "117:1459",
+      "label": "Checkbox ",
+      "destination": "working-editor"
+    },
+    {
+      "id": "117:1465",
+      "label": "Button Открыть проект",
+      "destination": "115:2"
+    },
+    {
+      "id": "104:5",
+      "label": "Link - Сборка, главная Сборка",
+      "destination": "98:2"
+    },
+    {
+      "id": "104:14",
+      "label": "Button - Отменить Отменить",
+      "destination": "working-editor"
+    },
+    {
+      "id": "104:20",
+      "label": "Button - Сохранить проект Сохранить проект",
+      "destination": "working-editor"
+    },
+    {
+      "id": "104:25",
+      "label": "Button - Скачать SVG Скачать SVG",
+      "destination": "working-editor"
+    },
+    {
+      "id": "104:40",
+      "label": "Text Area Обучение без отвлечений",
+      "destination": "working-editor"
+    },
+    {
+      "id": "104:42",
+      "label": "Button Собрать идею",
+      "destination": "working-editor"
+    },
+    {
+      "id": "104:51",
+      "label": "Button Импорт SVG",
+      "destination": "99:2"
+    },
+    {
+      "id": "104:57",
+      "label": "Search Input Найти объект",
+      "destination": "working-editor"
+    },
+    {
+      "id": "104:61",
+      "label": "Button - Библиотека лентой ",
+      "destination": "98:2"
+    },
+    {
+      "id": "104:64",
+      "label": "Button - Библиотека сеткой три на три ",
+      "destination": "103:2"
+    },
+    {
+      "id": "104:68",
+      "label": "Button - Предыдущие объекты ",
+      "destination": "working-editor"
+    },
+    {
+      "id": "104:71",
+      "label": "Button - Следующие объекты ",
+      "destination": "working-editor"
+    },
+    {
+      "id": "104:76",
+      "label": "Button Пазлы",
+      "destination": "working-editor"
+    },
+    {
+      "id": "104:138",
+      "label": "Button Книга",
+      "destination": "working-editor"
+    },
+    {
+      "id": "104:195",
+      "label": "Button Телефон",
+      "destination": "working-editor"
+    },
+    {
+      "id": "104:354",
+      "label": "Button Наушники",
+      "destination": "working-editor"
+    },
+    {
+      "id": "104:442",
+      "label": "Button Лампа",
+      "destination": "working-editor"
+    },
+    {
+      "id": "104:473",
+      "label": "Button Кошелёк",
+      "destination": "working-editor"
+    },
+    {
+      "id": "104:563",
+      "label": "Button Ручка",
+      "destination": "working-editor"
+    },
+    {
+      "id": "104:591",
+      "label": "Button Папка",
+      "destination": "working-editor"
+    },
+    {
+      "id": "104:617",
+      "label": "Button Монета",
+      "destination": "working-editor"
+    },
+    {
+      "id": "104:757",
+      "label": "Button Цветы",
+      "destination": "working-editor"
+    },
+    {
+      "id": "104:900",
+      "label": "Button S",
+      "destination": "working-editor"
+    },
+    {
+      "id": "104:903",
+      "label": "Button L",
+      "destination": "working-editor"
+    },
+    {
+      "id": "104:910",
+      "label": "Button - Горизонтальный холст 1200 на 630 ",
+      "destination": "working-editor"
+    },
+    {
+      "id": "104:912",
+      "label": "Button - Квадратный холст 1080 на 1080 ",
+      "destination": "working-editor"
+    },
+    {
+      "id": "104:914",
+      "label": "Button - Вертикальный холст 1080 на 1350 ",
+      "destination": "working-editor"
+    },
+    {
+      "id": "104:916",
+      "label": "Button - Свой размер холста +",
+      "destination": "working-editor"
+    },
+    {
+      "id": "104:1118",
+      "label": "Button Другой вариант",
+      "destination": "working-editor"
+    },
+    {
+      "id": "104:1124",
+      "label": "Button Очистить",
+      "destination": "working-editor"
+    },
+    {
+      "id": "104:1130",
+      "label": "Button Накопить на мечту",
+      "destination": "working-editor"
+    },
+    {
+      "id": "104:1132",
+      "label": "Button Работа с документами",
+      "destination": "working-editor"
+    },
+    {
+      "id": "104:1134",
+      "label": "Button Найти решение вместе",
+      "destination": "working-editor"
+    },
+    {
+      "id": "104:1136",
+      "label": "Button Войти в поток",
+      "destination": "working-editor"
+    },
+    {
+      "id": "104:1138",
+      "label": "Button Разгрести завалы",
+      "destination": "working-editor"
+    },
+    {
+      "id": "104:1140",
+      "label": "Button Включить голову",
+      "destination": "working-editor"
+    },
+    {
+      "id": "104:1149",
+      "label": "Summary - Настройки палитры Настройки",
+      "destination": "98:2"
+    },
+    {
+      "id": "104:1159",
+      "label": "Button - Исходная, цветовая схема База",
+      "destination": "working-editor"
+    },
+    {
+      "id": "104:1168",
+      "label": "Button - Сирень, цветовая схема Сирень",
+      "destination": "working-editor"
+    },
+    {
+      "id": "104:1176",
+      "label": "Button - Персик, цветовая схема Персик",
+      "destination": "working-editor"
+    },
+    {
+      "id": "104:1184",
+      "label": "Button - Мята, цветовая схема Мята",
+      "destination": "working-editor"
+    },
+    {
+      "id": "104:1192",
+      "label": "Button - Своя, цветовая схема + Своя",
+      "destination": "102:2"
+    },
+    {
+      "id": "104:1202",
+      "label": "Checkbox:margin ",
+      "destination": "working-editor"
+    },
+    {
+      "id": "104:1200",
+      "label": "Checkbox ",
+      "destination": "working-editor"
+    },
+    {
+      "id": "104:1207",
+      "label": "Color Picker - Выбрать цвет холста ",
+      "destination": "working-editor"
+    },
+    {
+      "id": "104:1212",
+      "label": "Button - Вернуть цвет холста из палитры ↺",
+      "destination": "working-editor"
+    },
+    {
+      "id": "104:1215",
+      "label": "Button Импорт палитры",
+      "destination": "121:2"
+    },
+    {
+      "id": "104:1222",
+      "label": "Summary - Настройки объекта Объект Книга",
+      "destination": "98:2"
+    },
+    {
+      "id": "104:1237",
+      "label": "Checkbox:margin ",
+      "destination": "working-editor"
+    },
+    {
+      "id": "104:1234",
+      "label": "Checkbox ",
+      "destination": "working-editor"
+    },
+    {
+      "id": "104:1242",
+      "label": "Number Input 612",
+      "destination": "working-editor"
+    },
+    {
+      "id": "104:1246",
+      "label": "Number Input 362",
+      "destination": "working-editor"
+    },
+    {
+      "id": "104:1251",
+      "label": "Number Input - Поворот 0",
+      "destination": "working-editor"
+    },
+    {
+      "id": "104:1256",
+      "label": "Button Дублировать",
+      "destination": "working-editor"
+    },
+    {
+      "id": "104:1258",
+      "label": "Button Удалить",
+      "destination": "working-editor"
+    },
+    {
+      "id": "104:1265",
+      "label": "Summary - Слои Слои 3",
+      "destination": "98:2"
+    },
+    {
+      "id": "104:1275",
+      "label": "Button Наушники",
+      "destination": "working-editor"
+    },
+    {
+      "id": "104:1365",
+      "label": "Button Книга",
+      "destination": "working-editor"
+    },
+    {
+      "id": "104:1423",
+      "label": "Button Лампа фон",
+      "destination": "working-editor"
+    },
+    {
+      "id": "104:1460",
+      "label": "Button Ниже",
+      "destination": "working-editor"
+    },
+    {
+      "id": "104:1462",
+      "label": "Button Выше",
+      "destination": "working-editor"
+    },
+    {
+      "id": "104:1467",
+      "label": "Checkbox:margin ",
+      "destination": "working-editor"
+    },
+    {
+      "id": "104:1465",
+      "label": "Checkbox ",
+      "destination": "working-editor"
+    },
+    {
+      "id": "104:1471",
+      "label": "Button Открыть проект",
+      "destination": "101:2"
+    },
+    {
+      "id": "111:5",
+      "label": "Link - Сборка, главная Сборка",
+      "destination": "105:2"
+    },
+    {
+      "id": "111:14",
+      "label": "Button - Отменить Отменить",
+      "destination": "working-editor"
+    },
+    {
+      "id": "111:20",
+      "label": "Button - Сохранить проект Сохранить проект",
+      "destination": "working-editor"
+    },
+    {
+      "id": "111:25",
+      "label": "Button - Скачать SVG Скачать SVG",
+      "destination": "working-editor"
+    },
+    {
+      "id": "111:40",
+      "label": "Text Area Обучение без отвлечений",
+      "destination": "working-editor"
+    },
+    {
+      "id": "111:42",
+      "label": "Button Собрать идею",
+      "destination": "working-editor"
+    },
+    {
+      "id": "111:51",
+      "label": "Button Импорт SVG",
+      "destination": "106:2"
+    },
+    {
+      "id": "111:57",
+      "label": "Search Input Найти объект",
+      "destination": "working-editor"
+    },
+    {
+      "id": "111:61",
+      "label": "Button - Библиотека лентой ",
+      "destination": "105:2"
+    },
+    {
+      "id": "111:64",
+      "label": "Button - Библиотека сеткой три на три ",
+      "destination": "127:2"
+    },
+    {
+      "id": "111:68",
+      "label": "Button - Предыдущие объекты ",
+      "destination": "working-editor"
+    },
+    {
+      "id": "111:71",
+      "label": "Button - Следующие объекты ",
+      "destination": "working-editor"
+    },
+    {
+      "id": "111:76",
+      "label": "Button Пазлы",
+      "destination": "working-editor"
+    },
+    {
+      "id": "111:138",
+      "label": "Button Книга",
+      "destination": "working-editor"
+    },
+    {
+      "id": "111:195",
+      "label": "Button Телефон",
+      "destination": "working-editor"
+    },
+    {
+      "id": "111:354",
+      "label": "Button Наушники",
+      "destination": "working-editor"
+    },
+    {
+      "id": "111:442",
+      "label": "Button Лампа",
+      "destination": "working-editor"
+    },
+    {
+      "id": "111:473",
+      "label": "Button Кошелёк",
+      "destination": "working-editor"
+    },
+    {
+      "id": "111:563",
+      "label": "Button Ручка",
+      "destination": "working-editor"
+    },
+    {
+      "id": "111:591",
+      "label": "Button Папка",
+      "destination": "working-editor"
+    },
+    {
+      "id": "111:617",
+      "label": "Button Монета",
+      "destination": "working-editor"
+    },
+    {
+      "id": "111:757",
+      "label": "Button Цветы",
+      "destination": "working-editor"
+    },
+    {
+      "id": "111:900",
+      "label": "Button S",
+      "destination": "working-editor"
+    },
+    {
+      "id": "111:903",
+      "label": "Button L",
+      "destination": "working-editor"
+    },
+    {
+      "id": "111:910",
+      "label": "Button - Горизонтальный холст 1200 на 630 ",
+      "destination": "working-editor"
+    },
+    {
+      "id": "111:912",
+      "label": "Button - Квадратный холст 1080 на 1080 ",
+      "destination": "working-editor"
+    },
+    {
+      "id": "111:914",
+      "label": "Button - Вертикальный холст 1080 на 1350 ",
+      "destination": "working-editor"
+    },
+    {
+      "id": "111:916",
+      "label": "Button - Свой размер холста +",
+      "destination": "working-editor"
+    },
+    {
+      "id": "111:1118",
+      "label": "Button Другой вариант",
+      "destination": "working-editor"
+    },
+    {
+      "id": "111:1124",
+      "label": "Button Очистить",
+      "destination": "working-editor"
+    },
+    {
+      "id": "111:1130",
+      "label": "Button Накопить на мечту",
+      "destination": "working-editor"
+    },
+    {
+      "id": "111:1132",
+      "label": "Button Работа с документами",
+      "destination": "working-editor"
+    },
+    {
+      "id": "111:1134",
+      "label": "Button Найти решение вместе",
+      "destination": "working-editor"
+    },
+    {
+      "id": "111:1136",
+      "label": "Button Войти в поток",
+      "destination": "working-editor"
+    },
+    {
+      "id": "111:1138",
+      "label": "Button Разгрести завалы",
+      "destination": "working-editor"
+    },
+    {
+      "id": "111:1140",
+      "label": "Button Включить голову",
+      "destination": "working-editor"
+    },
+    {
+      "id": "111:1149",
+      "label": "Summary - Настройки палитры Настройки",
+      "destination": "105:2"
+    },
+    {
+      "id": "111:1160",
+      "label": "Button - Исходная, цветовая схема База",
+      "destination": "working-editor"
+    },
+    {
+      "id": "111:1169",
+      "label": "Button - Сирень, цветовая схема Сирень",
+      "destination": "working-editor"
+    },
+    {
+      "id": "111:1177",
+      "label": "Button - Персик, цветовая схема Персик",
+      "destination": "working-editor"
+    },
+    {
+      "id": "111:1185",
+      "label": "Button - Мята, цветовая схема Мята",
+      "destination": "working-editor"
+    },
+    {
+      "id": "111:1193",
+      "label": "Button - Своя, цветовая схема + Своя",
+      "destination": "108:2"
+    },
+    {
+      "id": "111:1203",
+      "label": "Checkbox:margin ",
+      "destination": "working-editor"
+    },
+    {
+      "id": "111:1201",
+      "label": "Checkbox ",
+      "destination": "working-editor"
+    },
+    {
+      "id": "111:1208",
+      "label": "Color Picker - Выбрать цвет холста ",
+      "destination": "working-editor"
+    },
+    {
+      "id": "111:1213",
+      "label": "Button - Вернуть цвет холста из палитры ↺",
+      "destination": "working-editor"
+    },
+    {
+      "id": "111:1216",
+      "label": "Button Импорт палитры",
+      "destination": "125:2"
+    },
+    {
+      "id": "111:1223",
+      "label": "Summary - Настройки объекта Объект Книга",
+      "destination": "105:2"
+    },
+    {
+      "id": "111:1239",
+      "label": "Checkbox:margin ",
+      "destination": "working-editor"
+    },
+    {
+      "id": "111:1236",
+      "label": "Checkbox ",
+      "destination": "working-editor"
+    },
+    {
+      "id": "111:1244",
+      "label": "Number Input 612",
+      "destination": "working-editor"
+    },
+    {
+      "id": "111:1248",
+      "label": "Number Input 362",
+      "destination": "working-editor"
+    },
+    {
+      "id": "111:1253",
+      "label": "Number Input - Поворот 0",
+      "destination": "working-editor"
+    },
+    {
+      "id": "111:1258",
+      "label": "Button Дублировать",
+      "destination": "working-editor"
+    },
+    {
+      "id": "111:1260",
+      "label": "Button Удалить",
+      "destination": "working-editor"
+    },
+    {
+      "id": "111:1267",
+      "label": "Summary - Слои Слои 3",
+      "destination": "105:2"
+    },
+    {
+      "id": "111:1278",
+      "label": "Button Наушники",
+      "destination": "working-editor"
+    },
+    {
+      "id": "111:1368",
+      "label": "Button Книга",
+      "destination": "working-editor"
+    },
+    {
+      "id": "111:1426",
+      "label": "Button Лампа фон",
+      "destination": "working-editor"
+    },
+    {
+      "id": "111:1463",
+      "label": "Button Ниже",
+      "destination": "working-editor"
+    },
+    {
+      "id": "111:1465",
+      "label": "Button Выше",
+      "destination": "working-editor"
+    },
+    {
+      "id": "111:1470",
+      "label": "Checkbox:margin ",
+      "destination": "working-editor"
+    },
+    {
+      "id": "111:1468",
+      "label": "Checkbox ",
+      "destination": "working-editor"
+    },
+    {
+      "id": "111:1474",
+      "label": "Button Открыть проект",
+      "destination": "109:2"
+    },
+    {
+      "id": "118:5",
+      "label": "Link - Сборка, главная Сборка",
+      "destination": "112:2"
+    },
+    {
+      "id": "118:14",
+      "label": "Button - Отменить ",
+      "destination": "working-editor"
+    },
+    {
+      "id": "118:17",
+      "label": "Button - Сохранить проект Проект",
+      "destination": "working-editor"
+    },
+    {
+      "id": "118:23",
+      "label": "Button - Скачать SVG SVG",
+      "destination": "working-editor"
+    },
+    {
+      "id": "118:897",
+      "label": "Button S",
+      "destination": "working-editor"
+    },
+    {
+      "id": "118:900",
+      "label": "Button L",
+      "destination": "working-editor"
+    },
+    {
+      "id": "118:907",
+      "label": "Button - Горизонтальный холст 1200 на 630 ",
+      "destination": "working-editor"
+    },
+    {
+      "id": "118:909",
+      "label": "Button - Квадратный холст 1080 на 1080 ",
+      "destination": "working-editor"
+    },
+    {
+      "id": "118:911",
+      "label": "Button - Вертикальный холст 1080 на 1350 ",
+      "destination": "working-editor"
+    },
+    {
+      "id": "118:913",
+      "label": "Button - Свой размер холста +",
+      "destination": "working-editor"
+    },
+    {
+      "id": "118:1115",
+      "label": "Button Другой вариант",
+      "destination": "working-editor"
+    },
+    {
+      "id": "118:1121",
+      "label": "Button Очистить",
+      "destination": "working-editor"
+    },
+    {
+      "id": "118:1127",
+      "label": "Button Накопить на мечту",
+      "destination": "working-editor"
+    },
+    {
+      "id": "118:1129",
+      "label": "Button Работа с документами",
+      "destination": "working-editor"
+    },
+    {
+      "id": "118:1131",
+      "label": "Button Найти решение вместе",
+      "destination": "working-editor"
+    },
+    {
+      "id": "118:1133",
+      "label": "Button Войти в поток",
+      "destination": "working-editor"
+    },
+    {
+      "id": "118:1135",
+      "label": "Button Разгрести завалы",
+      "destination": "working-editor"
+    },
+    {
+      "id": "118:1137",
+      "label": "Button Включить голову",
+      "destination": "working-editor"
+    },
+    {
+      "id": "118:37",
+      "label": "Text Area Обучение без отвлечений",
+      "destination": "working-editor"
+    },
+    {
+      "id": "118:39",
+      "label": "Button Собрать идею",
+      "destination": "working-editor"
+    },
+    {
+      "id": "118:48",
+      "label": "Button Импорт SVG",
+      "destination": "130:2"
+    },
+    {
+      "id": "118:54",
+      "label": "Search Input Найти объект",
+      "destination": "working-editor"
+    },
+    {
+      "id": "118:58",
+      "label": "Button - Библиотека лентой ",
+      "destination": "112:2"
+    },
+    {
+      "id": "118:61",
+      "label": "Button - Библиотека сеткой три на три ",
+      "destination": "117:2"
+    },
+    {
+      "id": "118:65",
+      "label": "Button - Предыдущие объекты ",
+      "destination": "working-editor"
+    },
+    {
+      "id": "118:68",
+      "label": "Button - Следующие объекты ",
+      "destination": "working-editor"
+    },
+    {
+      "id": "118:73",
+      "label": "Button Пазлы",
+      "destination": "working-editor"
+    },
+    {
+      "id": "118:135",
+      "label": "Button Книга",
+      "destination": "working-editor"
+    },
+    {
+      "id": "118:192",
+      "label": "Button Телефон",
+      "destination": "working-editor"
+    },
+    {
+      "id": "118:351",
+      "label": "Button Наушники",
+      "destination": "working-editor"
+    },
+    {
+      "id": "118:439",
+      "label": "Button Лампа",
+      "destination": "working-editor"
+    },
+    {
+      "id": "118:470",
+      "label": "Button Кошелёк",
+      "destination": "working-editor"
+    },
+    {
+      "id": "118:560",
+      "label": "Button Ручка",
+      "destination": "working-editor"
+    },
+    {
+      "id": "118:588",
+      "label": "Button Папка",
+      "destination": "working-editor"
+    },
+    {
+      "id": "118:614",
+      "label": "Button Монета",
+      "destination": "working-editor"
+    },
+    {
+      "id": "118:754",
+      "label": "Button Цветы",
+      "destination": "working-editor"
+    },
+    {
+      "id": "118:1146",
+      "label": "Summary - Настройки палитры Настройки",
+      "destination": "112:2"
+    },
+    {
+      "id": "118:1157",
+      "label": "Button - Исходная, цветовая схема База",
+      "destination": "working-editor"
+    },
+    {
+      "id": "118:1165",
+      "label": "Button - Сирень, цветовая схема Сирень",
+      "destination": "working-editor"
+    },
+    {
+      "id": "118:1173",
+      "label": "Button - Персик, цветовая схема Персик",
+      "destination": "working-editor"
+    },
+    {
+      "id": "118:1181",
+      "label": "Button - Мята, цветовая схема Мята",
+      "destination": "working-editor"
+    },
+    {
+      "id": "118:1189",
+      "label": "Button - Своя, цветовая схема + Своя",
+      "destination": "116:2"
+    },
+    {
+      "id": "118:1199",
+      "label": "Checkbox:margin ",
+      "destination": "working-editor"
+    },
+    {
+      "id": "118:1197",
+      "label": "Checkbox ",
+      "destination": "working-editor"
+    },
+    {
+      "id": "118:1204",
+      "label": "Color Picker - Выбрать цвет холста ",
+      "destination": "working-editor"
+    },
+    {
+      "id": "118:1209",
+      "label": "Button - Вернуть цвет холста из палитры ↺",
+      "destination": "working-editor"
+    },
+    {
+      "id": "118:1212",
+      "label": "Button Импорт палитры",
+      "destination": "114:2"
+    },
+    {
+      "id": "118:1219",
+      "label": "Summary - Настройки объекта Объект Книга",
+      "destination": "112:2"
+    },
+    {
+      "id": "118:1235",
+      "label": "Checkbox:margin ",
+      "destination": "working-editor"
+    },
+    {
+      "id": "118:1232",
+      "label": "Checkbox ",
+      "destination": "working-editor"
+    },
+    {
+      "id": "118:1240",
+      "label": "Number Input 612",
+      "destination": "working-editor"
+    },
+    {
+      "id": "118:1244",
+      "label": "Number Input 362",
+      "destination": "working-editor"
+    },
+    {
+      "id": "118:1249",
+      "label": "Number Input - Поворот 0",
+      "destination": "working-editor"
+    },
+    {
+      "id": "118:1254",
+      "label": "Button Дублировать",
+      "destination": "working-editor"
+    },
+    {
+      "id": "118:1256",
+      "label": "Button Удалить",
+      "destination": "working-editor"
+    },
+    {
+      "id": "118:1263",
+      "label": "Summary - Слои Слои 3",
+      "destination": "112:2"
+    },
+    {
+      "id": "118:1274",
+      "label": "Button Наушники",
+      "destination": "working-editor"
+    },
+    {
+      "id": "118:1364",
+      "label": "Button Книга",
+      "destination": "working-editor"
+    },
+    {
+      "id": "118:1422",
+      "label": "Button Лампа фон",
+      "destination": "working-editor"
+    },
+    {
+      "id": "118:1459",
+      "label": "Button Ниже",
+      "destination": "working-editor"
+    },
+    {
+      "id": "118:1461",
+      "label": "Button Выше",
+      "destination": "working-editor"
+    },
+    {
+      "id": "118:1466",
+      "label": "Checkbox:margin ",
+      "destination": "working-editor"
+    },
+    {
+      "id": "118:1464",
+      "label": "Checkbox ",
+      "destination": "working-editor"
+    },
+    {
+      "id": "118:1470",
+      "label": "Button Открыть проект",
+      "destination": "115:2"
+    }
+  ],
+  "changedNodeIds": [
+    "98:2",
+    "105:2",
+    "112:2",
+    "99:2",
+    "106:2",
+    "130:2",
+    "121:2",
+    "125:2",
+    "114:2",
+    "101:2",
+    "109:2",
+    "115:2",
+    "102:2",
+    "108:2",
+    "116:2",
+    "103:2",
+    "127:2",
+    "117:2",
+    "104:2",
+    "111:2",
+    "118:2"
+  ],
+  "note": "Exact editable captures. Window/view navigation stays in Figma; real filesystem and editing actions open the running editor."
+}

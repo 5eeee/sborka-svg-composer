@@ -11,6 +11,12 @@
     <link rel="stylesheet" href="src/styles/editor.css" />
   </head>
   <body>
+    <div id="startup" class="startup" aria-label="Запуск Сборки">
+      <div class="startup-mark" aria-hidden="true"><i></i><i></i></div>
+      <strong>Сборка</strong>
+      <p role="status">Готовим вашу мастерскую</p>
+      <div class="startup-track" aria-hidden="true"><span></span></div>
+    </div>
     <header>
       <a class="brand" href="./" aria-label="Сборка, главная"
         ><svg
@@ -287,8 +293,8 @@
             </button>
           </div>
           <label class="check"
-            ><input type="checkbox" id="canvasArtwork" checked />Графика фона из
-            Figma</label
+            ><input type="checkbox" id="canvasArtwork" checked />Фоновая
+            иллюстрация</label
           ><label for="bgHex">Цвет холста</label>
           <div class="figma-color">
             <input
@@ -448,6 +454,8 @@
 const pause=ms=>new Promise(r=>setTimeout(r,ms));
 for(let i=0;i<100;i++){if(document.images.length>=13&&[...document.images].every(i=>i.complete&&i.naturalWidth>0))break;await pause(100);}
 await document.fonts.ready;
+for(let i=0;i<100&&document.getElementById("startup");i++)await pause(100);
+if(document.getElementById("startup"))throw Error("Editor startup not completed; capture cancelled");
 let serial=0;
 for(const img of [...document.images]){
  const raw=await (await fetch(img.src)).text();
@@ -457,7 +465,7 @@ for(const img of [...document.images]){
  for(const n of [svg,...svg.querySelectorAll('*')]){for(const a of [...n.attributes]){let v=a.value;if(a.name==='id')v=prefix+v;else v=v.replace(/url\(#([^)]*)\)/g,(_,id)=>'url(#'+prefix+id+')');if(v!==a.value)n.setAttribute(a.name,v);}}
  svg.setAttribute('aria-label',img.alt||img.parentElement.textContent.trim());img.replaceWith(document.importNode(svg,true));
 }
-const modal=new URLSearchParams(location.search).get('modal');if(modal){const ids={svg:'importBtn',palette:'paletteFileBtn',project:'loadProjectBtn'};document.getElementById(ids[modal])?.click();}
+const modal=new URLSearchParams(location.search).get('modal');if(modal==='custom')document.querySelector('[data-palette=custom]')?.click();if(modal==='grid')document.querySelector('[data-library-view=grid]')?.click();if(modal==='collapsed')document.querySelectorAll('.settings-group').forEach(d=>d.open=false);if(['svg','palette','project'].includes(modal)){const ids={svg:'importBtn',palette:'paletteFileBtn',project:'loadProjectBtn'};document.getElementById(ids[modal])?.click();}
 const capture=document.createElement('script');capture.src='https://mcp.figma.com/mcp/html-to-design/capture.js';capture.async=true;document.body.append(capture);
 </script></body>
 </html>

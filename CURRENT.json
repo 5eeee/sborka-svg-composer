@@ -1,17 +1,17 @@
 {
-  "status": "final_kit_ready_not_sent",
+  "status": "v14_ready_not_sent",
   "date": "2026-11-03",
   "entry": "index.html",
   "url": "http://127.0.0.1:8774",
   "plugin_id": "2137a770-4ae4-432e-8fb5-81003c111a93",
-  "plugin_version": "85761b4cec805ee83aef4127e787104e23ff19f1",
-  "figma_runtime": "exact_screens_and_component_library_verified",
+  "plugin_version": "09c8f13505e064a31690e53873505b68968b892a",
+  "figma_runtime": "21_exact_responsive_states_and_199_components",
   "external_submission": "not_sent",
   "verification_file": "https://www.figma.com/design/aadh2KN9IgfjlrDEfzDLNM/Untitled",
   "verification_result": "20 automated tests pass; exact source screens preserved; component instances available in separate review sheet.",
-  "design_version": 13,
+  "design_version": 14,
   "last_live_insertion_version": "341ee176c7a2e96424045bf4b8cd607986286dee",
-  "design_qa": "169/169 component checks accepted; 110 exact visible pixel matches, remainder within documented edge-antialiasing tolerance. All bounds match. Dialog typography normalized to bundled Inter.",
+  "design_qa": "Final verification: 199/199 accepted, 144 exact visible pixel matches; remaining differences within documented antialiasing tolerance. No frozen startup overlays in working states.",
   "tests_passed": 20,
   "source_repository": "https://github.com/5eeee/sborka-svg-composer",
   "source_visibility": "public",
@@ -27,22 +27,34 @@
     390
   ],
   "figma_design": {
-    "components_page": "19:1268",
     "screens_page": "0:1",
-    "desktop": "64:2",
-    "tablet": "65:2",
-    "mobile": "66:2",
-    "tablet_inspector": "three_columns_verified",
-    "component_overview": "71:11825",
-    "component_count": 169,
-    "screen_layer_replacement": "disabled_to_preserve_imported_layout"
+    "screens_page_name": "01 · Все экраны · Desktop / Tablet / Mobile",
+    "desktop": "98:2",
+    "tablet": "105:2",
+    "mobile": "112:2",
+    "components_page": "19:1268",
+    "component_overview": "126:37",
+    "component_count": 199,
+    "states_per_format": 7
   },
   "component_report": "sources/components-pixel-validation.json",
   "component_validation": {
-    "total": 169,
-    "accepted": 169,
-    "exact_visible_matches": 110
+    "total": 199,
+    "accepted": 199,
+    "exact_visible_matches": 144
   },
   "figma_local_copy": "figma/Sborka_Editor_Components.fig",
-  "figma_local_copy_sha256": "c67e146786de2c7d91d290f1ba663215af480799e118806a5d0e0e33e5829ece"
+  "figma_local_copy_sha256": "14c2a336eaf08275403621144b7d8e8016d45c839d8d91c917b9cffdb9e6ade8",
+  "ux_revision": {
+    "label": "Фоновая иллюстрация",
+    "collapsible_sections": true,
+    "library_views": [
+      "strip",
+      "grid-3x3"
+    ],
+    "grid_expand": true,
+    "startup": "animated_auto_library",
+    "cloud_requires_network": true,
+    "standalone_library_embedded": true
+  }
 }

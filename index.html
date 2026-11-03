@@ -11,6 +11,12 @@
     <link rel="stylesheet" href="src/styles/editor.css" />
   </head>
   <body>
+    <div id="startup" class="startup" aria-label="Запуск Сборки">
+      <div class="startup-mark" aria-hidden="true"><i></i><i></i></div>
+      <strong>Сборка</strong>
+      <p role="status">Готовим вашу мастерскую</p>
+      <div class="startup-track" aria-hidden="true"><span></span></div>
+    </div>
     <header>
       <a class="brand" href="./" aria-label="Сборка, главная"
         ><svg
@@ -287,8 +293,8 @@
             </button>
           </div>
           <label class="check"
-            ><input type="checkbox" id="canvasArtwork" checked />Графика фона из
-            Figma</label
+            ><input type="checkbox" id="canvasArtwork" checked />Фоновая
+            иллюстрация</label
           ><label for="bgHex">Цвет холста</label>
           <div class="figma-color">
             <input

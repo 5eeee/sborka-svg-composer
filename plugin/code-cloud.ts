@@ -1,5 +1,5 @@
 // Source of truth: the six verified browser transfers in this file.
-const EXACT_ROOT_IDS = ["64:2", "65:2", "66:2", "67:2", "68:2", "70:2"];
+const EXACT_ROOT_IDS = ["98:2", "105:2", "112:2", "99:2", "121:2", "101:2"];
 const EXACT_LIBRARY_PAGE = "Сборка · Компоненты приложения";
 type ExactReport = { kind: string; [key: string]: unknown };
 async function inspectExactDesign(): Promise<ExactReport> {
@@ -24,7 +24,7 @@ async function buildExactComponents(): Promise<ExactReport> {
   );
   if (
     existing &&
-    existing.children.some((n) => n.name === "Основные компоненты v3")
+    existing.children.some((n) => n.name === "Основные компоненты v4")
   ) {
     await figma.setCurrentPageAsync(existing);
     const preview = existing.children.find(
@@ -40,6 +40,7 @@ async function buildExactComponents(): Promise<ExactReport> {
       message: "Компоненты уже собраны. Повторный запуск не создаёт дублей.",
     };
   }
+  await normalizeCapturedFonts(roots);
   const fonts = new Map<string, FontName>();
   for (const r of roots)
     for (const t of r.findAllWithCriteria({ types: ["TEXT"] }))
@@ -59,8 +60,17 @@ async function buildExactComponents(): Promise<ExactReport> {
     );
   const page = figma.root.children.find((p) => p.id === "19:1268");
   if (!page) throw Error("Не найдена страница компонентов.");
-  const archive = figma.root.children.find((p) => p.id === "19:2326");
-  if (!archive) throw Error("Не найдена страница архива.");
+  const incomplete = figma.root.children.find(
+    (p) => p.name === "02 · Все действия · Desktop / Tablet / Mobile",
+  );
+  if (incomplete) incomplete.remove();
+  let archive = figma.root.children.find(
+    (p) => p.name === "Архив · Сборка v13",
+  );
+  if (!archive) {
+    archive = figma.createPage();
+    archive.name = "Архив · Сборка v13";
+  }
   for (const id of ["37:2", "38:2", "39:2", "44:2", "46:2", "47:2"]) {
     const n = await figma.getNodeByIdAsync(id);
     if (n && "x" in n) {
@@ -200,7 +210,7 @@ async function buildExactComponents(): Promise<ExactReport> {
     }
   }
   const masters = figma.createFrame();
-  masters.name = "Основные компоненты v3";
+  masters.name = "Основные компоненты v4";
   masters.fills = [];
   masters.clipsContent = false;
   masters.x = 4000;
@@ -526,7 +536,7 @@ async function inspectComponentProofs(): Promise<ExactReport> {
   for (const p of figma.root.children) await p.loadAsync();
   const p = figma.root.children.find((p) => p.name === EXACT_LIBRARY_PAGE);
   if (!p) throw Error("Нет страницы компонентов");
-  const master = p.children.find((n) => n.name === "Основные компоненты v3");
+  const master = p.children.find((n) => n.name === "Основные компоненты v4");
   if (!master || !("findAllWithCriteria" in master))
     throw Error("Нужна библиотека v2");
   const samples = [];
@@ -634,7 +644,7 @@ async function finalizeExactHandoff(): Promise<ExactReport> {
   for (const p of figma.root.children) await p.loadAsync();
   const page = figma.root.children.find((p) => p.name === EXACT_LIBRARY_PAGE);
   if (!page) throw Error("Сначала соберите библиотеку");
-  const master = page.children.find((n) => n.name === "Основные компоненты v3");
+  const master = page.children.find((n) => n.name === "Основные компоненты v4");
   if (!master || !("findAllWithCriteria" in master))
     throw Error("Нужна финальная библиотека");
   const count = master.findAllWithCriteria({ types: ["COMPONENT"] }).length;
@@ -720,13 +730,278 @@ async function finalizeExactHandoff(): Promise<ExactReport> {
   };
 }
 
+async function inspectResponsiveStates(): Promise<ExactReport> {
+  const roots = [];
+  for (const id of EXACT_ROOT_IDS) {
+    const n = await figma.getNodeByIdAsync(id);
+    if (!n || n.type !== "FRAME") continue;
+    roots.push({
+      id: n.id,
+      name: n.name,
+      w: n.width,
+      h: n.height,
+      nodes: n
+        .findAllWithCriteria({ types: ["FRAME", "TEXT"] })
+        .map((x) => ({
+          id: x.id,
+          parent: x.parent?.id,
+          name: x.name,
+          type: x.type,
+          w: x.width,
+          h: x.height,
+          x: x.x,
+          y: x.y,
+          ...(x.type === "TEXT" ? { text: x.characters } : {}),
+          ...(x.type === "FRAME" ? { layout: x.layoutMode } : {}),
+        })),
+    });
+  }
+  return { kind: "responsive-inspect", roots };
+}
+
+async function normalizeCapturedFonts(roots: FrameNode[]) {
+  const available = (await figma.listAvailableFontsAsync())
+    .filter((f) => f.fontName.family === "Inter")
+    .map((f) => f.fontName);
+  for (const root of roots)
+    for (const node of root.findAllWithCriteria({ types: ["TEXT"] })) {
+      for (const segment of node.getStyledTextSegments(["fontName"])) {
+        if (segment.fontName.family !== "SborkaInter") continue;
+        const wanted = segment.fontName.style
+          .replace(/SemiBold/g, "Semi Bold")
+          .replace(/ExtraBold/g, "Extra Bold");
+        const face =
+          available.find((f) => f.style === wanted) ||
+          available.find((f) => f.style === "Regular");
+        if (!face) throw Error("Inter недоступен");
+        await figma.loadFontAsync(face);
+        node.setRangeFontName(segment.start, segment.end, face);
+      }
+    }
+}
+
+// Organize exact captures without approximating responsive layouts.
+async function buildResponsiveFlows(): Promise<ExactReport> {
+  const page = figma.root.children.find((p) => p.id === "0:1");
+  const archive = figma.root.children.find(
+    (p) => p.name === "Архив · Сборка v13",
+  );
+  if (!page || !archive) throw Error("Сначала обновите компоненты");
+  await figma.setCurrentPageAsync(page);
+  const rows = [
+    ["Редактор", "98:2", "105:2", "112:2"],
+    ["Импорт SVG", "99:2", "106:2", "130:2"],
+    ["Импорт палитры", "121:2", "125:2", "114:2"],
+    ["Открыть проект", "101:2", "109:2", "115:2"],
+    ["Своя палитра", "102:2", "108:2", "116:2"],
+    ["Библиотека 3 × 3", "103:2", "127:2", "117:2"],
+    ["Свёрнутые настройки", "104:2", "111:2", "118:2"],
+  ];
+  const roots: FrameNode[][] = [];
+  for (const row of rows) {
+    const nodes: FrameNode[] = [];
+    for (const id of row.slice(1)) {
+      const n = await figma.getNodeByIdAsync(id);
+      if (!n || n.type !== "FRAME") throw Error("Перенос не завершён: " + id);
+      nodes.push(n);
+    }
+    roots.push(nodes);
+  }
+  await normalizeCapturedFonts(([] as FrameNode[]).concat(...roots));
+  const removedStartup: string[] = [];
+  for (const root of ([] as FrameNode[]).concat(...roots)) {
+    const status = root.findOne(
+      (n) => n.type === "TEXT" && n.characters === "Готовим вашу мастерскую",
+    );
+    if (!status) continue;
+    const body = root.children.find((n) => n.name === "Body");
+    let candidate: SceneNode = status;
+    while (
+      candidate.parent &&
+      candidate.parent !== body &&
+      candidate.parent !== root
+    )
+      candidate = candidate.parent as SceneNode;
+    if (
+      candidate === body ||
+      candidate === root ||
+      candidate.width < root.width * 0.8
+    )
+      throw Error("Нужно проверить слой загрузки: " + root.id);
+    removedStartup.push(candidate.id);
+    candidate.remove();
+  }
+
+  for (const id of ["84:2", "67:2", "68:2", "70:2"]) {
+    const n = await figma.getNodeByIdAsync(id);
+    if (n && "x" in n) {
+      archive.appendChild(n as SceneNode);
+      (n as SceneNode).x += 24000;
+    }
+  }
+
+  const normalPrimary = await figma.getNodeByIdAsync("98:42");
+  let normalizedPrimary = 0;
+  if (normalPrimary && normalPrimary.type === "FRAME") {
+    const ink = normalPrimary.findAllWithCriteria({ types: ["TEXT"] })[0]
+      ?.fills;
+    const library = figma.root.children.find((p) => p.id === "19:1268");
+    if (library) await library.loadAsync();
+    const nodes: SceneNode[] = [];
+    for (const root of ([] as FrameNode[]).concat(...roots))
+      nodes.push(
+        ...root
+          .findAllWithCriteria({ types: ["FRAME"] })
+          .filter((n) => n.name.startsWith("Button")),
+      );
+    if (library)
+      nodes.push(
+        ...library
+          .findAllWithCriteria({ types: ["COMPONENT"] })
+          .filter((n) => n.name.startsWith("Кнопки /")),
+      );
+    for (const n of nodes) {
+      if (n.type !== "FRAME" && n.type !== "COMPONENT") continue;
+      const caption = n
+        .findAllWithCriteria({ types: ["TEXT"] })
+        .map((t) => t.characters)
+        .join(" ")
+        .trim();
+      if (!/^(Собрать идею|Скачать SVG|SVG)$/.test(caption)) continue;
+      n.fills = JSON.parse(JSON.stringify(normalPrimary.fills));
+      n.strokes = JSON.parse(JSON.stringify(normalPrimary.strokes));
+      n.opacity = 1;
+      if (ink && ink !== figma.mixed)
+        for (const text of n.findAllWithCriteria({ types: ["TEXT"] }))
+          text.fills = JSON.parse(JSON.stringify(ink));
+      normalizedPrimary++;
+    }
+  }
+  page.name = "01 · Все экраны · Desktop / Tablet / Mobile";
+  const changed: string[] = [],
+    coverage: { id: string; label: string; destination: string }[] = [];
+  let y = 0;
+  const formats = ["Десктоп", "Планшет", "Телефон"];
+  for (let r = 0; r < roots.length; r++) {
+    let x = 0,
+      height = 0;
+    for (let f = 0; f < 3; f++) {
+      const root = roots[r][f];
+      root.name = formats[f] + " · " + rows[r][0] + " · v14";
+      root.x = x;
+      root.y = y;
+      height = Math.max(height, root.height);
+      x += root.width + 100;
+      changed.push(root.id);
+      const controls = root
+        .findAllWithCriteria({ types: ["FRAME"] })
+        .filter((n) =>
+          /^(Button(?: -|$)|Link -|Summary|Search Input|Text Area|Number Input|Color Picker|Checkbox)/.test(
+            n.name,
+          ),
+        );
+      for (const n of controls) {
+        const label =
+          n.name +
+          " " +
+          n
+            .findAllWithCriteria({ types: ["TEXT"] })
+            .map((t) => t.characters)
+            .join(" ")
+            .trim();
+        let destination = roots[0][f].id;
+        if (/Импорт SVG/.test(label)) destination = roots[1][f].id;
+        else if (/Импорт палитры/.test(label)) destination = roots[2][f].id;
+        else if (/Открыть проект/.test(label)) destination = roots[3][f].id;
+        else if (/Своя|Применить/.test(label)) destination = roots[4][f].id;
+        else if (/сеткой|Показать все/.test(label))
+          destination = roots[5][f].id;
+        else if (/Summary/.test(label))
+          destination = (r === 6 ? roots[0] : roots[6])[f].id;
+        else if (!/Закрыть|лентой|Свернуть|Сборка, главная/.test(label)) {
+          await n.setReactionsAsync([
+            {
+              trigger: { type: "ON_CLICK" },
+              actions: [
+                {
+                  type: "URL",
+                  url: "http://127.0.0.1:8774/?demo=1",
+                  openInNewTab: true,
+                },
+              ],
+            },
+          ]);
+          coverage.push({ id: n.id, label, destination: "working-editor" });
+          continue;
+        }
+        if (destination === root.id) {
+          await n.setReactionsAsync([
+            {
+              trigger: { type: "ON_CLICK" },
+              actions: [
+                {
+                  type: "URL",
+                  url: "http://127.0.0.1:8774/?demo=1",
+                  openInNewTab: true,
+                },
+              ],
+            },
+          ]);
+          coverage.push({ id: n.id, label, destination: "working-editor" });
+          continue;
+        }
+        await n.setReactionsAsync([
+          {
+            trigger: { type: "ON_CLICK" },
+            actions: [
+              {
+                type: "NODE",
+                destinationId: destination,
+                navigation: "NAVIGATE" as never,
+                transition: null,
+                resetScrollPosition: false,
+              },
+            ],
+          },
+        ]);
+        coverage.push({ id: n.id, label, destination });
+      }
+    }
+    y += height + 220;
+  }
+  page.flowStartingPoints = roots[0].map((root, i) => ({
+    nodeId: root.id,
+    name: formats[i] + " · редактор v14",
+  }));
+  page.selection = roots[0];
+  figma.viewport.scrollAndZoomIntoView(roots[0]);
+  return {
+    kind: "v14-organized",
+    removedStartup,
+    normalizedPrimary,
+    page: page.id,
+    roots: roots.map((row, i) => ({
+      state: rows[i][0],
+      screens: row.map((n) => ({
+        id: n.id,
+        name: n.name,
+        w: n.width,
+        h: n.height,
+      })),
+    })),
+    coverage,
+    changedNodeIds: changed,
+    note: "Exact editable captures. Window/view navigation stays in Figma; real filesystem and editing actions open the running editor.",
+  };
+}
+
 const PACKED_TAIL="";
 const COMMAND='2137a770-4ae4-432e-8fb5-81003c111a93';
 figma.showUI(__html__,{width:1180,height:780,themeColors:true});
 figma.root.setRelaunchData({[COMMAND]:'Собрать новую иллюстрацию'});
 let busy=false;let componentBusy=false;
 figma.ui.onmessage=async(message:{type:string;svg?:string;name?:string;width?:number;height?:number;library?:Record<string,string>})=>{
- if(message.type==='components-inspect'||message.type==='components-build'||message.type==='components-finalize'){if(componentBusy)return;componentBusy=true;try{const report=message.type==='components-inspect'?await inspectExactDesign():message.type==='components-finalize'?await finalizeExactHandoff():await buildExactComponents();figma.ui.postMessage({type:'components-report',report});}catch(e){figma.ui.postMessage({type:'components-report',report:{error:String(e)}});}finally{componentBusy=false;}return;}
+ if(message.type==='responsive-build'||message.type==='responsive-inspect'||message.type==='components-inspect'||message.type==='components-build'||message.type==='components-finalize'){if(componentBusy)return;componentBusy=true;try{const report=message.type==='responsive-build'?await buildResponsiveFlows():message.type==='responsive-inspect'?await inspectResponsiveStates():message.type==='components-inspect'?await inspectExactDesign():message.type==='components-finalize'?await finalizeExactHandoff():await buildExactComponents();figma.ui.postMessage({type:'components-report',report});}catch(e){figma.ui.postMessage({type:'components-report',report:{error:String(e)}});}finally{componentBusy=false;}return;}
  if(message.type==='design'){try{const result=await createResponsiveDesign(String(message.svg||''),message.library||{});figma.ui.postMessage({type:'status',text:'Макеты готовы: desktop, tablet, mobile и отдельные компоненты. '+JSON.stringify(result)});}catch(e){figma.ui.postMessage({type:'status',text:'Ошибка создания макетов: '+String(e)});}return;}
  if(message.type==='boot'){figma.ui.postMessage({type:'assets',tail:PACKED_TAIL});return;}
  if(message.type!=='insert'||busy)return;

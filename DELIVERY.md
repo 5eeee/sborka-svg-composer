@@ -4,7 +4,7 @@
 
 Запуск: start.cmd или node server.mjs, затем http://127.0.0.1:8774. Для готового редактора достаточно Node.js 18+, npm install не нужен. Для разработки и пересборки: npm ci, npm run build:plugin, npm test.
 
-В комплекте исходники модулей, автономный плагин Figma, library.json, 40 предметных SVG, 6 фонов, оригинальное ТЗ, три примера SVG/JSON, демо и инструкции. Ссылки на актуальные экраны и 169 компонентов: DESIGN.md. Архитектура: ARCHITECTURE.md. Черновик сообщения: SUBMISSION.md.
+В комплекте исходники модулей, автономный плагин Figma, library.json, 40 предметных SVG, 6 фонов, оригинальное ТЗ, три примера SVG/JSON, демо и инструкции. Ссылки на актуальные экраны и 199 компонентов: DESIGN.md. Архитектура: ARCHITECTURE.md. Черновик сообщения: SUBMISSION.md.
 
 Публичный репозиторий: https://github.com/5eeee/sborka-svg-composer
 

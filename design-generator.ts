@@ -1,5 +1,5 @@
 // Source of truth: the six verified browser transfers in this file.
-const EXACT_ROOT_IDS = ["64:2", "65:2", "66:2", "67:2", "68:2", "70:2"];
+const EXACT_ROOT_IDS = ["98:2", "105:2", "112:2", "99:2", "121:2", "101:2"];
 const EXACT_LIBRARY_PAGE = "Сборка · Компоненты приложения";
 type ExactReport = { kind: string; [key: string]: unknown };
 async function inspectExactDesign(): Promise<ExactReport> {
@@ -24,7 +24,7 @@ async function buildExactComponents(): Promise<ExactReport> {
   );
   if (
     existing &&
-    existing.children.some((n) => n.name === "Основные компоненты v3")
+    existing.children.some((n) => n.name === "Основные компоненты v4")
   ) {
     await figma.setCurrentPageAsync(existing);
     const preview = existing.children.find(
@@ -40,6 +40,7 @@ async function buildExactComponents(): Promise<ExactReport> {
       message: "Компоненты уже собраны. Повторный запуск не создаёт дублей.",
     };
   }
+  await normalizeCapturedFonts(roots);
   const fonts = new Map<string, FontName>();
   for (const r of roots)
     for (const t of r.findAllWithCriteria({ types: ["TEXT"] }))
@@ -59,8 +60,17 @@ async function buildExactComponents(): Promise<ExactReport> {
     );
   const page = figma.root.children.find((p) => p.id === "19:1268");
   if (!page) throw Error("Не найдена страница компонентов.");
-  const archive = figma.root.children.find((p) => p.id === "19:2326");
-  if (!archive) throw Error("Не найдена страница архива.");
+  const incomplete = figma.root.children.find(
+    (p) => p.name === "02 · Все действия · Desktop / Tablet / Mobile",
+  );
+  if (incomplete) incomplete.remove();
+  let archive = figma.root.children.find(
+    (p) => p.name === "Архив · Сборка v13",
+  );
+  if (!archive) {
+    archive = figma.createPage();
+    archive.name = "Архив · Сборка v13";
+  }
   for (const id of ["37:2", "38:2", "39:2", "44:2", "46:2", "47:2"]) {
     const n = await figma.getNodeByIdAsync(id);
     if (n && "x" in n) {
@@ -200,7 +210,7 @@ async function buildExactComponents(): Promise<ExactReport> {
     }
   }
   const masters = figma.createFrame();
-  masters.name = "Основные компоненты v3";
+  masters.name = "Основные компоненты v4";
   masters.fills = [];
   masters.clipsContent = false;
   masters.x = 4000;
@@ -526,7 +536,7 @@ async function inspectComponentProofs(): Promise<ExactReport> {
   for (const p of figma.root.children) await p.loadAsync();
   const p = figma.root.children.find((p) => p.name === EXACT_LIBRARY_PAGE);
   if (!p) throw Error("Нет страницы компонентов");
-  const master = p.children.find((n) => n.name === "Основные компоненты v3");
+  const master = p.children.find((n) => n.name === "Основные компоненты v4");
   if (!master || !("findAllWithCriteria" in master))
     throw Error("Нужна библиотека v2");
   const samples = [];
@@ -634,7 +644,7 @@ async function finalizeExactHandoff(): Promise<ExactReport> {
   for (const p of figma.root.children) await p.loadAsync();
   const page = figma.root.children.find((p) => p.name === EXACT_LIBRARY_PAGE);
   if (!page) throw Error("Сначала соберите библиотеку");
-  const master = page.children.find((n) => n.name === "Основные компоненты v3");
+  const master = page.children.find((n) => n.name === "Основные компоненты v4");
   if (!master || !("findAllWithCriteria" in master))
     throw Error("Нужна финальная библиотека");
   const count = master.findAllWithCriteria({ types: ["COMPONENT"] }).length;
@@ -718,4 +728,54 @@ async function finalizeExactHandoff(): Promise<ExactReport> {
     sections,
     externalSubmission: "not_sent",
   };
+}
+
+async function inspectResponsiveStates(): Promise<ExactReport> {
+  const roots = [];
+  for (const id of EXACT_ROOT_IDS) {
+    const n = await figma.getNodeByIdAsync(id);
+    if (!n || n.type !== "FRAME") continue;
+    roots.push({
+      id: n.id,
+      name: n.name,
+      w: n.width,
+      h: n.height,
+      nodes: n
+        .findAllWithCriteria({ types: ["FRAME", "TEXT"] })
+        .map((x) => ({
+          id: x.id,
+          parent: x.parent?.id,
+          name: x.name,
+          type: x.type,
+          w: x.width,
+          h: x.height,
+          x: x.x,
+          y: x.y,
+          ...(x.type === "TEXT" ? { text: x.characters } : {}),
+          ...(x.type === "FRAME" ? { layout: x.layoutMode } : {}),
+        })),
+    });
+  }
+  return { kind: "responsive-inspect", roots };
+}
+
+async function normalizeCapturedFonts(roots: FrameNode[]) {
+  const available = (await figma.listAvailableFontsAsync())
+    .filter((f) => f.fontName.family === "Inter")
+    .map((f) => f.fontName);
+  for (const root of roots)
+    for (const node of root.findAllWithCriteria({ types: ["TEXT"] })) {
+      for (const segment of node.getStyledTextSegments(["fontName"])) {
+        if (segment.fontName.family !== "SborkaInter") continue;
+        const wanted = segment.fontName.style
+          .replace(/SemiBold/g, "Semi Bold")
+          .replace(/ExtraBold/g, "Extra Bold");
+        const face =
+          available.find((f) => f.style === wanted) ||
+          available.find((f) => f.style === "Regular");
+        if (!face) throw Error("Inter недоступен");
+        await figma.loadFontAsync(face);
+        node.setRangeFontName(segment.start, segment.end, face);
+      }
+    }
 }
